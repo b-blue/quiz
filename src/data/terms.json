@@ -1,0 +1,847 @@
+[
+  {
+    "term": "Users",
+    "definition": "Mapped to physical users, have password for AWS Console",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "Groups",
+    "definition": "Contains users exclusively",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "Policies",
+    "definition": "JSON document outlining permissions for users or groups",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "Roles",
+    "definition": "Used for EC2 Instances or AWS Services",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "Security",
+    "definition": "MFA + Password Policy",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "AWS CLI",
+    "definition": "Manage AWS services using the command line",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "AWS SDK",
+    "definition": "Manage your AWS services using a programming language",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "Access Keys",
+    "definition": "Access AWS using CLI or SDK",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "IAM Credential Report",
+    "definition": "Lists all account's users and status of their credentials",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "IAM Access Advisor",
+    "definition": "Shows service permissions granted to a user and when they were last accessed",
+    "section": "IAM Summary"
+  },
+  {
+    "term": "EC2 Instance",
+    "definition": "AMI (OS) + Instance Size (CPU + RAM) + Storage + Security Groups + EC2 User Data",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Security Groups",
+    "definition": "Firewall attached to the EC2 Instance",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "EC2 User Data",
+    "definition": "Script launched at first start of an instance",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "SSH",
+    "definition": "Start terminal into EC2 Instance on port 22",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "EC2 Instance Role",
+    "definition": "Link to IAM Roles",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "On-Demand Instances",
+    "definition": "Short workload, predictable pricing, pay by the second",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Spot Instances",
+    "definition": "Short workloads, cheap, can lose instances (less reliable than on-demand)",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Dedicated Hosts",
+    "definition": "Most expensive; physical server booked; good for server-bound software licenses",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Dedicated Instance",
+    "definition": "No other customers share hardware",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Capacity Reservations",
+    "definition": "Reserve capacity in specific AZ for any duration",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Reserved Instances (RIs)",
+    "definition": "Maximum 72% billing discount applied to on-demand instances; 1- or 3-year terms; for long workloads; convertible RIs with flexible instances exist",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Savings Plans",
+    "definition": "1- or 3-year terms; commitment to amount of usage; good for long workloads",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "EBS (Elastic Block Store) Volumes",
+    "definition": "Network drives attached to one EC2 instance at a time; mapped to availability zones; can use EBS Snapshots for backups/transfer of EBS Volumes across AZ; persist after EC2 instance is terminated",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EBS Snapshots",
+    "definition": "Stored incrementally; users billed only for changed blocks stored",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "AMI (Amazon Machine Image)",
+    "definition": "Create ready-to-use EC2 instances with our customizations in place",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EC2 Image Builder",
+    "definition": "Automatically build, test, distribute AMIs",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EC2 Instance Store",
+    "definition": "High performance hardware disk attached to our EC2 instance; lost if our instance is stopped/terminated",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EFS",
+    "definition": "Network file system, can be attached to hundreds of instances in the same region; works across AZs",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EFS-IA",
+    "definition": "Cost-optimized storage clas for infrequently accessed files",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "FSx for Windows",
+    "definition": "Network file system for Windows servers",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "FSx for Lustre",
+    "definition": "High performance computing Linux file system",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "Agility",
+    "definition": "Quickly spin up and deploy resources in the cloud",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Elasticity",
+    "definition": "Provision resources based on actual need; scale resources up and down to fit needs",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Vertical Scalability (Scaling up or down)",
+    "definition": "Think elasticity; Allocate more or less resources (CPU, RAM) to one instance",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Horizontal Scalabililty (Scaling out or in)",
+    "definition": "Think elasticity; increase or decrease number of instances; duplicating resources, implies distributed systems",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "High Availability",
+    "definition": "Running an app/system in at least 2 AZs",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Elastic Load Balancers (ELB)",
+    "definition": "Distribute traffic across backend EC2 instances; can be multi-AZ; supports health checks",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Application Load Balancer",
+    "definition": "Layer 7; application layer",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Network Load Balancer",
+    "definition": "Layer 4; network layer; ultra-high performance; allows for TCP",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Gateway Load Balancer",
+    "definition": "Layer 3",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Classic Load Balancer",
+    "definition": "L4 + L7; retired in 2023",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Auto Scaling Groups (ASG)",
+    "definition": "Free to use; implements elasticity based on demand on system; can be multi-AZ; integrated with ELB; cannot change instance types",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Buckets",
+    "definition": "Global unique names; tied to region; best thought of as folders in file directory analogy",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Objects",
+    "definition": "Contents of buckets; best thought of as files in file directory analogy",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Security",
+    "definition": "IAM policy; S3 bucket policy; S3 encryption",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Websites",
+    "definition": "Host static website on S3",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Versioning",
+    "definition": "Multiple versions for files; prevent accidental deletes",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Replication",
+    "definition": "Same-region or cross-region; must enable versioning",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Storage Classes",
+    "definition": "Lifecycle rules can move objects between storage classes",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 Standard",
+    "definition": "General Purpose",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 Standard",
+    "definition": "Infrequent Access (IA)",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 One Zone",
+    "definition": "Infrequent Access",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier",
+    "definition": "Instant Retrieval",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier",
+    "definition": "Flexible Retrieval",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier",
+    "definition": "Deep Archive; retrieve data in 12 or 48 hours",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Snowball",
+    "definition": "Import data into S3 through physical device; example of edge computing",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Storage Gateway",
+    "definition": "Hybrid solution to extend on-prem storage to S3",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 Replication",
+    "definition": "Versioning must be enabled in source and destination buckets; asynchronous copying; cross-region replication (CRR) or same-region replication (SRR)",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 CRR (Cross-Region Replication)",
+    "definition": "Copy bucket contents across regions; meet compliance requirements; minimize latency; increase operational efficiency",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 SRR (Same-Region Replication)",
+    "definition": "Copy bucket contents within region; aggregate logs; configure live replication between prod and test accounts; abide by data sovereignty laws",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Docker",
+    "definition": "Like ECS; run applications using containers",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "ECS (Elastic Container Service)",
+    "definition": "Like Docker; run applications on EC2 instances",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "AWS Fargate",
+    "definition": "Serverless; run Docker containers without provisioning infrastructure",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "ECR (Elastic Container Registry)",
+    "definition": "Like DockerHub; private Docker image repository",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "AWS Batch",
+    "definition": "Run batch jobs on AWS across managed EC2 instances",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "Lightsail",
+    "definition": "Predictable and low pricing for simple, preconfigured apps and database stacks",
+    "section": "Other Compute Summary"
+  },
+  {
+    "term": "AWS Lambda",
+    "definition": "Serverless; FAAS (Function As A Service); run functions on-demand; billed by time run x RAM provisioned and by number of invocations; invocations capped at 15 minutes in length; use API Gateway to expose Lambda functions as HTTP API",
+    "section": "AWS Lambda Summary"
+  },
+  {
+    "term": "CloudFormation (AWS)",
+    "definition": "Like Terraform; infrastructure as code, works with almost all AWS resources; repeat across regions and accounts",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "Elastic Beanstalk (AWS)",
+    "definition": "Platform as a Service, limited to certain programming languages or Docker; PHP, Java, .NET, Node, Python, etc.; Deploy code consistently with known architecture (ALB + EC2 + RDS)",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodeDeploy (Hybrid)",
+    "definition": "Deploy and upgrade application onto servers",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "Systems Manager (Hybrid)",
+    "definition": "Patch, configure, run commands at scale",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "Systems Manager Session Manager",
+    "definition": "Fully managed, browser-based shell and CLI; access across instances",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodeCommit",
+    "definition": "Store code in private git repo",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodeBuild",
+    "definition": "Build and test code in AWS",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodeDeploy",
+    "definition": "Deploy code onto servers",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodePipeline",
+    "definition": "Orchestration of pipeline (CICD)",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CodeArtifact",
+    "definition": "Store packages/dependencies on AWS",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "AWS CDK",
+    "definition": "Define cloud infra using specific programming language",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CloudWatch",
+    "definition": "Resource performance monitoring, events and alerts",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudWatch Metrics",
+    "definition": "Monitor performance of AWS services and billing metrics",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudWatch Alarms",
+    "definition": "Automate notifications, perform EC2 actions, notify to SNS based on metric",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudWatch Logs",
+    "definition": "Collect log files from EC2 instances, on-prem servers, Lambda functions",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "EventBridge",
+    "definition": "Scheduling processes; react to events in AWS, or trigger a rule/process on a schedule using Amazon EventBridge Scheduler",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudTrail",
+    "definition": "Account-specific activity and audit; audit API calls made within your AWS account, investigate after the fact",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudTrail Insights",
+    "definition": "Automated analysis of CloudTrail events",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "X-Ray",
+    "definition": "Trace requests made through your distributed applications, investigate in real-time",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "AWS Health Dashboard",
+    "definition": "Status of all AWS services across all regions",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "AWS Account Health Dashboard",
+    "definition": "AWS events that impact your infrastructure",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "Amazon CodeGuru",
+    "definition": "Automated code reviews, application performance recommendations",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "VPC (Virtual Private Cloud)",
+    "definition": "Spans all AZs in region; provisioned logically isolated section of AWS cloud in which to launch resources in virtual network; can create subnets, select IP address range, and configure routing and network gateways; cannot connect on-prem network to cloud",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Internet Gateway",
+    "definition": "Connects VPC to public internet, provides Internet access to VPC",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Peering",
+    "definition": "Connect two VPCs with non-overlapping IP ranges, nontransitive",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Transit Gateway",
+    "definition": "Connect thousands of VPC and on-premises networks together",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Endpoints",
+    "definition": "Provide private access to AWS services within VPC: two types are interface endpoints and gateway endpoints",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Gateway Endpoint",
+    "definition": "AWS S3 & DynamoDb only; gateway specified by user as target for route in route table for traffic bound to AWS service",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Interface Endpoint",
+    "definition": "All other AWS services (includes S3); elastic network interface with private subnet IP; entry point for traffic to supported AWS service",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "PrivateLink",
+    "definition": "Private connection to service in a 3rd party VPC",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Flow Logs",
+    "definition": "Network traffic logs",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Subnets",
+    "definition": "Spans one AZ in region; part of a VPC; tied to AZ, represents network partition of VPC",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "NAT Gateway (AWS Managed) & NAT Instances (Self-managed)",
+    "definition": "Give internet access to private subnets",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "NACL (Network Access Control List)",
+    "definition": "Stateless, subnet rules for inbound and outbound; IP addresses only, supports DENY and ALLOW rules",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Security Groups",
+    "definition": "Stateful, operate at EC2 Instance level or ENI level",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "AWS VPN",
+    "definition": "Establish secure connection from on-prem, remote offices or client devices to AWS global network; consists of Site-to-site VPN or Client VPN",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Site-to-Site VPN",
+    "definition": "VPN over public internet between on-premises DC and AWS",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Client VPN",
+    "definition": "OpenVPN connection from your computer into your VPC",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Direct Connect",
+    "definition": "Direct private connection from on-prem straight to AWS, public internet not involved",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Elastic IP",
+    "definition": "Fixed public IPV4, ongoing cost if not in-use",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Shield",
+    "definition": "Automatic DDoS Protection + 24/7 support for advanced",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Shield Standard",
+    "definition": "Enabled for all customers at no cost; protects against typical DDoS attacks",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Shield Advanced",
+    "definition": "Additional fee; 24x7 DDoS response team on standby; detailed real-time metrics and reports available",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "WAF",
+    "definition": "Firewall to filter incoming requests based on rules",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "KMS",
+    "definition": "Encryption keys managed by AWS",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "CloudHSM (Hardware Security Module)",
+    "definition": "Hardware encryption, we manage encryption keys",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "AWS Certificate Manager",
+    "definition": "Provision, manage, deploy SSL/TLS Certificates",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Artifact",
+    "definition": "Get access to compliance reports like PCI, ISO, etc.",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "GuardDuty",
+    "definition": "Protects AWS Account by checking VPC, DNS & CloudTrail logs to assess malicious activity/unauthorized behavior",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Inspector",
+    "definition": "Automated protection of EC2 instances, ECR images and Lambda functions against exposure, vulnerabilities and deviations from best practices; also tests network accessibility of EC2 instances and security state of apps running on instances",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Network Firewall",
+    "definition": "Protect VPC against network attacks",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Config",
+    "definition": "Track config changes and compliance against rules",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Macie",
+    "definition": "Find sensitive data (ex: PII or personally identificable information) in Amazon S3 buckets",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "CloudTrail",
+    "definition": "Account-specific activity and audit; track API calls made by users within account",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "AWS Security Hub",
+    "definition": "Gather security findings from multiple AWS accounts",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Amazon Detective",
+    "definition": "Find the root cause of security issues or suspicious activities",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "AWS Abuse",
+    "definition": "Report AWS Resources used for abusive or illegal purposes",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "IAM Access Analyzer",
+    "definition": "Identify which resources shares externally outside zone of trust",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Firewall Manager",
+    "definition": "Manage security rules across an Organization (WAF, Shield, etc...)",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "AWS Secrets Manager",
+    "definition": "Rotate, manage and retrieve database credentials, API keys, etc. throughout lifecycle",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Rekognition",
+    "definition": "Face detection, labeling, celebrity recognition",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Transcribe",
+    "definition": "Audio to text (subtitles)",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Polly",
+    "definition": "Text to audio",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Translate",
+    "definition": "Translations",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Lex",
+    "definition": "Build conversational chatbots",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Connect",
+    "definition": "Cloud contact center",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Comprehend",
+    "definition": "Natural language processing to find meaning, insights in text",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "SageMaker",
+    "definition": "Machine Learning (build, train, deploy) for every developer and data scientist",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Kendra",
+    "definition": "ML-powered search engine",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Personalize",
+    "definition": "Real-time personalized recommendations",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Textract",
+    "definition": "Detect text and data in documents",
+    "section": "Machine Learning Summary"
+  },
+  {
+    "term": "Organizations",
+    "definition": "Centrally manage billing; control access, compliance and security; share resources across AWS accounts; automate account creation; create groups of accounts to reflect business needs; apply governance policies to groups",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "SCP (Service Control Policies)",
+    "definition": "Restrict account power (affects root user, unlike IAM)",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "AWS Control Tower",
+    "definition": "Easily setup multiple accounts with best-practices",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Use Tags & Cost Allocation Tags",
+    "definition": "Easy management and billing (!)",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "IAM Guidelines",
+    "definition": "MFA, least-privilege, password policy, password rotation",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Config",
+    "definition": "Resource-specific change history, audit and compliance; record all resources' configurations & compliance, over time",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "CloudFormation",
+    "definition": "Like Terraform; deploy stacks across accounts or across regions",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Trusted Advisor",
+    "definition": "High-level AWS account assessment provides insights, support plan adapted to your needs; helps provision resources following best practices for cost optimization, performance, security, fault tolerance, and service limits; full set of checks on Business or Enterprise Support Plan",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "S3 or CloudWatch Logs",
+    "definition": "Destination for service logs or access logs",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "CloudTrail",
+    "definition": "Account-specific activity and audit; record API calls made within your account",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "AWS Service Catalog",
+    "definition": "Users and organizations can create and manage catalogs of IT services approved for use on AWS; virtual machine images, servers, software",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "APN (AWS Partner Network) Consulting Partner",
+    "definition": "Professional services firm to help customers design, architect, build, migrate and manage workloads on AWS",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "APN (AWS Partner Network) Technology Partner",
+    "definition": "Provide hardware, connectivity services, or software solutions hosted on or integrated with AWS Cloud",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "If your account is compromised",
+    "definition": "Change root password; delete and rotate all passwords / keys; contact AWS support",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Compute Optimizer",
+    "definition": "Uses machine learning to recommend optimal resource configurations to reduce cost; applies to some types of Ec2 instances, EC2 auto scaling groups, EBS volumes, and Lamda functions",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Simple Monthly Calculator / Pricing Calculator",
+    "definition": "Determine cost of services on AWS",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Billing Dashboard",
+    "definition": "High level overview",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost Allocation Tags",
+    "definition": "Tag resources to create detailed reports; each tag key must be unique, and each tag key can have only one value; user must activate AWS-generated and user-defined tags separately to appear in Cost Explorer or reports",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost Explorer",
+    "definition": "View current usage in detail and forecast future usage",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost and Usage Reports",
+    "definition": "Most comprehensive billing dataset; more involved than Cost Explorer",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Billing Alarms",
+    "definition": "In `us-east-1`, track overall and per-service billing",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Budgets",
+    "definition": "More advanced than Billing Alarms, track usages, costs, RI, and get alerts; sends alerts as CloudWatch Billing Alarms and also when cost and usage are forecast to exceed budget; four budget types are Cost Budget, Usage Budget, Reservation Budget, and Savings Plans Budget",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Savings Plans",
+    "definition": "Easy way to save based on long-term usage of AWS",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost Anomaly Detection",
+    "definition": "Detect unusual spends with machine learning",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Service Quotas",
+    "definition": "Notify when you're close to a service quote threshold",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "IAM",
+    "definition": "Identity and Access Management",
+    "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "IAM Identity Center",
+    "definition": "One login for multiple AWS accounts and applications",
+    "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "Organizations",
+    "definition": "Manage multiple accounts",
+    "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "Security Token Service (STS)",
+    "definition": "Temporary, limited privileges credentials to access AWS resources",
+    "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "Cognito",
+    "definition": "Create a database of users for your mobile & web applications",
+    "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "Directory Services",
+    "definition": "Integrate Microsoft Active Directory (AD) in AWS",
+    "section": "Advanced Identity Summary"
+  }
+]
