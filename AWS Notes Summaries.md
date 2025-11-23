@@ -239,12 +239,12 @@ _Inbound data tranfers into AWS regions from the Internet is free_
 - Versioning // Multiple versions for files; prevent accidental deletes
 - Replication // Same-region or cross-region; must enable versioning
 - Storage Classes // Lifecycle rules can move objects between storage classes
-  - Amazon S3 Standard // General Purpose
-  - Amazon S3 Standard // Infrequent Access (IA)
-  - Amazon S3 One Zone // Infrequent Access
-  - Amazon S3 Glacier // Instant Retrieval
-  - Amazon S3 Glacier // Flexible Retrieval
-  - Amazon S3 Glacier // Deep Archive; retrieve data in 12 or 48 hours
+  - Amazon S3 Standard - General Purpose
+  - Amazon S3 Standard - Infrequent Access (IA)
+  - Amazon S3 One Zone - Infrequent Access
+  - Amazon S3 Glacier - Instant Retrieval
+  - Amazon S3 Glacier - Flexible Retrieval
+  - Amazon S3 Glacier - Deep Archive // retrieve data in 12 or 48 hours
 - Snowball // Import data into S3 through physical device; example of edge computing
 - Storage Gateway // Hybrid solution to extend on-prem storage to S3
 - S3 Replication // Versioning must be enabled in source and destination buckets; asynchronous copying; cross-region replication (CRR) or same-region replication (SRR)
@@ -328,8 +328,7 @@ _Inbound data tranfers into AWS regions from the Internet is free_
 - Subnets // Spans one AZ in region; part of a VPC; tied to AZ, represents network partition of VPC
   - NAT Gateway (AWS Managed) & NAT Instances (Self-managed) // Give internet access to private subnets
   - NACL (Network Access Control List) // Stateless, subnet rules for inbound and outbound; IP addresses only, supports DENY and ALLOW rules
-  - Security Groups // Stateful, operate at EC2 Instance level or ENI level
-    - IP addresses and other security groups, ALLOW rules only
+  - Security Groups // Stateful, operate at EC2 Instance level or ENI level; IP addresses and other security groups, ALLOW rules only
 - AWS VPN // Establish secure connection from on-prem, remote offices or client devices to AWS global network; consists of Site-to-site VPN or Client VPN
   - Site-to-Site VPN // VPN over public internet between on-premises DC and AWS
   - Client VPN // OpenVPN connection from your computer into your VPC

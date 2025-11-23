@@ -245,33 +245,8 @@
     "section": "S3 Summary"
   },
   {
-    "term": "Amazon S3 Standard",
-    "definition": "General Purpose",
-    "section": "S3 Summary"
-  },
-  {
-    "term": "Amazon S3 Standard",
-    "definition": "Infrequent Access (IA)",
-    "section": "S3 Summary"
-  },
-  {
-    "term": "Amazon S3 One Zone",
-    "definition": "Infrequent Access",
-    "section": "S3 Summary"
-  },
-  {
-    "term": "Amazon S3 Glacier",
-    "definition": "Instant Retrieval",
-    "section": "S3 Summary"
-  },
-  {
-    "term": "Amazon S3 Glacier",
-    "definition": "Flexible Retrieval",
-    "section": "S3 Summary"
-  },
-  {
-    "term": "Amazon S3 Glacier",
-    "definition": "Deep Archive; retrieve data in 12 or 48 hours",
+    "term": "Amazon S3 Glacier - Deep Archive",
+    "definition": "retrieve data in 12 or 48 hours",
     "section": "S3 Summary"
   },
   {
@@ -506,7 +481,7 @@
   },
   {
     "term": "Security Groups",
-    "definition": "Stateful, operate at EC2 Instance level or ENI level",
+    "definition": "Stateful, operate at EC2 Instance level or ENI level; IP addresses and other security groups, ALLOW rules only",
     "section": "VPC Summary"
   },
   {
