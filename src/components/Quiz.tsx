@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '../types';
-import { getRandomQuestion } from '../lib/terms';
+import { getRandomQuestion, getAllTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 
 export default function Quiz() {
@@ -57,7 +57,23 @@ export default function Quiz() {
             {selected === question.correctIndex ? (
               <strong style={{ color: '#8ce99a' }}>Correct 🎉</strong>
             ) : (
-              <strong style={{ color: '#ff9b9b' }}>Incorrect — the correct answer is "{question.options[question.correctIndex]}"</strong>
+              <div>
+                <strong style={{ color: '#ff9b9b' }}>Incorrect — the correct answer is "{question.options[question.correctIndex]}"</strong>
+                {/* show definition for the selected (incorrect) option if available */}
+                {selected !== null && (() => {
+                  const all = getAllTerms();
+                  const selectedTerm = question.options[selected];
+                  const selectedEntry = all.find((t) => t.term === selectedTerm);
+                  if (selectedEntry?.definition) {
+                    return (
+                      <p style={{ color: 'var(--muted)', marginTop: 8 }}>
+                        You selected: <strong>{selectedTerm}</strong> — {selectedEntry.definition}
+                      </p>
+                    );
+                  }
+                  return null;
+                })()}
+              </div>
             )}
           </div>
         )}
