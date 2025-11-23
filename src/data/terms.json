@@ -1,5 +1,145 @@
 [
   {
+    "term": "1. Regions (3+ AZs)",
+    "definition": "Geographic areas made up of 3 or more isolated, physically separate Availability Zones",
+    "section": "AWS Global Infrastructure Hierarchy Summary"
+  },
+  {
+    "term": "2. Availability Zones (1+ DCs)",
+    "definition": "Areas inside Regions made of one or more discrete data centers",
+    "section": "AWS Global Infrastructure Hierarchy Summary"
+  },
+  {
+    "term": "Agility",
+    "definition": "Quickly spin up resources as needed",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "Elasticity",
+    "definition": "Provision amount of resources needed; scale up and down as needed",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "Cost Savings",
+    "definition": "Trade fixed expenses for variable expenses",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "Deploy Globally in Minutes",
+    "definition": "Global infrastructure means apps can be closer to end users, reducing latency",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "IAAS (Infrastructure As A Service)",
+    "definition": "Access to networking features, computers (virtual or on dedicated hardware), data storage; think Ec2",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "PAAS (Platform As A Service)",
+    "definition": "Deployment and management concerns without concern for underlying infrastructure; think Elastic Beanstalk",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "SAAS (Software As A Service)",
+    "definition": "Complete product is run and managed by the service provider without concern for maintenance or infrastructure; think Amazon Rekognition",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "Multi-AZ Deployments",
+    "definition": "High availability; span at least two AZs in a region",
+    "section": "Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas Summary"
+  },
+  {
+    "term": "Multi-Region Deployments",
+    "definition": "Disaster recovery, local performance; each region can have a multi-AZ deployment",
+    "section": "Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas Summary"
+  },
+  {
+    "term": "Read Replicas",
+    "definition": "Scalability; can be within AZ, cross-AZ or cross-region",
+    "section": "Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas Summary"
+  },
+  {
+    "term": "AWS Storage Gateways",
+    "definition": "Bridge between on-prem and cloud data; used for disaster recoverr, backup & restore, on-prem caching",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS File Gateway",
+    "definition": "Recent data cached in file gateway; plug app server into S3 gateway piped to non-Glacier S3 bucket",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS Volume Gateway",
+    "definition": "Block storage; cached volumes provide low latency access to recent data; stored volumes keep entire dataset on-prem with scheduled backups to S3",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS Tape Gateway",
+    "definition": "Used for physical tapes; Virtual Tape Library (VTL) backed by S3 and Glacier",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "Amazon S3 Standard",
+    "definition": "Frequently accessed data",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Amazon S3 Standard - Infrequent Access",
+    "definition": "Less costly than Standard; less frequent access, rapid retrieval",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Amazon S3 One Zone - Infrequent Access (S3 One Zone - IA)",
+    "definition": "20% less cost than S3 Standard-IA; Less frequent access but rapid retrieval",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier - Instant Retrieval",
+    "definition": "Archived data, retrieved in milliseconds",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier - Flexible Retrieval",
+    "definition": "Archived data, retrieval times between 1m-12h",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Amazon S3 Glacier - Deep Archive",
+    "definition": "Archived data, retrieval time between 12h-48h",
+    "section": "S3 Storage Retrieval by Storage Class Summary"
+  },
+  {
+    "term": "Simple Routing",
+    "definition": "For single resource performing a given domain function; web server to serve content for example.com website",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
+    "term": "Failover Routing",
+    "definition": "Configure active-passive failover",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
+    "term": "Geolocation Routing",
+    "definition": "User location determines routing",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
+    "term": "Latency Routing",
+    "definition": "With resources in multiple AWS regions, route traffic to region with lowest latency",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
+    "term": "Multivalue Answer Routing",
+    "definition": "Use when Route 53s response to DNS queries with up to 8 healthy records is desired",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
+    "term": "Weighted Routing",
+    "definition": "Route traffic to multiple resources in proportions specified",
+    "section": "AWS Route 53 Routing Policies Summary"
+  },
+  {
     "term": "Users",
     "definition": "Mapped to physical users, have password for AWS Console",
     "section": "IAM Summary"
@@ -273,6 +413,96 @@
     "term": "S3 SRR (Same-Region Replication)",
     "definition": "Copy bucket contents within region; aggregate logs; configure live replication between prod and test accounts; abide by data sovereignty laws",
     "section": "S3 Summary"
+  },
+  {
+    "term": "RDS (Relational Database Service)",
+    "definition": "OLTP; Managed DB service using SQL as query language; Postgres; MySQL; Oracle; MariaDB; Microsoft SQL Server",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Aurora",
+    "definition": "AWS implementation of PostgreSQL or MySQL as AuroraDb; \"cloud-optimized\" versions of same",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DocumentDb",
+    "definition": "AWS implementation of MongoDb (NoSQL database)",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Athena",
+    "definition": "Serverless query service to analyze data stored in Amazon S3 using SQL language",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DynamoDb",
+    "definition": "Serverless; fully managed NoSQL database replicated across 3 AZs; distributed \"serverless database\"; not relational database",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DynamodDb Accelerator - DAX",
+    "definition": "Fully managed in-memory cache for DynamoDb only",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DynamoDb Global Tables",
+    "definition": "Makes DynamoDb table accessible in multiple regions; active-active replication enables read/write to any AWS region",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "ElastiCache",
+    "definition": "AWS fully managed Redis or Memcached equivalent; in-memory database for read-intensive workloads",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Relational Databases (OLTP / Online Transaction Processing)",
+    "definition": "RDS & Aurora (SQL)",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Warehouse (OLAP / Online Analytical Processing)",
+    "definition": "Redshift (SQL)",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "EMR (Elastic MapReduce)",
+    "definition": "Creates Hadoop clusters of hundreds of Ec2 instances to process big datasets",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "QuickSight",
+    "definition": "Serverless ML-powered business intelligence service to create interactive dashboards",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Neptune",
+    "definition": "Graph database, highly available",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Timestream",
+    "definition": "Time series database",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "QLDB (Quantum Ledger Database)",
+    "definition": "Review history of all changes made to application data over time; immutable",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "Amazon Managed Blockchain",
+    "definition": "Join public blockchain networks or create scalable private network",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "AWS Glue",
+    "definition": "Serverless ETL (extract, transform, load); prepare data for analytics",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DMS (Database Migration Service)",
+    "definition": "Homogenous or heterogenous migrations supported; source DB is available during migration",
+    "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "Docker",
@@ -818,5 +1048,145 @@
     "term": "Directory Services",
     "definition": "Integrate Microsoft Active Directory (AD) in AWS",
     "section": "Advanced Identity Summary"
+  },
+  {
+    "term": "Amazon Workspaces",
+    "definition": "Desktop as a Service to provision Windows or Linux desktops",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "Amazon AppStream 2.0",
+    "definition": "Desktop Application Streaming service delivered from within a web browser",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "IOT Core",
+    "definition": "Connect IoT devices to AWS Cloud, serverless",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "Elastic Transcoder",
+    "definition": "Converts media files stored in S3 into media file formats required by consumer playback devices",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS AppSync",
+    "definition": "Store and sync data across mobile and web apps in real time with GraphQL",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Amplify",
+    "definition": "Set of tools and services to develop and deploy full-stack web and mobile apps",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Infrastructure Composer",
+    "definition": "Visually design and build serverless apps quickly on AWS",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Device Farm",
+    "definition": "Fully managed service to concurrently test web and mobile apps against desktop browsers, real mobile devices, tablets, etc.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Backup",
+    "definition": "Centrally manage and automated backups across AWS services, can be scheduled and restored",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Elastic Disaster Recovery (DRS)",
+    "definition": "Quickly recover physical, virtual and cloud-based servers into AWS with continuous block-level replication for servers",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS DataSync",
+    "definition": "Move lots of data from on-prem to AWS, supports scheduling, replication is incremental after first load",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Application Discovery Service",
+    "definition": "Plan migration projects by gathering info about on-prem data centers and dependency mapping",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Agentless Discovery Connector",
+    "definition": "VM inventory, config, performance history",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Application Discovery Agent",
+    "definition": "System config, perofmrance, processes, details of network connections between systems",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Application Migration Service",
+    "definition": "Rehost solution simplifies migration apps to AWS",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Migration Evaluator",
+    "definition": "Builds data-driven business case for migration to AWS with baseline of current architecture",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Migration Hub",
+    "definition": "Central location collects servers and app inventory data for assessing, planning, tracking mgirations to AWS",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Migration Hub Orchestrator",
+    "definition": "Provides pre-build templates to save time",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Fault Injection Simulator",
+    "definition": "Chaos engineering, runs fault injection experiments on AWS workloads",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Step Functions",
+    "definition": "Serverless visual workflow to orchestrate lambda functions",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Ground Station",
+    "definition": "Fully managed service to control satellite communications, process data, scale satellite operations",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Pinpoint",
+    "definition": "Scalable two-way (outbound/inbound) marketing communications service",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Global Accelerator",
+    "definition": "Availability and performance improvements; uses AWS global network to optimize path from users to applications; traffic improvements up to 60%",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "Amazon MQ",
+    "definition": "Fully managed message broker service for RabbitMQ or ActiveMQ",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Marketplace",
+    "definition": "Any AWS account can be buyer (subscriber); register AWS account to become a seller (provider); digital catalog with thousands of software listings from independent software vendors; simplifies finding, testing, buying and deploying software to run on AWS",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS OpsWorks",
+    "definition": "Configuration management service that provides managed instances of Chef and Puppet to automate how servers are configured, deployed and managed across EC2 instances or on-prem",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Knowledge Center",
+    "definition": "Troubleshooting starting point; contains most frequent & common questions and request, and AWS-provided solutions for the same",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Support Center",
+    "definition": "Hub for managing your support cases; Developer Support Plans and higher can chat or call engineers; Enterprise-level customers have dedicated TAM",
+    "section": "Other Services Summary"
   }
 ]

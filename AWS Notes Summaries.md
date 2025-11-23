@@ -1,6 +1,6 @@
 # AWS Notes Summaries
 
-## AWS Global Infrastructure Hierarchy
+## AWS Global Infrastructure Hierarchy Summary
 
 1. Regions (3+ AZs) // Geographic areas made up of 3 or more isolated, physically separate Availability Zones
 2. Availability Zones (1+ DCs) // Areas inside Regions made of one or more discrete data centers
@@ -12,7 +12,7 @@
 - Amazon Route 53 // DNS routing
 - AWS WAF (Web Application Firewall) // Application firewall
 
-## Cloud Computing Benefits
+## Cloud Computing Benefits Summary
 
 - Agility // Quickly spin up resources as needed
 - Elasticity // Provision amount of resources needed; scale up and down as needed
@@ -124,20 +124,20 @@ _Within a given term, all upfront is more cost effective than partial upfront, a
 - RDS // Additional feature requiring user to enable
 - Redshift // Optional setting
 
-## Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas
+## Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas Summary
 
 - Multi-AZ Deployments // High availability; span at least two AZs in a region
 - Multi-Region Deployments // Disaster recovery, local performance; each region can have a multi-AZ deployment
 - Read Replicas // Scalability; can be within AZ, cross-AZ or cross-region
 
-## Storage Gateways
+## Storage Gateways Summary
 
 - AWS Storage Gateways // Bridge between on-prem and cloud data; used for disaster recoverr, backup & restore, on-prem caching
 - AWS File Gateway // Recent data cached in file gateway; plug app server into S3 gateway piped to non-Glacier S3 bucket
 - AWS Volume Gateway // Block storage; cached volumes provide low latency access to recent data; stored volumes keep entire dataset on-prem with scheduled backups to S3
 - AWS Tape Gateway // Used for physical tapes; Virtual Tape Library (VTL) backed by S3 and Glacier
 
-## S3 Storage Retrieval by Storage Class
+## S3 Storage Retrieval by Storage Class Summary
 
 - _Because S3 buckets are regional, all S3 Storage Classes store data in a minimum of 3 AZs_
 - _S3 Intelligent Tiering can move objects between tiers based on usage_
@@ -149,7 +149,7 @@ _Within a given term, all upfront is more cost effective than partial upfront, a
 - Amazon S3 Glacier - Flexible Retrieval // Archived data, retrieval times between 1m-12h
 - Amazon S3 Glacier - Deep Archive // Archived data, retrieval time between 12h-48h
 
-## AWS Route 53 Routing Policies
+## AWS Route 53 Routing Policies Summary
 
 - Simple Routing // For single resource performing a given domain function; web server to serve content for example.com website
 - Failover Routing // Configure active-passive failover
@@ -252,7 +252,7 @@ _Inbound data tranfers into AWS regions from the Internet is free_
 - S3 SRR (Same-Region Replication) // Copy bucket contents within region; aggregate logs; configure live replication between prod and test accounts; abide by data sovereignty laws
 
 
-## Databases & Analytics Summary in AWS
+## Databases & Analytics Summary in AWS Summary
 
 - RDS (Relational Database Service) // OLTP; Managed DB service using SQL as query language; Postgres; MySQL; Oracle; MariaDB; Microsoft SQL Server
 - Aurora // AWS implementation of PostgreSQL or MySQL as AuroraDb; "cloud-optimized" versions of same
@@ -529,7 +529,7 @@ _Inbound data tranfers into AWS regions from the Internet is free_
 
 ---
 
-## Other Services
+## Other Services Summary
 
 - Amazon Workspaces // Desktop as a Service to provision Windows or Linux desktops
   - Eliminate management of on-premise VDI (Virtual Desktop Infrastructure)
