@@ -151,6 +151,22 @@
 .streaks { text-align: right; font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end; }
 .streaks > div { white-space: nowrap; }
 
+/* Animate streak value color changes and add a subtle pop when highlighted */
+.streaks strong {
+  transition: color 300ms cubic-bezier(.2,.9,.2,1), transform 220ms ease;
+  display: inline-block;
+}
+.streaks strong[style] {
+  /* when inline style changes color we slightly scale for emphasis */
+  will-change: color, transform;
+}
+
+/* explicit pop class for JS-triggered milestone emphasis */
+.pop {
+  transform: scale(1.12);
+  text-shadow: 0 6px 16px rgba(140,233,154,0.14);
+}
+
 
 .headerBar {
   display: flex;

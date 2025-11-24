@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 import raw from '../data/biology-terms.json';
 import styles from './Quiz.module.css';
@@ -55,6 +55,10 @@ const BiologyQuiz: FC = () => {
   // Game state: streaks (per-quiz), mute
   const [currentStreak, setCurrentStreak] = useState<number>(() => Number(localStorage.getItem('bio:currentStreak') || 0));
   const [bestStreak, setBestStreak] = useState<number>(() => Number(localStorage.getItem('bio:bestStreak') || 0));
+  const [csPop, setCsPop] = useState(false);
+  const [bsPop, setBsPop] = useState(false);
+  const csTimerRef = useRef<number | null>(null);
+  const bsTimerRef = useRef<number | null>(null);
   const [muted, setMuted] = useState<boolean>(() => localStorage.getItem('quiz:muted') === '1');
 
   useEffect(() => {
@@ -111,12 +115,29 @@ const BiologyQuiz: FC = () => {
       const newStreak = currentStreak + 1;
       setCurrentStreak(newStreak);
       localStorage.setItem('bio:currentStreak', String(newStreak));
+
+      // pop + audio cue for current streak multiples of 5
+      if (newStreak > 0 && newStreak % 5 === 0) {
+        setCsPop(true);
+        playTone(980, 0.12);
+        if (csTimerRef.current) window.clearTimeout(csTimerRef.current);
+        csTimerRef.current = window.setTimeout(() => setCsPop(false), 420) as unknown as number;
+      }
+
       if (newStreak > bestStreak) {
-        setBestStreak(newStreak);
-        localStorage.setItem('bio:bestStreak', String(newStreak));
+        const newBest = newStreak;
+        setBestStreak(newBest);
+        localStorage.setItem('bio:bestStreak', String(newBest));
         // extra celebration for new best
         triggerConfetti();
         playTone(880, 0.12);
+        // pop + audio cue for best-streak multiples of 10
+        if (newBest > 0 && newBest % 10 === 0) {
+          setBsPop(true);
+          playTone(1320, 0.14);
+          if (bsTimerRef.current) window.clearTimeout(bsTimerRef.current);
+          bsTimerRef.current = window.setTimeout(() => setBsPop(false), 520) as unknown as number;
+        }
       }
     } else {
       setCurrentStreak(0);
@@ -126,6 +147,13 @@ const BiologyQuiz: FC = () => {
   }
 
   // No drag handlers — options are pressed directly.
+
+  useEffect(() => {
+    return () => {
+      if (csTimerRef.current) window.clearTimeout(csTimerRef.current);
+      if (bsTimerRef.current) window.clearTimeout(bsTimerRef.current);
+    };
+  }, []);
 
   function triggerConfetti() {
     if (muted) return;
@@ -271,8 +299,8 @@ const BiologyQuiz: FC = () => {
             const bsColor = bestStreak > 0 && bestStreak % 10 === 0 ? '#ffd36b' : 'var(--muted)';
             return (
               <div className={styles.streaks} aria-live="polite">
-                <div>Streak: <strong style={{ color: csColor }}>{currentStreak}</strong></div>
-                <div>Best Streak: <strong style={{ color: bsColor }}>{bestStreak}</strong></div>
+                <div>Streak: <strong className={csPop ? styles.pop : undefined} style={{ color: csColor }}>{currentStreak}</strong></div>
+                <div>Best Streak: <strong className={bsPop ? styles.pop : undefined} style={{ color: bsColor }}>{bestStreak}</strong></div>
               </div>
             );
           })()}
