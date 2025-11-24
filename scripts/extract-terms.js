@@ -8,7 +8,56 @@ async function main() {
 
   // Project root is one level above scripts directory
   const projectRoot = path.resolve(__dirname, '..');
-  const mdPath = path.join(projectRoot, 'AWS Notes Summaries.md');
+
+  // The notes file may have been moved. Try to find it in a few locations
+  const candidates = [
+    path.join(projectRoot, 'AWS Notes Summaries.md'),
+    path.join(projectRoot, 'AWS Notes Summarized.md'),
+    path.join(projectRoot, 'src', 'data', 'AWS Notes Summaries.md'),
+    path.join(projectRoot, 'src', 'data', 'B', 'AWS Notes Summaries.md'),
+  ];
+
+  async function findFirstExisting(list) {
+    for (const p of list) {
+      try {
+        const stat = await fs.stat(p);
+        if (stat.isFile()) return p;
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    // fallback: scan src/data recursively for a file matching name
+    async function walk(dir) {
+      const entries = await fs.readdir(dir, { withFileTypes: true });
+      for (const ent of entries) {
+        const p = path.join(dir, ent.name);
+        if (ent.isDirectory()) {
+          const found = await walk(p);
+          if (found) return found;
+        } else {
+          if (/^AWS Notes Summaries\.md$/i.test(ent.name) || /^AWS Notes Summariz/.test(ent.name)) return p;
+        }
+      }
+      return null;
+    }
+
+    const scanDir = path.join(projectRoot, 'src', 'data');
+    try {
+      const found = await walk(scanDir);
+      if (found) return found;
+    } catch (e) {
+      // ignore
+    }
+
+    return null;
+  }
+
+  const mdPath = await findFirstExisting(candidates);
+  if (!mdPath) {
+    console.error('Could not find AWS Notes file. Searched common locations under project root.');
+    process.exit(1);
+  }
   const outDir = path.join(projectRoot, 'src', 'data');
   const outPath = path.join(outDir, 'terms.json');
 

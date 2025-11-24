@@ -51,108 +51,51 @@ export default defineConfig([
       ],
       languageOptions: {
         parserOptions: {
-          project: ['./tsconfig.node.json', './tsconfig.app.json'],
-          tsconfigRootDir: import.meta.dirname,
-        },
-        // other options...
-      },
-    },
-  ])
-  ```
+          # Quiz — AWS Notes
 
-  You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+          This project is a small quiz app that generates flashcard-style multiple-choice questions from a Markdown notes file and provides a lightweight UI for practicing terms.
 
-  ```js
-  // eslint.config.js
-  import reactX from 'eslint-plugin-react-x'
-  import reactDom from 'eslint-plugin-react-dom'
+          Key files
+          - `src/data/terms.json` — generated JSON containing term/definition pairs used by the quiz.
+          - `scripts/extract-terms.js` — small extractor that parses your Markdown notes and writes `terms.json`.
 
-  export default defineConfig([
-    globalIgnores(['dist']),
-    {
-      files: ['**/*.{ts,tsx}'],
-      extends: [
-        // Other configs...
-        // Enable lint rules for React
-        reactX.configs['recommended-typescript'],
-        // Enable lint rules for React DOM
-        reactDom.configs.recommended,
-      ],
-      languageOptions: {
-        parserOptions: {
-          project: ['./tsconfig.node.json', './tsconfig.app.json'],
-          tsconfigRootDir: import.meta.dirname,
-        },
-        // other options...
-      },
-    },
-  ])
-  ```
+          Notes extractor behavior
+          - The extractor looks for a file named `AWS Notes Summaries.md` (or similar). The file may live in the project root or under `src/data/` — the extractor now searches common locations and will scan `src/data` recursively to find the notes file.
+          - The extractor expects term lines in the form `Term // Definition` under headings that end with the word "Summary" (case-insensitive). The heading becomes the `section` for each term.
 
-  ## Generating terms.json from your notes
+          How to generate `terms.json`
+          1. Place your Markdown notes file somewhere in the repo (recommended locations: project root, or `src/data/` subfolders). Name it `AWS Notes Summaries.md` or similar.
+          2. From the project root run:
 
-  This project includes a small extractor that parses the Markdown file `AWS Notes Summaries.md` (project root) and writes a JSON file containing term/definition pairs used by the quiz UI.
+          ```bash
+          npm run extract-terms
+          ```
 
-  Where the output is written
-  - `src/data/terms.json` — the extractor will overwrite this file each time it runs.
+          You should see output like:
 
-  How to run the extractor
+          ```
+          Wrote N term(s) to /path/to/quiz/src/data/terms.json
+          ```
 
-  1. Make sure you are in the project directory:
+          If the extractor cannot find the notes file it will print a helpful error listing the locations it searched.
 
-  ```bash
-  cd ~/Dev/aws-quiz
-  ```
+          Running the app
+          1. Install dependencies:
 
-  2. Run the extractor npm script:
+          ```bash
+          npm install
+          ```
 
-  ```bash
-  npm run extract-terms
-  ```
+          2. Start the dev server:
 
-  3. After the script finishes you should see a message like:
+          ```bash
+          npm run dev
+          ```
 
-  ```
-  Wrote N term(s) to /path/to/aws-quiz/src/data/terms.json
-  ```
+          3. Open `http://localhost:5173` in your browser.
 
-  Notes and troubleshooting
-  - The extractor expects `AWS Notes Summaries.md` to be present in the project root and to contain lines of the form `Term // Definition` under headings that end with the word "Summary".
-  - The extractor will preserve the `section` (heading) where each pair was found. This is used to prefer same-section distractors in the quiz.
-  - If the JSON file is not updating, confirm the script exists at `scripts/extract-terms.js` and that Node (>=16) is available on your system.
-  - To immediately see changes in the app after extraction, refresh the browser or rely on Vite HMR if the dev server is running.
+          Further notes
+          - If you move the notes file, the extractor will attempt to find it automatically under `src/data`. If you prefer to keep your notes outside the repo, update `scripts/extract-terms.js` to point to your preferred path or run it from a wrapper script that sets an environment variable.
+          - The `extract-terms` script overwrites `src/data/terms.json` every time it runs.
 
-  ## Publishing to GitHub Pages (serve from main /docs)
-
-  If you want to continue pushing the whole repository to GitHub and use GitHub Pages configured to serve from the `main` branch `/docs` folder, this project is configured to build into `docs/` and to use relative asset paths. Follow these steps:
-
-  1. Build the site into `docs/`:
-
-  ```bash
-  cd ~/Dev/aws-quiz
-  npm run build
-  ```
-
-  2. Commit and push the generated `docs/` folder along with the rest of the repo:
-
-  ```bash
-  git add docs package.json vite.config.ts
-  git commit -m "Build site into docs/ for GitHub Pages"
-  git push origin main
-  ```
-
-  3. Enable Pages in the GitHub repo settings:
-     - Go to Settings → Pages
-     - Under "Source", choose the `main` branch and the `/docs` folder
-     - Save and wait a minute for the site to publish at `https://<your-user>.github.io/<repo>/`
-
-  Notes and tips
-  - The project is set with `base: './'` in `vite.config.ts` so assets are referenced relatively and the site works when served from `/docs`.
-  - The build step copies `docs/index.html` to `docs/404.html` so direct navigation to client-side routes won't 404.
-  - If you prefer not to keep generated files in the repo, use a CI workflow (GitHub Actions) or the `gh-pages` branch to publish instead.
-
-  Troubleshooting
-  - If the deployed site is blank and DevTools shows requests for `/src/main.tsx` or other root paths returning HTML, the `base` is likely wrong (assets are absolute). Rebuild with `base: './'` or `base: '/<repo>/'` and redeploy.
-  - Check the Network tab in DevTools to see the exact failing asset URLs — that usually reveals whether the site is missing the repo prefix.
-
-  ````
+          Questions or issues? Open an issue or edit this README to add details about your note formats.

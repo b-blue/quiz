@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "extract-terms": "node ./scripts/extract-terms.js",
+    "extract-biology": "node ./scripts/extract-biology.js",
     "postbuild": "cp -f docs/index.html docs/404.html || true"
   },
   "dependencies": {

@@ -1,0 +1,2989 @@
+[
+  {
+    "question": "Define and compare kinetic energy, potential energy, chemical energy, and heat.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Kinetic energy: the energy of motion",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Kinetic energy: the energy of motion"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Potential energy: Stored energy, capable of becoming kinetic energy",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Potential energy: Stored energy, capable of becoming kinetic energy"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Chemical energy: (potential energy) in the form of complex sugar molecules with covalent C—H bonds",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Chemical energy: (potential energy) in the form of complex sugar molecules with covalent C—H bonds"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Heat: (kinetic) A measure of the random motion of molecules",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Heat: (kinetic) A measure of the random motion of molecules"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Define the two laws of thermodynamics and explain how they relate to biological systems.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    First: Total amount of energy in the universe is constant, cannot be created or destroyed",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "First: Total amount of energy in the universe is constant, cannot be created or destroyed"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Second: Disorder in a closed system is continuously increasing",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Second: Disorder in a closed system is continuously increasing"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Define entropy",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    A measure of the degree of disorder of a system",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "A measure of the degree of disorder of a system"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Define and compare endergonic and exergonic reactions.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Endergonic: products contain more energy than reactants, and needs an outside source of energy. Not spontaneous.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Endergonic: products contain more energy than reactants, and needs an outside source of energy. Not spontaneous."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Exergonic: products have less free energy than reactant, tends to be spontaneous",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Exergonic: products have less free energy than reactant, tends to be spontaneous"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how cells use cellular respiration and energy coupling to survive.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Respiration generates ATP, which is then coupled, or transferred, to power all the cellular processes ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Respiration generates ATP, which is then coupled, or transferred, to power all the cellular processes "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Endergonic reactions in cells are typically tied to the reaction of the terminal phosphate of ATP breaking off",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Endergonic reactions in cells are typically tied to the reaction of the terminal phosphate of ATP breaking off"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Define activation energy",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    The energy a molecule must acquire to undergo a specific chemical reaction, to destabilize chemical bonds (usu. Heat, sunlight, or ATP)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "The energy a molecule must acquire to undergo a specific chemical reaction, to destabilize chemical bonds (usu. Heat, sunlight, or ATP)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how catalysts speed up chemical reactions.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    They lower the activation energy",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "They lower the activation energy"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Differentiate between an enzyme’s active site and its binding site.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Active site: the site on the enzyme where a substrate binds",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Active site: the site on the enzyme where a substrate binds"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Binding site: the site on a substrate/reactant that binds to an enzyme",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Binding site: the site on a substrate/reactant that binds to an enzyme"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish between a chemical reaction and a biochemical pathway",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Chemical reactions are the basic units of change, while a biochemical pathway is the assembly line that starts with reactants and and after a series of chemical reactions involving enzymes, results in a product. Example: glycolysis",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Chemical reactions are the basic units of change, while a biochemical pathway is the assembly line that starts with reactants and and after a series of chemical reactions involving enzymes, results in a product. Example: glycolysis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain the influence of temperature on an enzyme-catalyzed reaction",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Enzymes have an optimal temperature where there activity peaks. Low temperatures slow down reactions, too high temperatures permanently damage the enzymes. ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Enzymes have an optimal temperature where there activity peaks. Low temperatures slow down reactions, too high temperatures permanently damage the enzymes. "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how competitive and noncompetitive inhibitors alter an enzyme’s activity through feedback inhibition.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Competitive inhibitors: the product binds ot the same active site as the substrate",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Competitive inhibitors: the product binds ot the same active site as the substrate"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Noncompetitive inhibitors: product binds to a different allosteric site, changing the shape of the enzyme so the other substrate can’t bind.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Noncompetitive inhibitors: product binds to a different allosteric site, changing the shape of the enzyme so the other substrate can’t bind."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how certain drugs, pesticides, and poisons can affect enzymes.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    These things are designed to be enzyme inhibitors, to affect an essential biochemical pathway",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "These things are designed to be enzyme inhibitors, to affect an essential biochemical pathway"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how the chain of three phosphate groups in ATP stores potential energy",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Stored in the phosphate groups, which are forced to cluster together",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Stored in the phosphate groups, which are forced to cluster together"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Name the three layers of the leaf through which light must pass to reach chloroplasts.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cuticle: waxy, protective, watertight first layer",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cuticle: waxy, protective, watertight first layer"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Epidermis: 1-cell thick “skin” of the leaf, controls how gas/water enters the leaf",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Epidermis: 1-cell thick “skin” of the leaf, controls how gas/water enters the leaf"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Mesophyll: fills the leaf interior, contains chloroplasts",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Mesophyll: fills the leaf interior, contains chloroplasts"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Summarize the photosynthetic events that occur within the chloroplast.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Step one: sunlight strikes the surface membrane of thylakoids",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Step one: sunlight strikes the surface membrane of thylakoids"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Step 2: wherever a photon strikes the photosystem, since chlorophyll molecule will be in position to receive it",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Step 2: wherever a photon strikes the photosystem, since chlorophyll molecule will be in position to receive it"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Step 3: chlorophyll molecules excited. Photons energy absorbed by chlorophyll, boosting its electrons and passing excitation to neighbors",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Step 3: chlorophyll molecules excited. Photons energy absorbed by chlorophyll, boosting its electrons and passing excitation to neighbors"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Step 4: Energy settles into a key chlorophyll touching a membrane protein, which transfers the energy to an acceptor molecule",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Step 4: Energy settles into a key chlorophyll touching a membrane protein, which transfers the energy to an acceptor molecule"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe what a photon is made of, and state in what way its energy is related to its wavelength.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Photons are light energy. They are both particles and waves. ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Photons are light energy. They are both particles and waves. "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Shorter wavelength = high energy, longer wavelength = lower energy",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Shorter wavelength = high energy, longer wavelength = lower energy"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Identify which color(s) of light are NOT absorbed by the pigment chlorophyll.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Green",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Green"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "List and describe the five stages of the light dependent reactions.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Light Absorption and Water Splitting (oxidation) (Photosystem II) ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Light Absorption and Water Splitting (oxidation) (Photosystem II) "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Electron Transport Chain ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Electron Transport Chain "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Light Re-energization (Photosystem I) more solar energy added",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Light Re-energization (Photosystem I) more solar energy added"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    NADPH Formation: H Protons transferred to NADP+ to make NADPH",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "NADPH Formation: H Protons transferred to NADP+ to make NADPH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    ATP Synthesis (Chemiosmosis)  H+ ions (protons) used to power concentration gradient for thylakoid membrane’s electrical charge",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "ATP Synthesis (Chemiosmosis)  H+ ions (protons) used to power concentration gradient for thylakoid membrane’s electrical charge"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Differentiate reaction center chlorophyll molecules from other photosystem chlorophyll molecules.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Reaction center chlorophyll molecules come in pairs, and convert light energy into chemical energy (redox reaction) to be sent to a primary electron acceptor",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Reaction center chlorophyll molecules come in pairs, and convert light energy into chemical energy (redox reaction) to be sent to a primary electron acceptor"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Other photosystem molecules function to harvest light energy and pass on excited electrons to neighbors",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Other photosystem molecules function to harvest light energy and pass on excited electrons to neighbors"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the function of the electron transport system in noncyclic photophosphorylation.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    To establish the proton gradient, connect the photosystems, and contribute to NADPH production",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "To establish the proton gradient, connect the photosystems, and contribute to NADPH production"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain why the Calvin cycle required NADPH as well as ATP.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    ATP and NADPH are both needed to “fix” carbon dioxide into carbohydrate molecules (sugar)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "ATP and NADPH are both needed to “fix” carbon dioxide into carbohydrate molecules (sugar)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    NADPH supplies the electrons for reducing CO2",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "NADPH supplies the electrons for reducing CO2"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    ATP provides the chemical energy to power the reaction",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "ATP provides the chemical energy to power the reaction"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain why continuously photosynthesizing cells don’t run out of ADP to use in making ATP.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    The processes that use ATP (Calvin Cycle) provides the ADP for the light-dependent reactions",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "The processes that use ATP (Calvin Cycle) provides the ADP for the light-dependent reactions"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish between C3 and C4 photosynthesis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    C3: used by most plants in hot and dry environments, initiates photorespiration after the stomata close to conserve water. Built up O2 is incorporated into the Calvin cycle instead of CO2. Light reactions slow down and cease",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "C3: used by most plants in hot and dry environments, initiates photorespiration after the stomata close to conserve water. Built up O2 is incorporated into the Calvin cycle instead of CO2. Light reactions slow down and cease"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    C4: uses partitioned bundle sheath cells to contain built-up CO2, which is where the Calvin Cycle proceeds using its usual CO2. It keeps the Calvin Cycle separate from the mesophyll cell.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "C4: uses partitioned bundle sheath cells to contain built-up CO2, which is where the Calvin Cycle proceeds using its usual CO2. It keeps the Calvin Cycle separate from the mesophyll cell."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare the processes and locations of cellular respiration and photosynthesis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cellular respiration inputs glucose and oxygen to make carbon dioxide and water, while photosynthesis does the opposite: converts CO2 and water into glucose and oxygen",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cellular respiration inputs glucose and oxygen to make carbon dioxide and water, while photosynthesis does the opposite: converts CO2 and water into glucose and oxygen"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cellular respiration happens in the cytoplasm of the cell and the mitochondria",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cellular respiration happens in the cytoplasm of the cell and the mitochondria"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Photosynthesis happens in the thylakoids of chloroplasts.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Photosynthesis happens in the thylakoids of chloroplasts."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Provide the overall chemical equation for cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    C6H12O6 (glucose) + 6O2 (oxygen = 6CO2 + 6H20",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "C6H12O6 (glucose) + 6O2 (oxygen = 6CO2 + 6H20"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "State how many molecules of ATP are made from a glucose molecule during glycolysis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    4 ATP molecules, 2 net gain",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "4 ATP molecules, 2 net gain"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the enzyme that removes CO2 from pyruvate and the metabolic significance of doing so.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Pyruvate Dehydrogenase Complex facilitates oxidation of the two-carbon acetyl group, and the high-energy electrons released are captured by NAD+, reducing it to NADH",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Pyruvate Dehydrogenase Complex facilitates oxidation of the two-carbon acetyl group, and the high-energy electrons released are captured by NAD+, reducing it to NADH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Identify the substrates for the nine-reaction Krebs cycle and the overall products.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Krebs input: Acetyl-CoA, NAD+ and FAD, oxaloacetate",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Krebs input: Acetyl-CoA, NAD+ and FAD, oxaloacetate"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Krebs output: NADH, CO2, ATP, FADH",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Krebs output: NADH, CO2, ATP, FADH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how redox reactions are used in cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Oxidation-reduction reactions: oxidation is the loss of an electron, reduction is the gaining of an electron",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Oxidation-reduction reactions: oxidation is the loss of an electron, reduction is the gaining of an electron"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Redox reactions transfer electrons from highly reduced glucose molecules to highly oxidized oxygen molecules, whose energy transfers are captured in ATP",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Redox reactions transfer electrons from highly reduced glucose molecules to highly oxidized oxygen molecules, whose energy transfers are captured in ATP"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the general roles of dehydrogenase, NADH, and the electron transport chain in cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Dehydrogenase enzymes perform the redox reaction: removes hydrogen ions (oxidation) and gives electrons (reduces) to NAD+ and FAD to make NADH and FADH",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Dehydrogenase enzymes perform the redox reaction: removes hydrogen ions (oxidation) and gives electrons (reduces) to NAD+ and FAD to make NADH and FADH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    NADH works as an electron carrier along the electron transport chain",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "NADH works as an electron carrier along the electron transport chain"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    The electron transport chain: Its primary role is not to make ATP directly, but to use the energy from electron transfers to build the proton gradient that ultimately powers ATP synthesis",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "The electron transport chain: Its primary role is not to make ATP directly, but to use the energy from electron transfers to build the proton gradient that ultimately powers ATP synthesis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare the reactants, products, and energy yield of the three stages of cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Glycolysis: glucose yields 2 pyruvate, H20 and H+ ions",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Glycolysis: glucose yields 2 pyruvate, H20 and H+ ions"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Krebs/Citric Acid cycle: starts with pyruvate, yields Co2, ATP, FADH and NADH",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Krebs/Citric Acid cycle: starts with pyruvate, yields Co2, ATP, FADH and NADH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Electron Transport chain: starts with H+, through chemiosmosis yields  NADH and FADH, yields 32 ATP and H2o",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Electron Transport chain: starts with H+, through chemiosmosis yields  NADH and FADH, yields 32 ATP and H2o"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Discuss how many ATP molecules are harvested in aerobic versus anaerobic respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Anaerobic respiration (glycolysis in the cytoplasm) yields 4 ATP (2 net)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Anaerobic respiration (glycolysis in the cytoplasm) yields 4 ATP (2 net)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Aerobic respiration in the mitochondria yields 32 ATP",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Aerobic respiration in the mitochondria yields 32 ATP"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the special function of brown fat.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    The special function of brown fat is to generate heat without shivering, a process known as non-shivering thermogenesis",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "The special function of brown fat is to generate heat without shivering, a process known as non-shivering thermogenesis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare the reactants, products, and energy yield of alcohol and lactic acid fermentation.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Alcohol: Glucose and Pyruvate yields Co2 and acetyldehyde",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Alcohol: Glucose and Pyruvate yields Co2 and acetyldehyde"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Lactic Acid: Converts pyruvate into lactic acid",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Lactic Acid: Converts pyruvate into lactic acid"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Both have the purpose of oxidizing NADH to NAD+",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Both have the purpose of oxidizing NADH to NAD+"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish between obligate anaerobes and facultative anaerobes.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Obligate anaerobes find oxygen toxic while facultative anaerobes like E. coli use aerobic respiration foremost and can switch due to lack of oxygen",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Obligate anaerobes find oxygen toxic while facultative anaerobes like E. coli use aerobic respiration foremost and can switch due to lack of oxygen"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how fats, and proteins are used as fuel for cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Fats: fatty acids are broken down with beta-oxidation, which breaks down fatty acid (glycerol) long —CH tails to use the energy-rich H atoms",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Fats: fatty acids are broken down with beta-oxidation, which breaks down fatty acid (glycerol) long —CH tails to use the energy-rich H atoms"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Protein: Amino acids can be broken down via deanimation reactions to convert alanine to pyruvate, aspartate to oxaloacetate (to be combined with Acetyl-CoA)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Protein: Amino acids can be broken down via deanimation reactions to convert alanine to pyruvate, aspartate to oxaloacetate (to be combined with Acetyl-CoA)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how plants produce oxygen.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Oxygen is a byproduct of the light dependent reaction when water is split (photolysis) for its electrons and H+ gradient. Oxygen is waste.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Oxygen is a byproduct of the light dependent reaction when water is split (photolysis) for its electrons and H+ gradient. Oxygen is waste."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the role of redox reactions in photosynthesis and cellular respiration.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Photosynthesis redox reactions:",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Photosynthesis redox reactions:"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        oxidation of water (H2O), which loses electrons to the chlorophyll.",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "oxidation of water (H2O), which loses electrons to the chlorophyll."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Electrons flow down the ETC in a series of redox reactions, releasing energy used to pump protons and make ATP",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Electrons flow down the ETC in a series of redox reactions, releasing energy used to pump protons and make ATP"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        (Calvin Cycle): The electron carrier NADPH is oxidized (loses electrons) to NADP+",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "(Calvin Cycle): The electron carrier NADPH is oxidized (loses electrons) to NADP+"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cellular respiration redox reactions:",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cellular respiration redox reactions:"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Glycolysis and the Krebs Cycle, dehydrogenases oxidize glucose derivatives, stripping away H atoms and electrons.",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Glycolysis and the Krebs Cycle, dehydrogenases oxidize glucose derivatives, stripping away H atoms and electrons."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        The stripped electrons are immediately used to reduce NAD+ and FAD into the high-energy carriers NADH and FADH2",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "The stripped electrons are immediately used to reduce NAD+ and FAD into the high-energy carriers NADH and FADH2"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Electron Transport Chain: The carriers are oxidized (they drop off their electrons) at the ETC. The electrons pass down the chain in continuous redox reactions, releasing energy to pump protons.",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Electron Transport Chain: The carriers are oxidized (they drop off their electrons) at the ETC. The electrons pass down the chain in continuous redox reactions, releasing energy to pump protons."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Oxygen (O2) acts as the final, highly potent oxidizing agent, gaining the spent electrons and becoming reduced to water (H2O). ",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Oxygen (O2) acts as the final, highly potent oxidizing agent, gaining the spent electrons and becoming reduced to water (H2O). "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare photophosphorylation and oxidative phosphorylation.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Both use chemiosmosis to generate ATP",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Both use chemiosmosis to generate ATP"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Both rely on an H+ gradient: ",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Both rely on an H+ gradient: "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "            For photophosphorylation, it’s located in the thylakoid membrane",
+        "indent": "            ",
+        "indentLength": 12,
+        "marker": null,
+        "text": "For photophosphorylation, it’s located in the thylakoid membrane"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "            For oxidative phosphorylation, it’s located in the mitochondrial intermembrane space",
+        "indent": "            ",
+        "indentLength": 12,
+        "marker": null,
+        "text": "For oxidative phosphorylation, it’s located in the mitochondrial intermembrane space"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Photophosphorylation uses electrons from split water to reduce NADP+ to NADPH",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Photophosphorylation uses electrons from split water to reduce NADP+ to NADPH"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Oxidative Phosphorylation uses electrons from broken down organic molecules to make H2O from oxygen and H+",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Oxidative Phosphorylation uses electrons from broken down organic molecules to make H2O from oxygen and H+"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Photophosphorylation is like a solar panel (light energy) powering a water pump that creates the energy gradient.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Photophosphorylation is like a solar panel (light energy) powering a water pump that creates the energy gradient."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Oxidative Phosphorylation is like a coal power plant (chemical energy from food) that uses the fuel to power the same water pump.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Oxidative Phosphorylation is like a coal power plant (chemical energy from food) that uses the fuel to power the same water pump."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe prokaryotic cell division.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Prokaryotes divide by binary fission:",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Prokaryotes divide by binary fission:"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "List and describe the phases of the prokaryotic cell cycle.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    DNA replication",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "DNA replication"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Cell enlarges, DNA unzips at origin of replication",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Cell enlarges, DNA unzips at origin of replication"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    DNA partitioning",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "DNA partitioning"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Each chromosome attaches to special plasma membrane site",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Each chromosome attaches to special plasma membrane site"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cell fission",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cell fission"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        New plasma membrane, then new cell wall, grows inward",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "New plasma membrane, then new cell wall, grows inward"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how chromosomes are paired and distinguish between homologues and sister chromatids.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Homologous chromosomes are 1 from each parent with the same type of information stored in the same location. ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Homologous chromosomes are 1 from each parent with the same type of information stored in the same location. "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Sister chromatids are the copied versions of each homologue. Each strand is exactly identical, and they are joined at the their centromeres.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Sister chromatids are the copied versions of each homologue. Each strand is exactly identical, and they are joined at the their centromeres."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Draw a nucleosome and discuss its function",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    A complex of 8 histone proteins in a ball with chromatin strands wrapped around it.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "A complex of 8 histone proteins in a ball with chromatin strands wrapped around it."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe how chromosomes change during interphase",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    DNA replicates and forms 2 identical sister chromatids.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "DNA replicates and forms 2 identical sister chromatids."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "List the phases of mitosis and describe the events characteristic of each phase.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Prophase: nucleolus disappears, condensed chromosomes become visible, centrioles move to opposite ends of the cell and form a network of spindles between them, microtubules extend out and attach to the kinetochore on each side of the chromosomes",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Prophase: nucleolus disappears, condensed chromosomes become visible, centrioles move to opposite ends of the cell and form a network of spindles between them, microtubules extend out and attach to the kinetochore on each side of the chromosomes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Metaphase: chromosomes align along equatorial plane, spindle fibers attached to kinetochores extend to opposite ends of the cell",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Metaphase: chromosomes align along equatorial plane, spindle fibers attached to kinetochores extend to opposite ends of the cell"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Anaphase: chromatids separate, cleaved by enzymes, centromeres rell in microtubules with daughter chromosomes on each end. Each pole now has one set of chromosomes.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Anaphase: chromatids separate, cleaved by enzymes, centromeres rell in microtubules with daughter chromosomes on each end. Each pole now has one set of chromosomes."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Telophase: mitotic spindle disassembled, nuclear envelope forms, chromosomes uncoil, nucleolus reforms",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Telophase: mitotic spindle disassembled, nuclear envelope forms, chromosomes uncoil, nucleolus reforms"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish karyokinesis from cytokinesis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Karyokinesis, also known as mitosis, is the M phase of mitosis and precedes cytokinesis. ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Karyokinesis, also known as mitosis, is the M phase of mitosis and precedes cytokinesis. "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Karyokinesis is the phase in which the in the interior of the cell and its chromosomes are separated toward two opposite poles of the cell",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Karyokinesis is the phase in which the in the interior of the cell and its chromosomes are separated toward two opposite poles of the cell"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Cytokinesis is the phase in which the cell is cleaved in half",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Cytokinesis is the phase in which the cell is cleaved in half"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare cytokinesis in animal and plant cells.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Animal: cleavage furrow is formed by contracting actin microfilaments",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Animal: cleavage furrow is formed by contracting actin microfilaments"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Plant: Vesicles carrying membrane components form from the center outward. From there, the cell plate grows out.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Plant: Vesicles carrying membrane components form from the center outward. From there, the cell plate grows out."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Locate the three places in the cell cycle where checkpoints occur and describe their action.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    G1: Cell growth assessed. ",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "G1: Cell growth assessed. "
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Divide, delay, or rest before S phase?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Divide, delay, or rest before S phase?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Checks environmental conditions",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Checks environmental conditions"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        DNA Damaged?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "DNA Damaged?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Materials for replication ready?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Materials for replication ready?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    G2: DNA replication assessed",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "G2: DNA replication assessed"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Replicated DNA damaged?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Replicated DNA damaged?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "            Spindle parts ready?",
+        "indent": "            ",
+        "indentLength": 12,
+        "marker": null,
+        "text": "Spindle parts ready?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    M Checkpoint (end of M phase)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "M Checkpoint (end of M phase)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Triggers exit from mitosis into cytokinesis",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Triggers exit from mitosis into cytokinesis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Spindle fibers attached to chromosomes correctly?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Spindle fibers attached to chromosomes correctly?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Chromosomes aligned and distributed correctly?",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Chromosomes aligned and distributed correctly?"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how anchorage, cell density, and chemical growth factors control cell division.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cells send out signals to check if they’re anchored to a suitable surface, usually an extracellular matrix, or else they won’t replicate",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cells send out signals to check if they’re anchored to a suitable surface, usually an extracellular matrix, or else they won’t replicate"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cells usually form in a monolayer, limiting their density and stopping division at the G1 phase.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cells usually form in a monolayer, limiting their density and stopping division at the G1 phase."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Growth factors are external proteins which bind to cell receptors, which activate a chain of events that lead to cell division, getting them past the G1 checkpoint",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Growth factors are external proteins which bind to cell receptors, which activate a chain of events that lead to cell division, getting them past the G1 checkpoint"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain the role of telomeres in limiting cell proliferation.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Telomeres start as a region of about 5,000 repeating nucleotides, some of which are lost with every DNA replication. After they are gone, cells enter senescence, and eventually apoptosis",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Telomeres start as a region of about 5,000 repeating nucleotides, some of which are lost with every DNA replication. After they are gone, cells enter senescence, and eventually apoptosis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain how cancerous cells are different from healthy cells.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Cancer is a gene disorder",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Cancer is a gene disorder"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    It is unrestrained cell growth and division caused by damage to genes encoding growth factor, also known as a mutation",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "It is unrestrained cell growth and division caused by damage to genes encoding growth factor, also known as a mutation"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Oncogenes are mutated photo-oncogenes that are overly active and may develop into cancer",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Oncogenes are mutated photo-oncogenes that are overly active and may develop into cancer"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain the link of mutation and the role of p53 in cancer development.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    P53 is a key regulator of the G1 checkpoint",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "P53 is a key regulator of the G1 checkpoint"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    P53 halts cell division if it detects damaged DNA",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "P53 halts cell division if it detects damaged DNA"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    If DNA is damaged, it halts cell division and stimulates repair enzymes",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "If DNA is damaged, it halts cell division and stimulates repair enzymes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    If DNA cannot be repaired, p53 directs cell to undergo apoptosis program",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "If DNA cannot be repaired, p53 directs cell to undergo apoptosis program"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    P53 is nonfunctional in cancer cells",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "P53 is nonfunctional in cancer cells"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the functions of mitosis and meiosis. Compare mitosis and meiosis, noting similarities and differences.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Meiosis II doesn’t replicate chromosomes, resulting in reduction division (number of chromosomes halved",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Meiosis II doesn’t replicate chromosomes, resulting in reduction division (number of chromosomes halved"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Meiosis results in 4 nonindentical haploid cells, mitosis results in 2 identical diploid cells",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Meiosis results in 4 nonindentical haploid cells, mitosis results in 2 identical diploid cells"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Meiosis undergoes synapsis and crossover, in which replicated homologous chromosomes pair up and align, and exchange sections of chromosomes",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Meiosis undergoes synapsis and crossover, in which replicated homologous chromosomes pair up and align, and exchange sections of chromosomes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish between gametes and zygotes, between diploid cells and haploid cells, and asexual from sexual reproduction.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Gametes are the haploid product of diploid germ-line cells",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Gametes are the haploid product of diploid germ-line cells"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Zygotes are form from the coming together of two gametes",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Zygotes are form from the coming together of two gametes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Diploid = 2 of each chromosome type (2n)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Diploid = 2 of each chromosome type (2n)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Haploid = 1 set of chromosomes (n)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Haploid = 1 set of chromosomes (n)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Asexual reproduction does not involve meiosis",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Asexual reproduction does not involve meiosis"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain why sexual reproduction requires meiosis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Sexual reproduction must result in the same number of chromosomes as each parent. Reduction division halves the number of chromosomes for gamete so that, when combined into a zygote, the chromosome total is the same as the parents",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Sexual reproduction must result in the same number of chromosomes as each parent. Reduction division halves the number of chromosomes for gamete so that, when combined into a zygote, the chromosome total is the same as the parents"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Compare the life cycles of protists, animals and plants.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Distinguish between germ-line and somatic cells.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Germ-line cells undergo meiosis to produce gametes",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Germ-line cells undergo meiosis to produce gametes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Somatic cells undergo mitosis to make identical cells",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Somatic cells undergo mitosis to make identical cells"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "List the four stages of meiosis I",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Prophase I: homologous chromosomes pair up. During synapsis, crossing over occurs in which nonsister chromatids exchange portions of DNA strands",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Prophase I: homologous chromosomes pair up. During synapsis, crossing over occurs in which nonsister chromatids exchange portions of DNA strands"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Metaphase I: homologues held by crossovers, spindles can only attach to outward-facing kinetochore of centromere (random)",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Metaphase I: homologues held by crossovers, spindles can only attach to outward-facing kinetochore of centromere (random)"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Independent assortment: different orientations of chromosomes = gametes with different combinations of parental chromosomes",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Independent assortment: different orientations of chromosomes = gametes with different combinations of parental chromosomes"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Anaphase I: homologues pulled apart to opposite poles",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Anaphase I: homologues pulled apart to opposite poles"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "        Each pole has half the number of chromosomes than the start",
+        "indent": "        ",
+        "indentLength": 8,
+        "marker": null,
+        "text": "Each pole has half the number of chromosomes than the start"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Telophase I: chromosomes gather to form 2 clusters",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Telophase I: chromosomes gather to form 2 clusters"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "State how many copies of each chromosome are present at the end of meiosis II.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    1 copy of each chromosome",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "1 copy of each chromosome"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Describe the process of crossing over, identifying when it occurs and the elements involved.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Crossing over happens during meiosis I, at the prophase stage. Nonsister chromatids exchange DNA",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Crossing over happens during meiosis I, at the prophase stage. Nonsister chromatids exchange DNA"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Define synapsis.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    When homologous chromosomes physically align and pair up so that crossover can occur.",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "When homologous chromosomes physically align and pair up so that crossover can occur."
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain why meiosis results in a reduction division.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Because it goes through two rounds of division, and during the second, chromosomes are not copied",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Because it goes through two rounds of division, and during the second, chromosomes are not copied"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain the three principal mechanisms whereby genetic variation is produced in sexually reproducing organisms.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Crossing over",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Crossing over"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Independent assortment",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Independent assortment"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Random fertilization",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Random fertilization"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "question": "Explain the role of sex in generating evolutionary novelty.",
+    "answerLines": [
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    Gametes alone have over 8 million possible combinations of DNA",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "Gametes alone have over 8 million possible combinations of DNA"
+      },
+      {
+        "raw": "",
+        "indent": "",
+        "indentLength": 0,
+        "marker": null,
+        "text": ""
+      },
+      {
+        "raw": "    But with random fertilization, the possible outcomes are 70 trillion",
+        "indent": "    ",
+        "indentLength": 4,
+        "marker": null,
+        "text": "But with random fertilization, the possible outcomes are 70 trillion"
+      }
+    ]
+  }
+]

@@ -21,7 +21,7 @@ export function getAllTerms(): Term[] {
 }
 
 export function getSections(): string[] {
-  return Array.from(new Set(TERMS.map((t) => t.section).filter(Boolean))).sort();
+  return Array.from(new Set(TERMS.map((t) => t.section).filter((s): s is string => Boolean(s)))).sort();
 }
 
 /**

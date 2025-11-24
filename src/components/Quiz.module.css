@@ -71,6 +71,47 @@
 .quizFooter { margin-top: 1rem; display: flex; gap: 12px; align-items: center; }
 .quizNext { margin-left: auto; padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); }
 
+/* Drag & drop styles */
+.dropTarget {
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+.dropTarget.active {
+  box-shadow: 0 6px 20px rgba(108,140,255,0.12);
+  border: 2px dashed rgba(108,140,255,0.35);
+}
+.dropActive {
+  box-shadow: 0 6px 20px rgba(108,140,255,0.12);
+  border: 2px dashed rgba(108,140,255,0.35);
+}
+.quizOption.dragging {
+  opacity: 0.6;
+  transform: translateY(-4px) scale(1.01);
+}
+
+.dragging {}
+
+/* Drag preview (pointer fallback) */
+.dragPreview {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  background: var(--btn-bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 10px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.5);
+  transform: translate(-50%, -50%);
+  font-size: 0.95rem;
+  max-width: 60vw;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Prevent touch users from accidentally scrolling while dragging; applied dynamically */
+.no-touch-scroll {
+  touch-action: none !important;
+}
+
 .progressWrap {
   height: 6px;
   background: rgba(255,255,255,0.03);
