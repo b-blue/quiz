@@ -137,3 +137,61 @@
   .quizOption { padding: 0.9rem; font-size: 1rem; min-height: 56px; }
   .quizDefinition { font-size: 0.98rem; padding: 0.9rem; }
 }
+
+/* Portrait phone improvements for one-handed use */
+@media (max-width: 480px) and (orientation: portrait) {
+  .quizControls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .filterSelect, .clearFilter, .muteBtn {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .topRightControls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .quizOptions {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .quizOption {
+    padding: 1.05rem 1rem;
+    font-size: 1.05rem;
+    min-height: 64px;
+    border-radius: 10px;
+  }
+
+  .quizFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .quizNext {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    margin-left: 0;
+  }
+
+  .streaks {
+    text-align: left;
+    font-size: 0.98rem;
+  }
+
+  .dragPreview {
+    font-size: 1rem;
+    padding: 10px 12px;
+    max-width: 85vw;
+  }
+}
