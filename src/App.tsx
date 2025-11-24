@@ -1,25 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Quiz from './components/Quiz'
 import BiologyQuiz from './components/BiologyQuiz'
 import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null
-    return stored === 'light' ? 'light' : 'dark'
-  })
-
-  useEffect(() => {
-    const root = document.documentElement
-    if (theme === 'light') root.classList.add('light-theme')
-    else root.classList.remove('light-theme')
-  try { localStorage.setItem('theme', theme); } catch { /* ignore errors (e.g., private mode) */ }
-  }, [theme])
-
-  function toggleTheme() {
-    setTheme((t) => (t === 'light' ? 'dark' : 'light'))
-  }
-
+  // single dark theme only
   const [mode, setMode] = useState<'aws'|'bio'>('aws');
 
   return (
@@ -40,9 +25,7 @@ function App() {
             </button>
           </div>
 
-          <button onClick={toggleTheme} aria-pressed={theme === 'light'} style={{ padding: '0.4rem 0.6rem', borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)', background: 'var(--btn-bg)', color: 'var(--text)' }}>
-            {theme === 'light' ? 'Light' : 'Dark'}
-          </button>
+          {/* dark theme only — toggle removed */}
         </div>
       </header>
       <main>

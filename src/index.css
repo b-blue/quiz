@@ -28,25 +28,7 @@
   background-color: var(--bg);
 }
 
-/* Light theme overrides */
-.light-theme {
-  --bg: #ffffff;
-  --surface: #f7f9fc;
-  --card: #ffffff;
-  --text: #0f1724;
-  --muted: #475569;
-  --primary: #5563ff;
-  --accent: #0ea5e9;
-  --btn-bg: #f2f6fb;
-  --btn-border: rgba(15,23,36,0.06);
-  --correct-bg: #e6ffed;
-  --correct-border: #12a65a;
-  --incorrect-bg: #fff1f2;
-  --incorrect-border: #ef4444;
-  color-scheme: light;
-  color: var(--text);
-  background-color: var(--bg);
-}
+/* Light theme removed — app uses dark theme only */
 
 a {
   font-weight: 500;

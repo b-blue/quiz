@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { FC } from 'react';
 import raw from '../data/biology-terms.json';
 import styles from './Quiz.module.css';
+import LightGrid from './LightGrid';
 
 type AnswerLine = {
   raw: string;
@@ -167,7 +168,12 @@ const BiologyQuiz: FC = () => {
 
   return (
     <div className={styles.quizContainer}>
-      <h2 className={styles.quizTitle}>Biology Quiz</h2>
+      {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
+
+      <div className={styles.headerBar}>
+        <LightGrid />
+        <h2 className={`${styles.quizTitle} ${styles.sciTitle}`}>Biology Quiz</h2>
+      </div>
       <div className={styles.topRightControls}>
         <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
           {muted ? 'Unmute' : 'Mute'}

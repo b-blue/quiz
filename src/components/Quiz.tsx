@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSections } from '../lib/terms';
 import styles from './Quiz.module.css';
+import LightGrid from './LightGrid';
 
 export default function Quiz() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
@@ -147,7 +148,16 @@ export default function Quiz() {
 
   return (
     <div className={styles.quizContainer}>
-      <h2 className={styles.quizTitle}>Which term matches this definition?</h2>
+      {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
+
+      <div className={styles.headerBar}>
+        <div className={styles.gizmoWell} aria-hidden>
+          <LightGrid />
+        </div>
+        <div className={styles.questionWell}>
+          <div className={styles.questionText}>{question.definition}</div>
+        </div>
+      </div>
       <div className={styles.topRightControls}>
         <label className={styles.smallToggle}><input type="checkbox" checked={timedMode} onChange={(e) => setTimedMode(e.target.checked)} /> Timed</label>
         <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
@@ -187,7 +197,7 @@ export default function Quiz() {
           </button>
         )}
       </div>
-      <p className={styles.quizDefinition}>{question.definition}</p>
+      {/* question is displayed in the header's question well */}
       {timedMode && (
         <div className={styles.progressWrap} aria-hidden>
           <div className={styles.progress} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
