@@ -45,6 +45,136 @@
     "section": "Cloud Computing Benefits Summary"
   },
   {
+    "term": "Business Capabilities",
+    "definition": "Strategy management; portfolio management; innovation management; product management; strategic partnership; data monetization; business insights; data science",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "People Capabilities",
+    "definition": "Culture evolution; transformational leadership; cloud fluency; workforce transformation; change acceleration; organization design; organizational alignment",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Governance Capabilities",
+    "definition": "Program and project management; benefits management; risk management; cloud financial management; application portfolio management; data governance; data curation",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Platform Capabilities",
+    "definition": "Platform architecture; data architecture; platform engineering; data engineering; provisioning and orchestration; mordern application development; CI/CD",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Security Capabilities",
+    "definition": "Security governance; security assistance; identity and access management; threat detection; vulnerability management; infrastructure protection; data protection; application security; incident response",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Operations Capabilities",
+    "definition": "Observability; event management/AIOps; incident and problem management; change and release management; performance and capacity management; configuration management; patch management; availability and continuity management; application management",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Business Perspective",
+    "definition": "Stakeholders include CEO, CFO, COO, CIO, and CTO",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "People Perspective",
+    "definition": "Stakeholders include CIO, COO, CTO, Cloud Director, and cross-functional/enterprise-wide leaders",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "Governance Perspective",
+    "definition": "Stakeholders include Chief Transformation Officer, CIO, CTO, CFO, Chief Data Officer, Chief Risk Officer",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "Platform Perspective",
+    "definition": "Stakeholders include CTO, technology leaders, architects and engineers",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "Security Perspective",
+    "definition": "Stakeholders include Chief Information Security Officer, Chief Compliance Officer, internal audit leaders, security architects and engineers",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "Operations Perspective",
+    "definition": "Stakeholders include infrastructure and operations leaders, site reliability engineers, information technology service managers",
+    "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
+  },
+  {
+    "term": "Layer 7",
+    "definition": "Application Layer (HTTP, HTTPS requests occur here / AWS WAF applies here)",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 6",
+    "definition": "Presentation Layer",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 5",
+    "definition": "Session Layer",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 4",
+    "definition": "Transport Layer (TCP, UDP data transmission occurs here / AWS Shield applies here)",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 3",
+    "definition": "Network Layer (Physical movement through network determined / AWS Shield applies here)",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 2",
+    "definition": "Data Link Layer",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 1",
+    "definition": "Physical Layer",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Retire",
+    "definition": "Turn things off if you don't need them",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Retain",
+    "definition": "Do nothing for now",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Relocate",
+    "definition": "Move apps from on-prem to Cloud version, or EC2 instances between VPC, regions, etc.",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Rehost (\"Lift and shift\")",
+    "definition": "Simple migrations via re-hosting on AWS, or migrate machines to AWS cloud",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Replatform (\"Lift and reshape\")",
+    "definition": "Leverage cloud optimizations such as migrating database to RDS or app to Elastic Beanstalk",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Repurchase (\"Drop and shop\")",
+    "definition": "Move to different product while also moving to cloud (e.g., HR -> Workday)",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
+    "term": "Refactor/Re-architect",
+    "definition": "Reimagine application architecture using cloud native features (move to serverless, etc.)",
+    "section": "Cloud Migration - The 7 R's Summary"
+  },
+  {
     "term": "Multi-AZ Deployments",
     "definition": "High availability; span at least two AZs in a region",
     "section": "Multi-AZ Deployments vs Multi-Region Deployments vs Read Replicas Summary"

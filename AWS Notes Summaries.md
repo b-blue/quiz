@@ -59,7 +59,7 @@
 - Launch Phase // Deliver pilot initiatives; demonstrate incremental business value
 - Scale Phase // Expand production pilots and business value; ensure cloud investments pay off
 
-## AWS Cloud Adoption Framework Perspectives Capabilities
+## AWS Cloud Adoption Framework Perspectives Capabilities Summary
 
 - Business Capabilities // Strategy management; portfolio management; innovation management; product management; strategic partnership; data monetization; business insights; data science
 - People Capabilities // Culture evolution; transformational leadership; cloud fluency; workforce transformation; change acceleration; organization design; organizational alignment
@@ -68,7 +68,7 @@
 - Security Capabilities // Security governance; security assistance; identity and access management; threat detection; vulnerability management; infrastructure protection; data protection; application security; incident response
 - Operations Capabilities // Observability; event management/AIOps; incident and problem management; change and release management; performance and capacity management; configuration management; patch management; availability and continuity management; application management
 
-## AWS Cloud Adoption Framework Perspectives Stakeholders
+## AWS Cloud Adoption Framework Perspectives Stakeholders Summary
 
 - Business Perspective // Stakeholders include CEO, CFO, COO, CIO, and CTO
 - People Perspective // Stakeholders include CIO, COO, CTO, Cloud Director, and cross-functional/enterprise-wide leaders
@@ -84,7 +84,7 @@
 	- Least number of applicable products
 	- Oldest credit
 
-## OSI Layer Architecture
+## OSI Layer Architecture Summary
 
 - Layer 7 // Application Layer (HTTP, HTTPS requests occur here / AWS WAF applies here)
 - Layer 6 // Presentation Layer
@@ -94,7 +94,7 @@
 - Layer 2 // Data Link Layer 
 - Layer 1 // Physical Layer
 
-## Cloud Migration - The 7 R's
+## Cloud Migration - The 7 R's Summary
 - Retire // Turn things off if you don't need them
 - Retain // Do nothing for now
 - Relocate // Move apps from on-prem to Cloud version, or EC2 instances between VPC, regions, etc.

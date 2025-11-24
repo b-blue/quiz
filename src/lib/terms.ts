@@ -20,13 +20,17 @@ export function getAllTerms(): Term[] {
   return TERMS;
 }
 
+export function getSections(): string[] {
+  return Array.from(new Set(TERMS.map((t) => t.section).filter(Boolean))).sort();
+}
+
 /**
  * Pick up to `count` unique distractors, preferring same-section terms when possible.
  */
-function pickDistractors(correct: Term, count = 3): string[] {
+function pickDistractors(correct: Term, count = 3, pool: Term[] = TERMS): string[] {
   const correctTerm = correct.term;
 
-  const others = TERMS.filter((t) => t.term !== correctTerm);
+  const others = pool.filter((t) => t.term !== correctTerm);
 
   // Terms in the same section (if section exists)
   const sameSection = correct.section
@@ -51,11 +55,14 @@ function pickDistractors(correct: Term, count = 3): string[] {
   return chosen.slice(0, count);
 }
 
-export function getRandomQuestion(): QuizQuestion | null {
+export function getRandomQuestion(section?: string | null): QuizQuestion | null {
   if (!TERMS.length) return null;
 
-  const correct = TERMS[Math.floor(Math.random() * TERMS.length)];
-  const distractors = pickDistractors(correct, 3);
+  const pool = section ? TERMS.filter((t) => t.section === section) : TERMS;
+  if (!pool.length) return null;
+
+  const correct = pool[Math.floor(Math.random() * pool.length)];
+  const distractors = pickDistractors(correct, 3, pool);
 
   const options = shuffle([correct.term, ...distractors]);
   const correctIndex = options.findIndex((o) => o === correct.term);

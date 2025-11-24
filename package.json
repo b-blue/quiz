@@ -12,6 +12,7 @@
     "postbuild": "cp -f docs/index.html docs/404.html || true"
   },
   "dependencies": {
+    "node": "^25.2.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

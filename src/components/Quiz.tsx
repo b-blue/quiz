@@ -1,20 +1,33 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '../types';
-import { getRandomQuestion, getAllTerms } from '../lib/terms';
+import { getRandomQuestion, getAllTerms, getSections } from '../lib/terms';
 import styles from './Quiz.module.css';
 
 export default function Quiz() {
+  const [selectedSection, setSelectedSection] = useState<string | null>(null);
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion());
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
 
+  const sections = getSections();
+
   function next() {
-    setQuestion(getRandomQuestion());
+    setQuestion(getRandomQuestion(selectedSection ?? undefined));
     setSelected(null);
     setShowAnswer(false);
   }
 
-  if (!question) return <div>No terms available. Run the extractor to generate data.</div>;
+  if (!question) {
+    return (
+      <div>
+        {selectedSection ? (
+          <>No terms available for the selected section.</>
+        ) : (
+          <>No terms available. Run the extractor to generate data.</>
+        )}
+      </div>
+    );
+  }
 
   function onSelect(i: number) {
     if (showAnswer) return;
@@ -25,6 +38,39 @@ export default function Quiz() {
   return (
     <div className={styles.quizContainer}>
       <h2 className={styles.quizTitle}>Which term matches this definition?</h2>
+      <div className={styles.quizControls}>
+        <label className={styles.filterLabel} htmlFor="section-filter">Filter by section:</label>
+        <select
+          id="section-filter"
+          className={styles.filterSelect}
+          value={selectedSection ?? ''}
+          onChange={(e) => {
+            const val = e.target.value || null;
+            setSelectedSection(val);
+            setQuestion(getRandomQuestion(val ?? undefined));
+            setSelected(null);
+            setShowAnswer(false);
+          }}
+        >
+          <option value="">All sections</option>
+          {sections.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+        {selectedSection && (
+          <button
+            className={styles.clearFilter}
+            onClick={() => {
+              setSelectedSection(null);
+              setQuestion(getRandomQuestion());
+              setSelected(null);
+              setShowAnswer(false);
+            }}
+          >
+            Clear
+          </button>
+        )}
+      </div>
       <p className={styles.quizDefinition}>{question.definition}</p>
 
       <div className={styles.quizOptions}>

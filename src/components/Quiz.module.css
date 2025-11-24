@@ -18,6 +18,33 @@
   line-height: 1.45;
   margin-top: 0.75rem;
 }
+.quizControls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.filterLabel {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-right: 0.25rem;
+}
+.filterSelect {
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.clearFilter {
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
 .quizOptions {
   display: grid;
   grid-template-columns: 1fr 1fr;
