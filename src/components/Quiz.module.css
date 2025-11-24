@@ -91,7 +91,7 @@
   transform: translateY(1px) scale(0.995);
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.12);
 }
-.quizFooter { margin-top: 1rem; display: flex; gap: 12px; align-items: center; }
+.quizFooter { margin-top: 1rem; display: flex; gap: 12px; align-items: center; min-height: 64px; }
 .quizNext { margin-left: auto; padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); }
 
 /* Drag & drop styles */
@@ -148,15 +148,7 @@
 .topRightControls { display: flex; gap: 8px; justify-content: flex-end; align-items: center; margin-top: 0.25rem; }
 .smallToggle { font-size: 0.85rem; color: var(--muted); }
 .muteBtn { padding: 0.35rem 0.5rem; border-radius: 6px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); }
-.streaks { text-align: right; font-size: 0.9rem; color: var(--muted); }
-
-/* Keep streaks compact: keep each label+value on a single line and allow them to sit side-by-side when space permits */
-.streaks {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
+.streaks { text-align: right; font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end; }
 .streaks > div { white-space: nowrap; }
 
 
@@ -169,6 +161,51 @@
   border-radius: 8px;
   box-shadow: inset 0 3px 10px rgba(0,0,0,0.45);
   margin-bottom: 8px;
+}
+
+/* left gizmo well and right question well (fixed-size wells) */
+.gizmoWell {
+  width: 76px;
+  min-width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.55));
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.02);
+}
+
+.headerDivider {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-radius: 1px;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+
+.questionWell {
+  flex: 1 1 auto;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03));
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.questionText {
+  width: 100%;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  line-height: 1.2;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(78,168,255,0.18), 0 1px 2px rgba(0,0,0,0.6);
+  overflow-wrap: anywhere;
 }
 
 .gizmoGrid {
@@ -218,10 +255,70 @@
 /* overlay used to capture clicks after answer shown */
 .nextOverlay {
   position: absolute;
-  inset: 0;
   z-index: 50;
   cursor: pointer;
+  /* cover only the right half so the left terminal well can remain interactive/scrollable */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 0;
 }
+
+/* left column containing the gizmo and terminal wells stacked */
+.leftWells {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 0 76px;
+  align-items: stretch;
+}
+
+.terminalWell {
+  width: 76px;
+  min-width: 76px;
+  height: 76px;
+  padding: 6px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.7));
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+  color: #9fe6ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+  font-size: 12px;
+  overflow: auto;
+}
+
+.terminalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.terminalLine {
+  white-space: pre-wrap;
+  color: #dff8ff;
+}
+
+.terminalPrompt {
+  color: #9fe6ff;
+  margin-right: 6px;
+}
+
+/* footer terminal — expands to the right and replaces the inline feedback */
+.terminalFooter {
+  flex: 1 1 60%;
+  min-height: 64px;
+  max-height: 160px;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.7));
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
+  color: #dff8ff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+  font-size: 13px;
+  overflow: auto;
+}
+
+.terminalFooter .terminalLine { margin-bottom: 6px; }
 
 /* ensure container positions overlay correctly */
 .quizContainer { position: relative; }
@@ -271,6 +368,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0.6rem;
+    min-height: 84px;
   }
 
   .quizNext {
@@ -284,6 +382,7 @@
   .streaks {
     text-align: left;
     font-size: 0.98rem;
+    flex-direction: column;
   }
 
   .dragPreview {

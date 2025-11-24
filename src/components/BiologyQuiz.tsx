@@ -171,15 +171,19 @@ const BiologyQuiz: FC = () => {
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
       <div className={styles.headerBar}>
-        <LightGrid />
-        <h2 className={`${styles.quizTitle} ${styles.sciTitle}`}>Biology Quiz</h2>
+        <div className={styles.gizmoWell} aria-hidden>
+          <LightGrid />
+        </div>
+        <div className={styles.headerDivider} />
+        <div className={styles.questionWell}>
+          <div className={styles.questionText}>{entry.question}</div>
+        </div>
       </div>
       <div className={styles.topRightControls}>
         <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
           {muted ? 'Unmute' : 'Mute'}
         </button>
       </div>
-      <p style={{ color: 'var(--muted)' }}>{entry.question}</p>
 
       <div style={{ marginTop: 10 }}>
         {/* Render the full answer block inside a single <pre> to preserve exact indentation and line breaks. */}
@@ -236,25 +240,42 @@ const BiologyQuiz: FC = () => {
       </div>
 
       <div className={styles.quizFooter}>
-        {showAnswer && (
-          <div>
-            {(() => {
-              const correctLineText = (missingLine !== null && entry && entry.answerLines && entry.answerLines[missingLine]) ? entry.answerLines[missingLine].raw.trim() : null;
-              const normalize = (s: string | null) => s ? s.replace(/\s+/g, ' ').trim().toLowerCase() : null;
-              const selectedCanonical = (selected !== null && options[selected]) ? options[selected].canonical : null;
-              if (selected !== null && normalize(correctLineText) && normalize(selectedCanonical) === normalize(correctLineText)) {
-                return <strong style={{ color: '#8ce99a' }}>Correct 🎉</strong>;
-              }
-              return <strong style={{ color: '#ff9b9b' }}>Incorrect — correct: {correctLineText ?? ''}</strong>;
-            })()}
+        <div className={styles.terminalFooter}>
+          <div className={styles.terminalContent}>
+            {showAnswer ? (
+              (() => {
+                const correctLineText = (missingLine !== null && entry && entry.answerLines && entry.answerLines[missingLine]) ? entry.answerLines[missingLine].raw.trim() : null;
+                const lines: string[] = [];
+                const normalize = (s: string | null) => s ? s.replace(/\s+/g, ' ').trim().toLowerCase() : null;
+                const selectedCanonical = (selected !== null && options[selected]) ? options[selected].canonical : null;
+                const isCorrect = normalize(correctLineText) && normalize(selectedCanonical) === normalize(correctLineText);
+                if (isCorrect) {
+                  lines.push('Correct 🎉');
+                } else {
+                  lines.push(`Incorrect — correct: ${correctLineText ?? ''}`);
+                  if (correctLineText) lines.push(correctLineText);
+                }
+                return lines.map((l, idx) => (
+                  <div key={idx} className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>{l}</div>
+                ));
+              })()
+            ) : (
+              <div className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>Ready</div>
+            )}
           </div>
-        )}
+        </div>
+
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-          <div className={styles.streaks} aria-live="polite">
-            <div>Streak: <strong>{currentStreak}</strong></div>
-            <div>Best Streak: <strong>{bestStreak}</strong></div>
-          </div>
-          <button onClick={next} className={styles.quizNext}>Next</button>
+          {(() => {
+            const csColor = currentStreak > 0 && currentStreak % 5 === 0 ? '#8ce99a' : 'var(--muted)';
+            const bsColor = bestStreak > 0 && bestStreak % 10 === 0 ? '#ffd36b' : 'var(--muted)';
+            return (
+              <div className={styles.streaks} aria-live="polite">
+                <div>Streak: <strong style={{ color: csColor }}>{currentStreak}</strong></div>
+                <div>Best Streak: <strong style={{ color: bsColor }}>{bestStreak}</strong></div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>

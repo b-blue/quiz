@@ -154,9 +154,10 @@ export default function Quiz() {
         <div className={styles.gizmoWell} aria-hidden>
           <LightGrid />
         </div>
-        <div className={styles.questionWell}>
-          <div className={styles.questionText}>{question.definition}</div>
-        </div>
+          <div className={styles.headerDivider} />
+          <div className={styles.questionWell}>
+            <div className={styles.questionText}>{question.definition}</div>
+          </div>
       </div>
       <div className={styles.topRightControls}>
         <label className={styles.smallToggle}><input type="checkbox" checked={timedMode} onChange={(e) => setTimedMode(e.target.checked)} /> Timed</label>
@@ -229,38 +230,43 @@ export default function Quiz() {
       </div>
 
       <div className={styles.quizFooter}>
-        {showAnswer && (
-          <div>
-            {selected === question.correctIndex ? (
-              <strong style={{ color: '#8ce99a' }}>Correct 🎉</strong>
-            ) : (
-              <div>
-                <strong style={{ color: '#ff9b9b' }}>Incorrect — the correct answer is "{question.options[question.correctIndex]}"</strong>
-                {/* show definition for the selected (incorrect) option if available */}
-                {selected !== null && (() => {
-                  const all = getAllTerms();
-                  const selectedTerm = question.options[selected];
-                  const selectedEntry = all.find((t) => t.term === selectedTerm);
-                  if (selectedEntry?.definition) {
-                    return (
-                      <p style={{ color: 'var(--muted)', marginTop: 8 }}>
-                        You selected: <strong>{selectedTerm}</strong> — {selectedEntry.definition}
-                      </p>
-                    );
+        <div className={styles.terminalFooter}>
+          <div className={styles.terminalContent}>
+            {showAnswer ? (
+              (() => {
+                const lines: string[] = [];
+                if (selected === question.correctIndex) {
+                  lines.push('Correct 🎉');
+                } else {
+                  lines.push(`Incorrect — the correct answer is "${question.options[question.correctIndex]}"`);
+                  if (selected !== null) {
+                    const all = getAllTerms();
+                    const selectedTerm = question.options[selected];
+                    const selectedEntry = all.find((t) => t.term === selectedTerm);
+                    if (selectedEntry?.definition) lines.push(`${selectedTerm} — ${selectedEntry.definition}`);
                   }
-                  return null;
-                })()}
-              </div>
+                }
+                return lines.map((l, idx) => (
+                  <div key={idx} className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>{l}</div>
+                ));
+              })()
+            ) : (
+              <div className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>Ready</div>
             )}
           </div>
-        )}
+        </div>
 
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-          <div className={styles.streaks} aria-live="polite">
-            <div>Streak: <strong>{currentStreak}</strong></div>
-            <div>Best Streak: <strong>{bestStreak}</strong></div>
-          </div>
-          <button onClick={next} className={styles.quizNext}>Next</button>
+          {(() => {
+            const csColor = currentStreak > 0 && currentStreak % 5 === 0 ? '#8ce99a' : 'var(--muted)';
+            const bsColor = bestStreak > 0 && bestStreak % 10 === 0 ? '#ffd36b' : 'var(--muted)';
+            return (
+              <div className={styles.streaks} aria-live="polite">
+                <div>Streak: <strong style={{ color: csColor }}>{currentStreak}</strong></div>
+                <div>Best Streak: <strong style={{ color: bsColor }}>{bestStreak}</strong></div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>
