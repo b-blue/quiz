@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import type React from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { FC } from 'react';
 import raw from '../data/biology-terms.json';
 import styles from './Quiz.module.css';
@@ -51,8 +50,7 @@ const BiologyQuiz: FC = () => {
   const [options, setOptions] = useState<Array<{ raw: string; canonical: string }>>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const draggingIndexRef = useRef<number | null>(null);
-  const dragPreviewRef = useRef<HTMLElement | null>(null);
+  // No drag-and-drop used; selection is a simple button press
   // Game state: streaks (per-quiz), mute
   const [currentStreak, setCurrentStreak] = useState<number>(() => Number(localStorage.getItem('bio:currentStreak') || 0));
   const [bestStreak, setBestStreak] = useState<number>(() => Number(localStorage.getItem('bio:bestStreak') || 0));
@@ -105,16 +103,19 @@ const BiologyQuiz: FC = () => {
     const selectedCanonical = options[i]?.canonical ?? null;
     const correct = normalize(correctLineText) !== null && normalize(selectedCanonical) === normalize(correctLineText);
     if (correct) {
+      // confetti every correct
+      triggerConfetti();
+      playTone(660, 0.1);
+
       const newStreak = currentStreak + 1;
       setCurrentStreak(newStreak);
       localStorage.setItem('bio:currentStreak', String(newStreak));
       if (newStreak > bestStreak) {
         setBestStreak(newStreak);
         localStorage.setItem('bio:bestStreak', String(newStreak));
+        // extra celebration for new best
         triggerConfetti();
         playTone(880, 0.12);
-      } else {
-        playTone(660, 0.1);
       }
     } else {
       setCurrentStreak(0);
@@ -123,85 +124,7 @@ const BiologyQuiz: FC = () => {
     }
   }
 
-  // Drag & drop handlers for options -> drop on answer block
-  function handleDragStart(e: React.DragEvent, i: number) {
-    draggingIndexRef.current = i;
-    try { e.dataTransfer.setData('text/plain', String(i)); } catch (err) {}
-    e.dataTransfer.effectAllowed = 'move';
-    (e.currentTarget as HTMLElement)?.classList.add(styles.dragging);
-  }
-
-  function handleDragEnd(e: React.DragEvent) {
-    draggingIndexRef.current = null;
-    (e.currentTarget as HTMLElement)?.classList.remove(styles.dragging);
-  }
-
-  function handleAnswerDragOver(e: React.DragEvent) {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-  }
-
-  function handleAnswerDrop(e: React.DragEvent) {
-    e.preventDefault();
-    const txt = e.dataTransfer.getData('text/plain');
-    const idx = txt ? Number(txt) : null;
-    draggingIndexRef.current = null;
-    if (typeof idx === 'number' && !Number.isNaN(idx)) {
-      onSelect(idx);
-    }
-  }
-
-  // pointer-based drag fallback for mobile
-  function startPointerDrag(e: React.PointerEvent, i: number) {
-    const target = e.currentTarget as HTMLElement;
-    // prevent page scroll while dragging
-    document.documentElement.classList.add(styles['no-touch-scroll']);
-    // prevent the generated click event after pointerup for pointer-based drags
-    e.preventDefault();
-    draggingIndexRef.current = i;
-    const preview = document.createElement('div');
-    preview.className = styles.dragPreview || 'dragPreview';
-    preview.textContent = target.textContent || '';
-    document.body.appendChild(preview);
-    // initialize preview position so it's not off-screen
-    preview.style.left = e.clientX + 'px';
-    preview.style.top = e.clientY + 'px';
-    dragPreviewRef.current = preview;
-
-    function moveHandler(ev: PointerEvent) {
-      if (!dragPreviewRef.current) return;
-      dragPreviewRef.current.style.left = ev.clientX + 'px';
-      dragPreviewRef.current.style.top = ev.clientY + 'px';
-      document.querySelectorAll('.' + styles.dropTarget).forEach((el) => el.classList.remove(styles.dropActive));
-      const under = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
-      if (under) {
-        const drop = under.closest('.' + styles.dropTarget) as HTMLElement | null;
-        if (drop) drop.classList.add(styles.dropActive);
-      }
-    }
-
-    function upHandler(ev: PointerEvent) {
-      const under = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
-      const drop = under ? under.closest('.' + styles.dropTarget) as HTMLElement | null : null;
-      cleanupPointer();
-      if (drop) onSelect(i);
-    }
-
-    function cleanupPointer() {
-      document.documentElement.classList.remove(styles['no-touch-scroll']);
-      draggingIndexRef.current = null;
-      if (dragPreviewRef.current) {
-        document.body.removeChild(dragPreviewRef.current);
-        dragPreviewRef.current = null;
-      }
-      document.removeEventListener('pointermove', moveHandler as any);
-      document.removeEventListener('pointerup', upHandler as any);
-      document.querySelectorAll('.' + styles.dropTarget).forEach((el) => el.classList.remove(styles.dropActive));
-    }
-
-    document.addEventListener('pointermove', moveHandler as any);
-    document.addEventListener('pointerup', upHandler as any);
-  }
+  // No drag handlers — options are pressed directly.
 
   function triggerConfetti() {
     if (muted) return;
@@ -256,9 +179,6 @@ const BiologyQuiz: FC = () => {
         {/* Render the full answer block inside a single <pre> to preserve exact indentation and line breaks. */}
         <pre
           style={{ margin: 6, whiteSpace: 'pre-wrap', fontFamily: 'inherit', overflowWrap: 'break-word' }}
-          className={styles.dropTarget}
-          onDragOver={handleAnswerDragOver}
-          onDrop={handleAnswerDrop}
         >
             {entry.answerLines
               .map((ln, i) => {
@@ -302,10 +222,6 @@ const BiologyQuiz: FC = () => {
               key={`${i}-${optCanonical.slice(0,20)}`}
               className={classes.join(' ')}
               onClick={() => onSelect(i)}
-              draggable
-              onDragStart={(e) => handleDragStart(e, i)}
-              onDragEnd={handleDragEnd}
-              onPointerDown={(ev) => startPointerDrag(ev, i)}
             >
               <span style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', display: 'block' }}>{optRaw}</span>
             </button>

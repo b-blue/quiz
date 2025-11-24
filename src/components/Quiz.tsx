@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import type React from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSections } from '../lib/terms';
 import styles from './Quiz.module.css';
@@ -9,61 +8,7 @@ export default function Quiz() {
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion());
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const draggingIndexRef = useRef<number | null>(null);
-  const dragPreviewRef = useRef<HTMLElement | null>(null);
-
-  // Pointer-based drag fallback for touch devices
-  function startPointerDrag(e: React.PointerEvent, i: number) {
-    const target = e.currentTarget as HTMLElement;
-    // prevent page scroll while dragging
-    document.documentElement.classList.add(styles['no-touch-scroll']);
-    // prevent the generated click event after pointerup for pointer-based drags
-    e.preventDefault();
-    draggingIndexRef.current = i;
-    // create preview
-    const preview = document.createElement('div');
-    preview.className = styles.dragPreview || 'dragPreview';
-    preview.textContent = target.textContent || '';
-    document.body.appendChild(preview);
-    // initialize preview position so it's not off-screen
-    preview.style.left = e.clientX + 'px';
-    preview.style.top = e.clientY + 'px';
-    dragPreviewRef.current = preview;
-    function moveHandler(ev: PointerEvent) {
-      if (!dragPreviewRef.current) return;
-      dragPreviewRef.current.style.left = ev.clientX + 'px';
-      dragPreviewRef.current.style.top = ev.clientY + 'px';
-      // highlight drop target under pointer
-      const under = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
-      document.querySelectorAll('.' + styles.dropTarget).forEach((el) => el.classList.remove(styles.dropActive));
-      if (under) {
-        const drop = under.closest('.' + styles.dropTarget) as HTMLElement | null;
-        if (drop) drop.classList.add(styles.dropActive);
-      }
-    }
-    function upHandler(ev: PointerEvent) {
-      // determine drop target
-      const under = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
-      const drop = under ? under.closest('.' + styles.dropTarget) as HTMLElement | null : null;
-      cleanupPointer();
-      if (drop) {
-        onSelect(i);
-      }
-    }
-    function cleanupPointer() {
-      document.documentElement.classList.remove(styles['no-touch-scroll']);
-      draggingIndexRef.current = null;
-      if (dragPreviewRef.current) {
-        document.body.removeChild(dragPreviewRef.current);
-        dragPreviewRef.current = null;
-      }
-      document.removeEventListener('pointermove', moveHandler as any);
-      document.removeEventListener('pointerup', upHandler as any);
-      document.querySelectorAll('.' + styles.dropTarget).forEach((el) => el.classList.remove(styles.dropActive));
-    }
-    document.addEventListener('pointermove', moveHandler as any);
-    document.addEventListener('pointerup', upHandler as any);
-  }
+  // Buttons are simple press targets now (no drag-and-drop)
 
   // Game state: streaks (per-quiz), muted
   const [currentStreak, setCurrentStreak] = useState<number>(() => Number(localStorage.getItem('aws:currentStreak') || 0));
@@ -106,6 +51,10 @@ export default function Quiz() {
 
     const correct = i === question!.correctIndex;
     if (correct) {
+      // celebrate every correct
+      triggerConfetti();
+      playTone(660, 0.1);
+
       const newStreak = currentStreak + 1;
       setCurrentStreak(newStreak);
       localStorage.setItem('aws:currentStreak', String(newStreak));
@@ -113,11 +62,9 @@ export default function Quiz() {
       if (newStreak > bestStreak) {
         setBestStreak(newStreak);
         localStorage.setItem('aws:bestStreak', String(newStreak));
-        // celebrate new best streak
+        // extra celebration for new best
         triggerConfetti();
         playTone(880, 0.12);
-      } else {
-        playTone(660, 0.1);
       }
     } else {
       setCurrentStreak(0);
@@ -126,35 +73,7 @@ export default function Quiz() {
     }
   }
 
-  // Drag handlers for options -> drop on definition area
-  function handleDragStart(e: React.DragEvent, i: number) {
-    draggingIndexRef.current = i;
-    try { e.dataTransfer.setData('text/plain', String(i)); } catch (err) {}
-    // allow link dragging
-    e.dataTransfer.effectAllowed = 'move';
-    // add dragging class via currentTarget using module class name
-    (e.currentTarget as HTMLElement)?.classList.add(styles.dragging);
-  }
-
-  function handleDragEnd(e: React.DragEvent) {
-    draggingIndexRef.current = null;
-    (e.currentTarget as HTMLElement)?.classList.remove(styles.dragging);
-  }
-
-  function handleDefinitionDragOver(e: React.DragEvent) {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-  }
-
-  function handleDefinitionDrop(e: React.DragEvent) {
-    e.preventDefault();
-    const txt = e.dataTransfer.getData('text/plain');
-    const idx = txt ? Number(txt) : null;
-    draggingIndexRef.current = null;
-    if (typeof idx === 'number' && !Number.isNaN(idx)) {
-      onSelect(idx);
-    }
-  }
+  // No drag handlers — selecting is done by pressing option buttons.
 
   function triggerConfetti() {
     if (muted) return;
@@ -268,13 +187,7 @@ export default function Quiz() {
           </button>
         )}
       </div>
-      <p
-        className={`${styles.quizDefinition} ${styles.dropTarget}`}
-        onDragOver={handleDefinitionDragOver}
-        onDrop={handleDefinitionDrop}
-      >
-        {question.definition}
-      </p>
+      <p className={styles.quizDefinition}>{question.definition}</p>
       {timedMode && (
         <div className={styles.progressWrap} aria-hidden>
           <div className={styles.progress} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
@@ -298,10 +211,6 @@ export default function Quiz() {
               onClick={() => onSelect(i)}
               className={classes.join(' ')}
               aria-pressed={isSelected}
-              draggable
-              onDragStart={(e) => handleDragStart(e, i)}
-              onDragEnd={handleDragEnd}
-              onPointerDown={(ev) => startPointerDrag(ev, i)}
             >
               {opt}
             </button>
