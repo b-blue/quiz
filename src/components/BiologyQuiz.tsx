@@ -59,7 +59,7 @@ const BiologyQuiz: FC = () => {
   const [bsPop, setBsPop] = useState(false);
   const csTimerRef = useRef<number | null>(null);
   const bsTimerRef = useRef<number | null>(null);
-  const [muted, setMuted] = useState<boolean>(() => localStorage.getItem('quiz:muted') === '1');
+  const muted: boolean = localStorage.getItem('quiz:muted') === '1';
 
   useEffect(() => {
     // prepare missing line (entire line removed) for current entry
@@ -207,11 +207,7 @@ const BiologyQuiz: FC = () => {
           <div className={styles.questionText}>{entry.question}</div>
         </div>
       </div>
-      <div className={styles.topRightControls}>
-        <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
-          {muted ? 'Unmute' : 'Mute'}
-        </button>
-      </div>
+      {/* header controls moved to Settings */}
 
       <div style={{ marginTop: 10 }}>
         {/* Render the full answer block inside a single <pre> to preserve exact indentation and line breaks. */}

@@ -321,6 +321,42 @@
   font-size: 1.05rem;
 }
 
+/* Settings card — visually distinct from quiz cards */
+.settingsCard {
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(44,50,60,0.9), rgba(34,40,48,0.9));
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 28px rgba(2,6,23,0.5);
+}
+
+/* Start mode switch */
+.startSwitch { display: flex; flex-direction: column; align-items: center; }
+.switchTrack {
+  width: 78px;
+  height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+}
+.switchAws { background: linear-gradient(90deg, rgba(46,110,255,0.22), rgba(108,140,255,0.12)); }
+.switchBio { background: linear-gradient(90deg, rgba(82,199,150,0.12), rgba(70,180,210,0.06)); }
+.switchThumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), background 180ms ease;
+}
+.thumbLeft { transform: translateX(0); }
+.thumbRight { transform: translateX(40px); }
+.switchLabel { color: var(--muted); font-size: 0.85rem; }
+
 /* overlay used to capture clicks after answer shown */
 .nextOverlay {
   position: absolute;

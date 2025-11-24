@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
-import { getRandomQuestion, getAllTerms, getSections } from '../lib/terms';
+import { getRandomQuestion, getAllTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import LightGrid from './LightGrid';
 
 export default function Quiz() {
-  const [selectedSection, setSelectedSection] = useState<string | null>(null);
+  const selectedSection: string | null = (() => {
+    const v = localStorage.getItem('aws:selectedSection');
+    return v === null ? null : v;
+  })();
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion());
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -18,16 +21,14 @@ export default function Quiz() {
   const [bsPop, setBsPop] = useState(false);
   const csTimerRef = useRef<number | null>(null);
   const bsTimerRef = useRef<number | null>(null);
-  const [muted, setMuted] = useState<boolean>(() => localStorage.getItem('quiz:muted') === '1');
+  const muted: boolean = localStorage.getItem('quiz:muted') === '1';
 
   // Timed per-question mode
-  const [timedMode, setTimedMode] = useState<boolean>(false);
+  const timedMode: boolean = localStorage.getItem('aws:timedMode') === '1';
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
-  const [locked, setLocked] = useState(false);
-
-  const sections = getSections();
+  const locked: boolean = localStorage.getItem('quiz:locked') === '1';
 
   function next() {
     setQuestion(getRandomQuestion(selectedSection ?? undefined));
@@ -35,12 +36,10 @@ export default function Quiz() {
     setShowAnswer(false);
     setTimeLeft(timerDuration);
   }
-
-  function toggleLock() {
-    const newLock = !locked;
-    setLocked(newLock);
+  // apply lock from persisted setting on mount
+  useEffect(() => {
     try {
-      if (newLock) {
+      if (locked) {
         document.body.style.overflow = 'hidden';
         (document.documentElement as HTMLElement).style.touchAction = 'none';
       } else {
@@ -48,7 +47,7 @@ export default function Quiz() {
         (document.documentElement as HTMLElement).style.touchAction = '';
       }
     } catch (e) {}
-  }
+  }, [locked]);
 
   if (!question) {
     return (
@@ -165,7 +164,8 @@ export default function Quiz() {
           // time's up
           stopTimer();
           setShowAnswer(true);
-          setSelected(null);
+          // show the correct answer when time expires
+          setSelected(question ? question.correctIndex : null);
           setCurrentStreak(0);
           localStorage.setItem('aws:currentStreak', '0');
           playTone(220, 0.18);
@@ -210,59 +210,7 @@ export default function Quiz() {
             <div className={styles.questionText}>{question.definition}</div>
           </div>
       </div>
-      <div className={styles.topRightControls}>
-        <button
-          className={timedMode ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn}
-          onClick={() => setTimedMode((t) => !t)}
-          aria-pressed={timedMode}
-        >
-          {timedMode ? 'Timed: On' : 'Timed: Off'}
-        </button>
-        <button
-          className={locked ? `${styles.lockBtn} ${styles.lockBtnActive}` : styles.lockBtn}
-          onClick={toggleLock}
-          aria-pressed={locked}
-          title={locked ? 'Unlock scrolling' : 'Lock scrolling'}
-        >
-          {locked ? 'Unlock' : 'Lock'}
-        </button>
-        <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
-          {muted ? 'Unmute' : 'Mute'}
-        </button>
-      </div>
-      <div className={styles.quizControls}>
-        <label className={styles.filterLabel} htmlFor="section-filter">Filter by section:</label>
-        <select
-          id="section-filter"
-          className={styles.filterSelect}
-          value={selectedSection ?? ''}
-          onChange={(e) => {
-            const val = e.target.value || null;
-            setSelectedSection(val);
-            setQuestion(getRandomQuestion(val ?? undefined));
-            setSelected(null);
-            setShowAnswer(false);
-          }}
-        >
-          <option value="">All sections</option>
-          {sections.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-        {selectedSection && (
-          <button
-            className={styles.clearFilter}
-            onClick={() => {
-              setSelectedSection(null);
-              setQuestion(getRandomQuestion());
-              setSelected(null);
-              setShowAnswer(false);
-            }}
-          >
-            Clear
-          </button>
-        )}
-      </div>
+      {/* header controls moved to Settings */}
       {/* question is displayed in the header's question well */}
       {timedMode && (
         <div className={styles.progressWrap} aria-hidden>
