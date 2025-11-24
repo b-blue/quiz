@@ -5,17 +5,12 @@ export default function Settings() {
   const sections = getSections();
 
   const timed = localStorage.getItem('aws:timedMode') === '1';
-  const locked = localStorage.getItem('quiz:locked') === '1';
   const muted = localStorage.getItem('quiz:muted') === '1';
   const selectedSection = localStorage.getItem('aws:selectedSection') || '';
   const startMode = localStorage.getItem('app:startMode') === 'bio' ? 'bio' : 'aws';
 
   function setTimed(next: boolean) {
     try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
-    window.location.reload();
-  }
-  function setLocked(next: boolean) {
-    try { localStorage.setItem('quiz:locked', next ? '1' : '0'); } catch (e) {}
     window.location.reload();
   }
   function setMuted(next: boolean) {
@@ -60,7 +55,6 @@ export default function Settings() {
 
       <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
         <button className={timed ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setTimed(!timed)}>{timed ? 'Timed: On' : 'Timed: Off'}</button>
-        <button className={locked ? `${styles.lockBtn} ${styles.lockBtnActive}` : styles.lockBtn} onClick={() => setLocked(!locked)}>{locked ? 'Unlock Scroll' : 'Lock Scroll'}</button>
         <button className={styles.muteBtn} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
       </div>
 

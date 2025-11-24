@@ -28,7 +28,15 @@ export default function Quiz() {
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
-  const locked: boolean = localStorage.getItem('quiz:locked') === '1';
+  const [locked, setLocked] = useState<boolean>(() => localStorage.getItem('quiz:locked') === '1');
+
+  function toggleLock() {
+    const nextLocked = !locked;
+    setLocked(nextLocked);
+    try {
+      localStorage.setItem('quiz:locked', nextLocked ? '1' : '0');
+    } catch (e) {}
+  }
 
   function next() {
     setQuestion(getRandomQuestion(selectedSection ?? undefined));
@@ -280,6 +288,14 @@ export default function Quiz() {
               </div>
             );
           })()}
+          <button
+            className={styles.lockIconBtn}
+            onClick={toggleLock}
+            aria-label={locked ? 'Unlock scroll' : 'Lock scroll'}
+            title={locked ? 'Unlock scroll' : 'Lock scroll'}
+          >
+            {locked ? '🔒' : '🔓'}
+          </button>
         </div>
       </div>
     </div>
