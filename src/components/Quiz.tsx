@@ -25,6 +25,7 @@ export default function Quiz() {
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
+  const [locked, setLocked] = useState(false);
 
   const sections = getSections();
 
@@ -33,6 +34,20 @@ export default function Quiz() {
     setSelected(null);
     setShowAnswer(false);
     setTimeLeft(timerDuration);
+  }
+
+  function toggleLock() {
+    const newLock = !locked;
+    setLocked(newLock);
+    try {
+      if (newLock) {
+        document.body.style.overflow = 'hidden';
+        (document.documentElement as HTMLElement).style.touchAction = 'none';
+      } else {
+        document.body.style.overflow = '';
+        (document.documentElement as HTMLElement).style.touchAction = '';
+      }
+    } catch (e) {}
   }
 
   if (!question) {
@@ -170,6 +185,15 @@ export default function Quiz() {
     };
   }, []);
 
+  useEffect(() => {
+    return () => {
+      try {
+        document.body.style.overflow = '';
+        (document.documentElement as HTMLElement).style.touchAction = '';
+      } catch (e) {}
+    };
+  }, []);
+
   // framer-motion dynamic loading removed to avoid Vite import-analysis errors.
   // We use CSS transitions for hover/tap effects instead.
 
@@ -187,7 +211,21 @@ export default function Quiz() {
           </div>
       </div>
       <div className={styles.topRightControls}>
-        <label className={styles.smallToggle}><input type="checkbox" checked={timedMode} onChange={(e) => setTimedMode(e.target.checked)} /> Timed</label>
+        <button
+          className={timedMode ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn}
+          onClick={() => setTimedMode((t) => !t)}
+          aria-pressed={timedMode}
+        >
+          {timedMode ? 'Timed: On' : 'Timed: Off'}
+        </button>
+        <button
+          className={locked ? `${styles.lockBtn} ${styles.lockBtnActive}` : styles.lockBtn}
+          onClick={toggleLock}
+          aria-pressed={locked}
+          title={locked ? 'Unlock scrolling' : 'Lock scrolling'}
+        >
+          {locked ? 'Unlock' : 'Lock'}
+        </button>
         <button className={styles.muteBtn} onClick={() => { setMuted((m) => { const nm = !m; localStorage.setItem('quiz:muted', nm ? '1' : '0'); return nm; }); }}>
           {muted ? 'Unmute' : 'Mute'}
         </button>
@@ -228,7 +266,7 @@ export default function Quiz() {
       {/* question is displayed in the header's question well */}
       {timedMode && (
         <div className={styles.progressWrap} aria-hidden>
-          <div className={styles.progress} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
+          <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
         </div>
       )}
 
