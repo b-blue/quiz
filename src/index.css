@@ -100,3 +100,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* On very small screens, prevent the page body from scrolling and keep scroll inside the quiz card */
+@media (max-width: 480px) {
+  html, body, #root, main {
+    height: 100vh;
+    overflow: hidden;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* debug outlines removed */

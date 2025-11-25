@@ -52,7 +52,7 @@
 - Cost Optimization
 - Sustainability
 
-## AWS Cloud Transformation Phases
+## AWS Cloud Transformation Phases Summary
 
 - Envision Phase // Demonstrate how cloud accelerates business outcomes
 - Align Phase // Identify capability gaps across CAF perspectives, surfacing stakeholder concerns
@@ -103,9 +103,9 @@
 - Repurchase ("Drop and shop") // Move to different product while also moving to cloud (e.g., HR -> Workday)
 - Refactor/Re-architect // Reimagine application architecture using cloud native features (move to serverless, etc.)
 
-## Reservations to Optimize Costs
+## Reservations to Optimize Costs Summary
 
-_A three-year term is always more cost-effective than a one-year term_
+_A three-year term is always more cost-effective than a one-year term_  
 _Within a given term, all upfront is more cost effective than partial upfront, and partial upfront is more cost-effective than no upfront_
 
 - EC2 // Reserved Instances (RI); discount applied to running on-demand instances
@@ -114,7 +114,7 @@ _Within a given term, all upfront is more cost effective than partial upfront, a
 - RDS // Reserved Instances (RI); no upfront, partial upfront, all upfront with all reserved instance types available
 - Redshift // Reserved Nodes; commit to paying for 1- or 3-year duration
 
-## Encryption by Default
+## Encryption by Default Summary
 
 - AWS S3 // All S3 buckets are encrypted by default; objects also encrypted server-side by default with SSE-S3 keys
 - AWS Storage Gateway // All data transferred between gateway and AWS storage is encrypted with SSL by default

@@ -1,7 +1,10 @@
 import raw from '../data/terms.json';
 import type { Term, QuizQuestion } from '../types';
 
-const TERMS: Term[] = (raw as unknown as Term[]) ?? [];
+const TERMS: Term[] = ((raw as unknown as Term[]) ?? []).map((t) => ({
+  ...t,
+  section: typeof t.section === 'string' ? t.section.trim() : t.section,
+}));
 
 function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -21,7 +24,7 @@ export function getAllTerms(): Term[] {
 }
 
 export function getSections(): string[] {
-  return Array.from(new Set(TERMS.map((t) => t.section).filter((s): s is string => Boolean(s)))).sort();
+  return Array.from(new Set(TERMS.map((t) => (typeof t.section === 'string' ? t.section.trim() : t.section)).filter((s): s is string => Boolean(s)))).sort();
 }
 
 /**

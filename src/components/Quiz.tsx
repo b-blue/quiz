@@ -7,7 +7,7 @@ import LightGrid from './LightGrid';
 export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }) {
   const selectedSection: string | null = (() => {
     const v = localStorage.getItem('aws:selectedSection');
-    return v === null ? null : v;
+    return v === null ? null : (typeof v === 'string' ? v.trim() : v);
   })();
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection));
   const [selected, setSelected] = useState<number | null>(null);
@@ -45,7 +45,15 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
   }
 
   function next() {
-    setQuestion(getRandomQuestion(selectedSection ?? undefined));
+    // pick a new random question, but avoid returning the same definition immediately
+    const maxAttempts = 10;
+    let nextQ = getRandomQuestion(selectedSection ?? undefined);
+    let attempts = 0;
+    while (nextQ && question && nextQ.definition === question.definition && attempts < maxAttempts) {
+      nextQ = getRandomQuestion(selectedSection ?? undefined);
+      attempts++;
+    }
+    setQuestion(nextQ);
     setSelected(null);
     setShowAnswer(false);
     setTimeLeft(timerDuration);

@@ -1,19 +1,22 @@
 .quizContainer {
-  max-width: 720px;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  background: var(--card);
+/* Make the quiz container embedded in the page (not a floating card).
+   Container now stretches to available width and adapts responsively. */
+.quizContainer {
+  width: 100%;
+  margin: 0;
+  padding: 0.6rem 0.6rem;
+  background: transparent;
   color: var(--text);
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border-radius: 0;
+  box-shadow: none;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
 }
 
 /* ensure container sizing doesn't create horizontal overflow on small screens */
 .quizContainer {
   box-sizing: border-box;
   width: 100%;
-  max-width: 720px;
 }
 .quizTitle { margin: 0; font-size: 1.25rem; }
 .quizDefinition {
@@ -115,7 +118,7 @@
 }
 
 .quizOption:focus-visible {
-  outline: 3px solid rgba(100,108,255,0.16);
+  outline: 3px solid var(--led-color);
   outline-offset: 2px;
 }
 
@@ -390,6 +393,29 @@
   box-shadow: 1px 0 0 var(--shadow-right), 1px 1px 0 var(--shadow-bottom);
 }
 
+/* LED-style focus outlines for buttons inside the quiz container */
+.quizContainer button:focus-visible,
+.quizContainer .btn3d:focus-visible,
+.quizContainer .lockIconBtn:focus-visible,
+.quizContainer .gearBtn:focus-visible,
+.quizContainer .clockBtn:focus-visible,
+.quizContainer .timedBtn:focus-visible {
+  outline: 3px solid var(--led-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 12px var(--led-color);
+}
+
+/* Brighten text and add glow for selected / highlighted option buttons */
+.quizOption[aria-pressed="true"], .quizOption:focus-visible {
+  color: #ffffff;
+  text-shadow: var(--led-text-shadow);
+}
+
+/* subtle variant for correct selected option */
+.quizOption.correct[aria-pressed="true"] {
+  text-shadow: 0 0 10px rgba(120,220,160,0.42);
+}
+
 /* Make the icon slightly larger inside 3D buttons */
 .btn3d > svg, .btn3d > img {
   width: 20px;
@@ -561,6 +587,13 @@
   --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
 }
 
+/* LED derivations: brighter variant of the stepped-edge color for focus/glow */
+.quizContainer {
+  --led-alpha: calc(var(--shadow-alpha) * 1.85);
+  --led-color: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--led-alpha));
+  --led-text-shadow: 0 0 8px rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), calc(var(--led-alpha) * 0.7));
+}
+
 .btn3d {
   z-index: 2;
 }
@@ -702,16 +735,18 @@
 @media (max-width: 480px) {
   :root { font-size: 15px; }
   h1 { font-size: 1.6rem; }
-  .quizContainer { margin: 0.4rem auto; padding: 0.5rem; border-radius: 8px; max-width: calc(100% - 2rem); }
+  .quizContainer { margin: 0.3rem auto; padding: 0.45rem; border-radius: 8px; max-width: calc(100% - 2rem); }
   .quizOptions { grid-template-columns: 1fr; gap: 0.5rem; }
-  .quizOption { padding: 0.9rem; font-size: 1rem; min-height: 56px; }
-  .quizDefinition { font-size: 0.98rem; padding: 0.9rem; }
+  .quizOption { padding: 0.7rem; font-size: 0.98rem; min-height: 48px; }
+  .quizDefinition { font-size: 0.98rem; padding: 0.85rem; }
 }
 
 /* Portrait phone improvements for one-handed use */
 @media (max-width: 480px) and (orientation: portrait) {
-  /* ensure quiz containers are constrained to the viewport width on narrow portrait phones */
-  .quizContainer { max-width: calc(100% - 2rem); margin: 0.4rem auto; overflow-x: hidden; box-sizing: border-box; max-height: calc(100vh - 1.2rem); }
+  /* ensure quiz elements fit the viewport width — embedded, not a centered card */
+  .quizContainer { margin: 0.3rem 0; padding: 0.45rem; border-radius: 0; max-width: 100%; overflow-x: hidden; box-sizing: border-box; }
+  /* let the page handle vertical flow rather than locking to viewport height */
+  .quizContainer { overflow-y: visible; -webkit-overflow-scrolling: auto; }
   .quizControls {
     flex-direction: column;
     align-items: stretch;
@@ -736,22 +771,22 @@
   }
 
   .quizOption {
-    padding: 1.05rem 1rem;
-    font-size: 1.05rem;
-    min-height: 64px;
+    padding: 0.85rem 0.9rem;
+    font-size: 1.02rem;
+    min-height: 52px;
     border-radius: 10px;
   }
 
   .quizFooter {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.6rem;
-    min-height: 84px;
+    gap: 0.5rem;
+    min-height: 68px;
   }
 
   .quizNext {
     width: 100%;
-    padding: 0.95rem 1rem;
+    padding: 0.85rem 0.9rem;
     font-size: 1.05rem;
     border-radius: 10px;
     margin-left: 0;
@@ -778,4 +813,20 @@
   .settingsCard .startSwitch { display: flex; justify-content: center; }
   .filterRow { flex-direction: column; align-items: center; }
   .filterRow .clearFilter { margin-left: 0; margin-top: 8px; }
+
+  /* debug outlines removed */
+
+  /* reduce sizes of header wells and terminal to save vertical space */
+  .gizmoWell, .terminalWell { width: 56px; min-width: 56px; height: 56px; }
+  .questionWell { min-height: 46px; padding: 6px 8px; }
+  .terminalFooter { min-height: 36px; max-height: 72px; padding: 6px; overflow: hidden; }
+  .quizOptions { gap: 0.45rem; }
+  .streaks { font-size: 0.88rem; }
+  /* do not constrain by viewport height; allow natural flow */
+  .quizContainer { max-height: none; }
+  /* make options even smaller if needed */
+  .quizOption { min-height: 44px; }
+  /* On very small screens, reduce decorative gizmo and footer size rather than hide them entirely */
+  .gizmoWell { display: flex; }
+  .terminalFooter { display: block; }
 }

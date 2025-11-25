@@ -6,7 +6,10 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
   const sections = getSections();
 
   const muted = localStorage.getItem('quiz:muted') === '1';
-  const selectedSection = localStorage.getItem('aws:selectedSection') || '';
+  const selectedSection = (() => {
+    const v = localStorage.getItem('aws:selectedSection') || '';
+    return typeof v === 'string' ? v.trim() : v;
+  })();
   const startMode = localStorage.getItem('app:startMode') === 'bio' ? 'bio' : 'aws';
 
   function setMuted(next: boolean) {
@@ -20,8 +23,9 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
   }
   function setSection(val: string) {
     try {
-      if (!val) localStorage.removeItem('aws:selectedSection');
-      else localStorage.setItem('aws:selectedSection', val);
+      const v = typeof val === 'string' ? val.trim() : val;
+      if (!v) localStorage.removeItem('aws:selectedSection');
+      else localStorage.setItem('aws:selectedSection', v as string);
     } catch (e) {}
     window.location.reload();
   }
