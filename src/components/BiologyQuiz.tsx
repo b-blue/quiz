@@ -27,7 +27,7 @@ function choose<T>(arr: T[], n = 1) {
   return out;
 }
 
-const BiologyQuiz: FC = () => {
+const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) => {
   const data = (raw as unknown as BioEntry[]);
 
   // pool of full answer lines (preserve original raw line and canonical trimmed form)
@@ -60,6 +60,32 @@ const BiologyQuiz: FC = () => {
   const csTimerRef = useRef<number | null>(null);
   const bsTimerRef = useRef<number | null>(null);
   const muted: boolean = localStorage.getItem('quiz:muted') === '1';
+  const [timedMode, setTimedMode] = useState<boolean>(() => localStorage.getItem('aws:timedMode') === '1');
+  const [locked, setLocked] = useState<boolean>(() => localStorage.getItem('quiz:locked') === '1');
+
+  function toggleLock() {
+    const next = !locked;
+    setLocked(next);
+    try { localStorage.setItem('quiz:locked', next ? '1' : '0'); } catch (e) {}
+  }
+
+  function toggleTimedMode() {
+    const next = !timedMode;
+    setTimedMode(next);
+    try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
+  }
+
+  useEffect(() => {
+    try {
+      if (locked) {
+        document.body.style.overflow = 'hidden';
+        (document.documentElement as HTMLElement).style.touchAction = 'none';
+      } else {
+        document.body.style.overflow = '';
+        (document.documentElement as HTMLElement).style.touchAction = '';
+      }
+    } catch (e) {}
+  }, [locked]);
 
   useEffect(() => {
     // prepare missing line (entire line removed) for current entry
@@ -300,6 +326,33 @@ const BiologyQuiz: FC = () => {
               </div>
             );
           })()}
+
+          <button
+            className={`${styles.lockIconBtn} ${styles.btn3d}`}
+            onClick={toggleLock}
+            aria-label={locked ? 'Unlock scroll' : 'Lock scroll'}
+            title={locked ? 'Unlock scroll' : 'Lock scroll'}
+          >
+            {locked ? '🔒' : '🔓'}
+          </button>
+
+          <button
+            className={`${styles.clockBtn} ${styles.btn3d}`}
+            onClick={toggleTimedMode}
+            aria-label={timedMode ? 'Turn timed mode off' : 'Turn timed mode on'}
+            title={timedMode ? 'Timed: On' : 'Timed: Off'}
+          >
+            {timedMode ? '⏱️' : '⏰'}
+          </button>
+
+          <button
+            className={`${styles.gearBtn} ${styles.btn3d}`}
+            onClick={() => onOpenSettings?.()}
+            aria-label="Open settings"
+            title="Open settings"
+          >
+            ⚙️
+          </button>
         </div>
       </div>
     </div>

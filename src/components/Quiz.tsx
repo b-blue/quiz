@@ -4,12 +4,12 @@ import { getRandomQuestion, getAllTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import LightGrid from './LightGrid';
 
-export default function Quiz() {
+export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }) {
   const selectedSection: string | null = (() => {
     const v = localStorage.getItem('aws:selectedSection');
     return v === null ? null : v;
   })();
-  const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion());
+  const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection));
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   // Buttons are simple press targets now (no drag-and-drop)
@@ -24,7 +24,7 @@ export default function Quiz() {
   const muted: boolean = localStorage.getItem('quiz:muted') === '1';
 
   // Timed per-question mode
-  const timedMode: boolean = localStorage.getItem('aws:timedMode') === '1';
+  const [timedMode, setTimedMode] = useState<boolean>(() => localStorage.getItem('aws:timedMode') === '1');
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
@@ -36,6 +36,12 @@ export default function Quiz() {
     try {
       localStorage.setItem('quiz:locked', nextLocked ? '1' : '0');
     } catch (e) {}
+  }
+
+  function toggleTimedMode() {
+    const next = !timedMode;
+    setTimedMode(next);
+    try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
   }
 
   function next() {
@@ -289,12 +295,30 @@ export default function Quiz() {
             );
           })()}
           <button
-            className={styles.lockIconBtn}
+            className={`${styles.lockIconBtn} ${styles.btn3d}`}
             onClick={toggleLock}
             aria-label={locked ? 'Unlock scroll' : 'Lock scroll'}
             title={locked ? 'Unlock scroll' : 'Lock scroll'}
           >
             {locked ? '🔒' : '🔓'}
+          </button>
+
+          <button
+            className={`${styles.clockBtn} ${styles.btn3d}`}
+            onClick={toggleTimedMode}
+            aria-label={timedMode ? 'Turn timed mode off' : 'Turn timed mode on'}
+            title={timedMode ? 'Timed: On' : 'Timed: Off'}
+          >
+            {timedMode ? '⏱️' : '⏰'}
+          </button>
+
+          <button
+            className={`${styles.gearBtn} ${styles.btn3d}`}
+            onClick={() => onOpenSettings?.()}
+            aria-label="Open settings"
+            title="Open settings"
+          >
+            ⚙️
           </button>
         </div>
       </div>

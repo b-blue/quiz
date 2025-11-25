@@ -4,15 +4,10 @@ import styles from './Quiz.module.css';
 export default function Settings() {
   const sections = getSections();
 
-  const timed = localStorage.getItem('aws:timedMode') === '1';
   const muted = localStorage.getItem('quiz:muted') === '1';
   const selectedSection = localStorage.getItem('aws:selectedSection') || '';
   const startMode = localStorage.getItem('app:startMode') === 'bio' ? 'bio' : 'aws';
 
-  function setTimed(next: boolean) {
-    try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
-    window.location.reload();
-  }
   function setMuted(next: boolean) {
     try { localStorage.setItem('quiz:muted', next ? '1' : '0'); } catch (e) {}
     window.location.reload();
@@ -54,7 +49,6 @@ export default function Settings() {
       </div>
 
       <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
-        <button className={timed ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setTimed(!timed)}>{timed ? 'Timed: On' : 'Timed: Off'}</button>
         <button className={styles.muteBtn} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
       </div>
 

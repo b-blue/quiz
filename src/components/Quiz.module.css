@@ -212,7 +212,7 @@
   color: var(--text);
   cursor: pointer;
   font-size: 1.2rem;
-  display: flex;
+  display: none; /* hidden by default; shown for phone portrait via media query */
   align-items: center;
   justify-content: center;
   min-width: 44px;
@@ -227,6 +227,90 @@
   transform: translateY(0);
   box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
 }
+
+/* Gear button shares the same visual style but is always visible */
+.gearBtn {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.gearBtn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.gearBtn:active { transform: translateY(0); box-shadow: inset 0 2px 6px rgba(0,0,0,0.15); }
+
+/* Show the lock icon when viewport is phone-like in portrait orientation */
+@media (max-width: 600px) {
+  .lockIconBtn { display: flex; }
+}
+
+/* 3D chunky button base */
+.btn3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
+  border: 1px solid rgba(0,0,0,0.25);
+  color: var(--text);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.28), 0 18px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+  transform: translateY(0);
+  transition: transform 140ms cubic-bezier(.2,.9,.2,1), box-shadow 140ms cubic-bezier(.2,.9,.2,1);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn3d::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 8%;
+  height: 40%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.btn3d:active {
+  transform: translateY(8px);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.22), 0 8px 18px rgba(0,0,0,0.36);
+}
+
+/* Make the icon slightly larger inside 3D buttons */
+.btn3d > svg, .btn3d > img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Clock button: shown with lock on small portrait screens */
+.clockBtn {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex; /* always visible */
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.clockBtn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.clockBtn:active { transform: translateY(0); box-shadow: inset 0 2px 6px rgba(0,0,0,0.15); }
+
+/* clockBtn is always visible; lockIconBtn alone is shown only on small portrait screens */
 
 /* Animate streak value color changes and add a subtle pop when highlighted */
 .streaks strong {
