@@ -60,11 +60,13 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
 
         <div style={{ marginTop: 16 }}>
           <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
-          <select value={selectedSection} onChange={(e) => setSection(e.target.value)}>
-            <option value="">All sections</option>
-            {sections.map(s => <option key={s} value={s}>{s}</option>)}
-          </select>
-          {selectedSection && <button className={styles.clearFilter} style={{ marginLeft: 8 }} onClick={() => setSection('')}>Clear</button>}
+          <div className={styles.filterRow}>
+            <select className={styles.filterSelect} value={selectedSection} onChange={(e) => setSection(e.target.value)}>
+              <option value="">All sections</option>
+              {sections.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+            {selectedSection && <button className={styles.clearFilter} onClick={() => setSection('')}>Clear</button>}
+          </div>
         </div>
 
         <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>

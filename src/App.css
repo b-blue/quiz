@@ -1,8 +1,13 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem; /* no bottom padding to avoid adding to total page height */
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  /* compact padding on narrow screens, no top padding */
+  #root { padding: 0 0.5rem; }
 }
 
 .logo {

@@ -35,6 +35,9 @@
   background-color: var(--bg);
 }
 
+/* ensure full-height calculations behave consistently on mobile */
+html { height: 100%; }
+
 /* Light theme removed — app uses dark theme only */
 
 a {
@@ -49,9 +52,16 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: flex-start;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Center main content horizontally so quiz cards appear centered */
+main {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
