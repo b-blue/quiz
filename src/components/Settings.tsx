@@ -39,11 +39,22 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
         <div className={styles.headerDivider} />
         <div className={styles.questionWell}>
           <div className={styles.questionText}>Settings</div>
-          <div className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>Customize quiz behavior, filters, and audio</div>
         </div>
       </div>
 
       <div className={styles.settingsCard} style={{ marginTop: 12, padding: '1rem' }}>
+        {/* Filter moved above Start Mode to prioritize section selection */}
+        <div style={{ marginBottom: 12 }}>
+          <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
+          <div className={styles.filterRow}>
+            <select className={styles.filterSelect} value={selectedSection} onChange={(e) => setSection(e.target.value)}>
+              <option value="">All sections</option>
+              {sections.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+            {selectedSection && <button className={styles.clearFilter} onClick={() => setSection('')}>Clear</button>}
+          </div>
+        </div>
+
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
             <div style={{ fontWeight: 700 }}>Start Mode</div>
@@ -57,20 +68,9 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           </div>
         </div>
 
-            <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
-              <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
-              {/* Ambient pulse feature removed — pulsing disabled globally */}
-            </div>
-
-        <div style={{ marginTop: 16 }}>
-          <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
-          <div className={styles.filterRow}>
-            <select className={styles.filterSelect} value={selectedSection} onChange={(e) => setSection(e.target.value)}>
-              <option value="">All sections</option>
-              {sections.map(s => <option key={s} value={s}>{s}</option>)}
-            </select>
-            {selectedSection && <button className={styles.clearFilter} onClick={() => setSection('')}>Clear</button>}
-          </div>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
+          <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
+          {/* Ambient pulse feature removed — pulsing disabled globally */}
         </div>
 
         <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>
