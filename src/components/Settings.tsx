@@ -1,7 +1,7 @@
 import { getSections } from '../lib/terms';
 import styles from './Quiz.module.css';
 
-export default function Settings() {
+export default function Settings({ onBack }: { onBack?: () => void }) {
   const sections = getSections();
 
   const muted = localStorage.getItem('quiz:muted') === '1';
@@ -35,14 +35,9 @@ export default function Settings() {
             <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Choose which quiz starts when the app loads</div>
           </div>
           <div>
-            <div className={styles.startSwitch}>
-              <div className={`${styles.switchTrack} ${startMode === 'aws' ? styles.switchAws : styles.switchBio}`} onClick={() => setStartMode(startMode === 'aws' ? 'bio' : 'aws')}>
-                <div className={`${styles.switchThumb} ${startMode === 'aws' ? styles.thumbRight : styles.thumbLeft}`} />
-              </div>
-              <div style={{ display: 'flex', gap: 8, marginTop: 8, justifyContent: 'center' }}>
-                <span className={styles.switchLabel}>Biology Quiz</span>
-                <span className={styles.switchLabel}>AWS Quiz</span>
-              </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setStartMode('aws')}>AWS</button>
+              <button className={startMode === 'bio' ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setStartMode('bio')}>BIO</button>
             </div>
           </div>
         </div>
@@ -62,6 +57,10 @@ export default function Settings() {
       </div>
 
       <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>
+
+      <div style={{ marginTop: 18, display: 'flex', justifyContent: 'flex-end' }}>
+        <button className={styles.timedBtn} onClick={() => onBack ? onBack() : window.location.reload()}>Back</button>
+      </div>
     </div>
   );
 }

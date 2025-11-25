@@ -226,11 +226,9 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
       </div>
       {/* header controls moved to Settings */}
       {/* question is displayed in the header's question well */}
-      {timedMode && (
-        <div className={styles.progressWrap} aria-hidden>
-          <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
-        </div>
-      )}
+      <div className={styles.progressWrap} aria-hidden>
+        <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${timedMode ? (timeLeft / timerDuration) * 100 : 0}%` }} />
+      </div>
 
       <div className={styles.quizOptions}>
         {question.options.map((opt, i) => {

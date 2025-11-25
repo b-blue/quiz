@@ -274,11 +274,9 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
       </div>
       {/* header controls moved to Settings */}
 
-      {timedMode && (
-        <div className={styles.progressWrap} aria-hidden>
-          <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
-        </div>
-      )}
+      <div className={styles.progressWrap} aria-hidden>
+        <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${timedMode ? (timeLeft / timerDuration) * 100 : 0}%` }} />
+      </div>
 
       <div style={{ marginTop: 10 }}>
         {/* Render the full answer block inside a single <pre> to preserve exact indentation and line breaks. */}
