@@ -405,6 +405,18 @@
   transform: scale(1.15);
 }
 
+/* Variant palettes for LightGrid */
+.gizmoGrid[data-variant="settings"] .gizmoOn {
+  background: linear-gradient(135deg, #fff3b0, #ffd36b);
+  box-shadow: 0 6px 18px rgba(255,200,60,0.18), 0 0 6px rgba(255,240,200,0.14) inset;
+  transform: scale(1.18);
+}
+.gizmoGrid[data-variant="bio"] .gizmoOn {
+  background: linear-gradient(135deg, #bfffb0, #4ef78a);
+  box-shadow: 0 6px 18px rgba(110,220,120,0.22), 0 0 6px rgba(200,255,220,0.16) inset;
+  transform: scale(1.18);
+}
+
 /* subtle pulse/glow for active lights */
 @keyframes gizmo-pulse {
   0% { box-shadow: 0 6px 18px rgba(78,168,255,0.28), 0 0 6px rgba(127,255,212,0.18) inset; transform: scale(1.05); }

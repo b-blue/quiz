@@ -1,5 +1,6 @@
 import { getSections } from '../lib/terms';
 import styles from './Quiz.module.css';
+import LightGrid from './LightGrid';
 
 export default function Settings({ onBack }: { onBack?: () => void }) {
   const sections = getSections();
@@ -25,10 +26,19 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
   }
 
   return (
-    <div style={{ maxWidth: 720, margin: '1.5rem auto', padding: '1rem' }}>
-      <h2>Settings</h2>
+    <div className={styles.quizContainer}>
+      <div className={styles.headerBar}>
+        <div className={styles.gizmoWell} aria-hidden>
+          <LightGrid variant="settings" />
+        </div>
+        <div className={styles.headerDivider} />
+        <div style={{ flex: 1 }}>
+          <div style={{ fontWeight: 700, color: '#e6f7ff' }}>Settings</div>
+          <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Customize quiz behavior, filters, and audio</div>
+        </div>
+      </div>
 
-      <div className={styles.settingsCard} style={{ marginTop: 12 }}>
+      <div className={styles.settingsCard} style={{ marginTop: 12, padding: '1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
             <div style={{ fontWeight: 700 }}>Start Mode</div>
@@ -36,30 +46,30 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           </div>
           <div>
             <div style={{ display: 'flex', gap: 8 }}>
-              <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setStartMode('aws')}>AWS</button>
-              <button className={startMode === 'bio' ? `${styles.timedBtn} ${styles.timedBtnActive}` : styles.timedBtn} onClick={() => setStartMode('bio')}>BIO</button>
+              <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>AWS</button>
+              <button className={startMode === 'bio' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('bio')}>BIO</button>
             </div>
           </div>
         </div>
-      </div>
 
-      <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
-        <button className={styles.muteBtn} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
-      </div>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
+          <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
+        </div>
 
-      <div style={{ marginTop: 16 }}>
-        <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
-        <select value={selectedSection} onChange={(e) => setSection(e.target.value)}>
-          <option value="">All sections</option>
-          {sections.map(s => <option key={s} value={s}>{s}</option>)}
-        </select>
-        {selectedSection && <button className={styles.clearFilter} style={{ marginLeft: 8 }} onClick={() => setSection('')}>Clear</button>}
-      </div>
+        <div style={{ marginTop: 16 }}>
+          <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
+          <select value={selectedSection} onChange={(e) => setSection(e.target.value)}>
+            <option value="">All sections</option>
+            {sections.map(s => <option key={s} value={s}>{s}</option>)}
+          </select>
+          {selectedSection && <button className={styles.clearFilter} style={{ marginLeft: 8 }} onClick={() => setSection('')}>Clear</button>}
+        </div>
 
-      <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>
+        <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>
 
-      <div style={{ marginTop: 18, display: 'flex', justifyContent: 'flex-end' }}>
-        <button className={styles.timedBtn} onClick={() => onBack ? onBack() : window.location.reload()}>Back</button>
+        <div style={{ marginTop: 18, display: 'flex', justifyContent: 'flex-end' }}>
+          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => onBack ? onBack() : window.location.reload()}>Back</button>
+        </div>
       </div>
     </div>
   );

@@ -265,7 +265,7 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
 
       <div className={styles.headerBar}>
         <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid />
+          <LightGrid variant="bio" />
         </div>
         <div className={styles.headerDivider} />
         <div className={styles.questionWell}>

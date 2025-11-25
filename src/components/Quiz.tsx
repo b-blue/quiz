@@ -216,8 +216,8 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
       <div className={styles.headerBar}>
-        <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid />
+          <div className={styles.gizmoWell} aria-hidden>
+          <LightGrid variant="default" />
         </div>
           <div className={styles.headerDivider} />
           <div className={styles.questionWell}>

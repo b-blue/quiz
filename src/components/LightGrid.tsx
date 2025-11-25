@@ -27,7 +27,7 @@ function diagonalWave(step: number) {
   return out;
 }
 
-export default function LightGrid() {
+export default function LightGrid({ variant }: { variant?: 'default'|'settings'|'bio' } = { variant: 'default' }) {
   const [pattern, setPattern] = useState<boolean[]>(() => randomPattern());
   const [step, setStep] = useState(0);
 
@@ -50,7 +50,7 @@ export default function LightGrid() {
   }, [step]);
 
   return (
-    <div className={styles.gizmoGrid} aria-hidden>
+    <div className={styles.gizmoGrid} data-variant={variant} aria-hidden>
       {pattern.map((on, i) => (
         <div key={i} className={`${styles.gizmoLight} ${on ? styles.gizmoOn : ''}`} />
       ))}
