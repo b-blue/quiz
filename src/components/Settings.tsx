@@ -26,7 +26,7 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
   }
 
   return (
-    <div className={styles.quizContainer}>
+    <div className={styles.quizContainer} data-variant="settings">
       <div className={styles.headerBar}>
         <div className={styles.gizmoWell} aria-hidden>
           <LightGrid variant="settings" />

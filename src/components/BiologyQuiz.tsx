@@ -260,7 +260,7 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
   if (!entry) return <div className={styles.quizContainer}>No biology data found. Run the extractor.</div>;
 
   return (
-    <div className={styles.quizContainer}>
+    <div className={styles.quizContainer} data-variant="bio">
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
       <div className={styles.headerBar}>

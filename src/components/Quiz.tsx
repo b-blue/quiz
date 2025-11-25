@@ -212,7 +212,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
   // We use CSS transitions for hover/tap effects instead.
 
   return (
-    <div className={styles.quizContainer}>
+    <div className={styles.quizContainer} data-variant="aws">
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
       <div className={styles.headerBar}>
