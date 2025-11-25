@@ -32,9 +32,9 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           <LightGrid variant="settings" />
         </div>
         <div className={styles.headerDivider} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontWeight: 700, color: '#e6f7ff' }}>Settings</div>
-          <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Customize quiz behavior, filters, and audio</div>
+        <div className={styles.questionWell}>
+          <div className={styles.questionText}>Settings</div>
+          <div className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>Customize quiz behavior, filters, and audio</div>
         </div>
       </div>
 
