@@ -61,6 +61,9 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
   const bsTimerRef = useRef<number | null>(null);
   const muted: boolean = localStorage.getItem('quiz:muted') === '1';
   const [timedMode, setTimedMode] = useState<boolean>(() => localStorage.getItem('aws:timedMode') === '1');
+  const timerDuration = 15; // seconds per question when timedMode is on
+  const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
+  const timerRef = useRef<number | null>(null);
   const [locked, setLocked] = useState<boolean>(() => localStorage.getItem('quiz:locked') === '1');
 
   function toggleLock() {
@@ -74,6 +77,42 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
     setTimedMode(next);
     try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
   }
+
+  function stopTimer() {
+    if (timerRef.current) {
+      window.clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }
+
+  useEffect(() => {
+    // Reset timer when question changes
+    setTimeLeft(timerDuration);
+    stopTimer();
+    if (!timedMode) return;
+    timerRef.current = window.setInterval(() => {
+      setTimeLeft((t) => {
+        if (t <= 1) {
+          stopTimer();
+          setShowAnswer(true);
+          // reveal correct answer
+          const correctLineText = (missingLine !== null && entry && entry.answerLines && entry.answerLines[missingLine]) ? entry.answerLines[missingLine].raw.trim() : null;
+          const correctIndex = options.findIndex((o) => {
+            const normalize = (s: string | null) => s ? s.replace(/\s+/g, ' ').trim().toLowerCase() : null;
+            return normalize(o.canonical) === normalize(correctLineText);
+          });
+          if (correctIndex !== -1) setSelected(correctIndex);
+          setCurrentStreak(0);
+          localStorage.setItem('bio:currentStreak', '0');
+          try { const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext; const ctx = new AudioCtx(); const o = ctx.createOscillator(); const g = ctx.createGain(); o.type = 'sine'; o.frequency.value = 220; o.connect(g); g.connect(ctx.destination); g.gain.value = 0.0001; o.start(); const now = ctx.currentTime; g.gain.exponentialRampToValueAtTime(0.08, now + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, now + 0.18); o.stop(now + 0.22); setTimeout(() => { try { ctx.close(); } catch (e) {} }, 300); } catch (e) {}
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => stopTimer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, timedMode]);
 
   useEffect(() => {
     try {
@@ -234,6 +273,12 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
         </div>
       </div>
       {/* header controls moved to Settings */}
+
+      {timedMode && (
+        <div className={styles.progressWrap} aria-hidden>
+          <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${(timeLeft / timerDuration) * 100}%` }} />
+        </div>
+      )}
 
       <div style={{ marginTop: 10 }}>
         {/* Render the full answer block inside a single <pre> to preserve exact indentation and line breaks. */}
