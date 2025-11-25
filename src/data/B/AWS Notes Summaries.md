@@ -563,3 +563,44 @@ _Inbound data tranfers into AWS regions from the Internet is free_
 - AWS OpsWorks // Configuration management service that provides managed instances of Chef and Puppet to automate how servers are configured, deployed and managed across EC2 instances or on-prem
 - AWS Knowledge Center // Troubleshooting starting point; contains most frequent & common questions and request, and AWS-provided solutions for the same
 - AWS Support Center // Hub for managing your support cases; Developer Support Plans and higher can chat or call engineers; Enterprise-level customers have dedicated TAM
+
+## Cram Summary 
+
+- Savings Plans // Applies to EC2 instances; Compute Savings Plans (66% cost reduction); EC2 Instance Savings Plan (up to 72% savings)
+- Compute Savings Plan // Cost reduction up to 66%, apply automatically to EC2 instances, Fargate and Lambda
+- EC2 Instance Savings Plan // Lowest prices; cost reduction up to 72%; selected instance family in a region
+- Security Group // Think EC2 instances; virtual firewall to control incoming and outgoing traffic
+- Network Access Control List (NACL) // Think VPC; virtual firewall for incoming and outgoing subnet traffic
+- AWS CloudTrail Insights // Think API Calls; continuously analzes CloudTrail management events
+- AWS Management Console // Think MFA, U+P for best practices
+- Cost Allocation Tags // Think customer-enabled; organize cost by billing dimensions
+- Amazon Detective // Think internal security, GuardDuty plus; analyze VPC flow logs, CloudTrail and GuardDuty; examine resources, users and interactions between
+- Amazon Inspector // Think external security, not "Detective"; test network accessibility of EC2 instances, security state of apps on those instances
+- AWS CloudTrail // Think history, logging; provides visibility into user activity by recording actions taken on account
+- AWS Trusted Advisor // Think provisioned optimization; guidance to help provision resources following best practices
+- AWS OpsHub // Think Snowball; GUI to manage Snowball devices
+- AppStream 2.0 // Think desktop streaming; centrally manage desktop applications, stream to any computer
+- AWS Transfer Family // Think FTP; aggregated name for "AWS Transfer for SFTP", "AWS Transfer for FPTS", and "AWS Transfer for FTP"
+- Backup and Restore Strategy // Think "redeploy"; replicate data to other regions
+- Pilot Light Strategy // Think "waiting to ignite"; waiting copy of infra in different region
+- Warm Standby Strategy // Think "ready to go"; scaled down functional copy in secondary region waiting for scale up
+- Multi-Site, Active-Active Strategy // Think "simultaneous"; running workoad in multiple regions
+- EC2 Instance Types // Compute-optimized, Memory-optimized, Storage-optimized, Accelerated computing-optimized
+- Compute-Optimized Instance Types // Think "HPC"; designed for machine learning, high-perf web servers, scientific modeling, etc.
+- Storage-Optimized Instance Types // Think "read/write big data"; used for data warehousing, log processing, very large datasets
+- Accelerated compting-Optimized Instance Types // Think "graphics"; GPU compute, GPU graphics, and FPGA programmable hardware types available
+- AWS Resource Groups // Think "organizing resources"; manage, automate resources simultaneously
+- AWS Organizations // Think "organizing accounts"; can only make, organize and decorate accounts with minor billing capability (Consolidated Billing combines member accounts into management account for single bill)
+- Amazon DynamoDb Accelerator (DAX) // Think "DynamoDb cache"; AWS recommends this over ElastiCache for DynamoDb itself
+- CloudTrail Events // Record of activity in an AWS account, has three types: management events (default), data events (opt-in, additional cost), CloudTrail Insights events (opt-in, additional cost)
+- Management Events // Default CloudTrail event type; describes management operations in account like setting up logging, registering devices, configuring routing; "control plane operations" 
+- Data Events // High-volume events; opt-in CloudTrail event type at additional cost; describes operations on resources; S3 API, Lambda execution, S3 activity on AWS Outposts; "data plan operations"
+- CloudTrail Insight Events // Opt-in CloudTrail event type; describe unusual activity in AWS account; disabled when trail is created, must be enabled
+- AWS Control Tower // Think "landing zones"; deploy and govern multi-account AWS environment, day-to-day reminders
+- AWS Elastic Beanstalk // Think "Free, easy EC2"; no charge to deploy AWS Elastic Beanstalk, just pay for underlying resources consumed
+- AWS Partner Solutions (Quick Starts) // Think "reference deployments"; compress procedures into several steps for specific workloads
+- AWS Architecture Center // Think "architecture center"; contains diagrams, solutions, patterns, and best practices for reference architectures
+- Infrastructure Event Management // Think "bespoke Enterprise O-R plus"; short-term engagement with AWS support for deeper understanding of customer use cases
+- AWS Global Services // Think "IAM, Route 53, and Work- stuff"; Route 53, Chime, WorkDocs, WorkMail, WorkSpaces, and WorkLink
+- AWS WAF Coverage // Think "WAF CDN"; tightly integrated with CloudFront, Application Load Balancer, API Gateway and AppSync which are all content delivery solutions
+- AWS Edge Locations // Think "CDN caching"; data centers strategically located for content delivery

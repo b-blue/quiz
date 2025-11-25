@@ -1398,5 +1398,195 @@
     "term": "AWS Support Center",
     "definition": "Hub for managing your support cases; Developer Support Plans and higher can chat or call engineers; Enterprise-level customers have dedicated TAM",
     "section": "Other Services Summary"
+  },
+  {
+    "term": "Savings Plans",
+    "definition": "Applies to EC2 instances; Compute Savings Plans (66% cost reduction); EC2 Instance Savings Plan (up to 72% savings)",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Compute Savings Plan",
+    "definition": "Cost reduction up to 66%, apply automatically to EC2 instances, Fargate and Lambda",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "EC2 Instance Savings Plan",
+    "definition": "Lowest prices; cost reduction up to 72%; selected instance family in a region",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Security Group",
+    "definition": "Think EC2 instances; virtual firewall to control incoming and outgoing traffic",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Network Access Control List (NACL)",
+    "definition": "Think VPC; virtual firewall for incoming and outgoing subnet traffic",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS CloudTrail Insights",
+    "definition": "Think API Calls; continuously analzes CloudTrail management events",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Management Console",
+    "definition": "Think MFA, U+P for best practices",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Cost Allocation Tags",
+    "definition": "Think customer-enabled; organize cost by billing dimensions",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Amazon Detective",
+    "definition": "Think internal security, GuardDuty plus; analyze VPC flow logs, CloudTrail and GuardDuty; examine resources, users and interactions between",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Amazon Inspector",
+    "definition": "Think external security, not \"Detective\"; test network accessibility of EC2 instances, security state of apps on those instances",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS CloudTrail",
+    "definition": "Think history, logging; provides visibility into user activity by recording actions taken on account",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Trusted Advisor",
+    "definition": "Think provisioned optimization; guidance to help provision resources following best practices",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS OpsHub",
+    "definition": "Think Snowball; GUI to manage Snowball devices",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AppStream 2.0",
+    "definition": "Think desktop streaming; centrally manage desktop applications, stream to any computer",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Transfer Family",
+    "definition": "Think FTP; aggregated name for \"AWS Transfer for SFTP\", \"AWS Transfer for FPTS\", and \"AWS Transfer for FTP\"",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Backup and Restore Strategy",
+    "definition": "Think \"redeploy\"; replicate data to other regions",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Pilot Light Strategy",
+    "definition": "Think \"waiting to ignite\"; waiting copy of infra in different region",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Warm Standby Strategy",
+    "definition": "Think \"ready to go\"; scaled down functional copy in secondary region waiting for scale up",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Multi-Site, Active-Active Strategy",
+    "definition": "Think \"simultaneous\"; running workoad in multiple regions",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "EC2 Instance Types",
+    "definition": "Compute-optimized, Memory-optimized, Storage-optimized, Accelerated computing-optimized",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Compute-Optimized Instance Types",
+    "definition": "Think \"HPC\"; designed for machine learning, high-perf web servers, scientific modeling, etc.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Storage-Optimized Instance Types",
+    "definition": "Think \"read/write big data\"; used for data warehousing, log processing, very large datasets",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Accelerated compting-Optimized Instance Types",
+    "definition": "Think \"graphics\"; GPU compute, GPU graphics, and FPGA programmable hardware types available",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Resource Groups",
+    "definition": "Think \"organizing resources\"; manage, automate resources simultaneously",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Organizations",
+    "definition": "Think \"organizing accounts\"; can only make, organize and decorate accounts with minor billing capability (Consolidated Billing combines member accounts into management account for single bill)",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Amazon DynamoDb Accelerator (DAX)",
+    "definition": "Think \"DynamoDb cache\"; AWS recommends this over ElastiCache for DynamoDb itself",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "CloudTrail Events",
+    "definition": "Record of activity in an AWS account, has three types: management events (default), data events (opt-in, additional cost), CloudTrail Insights events (opt-in, additional cost)",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Management Events",
+    "definition": "Default CloudTrail event type; describes management operations in account like setting up logging, registering devices, configuring routing; \"control plane operations\"",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Data Events",
+    "definition": "High-volume events; opt-in CloudTrail event type at additional cost; describes operations on resources; S3 API, Lambda execution, S3 activity on AWS Outposts; \"data plan operations\"",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "CloudTrail Insight Events",
+    "definition": "Opt-in CloudTrail event type; describe unusual activity in AWS account; disabled when trail is created, must be enabled",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Control Tower",
+    "definition": "Think \"landing zones\"; deploy and govern multi-account AWS environment, day-to-day reminders",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Elastic Beanstalk",
+    "definition": "Think \"Free, easy EC2\"; no charge to deploy AWS Elastic Beanstalk, just pay for underlying resources consumed",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Partner Solutions (Quick Starts)",
+    "definition": "Think \"reference deployments\"; compress procedures into several steps for specific workloads",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Architecture Center",
+    "definition": "Think \"architecture center\"; contains diagrams, solutions, patterns, and best practices for reference architectures",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Infrastructure Event Management",
+    "definition": "Think \"bespoke Enterprise O-R plus\"; short-term engagement with AWS support for deeper understanding of customer use cases",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Global Services",
+    "definition": "Think \"IAM, Route 53, and Work- stuff\"; Route 53, Chime, WorkDocs, WorkMail, WorkSpaces, and WorkLink",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS WAF Coverage",
+    "definition": "Think \"WAF CDN\"; tightly integrated with CloudFront, Application Load Balancer, API Gateway and AppSync which are all content delivery solutions",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Edge Locations",
+    "definition": "Think \"CDN caching\"; data centers strategically located for content delivery",
+    "section": "Cram Summary"
   }
 ]
