@@ -18,9 +18,12 @@
   --accent: #7fe8ff;
   --btn-bg: #122938; /* lighter button background for clearer 3D */
   --btn-border: rgba(255,255,255,0.08);
-  /* subtle colored shadows for boxy buttons */
-  --shadow-right: rgba(122,142,255,0.16); /* soft bluish highlight */
-  --shadow-bottom: rgba(60,80,120,0.18); /* muted blue-gray depth */
+  /* subtle colored shadows for boxy buttons (decomposed so alpha can be animated) */
+  --shadow-right-r: 122; --shadow-right-g: 142; --shadow-right-b: 255;
+  --shadow-bottom-r: 60; --shadow-bottom-g: 80; --shadow-bottom-b: 120;
+  --shadow-alpha: 0.16; /* animatable alpha for stepped-edge color */
+  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
+  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
   --ambient-shadow: rgba(0,0,0,0.55); /* default ambient drop shadow (can be overridden per-variant) */
   --correct-bg: #143b1f;
   --correct-border: #1f8a3a;

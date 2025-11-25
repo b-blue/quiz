@@ -519,17 +519,52 @@
 }
 
 /* Ambient shadow tinting per-variant: tie ambient drop shadow color to the page variant */
-.quizContainer[data-variant="aws"] { --ambient-shadow: rgba(78,168,255,0.32); }
-.quizContainer[data-variant="bio"] { --ambient-shadow: rgba(100,220,140,0.28); }
-.quizContainer[data-variant="settings"] { --ambient-shadow: rgba(255,200,60,0.28); }
-
-/* subtle pulse/glow for active lights */
-@keyframes gizmo-pulse {
-  0% { box-shadow: 0 6px 18px rgba(78,168,255,0.28), 0 0 6px rgba(127,255,212,0.18) inset; transform: scale(1.05); }
-  50% { box-shadow: 0 10px 28px rgba(78,168,255,0.34), 0 0 10px rgba(127,255,212,0.22) inset; transform: scale(1.2); }
-  100% { box-shadow: 0 6px 18px rgba(78,168,255,0.28), 0 0 6px rgba(127,255,212,0.18) inset; transform: scale(1.05); }
+.quizContainer[data-variant="aws"] {
+  --ambient-shadow: rgba(78,168,255,0.32);
+  --shadow-right-r: 120; --shadow-right-g: 160; --shadow-right-b: 255;
+  --shadow-bottom-r: 40; --shadow-bottom-g: 70; --shadow-bottom-b: 130;
+  --shadow-alpha: 0.28;
+  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
+  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
 }
-.gizmoOn { animation: gizmo-pulse 1800ms ease-in-out infinite; }
+.quizContainer[data-variant="bio"] {
+  --ambient-shadow: rgba(100,220,140,0.28);
+  --shadow-right-r: 140; --shadow-right-g: 240; --shadow-right-b: 170;
+  --shadow-bottom-r: 40; --shadow-bottom-g: 120; --shadow-bottom-b: 80;
+  --shadow-alpha: 0.26;
+  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
+  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
+}
+.quizContainer[data-variant="settings"] {
+  --ambient-shadow: rgba(255,200,60,0.28);
+  --shadow-right-r: 255; --shadow-right-g: 220; --shadow-right-b: 120;
+  --shadow-bottom-r: 160; --shadow-bottom-g: 110; --shadow-bottom-b: 30;
+  --shadow-alpha: 0.28;
+  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
+  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
+}
+
+.btn3d {
+  z-index: 2;
+}
+.btn3d::before,
+.quizOption::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  right: -18px;
+  top: -18px;
+  bottom: -18px;
+  border-radius: 12px;
+  background: radial-gradient(closest-side, var(--ambient-shadow), transparent 40%);
+  filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+/* Pulsing animations removed: stepped-edge and ambient tinting are static now. */
 
 /* sci-fi title styling */
 .sciTitle {

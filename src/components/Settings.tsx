@@ -13,6 +13,7 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
     try { localStorage.setItem('quiz:muted', next ? '1' : '0'); } catch (e) {}
     window.location.reload();
   }
+  
   function setStartMode(next: 'aws'|'bio') {
     try { localStorage.setItem('app:startMode', next); } catch (e) {}
     window.location.reload();
@@ -52,9 +53,10 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
-          <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
-        </div>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
+              <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
+              {/* Ambient pulse feature removed — pulsing disabled globally */}
+            </div>
 
         <div style={{ marginTop: 16 }}>
           <label style={{ color: 'var(--muted)', marginRight: 8 }}>Filter by section:</label>
