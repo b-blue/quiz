@@ -704,6 +704,7 @@
 
 .terminalLine {
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
   color: #dff8ff;
 }
 
@@ -716,7 +717,7 @@
 .terminalFooter {
   flex: 1 1 60%;
   min-height: 64px;
-  max-height: 160px;
+  max-height: none;
   padding: 10px;
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.7));
@@ -724,7 +725,7 @@
   color: #dff8ff;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
   font-size: 13px;
-  overflow: auto;
+  overflow: visible;
 }
 .terminalFooter, .terminalFooter * { min-width: 0; }
 
@@ -820,7 +821,7 @@
   /* reduce sizes of header wells and terminal to save vertical space */
   .gizmoWell, .terminalWell { width: 56px; min-width: 56px; height: 56px; }
   .questionWell { min-height: 46px; padding: 6px 8px; }
-  .terminalFooter { min-height: 36px; max-height: 72px; padding: 6px; overflow: hidden; }
+  .terminalFooter { min-height: 36px; max-height: none; padding: 6px; overflow: visible; }
   .quizOptions { gap: 0.45rem; }
   .streaks { font-size: 0.88rem; }
   /* do not constrain by viewport height; allow natural flow */
