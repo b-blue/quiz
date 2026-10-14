@@ -560,14 +560,26 @@
   box-shadow: 0 6px 18px rgba(110,220,120,0.22), 0 0 6px rgba(200,255,220,0.16) inset;
   transform: scale(1.18);
 }
+.gizmoGrid[data-variant="saa"] .gizmoOn {
+  background: linear-gradient(135deg, #e2d4ff, #a78bfa);
+  box-shadow: 0 6px 18px rgba(167,139,250,0.24), 0 0 6px rgba(226,212,255,0.18) inset;
+  transform: scale(1.18);
+}
 
 /* Ambient shadow tinting per-variant: tie ambient drop shadow color to the page variant */
-.quizContainer[data-variant="aws"],
-.quizContainer[data-variant="saa"] {
+.quizContainer[data-variant="aws"] {
   --ambient-shadow: rgba(78,168,255,0.32);
   --shadow-right-r: 120; --shadow-right-g: 160; --shadow-right-b: 255;
   --shadow-bottom-r: 40; --shadow-bottom-g: 70; --shadow-bottom-b: 130;
   --shadow-alpha: 0.28;
+  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
+  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
+}
+.quizContainer[data-variant="saa"] {
+  --ambient-shadow: rgba(167,139,250,0.28);
+  --shadow-right-r: 196; --shadow-right-g: 181; --shadow-right-b: 253;
+  --shadow-bottom-r: 109; --shadow-bottom-g: 82; --shadow-bottom-b: 170;
+  --shadow-alpha: 0.27;
   --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
   --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
 }
