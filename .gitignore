@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local practice test files; do not publish these source files.
+src/data/B/test-*.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

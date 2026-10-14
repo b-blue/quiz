@@ -1,10 +1,16 @@
 import raw from '../data/terms.json';
+import saaRaw from '../data/saa-terms.json';
 import type { Term, QuizQuestion } from '../types';
 
-const TERMS: Term[] = ((raw as unknown as Term[]) ?? []).map((t) => ({
-  ...t,
-  section: typeof t.section === 'string' ? t.section.trim() : t.section,
-}));
+function normalizeTerms(input: unknown): Term[] {
+  return ((input as Term[]) ?? []).map((t) => ({
+    ...t,
+    section: typeof t.section === 'string' ? t.section.trim() : t.section,
+  }));
+}
+
+const TERMS = normalizeTerms(raw);
+const SAA_TERMS = normalizeTerms(saaRaw);
 
 function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
@@ -19,12 +25,16 @@ function uniqueStrings(arr: string[]): string[] {
   return Array.from(new Set(arr));
 }
 
-export function getAllTerms(): Term[] {
-  return TERMS;
+export function getAllTerms(terms: Term[] = TERMS): Term[] {
+  return terms;
 }
 
-export function getSections(): string[] {
-  return Array.from(new Set(TERMS.map((t) => (typeof t.section === 'string' ? t.section.trim() : t.section)).filter((s): s is string => Boolean(s)))).sort();
+export function getSaaTerms(): Term[] {
+  return SAA_TERMS;
+}
+
+export function getSections(terms: Term[] = TERMS): string[] {
+  return Array.from(new Set(terms.map((t) => (typeof t.section === 'string' ? t.section.trim() : t.section)).filter((s): s is string => Boolean(s)))).sort();
 }
 
 /**
@@ -58,10 +68,10 @@ function pickDistractors(correct: Term, count = 3, pool: Term[] = TERMS): string
   return chosen.slice(0, count);
 }
 
-export function getRandomQuestion(section?: string | null): QuizQuestion | null {
-  if (!TERMS.length) return null;
+export function getRandomQuestion(section?: string | null, terms: Term[] = TERMS): QuizQuestion | null {
+  if (!terms.length) return null;
 
-  const pool = section ? TERMS.filter((t) => t.section === section) : TERMS;
+  const pool = section ? terms.filter((t) => t.section === section) : terms;
   if (!pool.length) return null;
 
   const correct = pool[Math.floor(Math.random() * pool.length)];
@@ -77,11 +87,11 @@ export function getRandomQuestion(section?: string | null): QuizQuestion | null 
   };
 }
 
-export function getQuestionFromDefinition(def: string): QuizQuestion | null {
-  const entry = TERMS.find((t) => t.definition === def);
+export function getQuestionFromDefinition(def: string, terms: Term[] = TERMS): QuizQuestion | null {
+  const entry = terms.find((t) => t.definition === def);
   if (!entry) return null;
 
-  const distractors = pickDistractors(entry, 3);
+  const distractors = pickDistractors(entry, 3, terms);
   const options = shuffle([entry.term, ...distractors]);
   const correctIndex = options.findIndex((o) => o === entry.term);
   return { definition: entry.definition, options, correctIndex };

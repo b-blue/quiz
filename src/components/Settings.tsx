@@ -1,31 +1,34 @@
-import { getSections } from '../lib/terms';
+import { getSections, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import LightGrid from './LightGrid';
 
 export default function Settings({ onBack }: { onBack?: () => void }) {
-  const sections = getSections();
-
   const muted = localStorage.getItem('quiz:muted') === '1';
+  const startMode = (() => {
+    const v = localStorage.getItem('app:startMode');
+    return v === 'bio' || v === 'saa' ? v : 'aws';
+  })();
+  const sectionMode = startMode === 'saa' ? 'saa' : 'aws';
+  const sections = sectionMode === 'saa' ? getSections(getSaaTerms()) : getSections();
   const selectedSection = (() => {
-    const v = localStorage.getItem('aws:selectedSection') || '';
+    const v = localStorage.getItem(`${sectionMode}:selectedSection`) || '';
     return typeof v === 'string' ? v.trim() : v;
   })();
-  const startMode = localStorage.getItem('app:startMode') === 'bio' ? 'bio' : 'aws';
 
   function setMuted(next: boolean) {
     try { localStorage.setItem('quiz:muted', next ? '1' : '0'); } catch (e) {}
     window.location.reload();
   }
   
-  function setStartMode(next: 'aws'|'bio') {
+  function setStartMode(next: 'aws'|'saa'|'bio') {
     try { localStorage.setItem('app:startMode', next); } catch (e) {}
     window.location.reload();
   }
   function setSection(val: string) {
     try {
       const v = typeof val === 'string' ? val.trim() : val;
-      if (!v) localStorage.removeItem('aws:selectedSection');
-      else localStorage.setItem('aws:selectedSection', v as string);
+      if (!v) localStorage.removeItem(`${sectionMode}:selectedSection`);
+      else localStorage.setItem(`${sectionMode}:selectedSection`, v as string);
     } catch (e) {}
     window.location.reload();
   }
@@ -63,6 +66,7 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           <div>
             <div style={{ display: 'flex', gap: 8 }}>
               <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>AWS</button>
+              <button className={startMode === 'saa' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('saa')}>SAA</button>
               <button className={startMode === 'bio' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('bio')}>BIO</button>
             </div>
           </div>

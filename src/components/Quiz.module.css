@@ -562,7 +562,8 @@
 }
 
 /* Ambient shadow tinting per-variant: tie ambient drop shadow color to the page variant */
-.quizContainer[data-variant="aws"] {
+.quizContainer[data-variant="aws"],
+.quizContainer[data-variant="saa"] {
   --ambient-shadow: rgba(78,168,255,0.32);
   --shadow-right-r: 120; --shadow-right-g: 160; --shadow-right-b: 255;
   --shadow-bottom-r: 40; --shadow-bottom-g: 70; --shadow-bottom-b: 130;

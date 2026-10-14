@@ -1,22 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
-import { getRandomQuestion, getAllTerms } from '../lib/terms';
+import { getRandomQuestion, getAllTerms, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import LightGrid from './LightGrid';
 
-export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }) {
+export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?: () => void; mode?: 'aws' | 'saa' }) {
+  const terms = mode === 'saa' ? getSaaTerms() : getAllTerms();
   const selectedSection: string | null = (() => {
-    const v = localStorage.getItem('aws:selectedSection');
+    const v = localStorage.getItem(`${mode}:selectedSection`);
     return v === null ? null : (typeof v === 'string' ? v.trim() : v);
   })();
-  const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection));
+  const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection, terms));
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   // Buttons are simple press targets now (no drag-and-drop)
 
   // Game state: streaks (per-quiz), muted
-  const [currentStreak, setCurrentStreak] = useState<number>(() => Number(localStorage.getItem('aws:currentStreak') || 0));
-  const [bestStreak, setBestStreak] = useState<number>(() => Number(localStorage.getItem('aws:bestStreak') || 0));
+  const [currentStreak, setCurrentStreak] = useState<number>(() => Number(localStorage.getItem(`${mode}:currentStreak`) || 0));
+  const [bestStreak, setBestStreak] = useState<number>(() => Number(localStorage.getItem(`${mode}:bestStreak`) || 0));
   const [csPop, setCsPop] = useState(false);
   const [bsPop, setBsPop] = useState(false);
   const csTimerRef = useRef<number | null>(null);
@@ -24,7 +25,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
   const muted: boolean = localStorage.getItem('quiz:muted') === '1';
 
   // Timed per-question mode
-  const [timedMode, setTimedMode] = useState<boolean>(() => localStorage.getItem('aws:timedMode') === '1');
+  const [timedMode, setTimedMode] = useState<boolean>(() => localStorage.getItem(`${mode}:timedMode`) === '1');
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
@@ -41,16 +42,16 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
   function toggleTimedMode() {
     const next = !timedMode;
     setTimedMode(next);
-    try { localStorage.setItem('aws:timedMode', next ? '1' : '0'); } catch (e) {}
+    try { localStorage.setItem(`${mode}:timedMode`, next ? '1' : '0'); } catch (e) {}
   }
 
   function next() {
     // pick a new random question, but avoid returning the same definition immediately
     const maxAttempts = 10;
-    let nextQ = getRandomQuestion(selectedSection ?? undefined);
+    let nextQ = getRandomQuestion(selectedSection ?? undefined, terms);
     let attempts = 0;
     while (nextQ && question && nextQ.definition === question.definition && attempts < maxAttempts) {
-      nextQ = getRandomQuestion(selectedSection ?? undefined);
+      nextQ = getRandomQuestion(selectedSection ?? undefined, terms);
       attempts++;
     }
     setQuestion(nextQ);
@@ -71,18 +72,6 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
     } catch (e) {}
   }, [locked]);
 
-  if (!question) {
-    return (
-      <div>
-        {selectedSection ? (
-          <>No terms available for the selected section.</>
-        ) : (
-          <>No terms available. Run the extractor to generate data.</>
-        )}
-      </div>
-    );
-  }
-
   function onSelect(i: number) {
     if (showAnswer) return;
     // stop timer while showing answer
@@ -98,7 +87,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
 
       const newStreak = currentStreak + 1;
       setCurrentStreak(newStreak);
-      localStorage.setItem('aws:currentStreak', String(newStreak));
+      localStorage.setItem(`${mode}:currentStreak`, String(newStreak));
 
       // pop + audio cue for current streak multiples of 5
       if (newStreak > 0 && newStreak % 5 === 0) {
@@ -111,7 +100,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
       if (newStreak > bestStreak) {
         const newBest = newStreak;
         setBestStreak(newBest);
-        localStorage.setItem('aws:bestStreak', String(newBest));
+        localStorage.setItem(`${mode}:bestStreak`, String(newBest));
         // extra celebration for new best
         triggerConfetti();
         playTone(880, 0.12);
@@ -125,7 +114,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
       }
     } else {
       setCurrentStreak(0);
-      localStorage.setItem('aws:currentStreak', '0');
+      localStorage.setItem(`${mode}:currentStreak`, '0');
       playTone(220, 0.18);
     }
   }
@@ -189,7 +178,7 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
           // show the correct answer when time expires
           setSelected(question ? question.correctIndex : null);
           setCurrentStreak(0);
-          localStorage.setItem('aws:currentStreak', '0');
+          localStorage.setItem(`${mode}:currentStreak`, '0');
           playTone(220, 0.18);
           return 0;
         }
@@ -219,8 +208,20 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
   // framer-motion dynamic loading removed to avoid Vite import-analysis errors.
   // We use CSS transitions for hover/tap effects instead.
 
+  if (!question) {
+    return (
+      <div>
+        {selectedSection ? (
+          <>No terms available for the selected section.</>
+        ) : (
+          <>No terms available. Run the extractor to generate data.</>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.quizContainer} data-variant="aws">
+    <div className={styles.quizContainer} data-variant={mode}>
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
       <div className={styles.headerBar}>
@@ -273,9 +274,8 @@ export default function Quiz({ onOpenSettings }: { onOpenSettings?: () => void }
                 } else {
                   lines.push(`Incorrect — the correct answer is "${question.options[question.correctIndex]}"`);
                   if (selected !== null) {
-                    const all = getAllTerms();
                     const selectedTerm = question.options[selected];
-                    const selectedEntry = all.find((t) => t.term === selectedTerm);
+                    const selectedEntry = terms.find((t) => t.term === selectedTerm);
                     if (selectedEntry?.definition) lines.push(`${selectedTerm} — ${selectedEntry.definition}`);
                   }
                 }
