@@ -226,7 +226,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
 
       <div className={styles.headerBar}>
           <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid variant="default" />
+          <LightGrid variant={mode === 'saa' ? 'saa' : 'default'} />
         </div>
           <div className={styles.headerDivider} />
           <div className={styles.questionWell}>

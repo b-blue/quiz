@@ -27,7 +27,7 @@ function diagonalWave(step: number) {
   return out;
 }
 
-export default function LightGrid({ variant }: { variant?: 'default'|'settings'|'bio' } = { variant: 'default' }) {
+export default function LightGrid({ variant }: { variant?: 'default'|'settings'|'bio'|'saa' } = { variant: 'default' }) {
   const [pattern, setPattern] = useState<boolean[]>(() => randomPattern());
   const [step, setStep] = useState(0);
 
