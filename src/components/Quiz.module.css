@@ -560,10 +560,14 @@
   box-shadow: 0 6px 18px rgba(110,220,120,0.22), 0 0 6px rgba(200,255,220,0.16) inset;
   transform: scale(1.18);
 }
+.gizmoGrid[data-variant="saa"] .gizmoLight {
+  background: rgba(167,139,250,0.22);
+  box-shadow: 0 0 6px rgba(167,139,250,0.14) inset;
+}
 .gizmoGrid[data-variant="saa"] .gizmoOn {
-  background: linear-gradient(135deg, #e2d4ff, #a78bfa);
-  box-shadow: 0 6px 18px rgba(167,139,250,0.24), 0 0 6px rgba(226,212,255,0.18) inset;
-  transform: scale(1.18);
+  background: linear-gradient(135deg, #f0eaff, #a78bfa);
+  box-shadow: 0 6px 18px rgba(167,139,250,0.42), 0 0 6px rgba(240,234,255,0.3) inset;
+  transform: scale(1.22);
 }
 
 /* Ambient shadow tinting per-variant: tie ambient drop shadow color to the page variant */
