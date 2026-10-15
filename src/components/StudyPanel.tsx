@@ -3,7 +3,7 @@ import remarkGfm from 'remark-gfm';
 import clfStudyMarkdown from '../data/B/CLF-C02.md?raw';
 import saaStudyMarkdown from '../data/B/SAA-C03.md?raw';
 import styles from './Quiz.module.css';
-import LightGrid from './LightGrid';
+import QuizHeader from './QuizHeader';
 
 export default function StudyPanel({ mode, onBack }: { mode: 'aws' | 'saa'; onBack: () => void }) {
   const isSaa = mode === 'saa';
@@ -12,21 +12,18 @@ export default function StudyPanel({ mode, onBack }: { mode: 'aws' | 'saa'; onBa
 
   return (
     <div className={styles.quizContainer} data-variant={mode}>
-      <div className={styles.studyHeader}>
-        <div className={styles.studyTitleBlock}>
-          <div className={styles.gizmoWell} aria-hidden>
-            <LightGrid variant={isSaa ? 'saa' : 'default'} />
-          </div>
+      <QuizHeader variant={mode}>
+        <div className={styles.studyHeaderContent}>
           <h1 className={styles.studyTitle}>{title}</h1>
+          <button
+            className={`${styles.studyBackButton} ${styles.btn3d}`}
+            onClick={onBack}
+            aria-label="Return to quiz"
+          >
+            ← Back to quiz
+          </button>
         </div>
-        <button
-          className={`${styles.studyBackButton} ${styles.btn3d}`}
-          onClick={onBack}
-          aria-label="Return to quiz"
-        >
-          ← Back to quiz
-        </button>
-      </div>
+      </QuizHeader>
       <article className={styles.studyContent}>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
       </article>

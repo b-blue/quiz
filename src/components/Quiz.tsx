@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
-import LightGrid from './LightGrid';
+import QuizHeader from './QuizHeader';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -205,15 +205,9 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     <div className={styles.quizContainer} data-variant={mode}>
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
-      <div className={styles.headerBar}>
-          <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid variant={mode === 'saa' ? 'saa' : 'default'} />
-        </div>
-          <div className={styles.headerDivider} />
-          <div className={styles.questionWell}>
-            <div className={styles.questionText}>{question.definition}</div>
-          </div>
-      </div>
+      <QuizHeader variant={mode}>
+        <div className={styles.questionText}>{question.definition}</div>
+      </QuizHeader>
       {/* header controls moved to Settings */}
       {/* question is displayed in the header's question well */}
       <div className={styles.progressWrap} aria-hidden>

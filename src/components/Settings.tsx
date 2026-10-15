@@ -1,6 +1,6 @@
 import { getSections, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
-import LightGrid from './LightGrid';
+import QuizHeader from './QuizHeader';
 
 export default function Settings({ onBack }: { onBack?: () => void }) {
   const muted = localStorage.getItem('quiz:muted') === '1';
@@ -35,15 +35,9 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
 
   return (
     <div className={styles.quizContainer} data-variant="settings">
-      <div className={styles.headerBar}>
-        <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid variant="settings" />
-        </div>
-        <div className={styles.headerDivider} />
-        <div className={styles.questionWell}>
-          <div className={styles.questionText}>Settings</div>
-        </div>
-      </div>
+      <QuizHeader variant="settings">
+        <div className={styles.questionText}>Settings</div>
+      </QuizHeader>
 
       <div className={styles.settingsCard} style={{ marginTop: 12, padding: '1rem' }}>
         {/* Filter moved above Start Mode to prioritize section selection */}

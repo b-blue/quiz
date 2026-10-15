@@ -180,21 +180,13 @@
   font-size: 1.2rem;
   cursor: pointer;
 }
-.studyHeader {
+.studyHeaderContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
-  box-shadow: inset 0 3px 10px rgba(0,0,0,0.35);
-}
-.studyTitleBlock {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
   min-width: 0;
 }
 .studyTitle { margin: 0; font-size: 1.25rem; }
@@ -532,15 +524,6 @@
   box-shadow: inset 0 2px 6px rgba(255,255,255,0.02);
 }
 
-.headerDivider {
-  width: 1px;
-  height: 56px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  border-radius: 1px;
-  margin: 0 6px;
-  flex-shrink: 0;
-}
-
 .questionWell {
   flex: 1 1 auto;
   min-height: 76px;
@@ -594,19 +577,11 @@
   box-shadow: 0 6px 18px rgba(255,200,60,0.18), 0 0 6px rgba(255,240,200,0.14) inset;
   transform: scale(1.18);
 }
-.gizmoGrid[data-variant="bio"] .gizmoOn {
+.gizmoGrid[data-variant="bio"] .gizmoOn,
+.gizmoGrid[data-variant="saa"] .gizmoOn {
   background: linear-gradient(135deg, #bfffb0, #4ef78a);
   box-shadow: 0 6px 18px rgba(110,220,120,0.22), 0 0 6px rgba(200,255,220,0.16) inset;
   transform: scale(1.18);
-}
-.gizmoGrid[data-variant="saa"] .gizmoLight {
-  background: rgba(167,139,250,0.22);
-  box-shadow: 0 0 6px rgba(167,139,250,0.14) inset;
-}
-.gizmoGrid[data-variant="saa"] .gizmoOn {
-  background: linear-gradient(135deg, #f0eaff, #a78bfa);
-  box-shadow: 0 6px 18px rgba(167,139,250,0.42), 0 0 6px rgba(240,234,255,0.3) inset;
-  transform: scale(1.22);
 }
 
 /* Ambient shadow tinting per-variant: tie ambient drop shadow color to the page variant */
@@ -618,22 +593,20 @@
   --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
   --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
 }
-.quizContainer[data-variant="saa"] {
-  --ambient-shadow: rgba(167,139,250,0.28);
-  --shadow-right-r: 196; --shadow-right-g: 181; --shadow-right-b: 253;
-  --shadow-bottom-r: 109; --shadow-bottom-g: 82; --shadow-bottom-b: 170;
-  --shadow-alpha: 0.27;
-  --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
-  --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
-}
+.quizContainer[data-variant="saa"],
 .quizContainer[data-variant="bio"] {
   --ambient-shadow: rgba(100,220,140,0.28);
   --shadow-right-r: 140; --shadow-right-g: 240; --shadow-right-b: 170;
   --shadow-bottom-r: 40; --shadow-bottom-g: 120; --shadow-bottom-b: 80;
   --shadow-alpha: 0.26;
+  --accent: #4ef78a;
+  --primary: #4fcf7c;
   --shadow-right: rgba(var(--shadow-right-r), var(--shadow-right-g), var(--shadow-right-b), var(--shadow-alpha));
   --shadow-bottom: rgba(var(--shadow-bottom-r), var(--shadow-bottom-g), var(--shadow-bottom-b), var(--shadow-alpha));
 }
+.quizContainer[data-variant="saa"] .questionText { text-shadow: 0 2px 10px rgba(110,220,140,0.3), 0 1px 2px rgba(0,0,0,0.6); }
+.quizContainer[data-variant="saa"] .progress,
+.quizContainer[data-variant="saa"] .progressAnimated { background: linear-gradient(90deg, #4ef78a, #bfffb0); }
 .quizContainer[data-variant="settings"] {
   --ambient-shadow: rgba(255,200,60,0.28);
   --shadow-right-r: 255; --shadow-right-g: 220; --shadow-right-b: 120;
@@ -871,10 +844,9 @@
     gap: 0.5rem;
     min-height: 68px;
   }
-  .studyHeader { flex-wrap: wrap; align-items: center; }
-  .studyTitleBlock { gap: 10px; }
+  .studyHeaderContent { gap: 8px; }
   .studyTitle { font-size: 1.05rem; }
-  .studyBackButton { margin-left: auto; padding: 0.5rem; font-size: 0.9rem; }
+  .studyBackButton { margin-left: auto; padding: 0.45rem; font-size: 0.85rem; }
   .studyContent { max-height: none; padding: 14px; }
 
   .quizNext {

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { FC } from 'react';
 import raw from '../data/biology2-processed.json';
 import styles from './Quiz.module.css';
-import LightGrid from './LightGrid';
+import QuizHeader from './QuizHeader';
 
 type BioEntry = {
   question: string;
@@ -246,15 +246,9 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
     <div className={styles.quizContainer} data-variant="bio">
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
 
-      <div className={styles.headerBar}>
-        <div className={styles.gizmoWell} aria-hidden>
-          <LightGrid variant="bio" />
-        </div>
-        <div className={styles.headerDivider} />
-        <div className={styles.questionWell}>
-          <div className={styles.questionText}>{question.question}</div>
-        </div>
-      </div>
+      <QuizHeader variant="bio">
+        <div className={styles.questionText}>{question.question}</div>
+      </QuizHeader>
 
       <div className={styles.progressWrap} aria-hidden>
         <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${timedMode ? (timeLeft / timerDuration) * 100 : 0}%` }} />
