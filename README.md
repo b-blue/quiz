@@ -58,11 +58,13 @@ export default defineConfig([
           Key files
           - `src/data/terms.json` — generated CLF-C02 JSON containing term/definition pairs used by the quiz.
           - `src/data/saa-terms.json` — generated SAA-C03 JSON containing term/definition pairs used by the quiz.
+          - `src/data/clf-definition-chunks.json` and `src/data/saa-definition-chunks.json` — curated standalone quiz definitions for source definitions longer than 81 characters; the study panels continue to show the full Markdown.
           - `scripts/extract-terms.js` and `scripts/extract-saa-terms.js` — extract quiz terms from the corresponding study Markdown files.
 
           Notes extractor behavior
           - The CLF-C02 extractor looks for `CLF-C02.md`; the SAA-C03 extractor reads `src/data/B/SAA-C03.md`.
           - The CLF extractor expects term lines in the form `Term // Definition` under headings ending with "Summary". The SAA extractor parses `Term // Definition` entries under second-level section headings.
+          - Quiz prompts are at most 81 characters. Long source definitions are represented by multiple concise quiz chunks. Terms are selected uniformly before choosing a chunk so longer definitions do not increase a term's question frequency.
 
           How to generate `terms.json`
           1. Keep `CLF-C02.md` and `SAA-C03.md` in `src/data/B/`.

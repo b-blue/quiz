@@ -6,7 +6,12 @@
   },
   {
     "term": "Batching",
-    "definition": "Multiple messages per API operation increases throughput; size batches to meet the required rate while respecting the queue's current throughput quota",
+    "definition": "Batching messages per API call raises throughput.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Batching",
+    "definition": "Choose batch sizes that meet demand and stay within queue quotas.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -16,7 +21,12 @@
   },
   {
     "term": "Amazon SQS buffering",
-    "definition": "Decouple producers from slower consumers; messages remain queued during traffic spikes or consumer outages and can be retried",
+    "definition": "SQS decouples producers from slower consumers.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon SQS buffering",
+    "definition": "Messages wait through traffic spikes or consumer outages and can be retried.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -26,17 +36,27 @@
   },
   {
     "term": "SQS queue-based Auto Scaling",
-    "definition": "Scale consumers using backlog per instance, such as visible messages divided by the number of InService instances; target tracking can maintain an acceptable backlog",
+    "definition": "Scale consumers using backlog per instance, such as visible messages per worker.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "SQS queue-based Auto Scaling",
+    "definition": "Target tracking can maintain an acceptable backlog.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Multi-stage SQS workflow",
-    "definition": "Use a separate queue between independently scalable processing stages; scale each worker fleet from its own queue depth",
+    "definition": "Use a separate queue between independently scaled processing stages.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Multi-stage SQS workflow",
+    "definition": "Scale each worker fleet using its own queue depth.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "AWS Lambda SQS event source mapping",
-    "definition": "Polls a queue and invokes a function with messages in batches; useful for serverless processing",
+    "definition": "Lambda polls SQS and invokes a function with batches of messages.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -46,22 +66,42 @@
   },
   {
     "term": "IAM permissions boundary",
-    "definition": "Sets the maximum permissions a user or role can receive; effective permissions are the intersection of the boundary and attached permission policies",
+    "definition": "A permissions boundary caps the permissions a user or role can receive.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM permissions boundary",
+    "definition": "Effective permissions are limited to the boundary and attached policies.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM least privilege",
-    "definition": "Grant only the required actions on the narrowest resource ARN; for S3, bucket actions such as ListBucket use the bucket ARN, while object actions such as DeleteObject use `bucket-name/*`",
+    "definition": "Grant only required actions on the narrowest resource ARN.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM least privilege",
+    "definition": "S3 bucket actions use the bucket ARN; object actions use bucket-name/*.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Cross-account IAM role",
-    "definition": "A principal assumes a role in the resource account for temporary credentials; the role's permissions and the resource policy (such as an S3 bucket policy) must both allow cross-account access",
+    "definition": "A principal assumes a role in the resource account for temporary credentials.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Cross-account IAM role",
+    "definition": "Both role permissions and the resource policy must allow cross-account access.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM policy `aws:SourceIp` condition",
-    "definition": "Evaluates the caller's source IP, not the public or private IP assigned to a resource being created",
+    "definition": "The aws:SourceIp condition checks the caller's source IP.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM policy `aws:SourceIp` condition",
+    "definition": "It does not check the public or private IP of a resource being created.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
@@ -71,102 +111,197 @@
   },
   {
     "term": "API Gateway resource policy",
-    "definition": "Restrict API invocation by principal, source IP range, or other supported conditions; API Gateway itself is not placed in a customer subnet or protected by a security group",
+    "definition": "API Gateway policies restrict invocation by principal, IP range, or conditions.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "API Gateway resource policy",
+    "definition": "API Gateway is not placed in a customer subnet or protected by a security group.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Cross-account access credentials",
-    "definition": "Prefer assumed roles and short-lived credentials over sharing long-term IAM user keys",
+    "definition": "Prefer assumed roles and short-lived credentials over long-term IAM user keys.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM database authentication",
-    "definition": "Use short-lived authentication tokens for supported RDS engines and grant the workload role the required database-connect permission",
+    "definition": "Use short-lived tokens for supported RDS engines.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM database authentication",
+    "definition": "Grant the workload role the required database-connect permission.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS WAF rate-based rule",
-    "definition": "Limit or block web requests that exceed a configured request rate; WAF can protect supported resources including CloudFront, ALB, and API Gateway",
+    "definition": "WAF rate rules limit or block requests above a configured rate.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS WAF rate-based rule",
+    "definition": "WAF can protect supported services such as CloudFront, ALB, and API Gateway.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Internet Gateway connectivity",
-    "definition": "An internet-facing instance needs a route to an Internet Gateway, a public address, and network controls that permit the traffic",
+    "definition": "Internet-facing instances need an Internet Gateway route and a public address.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Internet Gateway connectivity",
+    "definition": "Network controls must also permit the traffic.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "PrivateLink",
-    "definition": "Consumer-initiated private access to a supported service through an interface endpoint; avoids broad VPC-to-VPC network exposure",
+    "definition": "PrivateLink gives consumers private service access through interface endpoints.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "PrivateLink",
+    "definition": "It avoids broad VPC-to-VPC network exposure.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "S3 gateway VPC endpoint",
-    "definition": "Route VPC-to-S3 traffic privately without an internet or NAT gateway; associate it with route tables and restrict access with endpoint, IAM, or bucket policies",
+    "definition": "A gateway endpoint routes VPC-to-S3 traffic without internet or NAT.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "S3 gateway VPC endpoint",
+    "definition": "Route tables associate it; endpoint, IAM, or bucket policies restrict access.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "NAT Gateway high availability",
-    "definition": "Place a public NAT Gateway in each AZ used by private workloads and route each AZ to its local gateway",
+    "definition": "Place a public NAT Gateway in each AZ used by private workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "NAT Gateway high availability",
+    "definition": "Route each AZ's traffic through its local NAT Gateway.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "VPC peering",
-    "definition": "Direct connectivity between two VPCs; peering is non-transitive, so a hub-and-spoke peering layout does not provide spoke-to-spoke routing",
+    "definition": "VPC peering connects two VPCs directly but is non-transitive.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "VPC peering",
+    "definition": "Hub-and-spoke peering does not enable spoke-to-spoke routing.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Transit Gateway",
-    "definition": "Scalable hub for connecting many VPCs and on-premises networks; supports transitive routing subject to route-table configuration",
+    "definition": "Transit Gateway hubs many VPCs and on-premises networks.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Transit Gateway",
+    "definition": "It supports transitive routing subject to route-table configuration.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Global Accelerator",
-    "definition": "Use static anycast IPs and the AWS global network to improve access to regional TCP/UDP endpoints, including non-cacheable traffic",
+    "definition": "Global Accelerator uses static anycast IPs and the AWS global network.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Global Accelerator",
+    "definition": "It can improve access to regional TCP/UDP endpoints, even without caching.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Resource Access Manager (RAM) subnet sharing",
-    "definition": "Share subnets across accounts in an organization so resources can be deployed into a centrally managed VPC",
+    "definition": "RAM subnet sharing lets organization accounts deploy into a central VPC.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Direct Connect Gateway",
-    "definition": "Associate multiple regional virtual private gateways with Direct Connect for hybrid connectivity across regions",
+    "definition": "A Direct Connect Gateway associates multiple regional virtual private gateways.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Direct Connect Gateway",
+    "definition": "This supports hybrid connectivity across Regions.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Direct Connect public VIF",
-    "definition": "Reach public AWS service endpoints, such as S3, from on-premises over Direct Connect",
+    "definition": "A public VIF reaches AWS public endpoints like S3 from on-premises.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Direct Connect private VIF",
-    "definition": "Connect to a VPC through a virtual private gateway; it is not a direct association to an arbitrary VPC in another region",
+    "definition": "A private VIF connects to a VPC through a virtual private gateway.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Direct Connect private VIF",
+    "definition": "It does not directly associate with an arbitrary VPC in another Region.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Transit Gateway VPN ECMP",
-    "definition": "Multiple dynamic Site-to-Site VPN tunnels can provide aggregate throughput beyond a single tunnel's limit",
+    "definition": "Multiple dynamic Site-to-Site VPN tunnels can use ECMP.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Transit Gateway VPN ECMP",
+    "definition": "Together they can exceed the throughput limit of one tunnel.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Private IP for same-VPC/AZ workloads",
-    "definition": "Prefer private addresses for internal instance-to-instance traffic to avoid unnecessary public-path data transfer",
+    "definition": "Use private addresses for internal same-VPC, same-AZ traffic.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Private IP for same-VPC/AZ workloads",
+    "definition": "This avoids unnecessary public-path data transfer.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon CloudFront",
-    "definition": "CDN for cacheable and dynamic HTTP(S) content; it is not a general UDP accelerator",
+    "definition": "CloudFront delivers cacheable and dynamic HTTP(S) content.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon CloudFront",
+    "definition": "It is not a general-purpose UDP accelerator.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Route 53 private hosted zone prerequisites",
-    "definition": "Enable VPC DNS resolution (`enableDnsSupport`) and DNS hostnames (`enableDnsHostnames`) for associated VPCs",
+    "definition": "Route 53 private hosted zones require VPC DNS resolution and hostnames enabled.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Route 53 private hosted zone prerequisites",
+    "definition": "Set enableDnsSupport and enableDnsHostnames on associated VPCs.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 Instance Store",
-    "definition": "Host-attached temporary block storage; cannot be detached and attached elsewhere, is cleared on stop/hibernate/termination, and is not preserved in an AMI",
+    "definition": "Instance Store is temporary host-attached block storage.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Instance Store",
+    "definition": "It cannot be detached.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Instance Store",
+    "definition": "Data clears on stop, hibernate, or termination.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Instance Store",
+    "definition": "It is not preserved in AMIs.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -176,37 +311,72 @@
   },
   {
     "term": "EC2 reboot alarm action",
-    "definition": "CloudWatch can reboot an instance after an instance status-check failure; recover actions are for system status-check failures",
+    "definition": "CloudWatch can reboot an instance after an instance status-check failure.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 reboot alarm action",
+    "definition": "Recover actions apply to system status-check failures.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 Auto Scaling Standby",
-    "definition": "Temporarily remove an instance from service for maintenance while keeping it in the group, then return it to service",
+    "definition": "Standby removes an instance for maintenance but keeps it in its group.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Auto Scaling Standby",
+    "definition": "Return it to service when maintenance is done.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Auto Scaling `ReplaceUnhealthy` process",
-    "definition": "Suspend replacement during maintenance if appropriate; after resuming, unhealthy instances may be replaced",
+    "definition": "Suspend ReplaceUnhealthy during maintenance when appropriate.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Auto Scaling `ReplaceUnhealthy` process",
+    "definition": "After the process resumes, unhealthy instances may be replaced.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Auto Scaling health checks",
-    "definition": "Grace periods delay replacement after launch; configure ELB health checks if the group should act on load-balancer health status",
+    "definition": "Grace periods delay replacement after launch.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Auto Scaling health checks",
+    "definition": "Configure ELB health checks if the group should follow load-balancer health.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Predictive scaling",
-    "definition": "Forecast recurring demand from historical patterns; combine with dynamic target tracking to handle unexpected real-time changes",
+    "definition": "Predictive scaling forecasts recurring demand from historical patterns.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Predictive scaling",
+    "definition": "Pair it with target tracking for unexpected real-time changes.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Target tracking vs. step/scheduled scaling",
-    "definition": "Target tracking adjusts capacity to maintain a metric target; step scaling responds in increments to alarm breaches; scheduled scaling handles known time-based changes",
+    "definition": "Target tracking maintains a metric target; step scaling reacts to alarm breaches.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Target tracking vs. step/scheduled scaling",
+    "definition": "Scheduled scaling handles known time-based capacity changes.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Spot request types",
-    "definition": "Persistent requests reopen after interruption; stopping a Spot Instance does not reopen the request until it is started",
+    "definition": "Persistent Spot requests reopen after interruption.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Spot request types",
+    "definition": "Stopping a Spot Instance does not reopen its request until the instance starts.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -221,17 +391,32 @@
   },
   {
     "term": "Application Load Balancer (ALB) path routing",
-    "definition": "Route HTTP(S) requests to target groups based on URL paths; also supports host, header, method, query-string, and source-IP conditions",
+    "definition": "ALB routes HTTP(S) by URL path.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Application Load Balancer (ALB) path routing",
+    "definition": "It also supports host, header, method, query-string, and source-IP conditions.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Network Load Balancer (NLB)",
-    "definition": "Layer 4 TCP/UDP load balancer with static IP addresses; useful for protocols such as SSH and workloads that require fixed IPs",
+    "definition": "NLB is a Layer 4 TCP/UDP load balancer with static IPs.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Network Load Balancer (NLB)",
+    "definition": "It suits SSH and workloads needing fixed IPs.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Cross-zone load balancing",
-    "definition": "When enabled, distribute traffic across targets in all enabled AZs; when disabled, each load-balancer node routes only to targets in its AZ",
+    "definition": "With cross-zone balancing, traffic reaches targets in all enabled AZs.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Cross-zone load balancing",
+    "definition": "Without it, each load-balancer node routes only within its AZ.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -246,32 +431,62 @@
   },
   {
     "term": "EC2 tenancy",
-    "definition": "Dedicated tenancy can be selected on the launch template or inherited from the VPC; either setting to dedicated results in dedicated instances",
+    "definition": "Dedicated tenancy can be set on a launch template or inherited from the VPC.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 tenancy",
+    "definition": "Either setting to dedicated results in dedicated instances.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 cluster placement group",
-    "definition": "Place instances close together within one AZ for low-latency, high-throughput inter-node communication",
+    "definition": "A cluster placement group keeps instances close within one AZ.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 cluster placement group",
+    "definition": "This supports low-latency, high-throughput communication between instances.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 Elastic Fabric Adapter (EFA)",
-    "definition": "Enhanced networking for tightly coupled HPC and ML workloads, including OS-bypass communication",
+    "definition": "EFA enhances networking for tightly coupled HPC and ML workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Elastic Fabric Adapter (EFA)",
+    "definition": "It supports OS-bypass communication.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Detailed CloudWatch monitoring",
-    "definition": "EC2 detailed monitoring publishes metrics at 1-minute intervals rather than the 5-minute basic interval",
+    "definition": "Detailed EC2 monitoring publishes metrics every minute.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Detailed CloudWatch monitoring",
+    "definition": "Basic monitoring uses five-minute intervals.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EFS Infrequent Access",
-    "definition": "Lower-cost file storage for rarely accessed files; retains EFS file-system semantics, unlike S3 object storage",
+    "definition": "EFS Infrequent Access lowers storage costs for rarely accessed files.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EFS Infrequent Access",
+    "definition": "It keeps EFS file-system semantics, unlike S3 object storage.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Amazon FSx for Windows File Server",
-    "definition": "Managed Windows file storage with native SMB support and Active Directory integration",
+    "definition": "FSx for Windows provides managed Windows file storage.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon FSx for Windows File Server",
+    "definition": "It supports native SMB and Active Directory integration.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
@@ -281,42 +496,87 @@
   },
   {
     "term": "AWS Snowball Edge",
-    "definition": "Physical transfer for large offline data migrations; ingest into S3, then use lifecycle rules to transition objects to archive classes",
+    "definition": "Snowball Edge transfers large datasets physically for offline migration.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Snowball Edge",
+    "definition": "Ingest to S3, then use lifecycle rules to move objects to archive classes.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "S3 lifecycle rules",
-    "definition": "Transition objects between storage classes or expire them according to age; lifecycle rules alone do not make data immutable",
+    "definition": "S3 lifecycle rules transition or expire objects based on age.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "S3 lifecycle rules",
+    "definition": "Lifecycle rules alone do not make data immutable.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "S3 Standard-IA",
-    "definition": "Infrequently accessed data that still requires millisecond retrieval and multi-AZ resilience; retrieval charges and minimum storage duration apply",
+    "definition": "S3 Standard-IA supports infrequent access with millisecond retrieval.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "S3 Standard-IA",
+    "definition": "It provides multi-AZ resilience.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "S3 Standard-IA",
+    "definition": "Retrieval charges and minimum storage duration apply.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "S3 Glacier retrieval classes",
-    "definition": "Instant Retrieval supports immediate access; Flexible Retrieval and Deep Archive are for data that can tolerate restore delays",
+    "definition": "Glacier Instant Retrieval provides immediate access.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "S3 Glacier retrieval classes",
+    "definition": "Flexible Retrieval and Deep Archive tolerate restore delays.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "One-time S3 bucket copy",
-    "definition": "Use `aws s3 sync` for large copies; S3 Batch Replication is another option for existing objects when replication semantics are desired",
+    "definition": "Use aws s3 sync for a large one-time bucket copy.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "One-time S3 bucket copy",
+    "definition": "Batch Replication copies existing objects when replication semantics are needed.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Amazon ElastiCache for Redis",
-    "definition": "In-memory cache/store for low-latency, read-heavy, real-time workloads such as leaderboards, sessions, and geospatial lookups",
+    "definition": "ElastiCache for Redis is an in-memory cache or store for low-latency workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon ElastiCache for Redis",
+    "definition": "Examples include read-heavy leaderboards, sessions, and geospatial lookups.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "DynamoDB Accelerator (DAX)",
-    "definition": "Managed in-memory cache for DynamoDB read workloads; not a general-purpose cache for relational databases",
+    "definition": "DAX is a managed in-memory cache for DynamoDB reads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "DynamoDB Accelerator (DAX)",
+    "definition": "It is not a general-purpose cache for relational databases.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon Athena",
-    "definition": "Run serverless SQL queries on S3 for ad hoc analysis; partitioning, compression, and columnar formats reduce data scanned",
+    "definition": "Athena runs serverless SQL queries on S3 for ad hoc analysis.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Athena",
+    "definition": "Partitioning, compression, and columnar formats reduce scanned data.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -326,12 +586,22 @@
   },
   {
     "term": "Aurora Serverless",
-    "definition": "Automatically scales relational Aurora capacity for variable or intermittent workloads",
+    "definition": "Aurora Serverless automatically scales relational Aurora capacity.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora Serverless",
+    "definition": "It suits variable or intermittent workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS DMS Serverless",
-    "definition": "Automatically provisions and scales replication compute for database migration and ongoing change data capture",
+    "definition": "DMS Serverless automatically provisions and scales replication compute.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS DMS Serverless",
+    "definition": "Use it for migration and ongoing change data capture.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -341,17 +611,32 @@
   },
   {
     "term": "Babelfish for Aurora PostgreSQL",
-    "definition": "Supports portions of SQL Server T-SQL and wire protocol to reduce application changes during SQL Server migration",
+    "definition": "Babelfish supports parts of SQL Server T-SQL and its wire protocol.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Babelfish for Aurora PostgreSQL",
+    "definition": "It can reduce changes when migrating to Aurora PostgreSQL.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon Redshift cold-data offload",
-    "definition": "Move infrequently queried data to S3 storage and query it with Athena when immediate ad hoc SQL access is needed",
+    "definition": "Move infrequently queried Redshift data to S3.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Redshift cold-data offload",
+    "definition": "Query it with Athena when immediate ad hoc SQL access is needed.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Lambda and API Gateway",
-    "definition": "Serverless HTTP/API compute; API Gateway exposes Lambda functions, while Lambda scales with requests and supports provisioned concurrency to reduce cold-start impact",
+    "definition": "API Gateway exposes Lambda functions for serverless HTTP APIs.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Lambda and API Gateway",
+    "definition": "Lambda scales with requests; provisioned concurrency can reduce cold starts.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -366,12 +651,22 @@
   },
   {
     "term": "VPC-enabled Lambda internet access",
-    "definition": "A Lambda function attached to private VPC subnets needs a route through a NAT Gateway for public internet access; use VPC endpoints for supported private AWS service access",
+    "definition": "VPC-attached Lambda in private subnets needs NAT for public internet access.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "VPC-enabled Lambda internet access",
+    "definition": "Use VPC endpoints for supported private AWS service access.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Lambda monitoring",
-    "definition": "Alarm on concurrency and invocation metrics to detect unexpected spikes and manage cost",
+    "definition": "Alarm on Lambda concurrency and invocation metrics.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Lambda monitoring",
+    "definition": "This helps detect unexpected spikes and manage cost.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -386,187 +681,362 @@
   },
   {
     "term": "AWS Budgets Savings Plans coverage budget",
-    "definition": "Alert when the percentage of eligible usage covered by Savings Plans falls below a threshold",
+    "definition": "Alert when Savings Plans coverage falls below a set percentage threshold.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS CloudFormation",
-    "definition": "Infrastructure as code; CloudFormation itself has no additional charge, but provisioned resources incur their normal charges",
+    "definition": "CloudFormation provides infrastructure as code at no extra service charge.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS CloudFormation",
+    "definition": "Provisioned resources still incur their normal charges.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "EBS volume selection",
-    "definition": "General Purpose SSD suits broad workloads with burstable performance; Provisioned IOPS SSD suits sustained, I/O-intensive workloads; HDD types suit throughput-oriented or cold data",
+    "definition": "General Purpose SSD suits broad workloads with burstable performance.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EBS volume selection",
+    "definition": "Provisioned IOPS SSD suits sustained I/O; HDD suits throughput or cold data.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Cost of data egress",
-    "definition": "Keep chatty components such as analytics tools near their data source when practical, reducing large response transfers out of AWS",
+    "definition": "Keep chatty components near their data source when practical.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Cost of data egress",
+    "definition": "This reduces large response transfers out of AWS.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Service Control Policies (SCPs)",
-    "definition": "Set maximum permissions for member accounts; they do not grant permissions and do not restrict the management account",
+    "definition": "SCPs set maximum permissions for member accounts; they grant no permissions.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Service Control Policies (SCPs)",
+    "definition": "They do not restrict the Organizations management account.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "SCP and IAM evaluation",
-    "definition": "A member-account action must be allowed by both IAM permissions and the applicable SCP, with explicit denies taking precedence",
+    "definition": "Member-account actions need approval from both IAM and the applicable SCP.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "SCP and IAM evaluation",
+    "definition": "Explicit denies take precedence.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Control Tower",
-    "definition": "Establish a governed multi-account landing zone with account provisioning and preventive/detective guardrails",
+    "definition": "Control Tower establishes a governed multi-account landing zone.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Control Tower",
+    "definition": "It supports account provisioning and preventive or detective guardrails.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS CloudFormation StackSets",
-    "definition": "Deploy a common CloudFormation template across multiple accounts and Regions for centrally managed infrastructure",
+    "definition": "StackSets deploy a common CloudFormation template across accounts and Regions.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS CloudFormation StackSets",
+    "definition": "They support centrally managed infrastructure.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM policy evaluation",
-    "definition": "An explicit deny overrides an allow; absent an applicable allow, access is implicitly denied",
+    "definition": "An explicit deny overrides an allow.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM policy evaluation",
+    "definition": "Without an applicable allow, access is implicitly denied.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS shared responsibility model",
-    "definition": "AWS secures the cloud infrastructure; customers remain responsible for in-cloud identities, data, configurations, and workload controls according to service type",
+    "definition": "AWS secures the cloud infrastructure.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS shared responsibility model",
+    "definition": "Customers secure in-cloud identities, data, configuration, and workload controls.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM role for an AWS workload",
-    "definition": "Use temporary role credentials for EC2, Lambda, and cross-account access instead of embedding long-lived keys",
+    "definition": "Use temporary role credentials for EC2, Lambda, and cross-account workloads.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM role for an AWS workload",
+    "definition": "Do not embed long-lived keys.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Root user protection",
-    "definition": "Enable MFA, avoid routine use, and reserve root credentials for tasks that require them",
+    "definition": "Enable MFA and avoid routine root-user access.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Root user protection",
+    "definition": "Reserve root credentials for tasks that require them.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM Identity Center federation",
-    "definition": "Provide workforce single sign-on and centrally assign access across AWS accounts and applications",
+    "definition": "IAM Identity Center provides workforce single sign-on.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM Identity Center federation",
+    "definition": "Centrally assign access across AWS accounts and applications.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Security groups and network ACLs",
-    "definition": "Security groups are stateful instance-level allow lists; network ACLs are stateless subnet-level allow/deny lists and need return-path rules",
+    "definition": "Security groups are stateful, instance-level allow lists.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Security groups and network ACLs",
+    "definition": "Network ACLs are stateless subnet allow/deny lists requiring return rules.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS WAF and Shield",
-    "definition": "Use WAF rules for HTTP(S) request filtering and rate limiting; Shield provides managed DDoS protection at the network and application edge",
+    "definition": "WAF filters and rate-limits HTTP(S) requests.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS WAF and Shield",
+    "definition": "Shield provides managed DDoS protection at the network and application edge.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Firewall Manager",
-    "definition": "Centrally manage supported WAF, Shield Advanced, Network Firewall, and security-group policies across an organization",
+    "definition": "Firewall Manager centrally manages supported organization security policies.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Firewall Manager",
+    "definition": "Policies include WAF, Shield Advanced, Network Firewall, and security groups.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Systems Manager Session Manager",
-    "definition": "Obtain auditable shell access to managed instances without opening inbound SSH or maintaining bastion hosts",
+    "definition": "Session Manager provides auditable shell access to managed instances.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Systems Manager Session Manager",
+    "definition": "It avoids inbound SSH rules and bastion hosts.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "IAM Access Advisor and credential report",
-    "definition": "Access Advisor shows service-last-accessed information for least-privilege reviews; the credential report audits account IAM credential status",
+    "definition": "Access Advisor shows last-used services for least-privilege reviews.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM Access Advisor and credential report",
+    "definition": "The credential report audits IAM credentials across the account.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Secrets Manager versus Parameter Store",
-    "definition": "Use Secrets Manager when managed secret rotation is required; Parameter Store is suited to hierarchical configuration and SecureString parameters",
+    "definition": "Use Secrets Manager when managed secret rotation is required.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Secrets Manager versus Parameter Store",
+    "definition": "Parameter Store suits hierarchical configuration and SecureString values.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS KMS envelope encryption",
-    "definition": "Encrypt bulk data with a data key and protect that data key with a KMS key; KMS direct encryption is for small payloads",
+    "definition": "Envelope encryption protects bulk data with a data key encrypted by KMS.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS KMS envelope encryption",
+    "definition": "Direct KMS encryption is for small payloads.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS KMS versus CloudHSM",
-    "definition": "KMS provides managed key operations; CloudHSM offers dedicated, customer-controlled HSM hardware for workloads requiring that control model",
+    "definition": "KMS provides managed key operations.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS KMS versus CloudHSM",
+    "definition": "CloudHSM offers dedicated, customer-controlled HSM hardware.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "S3 Object Lock Compliance mode",
-    "definition": "Enforce retention that cannot be bypassed, including by the account root user, for the locked retention period",
+    "definition": "Compliance retention cannot be bypassed, even by account root.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 Object Lock Compliance mode",
+    "definition": "It applies throughout the locked retention period.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "S3 Object Lock Governance mode",
-    "definition": "Permit specially authorized users to bypass retention when the request and policy allow it",
+    "definition": "Governance mode lets specially authorized users bypass retention.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 Object Lock Governance mode",
+    "definition": "The request and policy must permit the bypass.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Backup Vault Lock",
-    "definition": "Enforce immutable backup retention controls on a backup vault, distinct from S3 Object Lock and Glacier Vault Lock",
+    "definition": "AWS Backup Vault Lock enforces immutable backup retention on a vault.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Backup Vault Lock",
+    "definition": "It differs from S3 Object Lock and Glacier Vault Lock.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "S3 Glacier Vault Lock",
-    "definition": "Enforce an immutable vault policy for long-term Glacier archives; it is separate from S3 Object Lock and AWS Backup Vault Lock",
+    "definition": "Glacier Vault Lock enforces an immutable policy for long-term archives.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 Glacier Vault Lock",
+    "definition": "It differs from S3 Object Lock and AWS Backup Vault Lock.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "S3 SSE-KMS Bucket Keys",
-    "definition": "Reduce S3-to-KMS request volume and associated KMS costs while retaining SSE-KMS encryption",
+    "definition": "S3 Bucket Keys reduce S3-to-KMS requests and related KMS costs.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 SSE-KMS Bucket Keys",
+    "definition": "They retain SSE-KMS encryption.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "KMS multi-Region keys",
-    "definition": "Related regional KMS keys share key material and key ID for multi-Region encryption workflows, while each key remains a regional resource",
+    "definition": "Related multi-Region KMS keys share key material and key ID.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "KMS multi-Region keys",
+    "definition": "Each key remains a regional resource.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "RDS encryption at rest",
-    "definition": "To encrypt an unencrypted DB instance, create and encrypt a snapshot copy, restore a new instance, then migrate clients",
+    "definition": "To encrypt an unencrypted RDS instance, encrypt a snapshot copy.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "RDS encryption at rest",
+    "definition": "Restore a new instance from it, then migrate clients.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "RDS SSL/TLS",
-    "definition": "Encrypt database connections in transit; this does not replace encryption at rest or database authorization",
+    "definition": "RDS SSL/TLS encrypts database connections in transit.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "RDS SSL/TLS",
+    "definition": "It does not replace encryption at rest or database authorization.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "CloudFront Origin Access Control (OAC)",
-    "definition": "Restrict a private S3 origin so CloudFront can access it through signed origin requests authorized by the bucket policy",
+    "definition": "OAC lets CloudFront access a private S3 origin through signed requests.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront Origin Access Control (OAC)",
+    "definition": "The bucket policy authorizes those origin requests.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "CloudFront signed URLs and signed cookies",
-    "definition": "Grant time-limited access to private content; use URLs for individual files or cookies for groups of files",
+    "definition": "Signed URLs and cookies grant time-limited access to private content.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront signed URLs and signed cookies",
+    "definition": "Use URLs for files and cookies for groups of files.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Certificate Manager and CloudFront",
-    "definition": "A certificate attached to a CloudFront distribution must be available in `us-east-1`",
+    "definition": "A certificate attached to CloudFront must be available in us-east-1.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Amazon Macie",
-    "definition": "Discover and classify sensitive data in S3 and generate findings for investigation",
+    "definition": "Macie discovers and classifies sensitive S3 data.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon Macie",
+    "definition": "It generates findings for investigation.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Amazon GuardDuty",
-    "definition": "Detect suspicious activity using sources such as CloudTrail events, VPC Flow Logs, and DNS logs",
+    "definition": "GuardDuty detects suspicious activity using sources such as CloudTrail.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon GuardDuty",
+    "definition": "It also analyzes VPC Flow Logs and DNS logs.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "Amazon Inspector",
-    "definition": "Assess supported compute resources and container images for software vulnerabilities and exposure",
+    "definition": "Inspector assesses supported compute resources and container images.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon Inspector",
+    "definition": "It finds software vulnerabilities and exposure.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Security Hub",
-    "definition": "Aggregate security findings and security-standard checks from services such as GuardDuty, Inspector, and Macie",
+    "definition": "Security Hub aggregates security findings and standards checks.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Security Hub",
+    "definition": "It integrates with GuardDuty, Inspector, and Macie.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "CloudTrail versus CloudWatch versus Config",
-    "definition": "CloudTrail records API activity, CloudWatch observes metrics/logs, and Config tracks resource configuration and compliance",
+    "definition": "CloudTrail records API activity; CloudWatch observes metrics and logs.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudTrail versus CloudWatch versus Config",
+    "definition": "Config tracks resource configuration and compliance.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
@@ -576,42 +1046,77 @@
   },
   {
     "term": "Recovery Point Objective (RPO)",
-    "definition": "The maximum acceptable amount of data loss measured as time since the last recoverable point",
+    "definition": "RPO is the maximum acceptable data loss since the last recovery point.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Backup and restore DR",
-    "definition": "Lowest-cost approach when longer recovery times are acceptable; restore infrastructure and data after an incident",
+    "definition": "Backup and restore is the lowest-cost DR approach when recovery can take longer.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Backup and restore DR",
+    "definition": "Restore infrastructure and data after an incident.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Pilot light DR",
-    "definition": "Keep core data or services replicated and ready, then provision the rest of the stack during recovery",
+    "definition": "Pilot light keeps core data or services replicated and ready.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Pilot light DR",
+    "definition": "Provision the rest of the stack during recovery.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Warm standby DR",
-    "definition": "Keep a reduced-capacity copy of the complete workload running and scale it up during recovery",
+    "definition": "Warm standby keeps a reduced-capacity copy of the complete workload running.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Warm standby DR",
+    "definition": "Scale it up during recovery.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Multi-site active-active DR",
-    "definition": "Run production capacity in multiple sites and route users to healthy sites for the lowest recovery time at the highest cost",
+    "definition": "Active-active runs production at multiple sites and routes to healthy ones.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Multi-site active-active DR",
+    "definition": "It offers the lowest recovery time at the highest cost.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "AWS Backup plans and vaults",
-    "definition": "Centrally schedule supported-resource backups with retention, lifecycle, and copy actions",
+    "definition": "AWS Backup centrally schedules supported-resource backups.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "AWS Backup plans and vaults",
+    "definition": "Plans specify retention, lifecycle, and copy actions.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "AWS Backup service selection",
-    "definition": "Use AWS Backup for centralized cross-service policy and copy management; service-native backups can suit isolated workloads",
+    "definition": "AWS Backup centralizes cross-service policy and copy management.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "AWS Backup service selection",
+    "definition": "Service-native backups may suit isolated workloads.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Cross-account and cross-Region backup",
-    "definition": "Copy recovery points to a separate account or Region to reduce the impact of account compromise or regional failure",
+    "definition": "Copy recovery points to another account or Region.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Cross-account and cross-Region backup",
+    "definition": "This reduces the impact of account compromise or regional failure.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -621,17 +1126,32 @@
   },
   {
     "term": "S3 replication",
-    "definition": "Replication requires versioning on source and destination; live replication covers new objects, while Batch Replication can copy eligible existing objects",
+    "definition": "S3 replication requires versioning on source and destination.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "S3 replication",
+    "definition": "Live copies new objects; Batch Replication can copy eligible existing ones.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "RDS Multi-AZ deployment",
-    "definition": "Provide managed high availability and failover; a traditional standby is not a read-scaling endpoint",
+    "definition": "RDS Multi-AZ provides managed high availability and failover.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "RDS Multi-AZ deployment",
+    "definition": "A traditional standby is not a read-scaling endpoint.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Aurora Global Database",
-    "definition": "Replicate Aurora data across Regions for low-lag regional disaster recovery and managed failover options",
+    "definition": "Aurora Global Database replicates data across Regions with low lag.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Aurora Global Database",
+    "definition": "It supports regional DR and managed failover options.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -646,87 +1166,157 @@
   },
   {
     "term": "DynamoDB global tables",
-    "definition": "Replicate table data across Regions to support local access and regional resilience",
+    "definition": "DynamoDB global tables replicate data across Regions.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "DynamoDB global tables",
+    "definition": "They support local access and regional resilience.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "AWS Step Functions",
-    "definition": "Orchestrate multi-step serverless workflows with task, choice, parallel, wait, and retry behavior",
+    "definition": "Step Functions orchestrates multi-step serverless workflows.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "AWS Step Functions",
+    "definition": "It supports tasks, choices, parallel work, waits, and retries.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Step Functions Standard versus Express",
-    "definition": "Standard workflows suit long-running auditable executions; Express workflows suit short-duration, high-volume processing",
+    "definition": "Standard workflows suit long-running, auditable executions.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Step Functions Standard versus Express",
+    "definition": "Express workflows suit short-duration, high-volume processing.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "ElastiCache Multi-AZ failover",
-    "definition": "Use Multi-AZ and automatic failover to improve cache availability; read replicas alone primarily add read capacity",
+    "definition": "ElastiCache Multi-AZ with automatic failover improves cache availability.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "ElastiCache Multi-AZ failover",
+    "definition": "Read replicas alone mainly add read capacity.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Availability Zone capacity planning",
-    "definition": "Distribute sufficient baseline capacity across AZs to meet minimum service needs during an AZ outage",
+    "definition": "Distribute baseline capacity across AZs to meet minimum needs during an outage.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Multi-AZ minimum capacity",
-    "definition": "Place enough instances across AZs to retain required capacity after an AZ failure; use the smallest safe baseline and scale out as demand rises",
+    "definition": "Place enough instances across AZs to retain capacity after an AZ failure.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Multi-AZ minimum capacity",
+    "definition": "Use the smallest safe baseline and scale out as demand rises.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "EC2 instance family selection",
-    "definition": "Match compute-, memory-, storage-, or accelerator-optimized families to the workload bottleneck",
+    "definition": "Match EC2 compute, memory, storage, or accelerator families to the bottleneck.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 purchasing options",
-    "definition": "Use On-Demand for flexible short-term capacity, commitments for steady usage, and interruptible Spot capacity for fault-tolerant work",
+    "definition": "Use On-Demand for flexible short-term capacity and commitments for steady use.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 purchasing options",
+    "definition": "Use interruptible Spot capacity for fault-tolerant work.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 placement groups",
-    "definition": "Use cluster placement for low-latency communication, spread for isolated critical instances, or partition for large distributed systems",
+    "definition": "Use cluster placement for low latency, spread for critical-instance isolation.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 placement groups",
+    "definition": "Use partition placement for large distributed systems.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 Auto Scaling policy selection",
-    "definition": "Target tracking maintains a metric target, step scaling reacts to alarm breaches, and scheduled scaling handles known demand patterns",
+    "definition": "Target tracking holds a metric target; step scaling reacts to alarm breaches.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Auto Scaling policy selection",
+    "definition": "Scheduled scaling handles known demand patterns.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EC2 Auto Scaling health checks",
-    "definition": "Configure load-balancer health checks when unhealthy targets should be replaced; use grace periods to avoid premature replacement",
+    "definition": "Use load-balancer health checks to replace unhealthy targets.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 Auto Scaling health checks",
+    "definition": "Grace periods help prevent premature replacement.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Application Load Balancer versus Network Load Balancer",
-    "definition": "ALB routes HTTP(S) at Layer 7 using request attributes; NLB handles Layer 4 TCP/UDP and supports static IPs",
+    "definition": "ALB routes HTTP(S) at Layer 7 using request attributes.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Application Load Balancer versus Network Load Balancer",
+    "definition": "NLB handles Layer 4 TCP/UDP and supports static IPs.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "ECS, EKS, and Fargate",
-    "definition": "ECS and EKS orchestrate containers; Fargate runs supported container tasks without managing EC2 worker instances",
+    "definition": "ECS and EKS orchestrate containers.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "ECS, EKS, and Fargate",
+    "definition": "Fargate runs supported tasks without managing EC2 worker instances.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Batch",
-    "definition": "Schedule batch jobs and provision compute capacity appropriate to queued workloads",
+    "definition": "AWS Batch schedules jobs and provisions capacity for queued workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EFS mount targets",
-    "definition": "Create mount targets in the AZs where clients run and prefer the local-AZ target to reduce latency and cross-AZ transfer",
+    "definition": "Create EFS mount targets in client AZs and prefer the local target.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EFS mount targets",
+    "definition": "This reduces latency and cross-AZ transfer.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EFS throughput modes",
-    "definition": "Choose bursting for variable workloads or provisioned/elastic throughput for sustained or changing throughput needs",
+    "definition": "Use bursting for variable EFS workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EFS throughput modes",
+    "definition": "Use provisioned or elastic throughput for sustained or changing needs.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "S3 multipart upload",
-    "definition": "Upload large objects in parallel parts and retry failed parts independently to improve throughput and resilience",
+    "definition": "Multipart upload sends large objects in parallel parts.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "S3 multipart upload",
+    "definition": "Retry failed parts independently to improve throughput and resilience.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -736,57 +1326,112 @@
   },
   {
     "term": "S3 Transfer Acceleration",
-    "definition": "Use AWS edge networking to speed long-distance uploads to S3 when the extra transfer charge is justified",
+    "definition": "S3 Transfer Acceleration uses AWS edge networking for distant uploads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "S3 Transfer Acceleration",
+    "definition": "Use it when the extra transfer charge is justified.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon CloudFront caching",
-    "definition": "Cache HTTP(S) content near viewers to reduce origin load and improve global delivery performance",
+    "definition": "CloudFront caches HTTP(S) content near viewers.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon CloudFront caching",
+    "definition": "This reduces origin load and improves global delivery.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon S3 and CloudFront static delivery",
-    "definition": "Store static assets in S3 and cache them globally with CloudFront to reduce origin load and viewer latency",
+    "definition": "Store static assets in S3 and cache them globally with CloudFront.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon S3 and CloudFront static delivery",
+    "definition": "This reduces origin load and viewer latency.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Outposts and Wavelength",
-    "definition": "Use Outposts for AWS infrastructure in customer facilities and Wavelength Zones for eligible low-latency 5G edge workloads",
+    "definition": "Outposts brings AWS infrastructure to customer facilities.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Outposts and Wavelength",
+    "definition": "Wavelength Zones support eligible low-latency 5G edge workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Site-to-Site VPN versus Direct Connect",
-    "definition": "VPN provides encrypted connectivity over the internet quickly; Direct Connect provides a private dedicated path with longer provisioning lead time",
+    "definition": "VPN provides quick encrypted connectivity over the internet.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Site-to-Site VPN versus Direct Connect",
+    "definition": "Direct Connect offers a private path but takes longer to provision.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Transit Gateway versus VPC peering",
-    "definition": "Transit Gateway supports hub-and-spoke transitive routing; VPC peering is direct and non-transitive",
+    "definition": "Transit Gateway supports transitive hub-and-spoke routing.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Transit Gateway versus VPC peering",
+    "definition": "VPC peering is direct and non-transitive.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "VPC endpoint selection",
-    "definition": "Gateway endpoints provide private S3/DynamoDB routes through route tables; interface endpoints use private ENIs and PrivateLink",
+    "definition": "Gateway endpoints route private S3 or DynamoDB traffic via route tables.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "VPC endpoint selection",
+    "definition": "Interface endpoints use private ENIs and PrivateLink.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Route 53 failover routing",
-    "definition": "Pair primary/secondary records with health checks to direct DNS responses toward healthy endpoints",
+    "definition": "Pair Route 53 primary and secondary records with health checks.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Route 53 failover routing",
+    "definition": "DNS can then favor healthy endpoints.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Route 53 latency routing",
-    "definition": "Direct users to the Region with the lowest measured latency when that best meets the workload requirement",
+    "definition": "Latency routing directs users to the Region with lowest measured latency.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Route 53 latency routing",
+    "definition": "Use it when this best meets workload requirements.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "RDS read replicas",
-    "definition": "Use asynchronous replicas to scale read-heavy relational workloads; promotion is possible but requires a failover plan",
+    "definition": "RDS read replicas asynchronously scale read-heavy relational workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "RDS read replicas",
+    "definition": "They can be promoted, but promotion requires a failover plan.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon Kinesis Data Streams",
-    "definition": "Retain ordered streaming records for independent consumers that need real-time processing or replay",
+    "definition": "Kinesis Data Streams retains ordered records for independent consumers.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Kinesis Data Streams",
+    "definition": "Consumers can process in real time or replay records.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -796,37 +1441,62 @@
   },
   {
     "term": "Kinesis enhanced fan-out",
-    "definition": "Give registered stream consumers dedicated per-shard read throughput when multiple consumers process records concurrently",
+    "definition": "Enhanced fan-out gives registered consumers dedicated per-shard read capacity.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Kinesis enhanced fan-out",
+    "definition": "This helps multiple consumers process records concurrently.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Kinesis producer batching",
-    "definition": "Batch records to reduce request overhead and improve producer throughput efficiency",
+    "definition": "Batch Kinesis records to reduce request overhead and improve producer throughput.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon Data Firehose",
-    "definition": "Buffer, optionally transform, and deliver streaming data to supported destinations without managing stream shards",
+    "definition": "Data Firehose buffers, optionally transforms, and delivers streaming data.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Data Firehose",
+    "definition": "It avoids managing stream shards.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Kinesis Data Analytics",
-    "definition": "Process streaming records with managed analytics when near-real-time transformation or insights are required",
+    "definition": "Kinesis Data Analytics processes streaming records with managed analytics.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Kinesis Data Analytics",
+    "definition": "Use it for near-real-time transformations or insights.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS DMS S3-to-Kinesis integration",
-    "definition": "Feed existing S3 data and ongoing changes into a stream when building a custom bridge is unnecessary",
+    "definition": "DMS can feed existing S3 data and ongoing changes into a stream.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS DMS S3-to-Kinesis integration",
+    "definition": "This avoids building a custom bridge.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon DataSync",
-    "definition": "Automate accelerated transfers among on-premises storage and supported AWS storage services; schedule recurring jobs when needed",
+    "definition": "DataSync automates accelerated transfers among on-premises and AWS storage.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon DataSync",
+    "definition": "Schedule recurring transfer jobs when needed.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "DataSync to EFS over Direct Connect",
-    "definition": "Use an on-premises DataSync agent and private connectivity for recurring transfers into EFS",
+    "definition": "Use an on-premises agent and private links for scheduled EFS transfers.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -836,27 +1506,52 @@
   },
   {
     "term": "AWS Database Migration Service (DMS)",
-    "definition": "Migrate databases while the source remains available and replicate ongoing changes when configured for CDC",
+    "definition": "DMS migrates databases while the source stays available.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Database Migration Service (DMS)",
+    "definition": "Configured CDC can replicate ongoing changes.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Application Migration Service (MGN)",
-    "definition": "Rehost supported server workloads to AWS using continuous block-level replication and a controlled cutover",
+    "definition": "MGN rehosts supported servers using continuous block-level replication.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Application Migration Service (MGN)",
+    "definition": "It supports a controlled cutover to AWS.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Schema Conversion Tool (SCT)",
-    "definition": "Convert schemas for heterogeneous database-engine migrations; homogeneous migrations generally do not require engine conversion",
+    "definition": "SCT converts schemas for heterogeneous database migrations.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Schema Conversion Tool (SCT)",
+    "definition": "Homogeneous migrations generally do not need engine conversion.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Six migration strategies (6 Rs)",
-    "definition": "Rehost, replatform, repurchase, refactor/re-architect, retain, and retire describe common application migration choices",
+    "definition": "The six Rs are rehost, replatform, repurchase, refactor, retain, and retire.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Six migration strategies (6 Rs)",
+    "definition": "They describe common application migration choices.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "AWS Glue and Data Catalog",
-    "definition": "Discover schemas and run managed ETL while maintaining metadata used by analytics services",
+    "definition": "Glue discovers schemas and runs managed ETL.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Glue and Data Catalog",
+    "definition": "Its Data Catalog maintains metadata for analytics services.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -871,7 +1566,12 @@
   },
   {
     "term": "Amazon Redshift and Spectrum",
-    "definition": "Use Redshift for analytical warehousing and Spectrum to query supported data in S3 without first loading it",
+    "definition": "Redshift provides analytical warehousing.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Redshift and Spectrum",
+    "definition": "Spectrum queries supported S3 data without loading it first.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -881,77 +1581,152 @@
   },
   {
     "term": "Amazon Quick",
-    "definition": "Use managed business-intelligence capabilities to build visualizations from supported data sources",
+    "definition": "Amazon Quick provides managed business intelligence.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Quick",
+    "definition": "Build visualizations from supported data sources.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Amazon Comprehend custom entity recognition",
-    "definition": "Use managed NLP to identify domain-specific entities in text rather than operating a custom model",
+    "definition": "Comprehend custom recognition finds domain-specific entities in text.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Comprehend custom entity recognition",
+    "definition": "Use managed NLP instead of operating a custom model.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Database read scaling and caching",
-    "definition": "Use read replicas for supported relational read workloads, ElastiCache for general-purpose low-latency caching, and DAX for DynamoDB reads",
+    "definition": "Use read replicas for supported relational read workloads.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Database read scaling and caching",
+    "definition": "ElastiCache provides general caching; DAX accelerates DynamoDB reads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "S3 Intelligent-Tiering",
-    "definition": "Automatically move eligible objects between access tiers when access patterns are uncertain and monitoring cost is justified",
+    "definition": "Intelligent-Tiering moves eligible objects between access tiers automatically.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "S3 Intelligent-Tiering",
+    "definition": "It suits uncertain access patterns when monitoring cost is worthwhile.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "EBS General Purpose SSD versus Provisioned IOPS SSD",
-    "definition": "Select general-purpose volumes for broad workloads and provisioned IOPS for sustained, I/O-intensive requirements",
+    "definition": "General Purpose SSD suits broad workloads.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EBS General Purpose SSD versus Provisioned IOPS SSD",
+    "definition": "Provisioned IOPS SSD suits sustained, I/O-intensive requirements.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "EC2 Savings Plans versus Reserved Instances",
-    "definition": "Compare commitment flexibility and eligible usage coverage against workload stability and required discount",
+    "definition": "Compare Savings Plans and Reserved Instances by flexibility and usage.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EC2 Savings Plans versus Reserved Instances",
+    "definition": "Consider workload stability and the required discount.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Spot Instances",
-    "definition": "Use discounted interruptible capacity for flexible workloads designed to checkpoint, retry, or tolerate interruption",
+    "definition": "Spot offers discounted interruptible capacity.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Spot Instances",
+    "definition": "Design workloads to checkpoint, retry, or tolerate interruption.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS Cost Explorer",
-    "definition": "Explore historical and forecast costs and review commitment purchase recommendations",
+    "definition": "Cost Explorer reviews historical and forecast costs.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Cost Explorer",
+    "definition": "It also provides commitment purchase recommendations.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS Budgets",
-    "definition": "Set cost, usage, or commitment thresholds and send alerts when actual or forecast values cross them",
+    "definition": "Budgets set cost, usage, or commitment thresholds.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Budgets",
+    "definition": "Alerts fire when actual or forecast values cross them.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS Cost and Usage Report",
-    "definition": "Export detailed billing and usage data for deeper analysis, commonly stored in S3 for Athena queries",
+    "definition": "The Cost and Usage Report exports detailed billing and usage data.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Cost and Usage Report",
+    "definition": "Store it in S3 for deeper analysis with Athena.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "Cost allocation tags",
-    "definition": "Apply and activate consistent project, team, or environment tags to attribute costs",
+    "definition": "Apply and activate consistent project, team, or environment tags.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Cost allocation tags",
+    "definition": "Cost allocation tags help attribute spending.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS Compute Optimizer",
-    "definition": "Use utilization analysis and recommendations to right-size supported compute and storage resources",
+    "definition": "Compute Optimizer analyzes utilization and recommends right-sizing.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Compute Optimizer",
+    "definition": "It supports selected compute and storage resources.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "VPC endpoint and NAT cost tradeoff",
-    "definition": "Evaluate endpoint charges against NAT processing and data-transfer charges for private AWS-service access",
+    "definition": "Compare endpoint charges with NAT processing and transfer charges.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "VPC endpoint and NAT cost tradeoff",
+    "definition": "Use this tradeoff for private AWS-service access.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "AWS Organizations consolidated billing",
-    "definition": "Combine eligible account usage on one bill; eligible volume pricing and commitment benefits may be shared across accounts",
+    "definition": "Organizations consolidated billing combines eligible account usage on one bill.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "AWS Organizations consolidated billing",
+    "definition": "Eligible volume pricing and commitment benefits may be shared.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "EC2 and Auto Scaling right-sizing",
-    "definition": "Use workload metrics to select instance size and minimum capacity rather than paying for idle headroom",
+    "definition": "Use workload metrics to right-size EC2 instances and minimum capacity.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EC2 and Auto Scaling right-sizing",
+    "definition": "Avoid paying for idle headroom.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   }
 ]

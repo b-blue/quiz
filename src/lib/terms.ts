@@ -74,8 +74,15 @@ export function getRandomQuestion(section?: string | null, terms: Term[] = TERMS
   const pool = section ? terms.filter((t) => t.section === section) : terms;
   if (!pool.length) return null;
 
-  const correct = pool[Math.floor(Math.random() * pool.length)];
-  const distractors = pickDistractors(correct, 3, pool);
+  // Multiple definition chunks can belong to one term; select terms uniformly
+  // first so longer definitions do not make a concept more likely to appear.
+  const uniqueTerms = uniqueStrings(pool.map((t) => t.term));
+  const correctTerm = uniqueTerms[Math.floor(Math.random() * uniqueTerms.length)];
+  const termDefinitions = pool.filter((t) => t.term === correctTerm);
+  const correct = termDefinitions[Math.floor(Math.random() * termDefinitions.length)];
+  // Keep answers distinct, preferring same-section distractors and filling
+  // from the full exam dataset if that section has fewer than three others.
+  const distractors = pickDistractors(correct, 3, terms);
 
   const options = shuffle([correct.term, ...distractors]);
   const correctIndex = options.findIndex((o) => o === correct.term);

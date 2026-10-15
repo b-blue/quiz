@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { applyDefinitionChunks } from './apply-definition-chunks.js';
 
 async function main() {
   const __filename = fileURLToPath(import.meta.url);
@@ -58,6 +59,7 @@ async function main() {
   }
   const outDir = path.join(projectRoot, 'src', 'data');
   const outPath = path.join(outDir, 'terms.json');
+  const chunksPath = path.join(outDir, 'clf-definition-chunks.json');
 
   const md = await fs.readFile(mdPath, 'utf8');
   const lines = md.split(/\r?\n/);
@@ -92,12 +94,15 @@ async function main() {
     }
   }
 
+  const chunkOverrides = JSON.parse(await fs.readFile(chunksPath, 'utf8'));
+  results = applyDefinitionChunks(results, chunkOverrides, 'CLF-C02');
+
   // Ensure output directory exists
   await fs.mkdir(outDir, { recursive: true });
 
   // Write JSON (overwrite)
   await fs.writeFile(outPath, JSON.stringify(results, null, 2), 'utf8');
-  console.log(`Wrote ${results.length} term(s) to ${outPath}`);
+  console.log(`Wrote ${results.length} term definition chunk(s) to ${outPath}`);
 }
 
 main().catch(err => {

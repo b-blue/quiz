@@ -1,12 +1,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { applyDefinitionChunks } from './apply-definition-chunks.js';
 
 async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const projectRoot = path.resolve(__dirname, '..');
   const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'SAA-C03.md');
   const outputPath = path.join(projectRoot, 'src', 'data', 'saa-terms.json');
+  const chunksPath = path.join(projectRoot, 'src', 'data', 'saa-definition-chunks.json');
   const markdown = await fs.readFile(sourcePath, 'utf8');
 
   const results = [];
@@ -33,8 +35,11 @@ async function main() {
     });
   }
 
-  await fs.writeFile(outputPath, JSON.stringify(results, null, 2), 'utf8');
-  console.log(`Wrote ${results.length} term(s) to ${outputPath}`);
+  const chunkOverrides = JSON.parse(await fs.readFile(chunksPath, 'utf8'));
+  const expandedResults = applyDefinitionChunks(results, chunkOverrides, 'SAA-C03');
+
+  await fs.writeFile(outputPath, JSON.stringify(expandedResults, null, 2), 'utf8');
+  console.log(`Wrote ${expandedResults.length} term definition chunk(s) to ${outputPath}`);
 }
 
 main().catch((error) => {

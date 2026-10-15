@@ -1,7 +1,7 @@
 [
   {
     "term": "1. Regions (3+ AZs)",
-    "definition": "Geographic areas made up of 3 or more isolated, physically separate Availability Zones",
+    "definition": "Regions are geographic areas with at least three isolated Availability Zones.",
     "section": "AWS Global Infrastructure Hierarchy Summary"
   },
   {
@@ -31,17 +31,22 @@
   },
   {
     "term": "IAAS (Infrastructure As A Service)",
-    "definition": "Access to networking features, computers (virtual or on dedicated hardware), data storage; think Ec2",
+    "definition": "IaaS provides networking, computing, and storage resources.",
+    "section": "Cloud Computing Benefits Summary"
+  },
+  {
+    "term": "IAAS (Infrastructure As A Service)",
+    "definition": "Compute resources may be virtual or dedicated hardware.",
     "section": "Cloud Computing Benefits Summary"
   },
   {
     "term": "PAAS (Platform As A Service)",
-    "definition": "Deployment and management concerns without concern for underlying infrastructure; think Elastic Beanstalk",
+    "definition": "PaaS manages deployment without requiring users to manage infrastructure.",
     "section": "Cloud Computing Benefits Summary"
   },
   {
     "term": "SAAS (Software As A Service)",
-    "definition": "Complete product is run and managed by the service provider without concern for maintenance or infrastructure; think Amazon Rekognition",
+    "definition": "SaaS is a complete product operated and maintained by its provider.",
     "section": "Cloud Computing Benefits Summary"
   },
   {
@@ -66,32 +71,72 @@
   },
   {
     "term": "Business Capabilities",
-    "definition": "Strategy management; portfolio management; innovation management; product management; strategic partnership; data monetization; business insights; data science",
+    "definition": "Business capabilities cover strategy, portfolios, innovation, and products.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Business Capabilities",
+    "definition": "They include partnerships, data monetization, insights, and data science.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "People Capabilities",
-    "definition": "Culture evolution; transformational leadership; cloud fluency; workforce transformation; change acceleration; organization design; organizational alignment",
+    "definition": "People capabilities cover culture, leadership, cloud fluency, and workforce.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "People Capabilities",
+    "definition": "They cover organizational design, alignment, and change acceleration.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Governance Capabilities",
-    "definition": "Program and project management; benefits management; risk management; cloud financial management; application portfolio management; data governance; data curation",
+    "definition": "Governance covers programs, projects, benefits, risks, and cloud finances.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Governance Capabilities",
+    "definition": "It includes application portfolios, data governance, and data curation.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Platform Capabilities",
-    "definition": "Platform architecture; data architecture; platform engineering; data engineering; provisioning and orchestration; mordern application development; CI/CD",
+    "definition": "Platform capabilities cover platform, data, and engineering architectures.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Platform Capabilities",
+    "definition": "They include provisioning, orchestration, modern app development, and CI/CD.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Security Capabilities",
-    "definition": "Security governance; security assistance; identity and access management; threat detection; vulnerability management; infrastructure protection; data protection; application security; incident response",
+    "definition": "Security covers governance, identity, threat, and vulnerability management.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Security Capabilities",
+    "definition": "It also covers infrastructure, data, and application protection.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Security Capabilities",
+    "definition": "Incident response is another security capability.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Operations Capabilities",
-    "definition": "Observability; event management/AIOps; incident and problem management; change and release management; performance and capacity management; configuration management; patch management; availability and continuity management; application management",
+    "definition": "Operations include observability, event, incident, and problem management.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Operations Capabilities",
+    "definition": "They cover change, release, performance, capacity, and configuration management.",
+    "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
+  },
+  {
+    "term": "Operations Capabilities",
+    "definition": "They include patching, availability, continuity, and application management.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
@@ -101,12 +146,12 @@
   },
   {
     "term": "People Perspective",
-    "definition": "Stakeholders include CIO, COO, CTO, Cloud Director, and cross-functional/enterprise-wide leaders",
+    "definition": "People stakeholders include CIO, COO, CTO, cloud, and enterprise leaders.",
     "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
   },
   {
     "term": "Governance Perspective",
-    "definition": "Stakeholders include Chief Transformation Officer, CIO, CTO, CFO, Chief Data Officer, Chief Risk Officer",
+    "definition": "Governance stakeholders include CIO, CTO, CFO, data, risk, and change leaders.",
     "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
   },
   {
@@ -116,12 +161,12 @@
   },
   {
     "term": "Security Perspective",
-    "definition": "Stakeholders include Chief Information Security Officer, Chief Compliance Officer, internal audit leaders, security architects and engineers",
+    "definition": "Security stakeholders include compliance officers, auditors, and security staff.",
     "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
   },
   {
     "term": "Operations Perspective",
-    "definition": "Stakeholders include infrastructure and operations leaders, site reliability engineers, information technology service managers",
+    "definition": "Operations stakeholders include infrastructure staff, SREs, and IT service leads.",
     "section": "AWS Cloud Adoption Framework Perspectives Stakeholders Summary"
   },
   {
@@ -141,12 +186,17 @@
   },
   {
     "term": "Layer 4",
-    "definition": "Transport Layer (TCP, UDP data transmission occurs here / AWS Shield applies here)",
+    "definition": "Layer 4 is the transport layer for TCP and UDP; AWS Shield applies here.",
     "section": "OSI Layer Architecture Summary"
   },
   {
     "term": "Layer 3",
-    "definition": "Network Layer (Physical movement through network determined / AWS Shield applies here)",
+    "definition": "Layer 3 is the network layer, where physical network movement is determined.",
+    "section": "OSI Layer Architecture Summary"
+  },
+  {
+    "term": "Layer 3",
+    "definition": "AWS Shield also applies at this layer.",
     "section": "OSI Layer Architecture Summary"
   },
   {
@@ -171,7 +221,7 @@
   },
   {
     "term": "Relocate",
-    "definition": "Move apps from on-prem to Cloud version, or EC2 instances between VPC, regions, etc.",
+    "definition": "Relocate applications to the cloud or move EC2 instances between VPCs or Regions.",
     "section": "Cloud Migration - The 7 R's Summary"
   },
   {
@@ -181,7 +231,7 @@
   },
   {
     "term": "Replatform (\"Lift and reshape\")",
-    "definition": "Leverage cloud optimizations such as migrating database to RDS or app to Elastic Beanstalk",
+    "definition": "Replatform by adopting cloud optimizations, such as RDS or Elastic Beanstalk.",
     "section": "Cloud Migration - The 7 R's Summary"
   },
   {
@@ -191,7 +241,7 @@
   },
   {
     "term": "Refactor/Re-architect",
-    "definition": "Reimagine application architecture using cloud native features (move to serverless, etc.)",
+    "definition": "Refactor by redesigning an app around cloud-native features such as serverless.",
     "section": "Cloud Migration - The 7 R's Summary"
   },
   {
@@ -201,17 +251,22 @@
   },
   {
     "term": "DynamoDB",
-    "definition": "Reserved Capacity; if predicting read/write throughput is possible, savings are significant over normal provisioned capacity",
+    "definition": "DynamoDB Reserved Capacity can save when read/write throughput is predictable.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
     "term": "ElastiCache",
-    "definition": "Reserved Nodes; low, one-time payment for each cache node to reserve, discounts hourly charge for node",
+    "definition": "ElastiCache Reserved Nodes require a low, one-time payment per cache node.",
+    "section": "Reservations to Optimize Costs Summary"
+  },
+  {
+    "term": "ElastiCache",
+    "definition": "Reservations discount the node's hourly charge.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
     "term": "RDS",
-    "definition": "Reserved Instances (RI); no upfront, partial upfront, all upfront with all reserved instance types available",
+    "definition": "RDS Reserved Instances offer no-, partial-, and all-upfront payment options.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
@@ -221,17 +276,17 @@
   },
   {
     "term": "AWS S3",
-    "definition": "All S3 buckets are encrypted by default; objects also encrypted server-side by default with SSE-S3 keys",
+    "definition": "S3 encrypts buckets and server-side encrypts objects by default with SSE-S3 keys.",
     "section": "Encryption by Default Summary"
   },
   {
     "term": "AWS Storage Gateway",
-    "definition": "All data transferred between gateway and AWS storage is encrypted with SSL by default",
+    "definition": "Storage Gateway encrypts data transfers to AWS storage with SSL by default.",
     "section": "Encryption by Default Summary"
   },
   {
     "term": "CloudTrail Logs",
-    "definition": "Log files delivered to S3 bucket from CloudTrail have SSE-S3 server-side encryption by default",
+    "definition": "CloudTrail log files delivered to S3 use SSE-S3 encryption by default.",
     "section": "Encryption by Default Summary"
   },
   {
@@ -271,17 +326,32 @@
   },
   {
     "term": "AWS Storage Gateways",
-    "definition": "Bridge between on-prem and cloud data; used for disaster recoverr, backup & restore, on-prem caching",
+    "definition": "Storage Gateways connect on-premises systems with cloud storage.",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS Storage Gateways",
+    "definition": "They support disaster recovery, backup, restore, and on-premises caching.",
     "section": "Storage Gateways Summary"
   },
   {
     "term": "AWS File Gateway",
-    "definition": "Recent data cached in file gateway; plug app server into S3 gateway piped to non-Glacier S3 bucket",
+    "definition": "File Gateway caches recent data and connects applications to S3.",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS File Gateway",
+    "definition": "Its S3 destination must not use a Glacier storage class.",
     "section": "Storage Gateways Summary"
   },
   {
     "term": "AWS Volume Gateway",
-    "definition": "Block storage; cached volumes provide low latency access to recent data; stored volumes keep entire dataset on-prem with scheduled backups to S3",
+    "definition": "Volume Gateway provides block storage; cached volumes give low-latency access.",
+    "section": "Storage Gateways Summary"
+  },
+  {
+    "term": "AWS Volume Gateway",
+    "definition": "Stored volumes keep the full dataset on-premises and back it up to S3.",
     "section": "Storage Gateways Summary"
   },
   {
@@ -321,7 +391,7 @@
   },
   {
     "term": "Simple Routing",
-    "definition": "For single resource performing a given domain function; web server to serve content for example.com website",
+    "definition": "Simple routing directs a domain to one resource, such as a website server.",
     "section": "AWS Route 53 Routing Policies Summary"
   },
   {
@@ -336,12 +406,12 @@
   },
   {
     "term": "Latency Routing",
-    "definition": "With resources in multiple AWS regions, route traffic to region with lowest latency",
+    "definition": "Latency routing sends users to the AWS Region with the lowest latency.",
     "section": "AWS Route 53 Routing Policies Summary"
   },
   {
     "term": "Multivalue Answer Routing",
-    "definition": "Use when Route 53s response to DNS queries with up to 8 healthy records is desired",
+    "definition": "Multivalue routing returns up to eight healthy records in DNS responses.",
     "section": "AWS Route 53 Routing Policies Summary"
   },
   {
@@ -451,7 +521,17 @@
   },
   {
     "term": "Reserved Instances (RIs)",
-    "definition": "Maximum 72% billing discount applied to on-demand instances; 1- or 3-year terms; for long workloads; convertible RIs with flexible instances exist",
+    "definition": "Reserved Instances can discount on-demand usage by up to 72%.",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Reserved Instances (RIs)",
+    "definition": "Choose one- or three-year terms for long workloads.",
+    "section": "EC2 Summary"
+  },
+  {
+    "term": "Reserved Instances (RIs)",
+    "definition": "Convertible RIs allow flexible instance changes.",
     "section": "EC2 Summary"
   },
   {
@@ -461,7 +541,17 @@
   },
   {
     "term": "EBS (Elastic Block Store) Volumes",
-    "definition": "Network drives attached to one EC2 instance at a time; mapped to availability zones; can use EBS Snapshots for backups/transfer of EBS Volumes across AZ; persist after EC2 instance is terminated",
+    "definition": "EBS volumes are network drives attached to one EC2 instance at a time.",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EBS (Elastic Block Store) Volumes",
+    "definition": "They are tied to an AZ and persist after instance termination.",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EBS (Elastic Block Store) Volumes",
+    "definition": "Snapshots back up volumes and can move them across AZs.",
     "section": "EC2 Instance Summary"
   },
   {
@@ -481,12 +571,17 @@
   },
   {
     "term": "EC2 Instance Store",
-    "definition": "High performance hardware disk attached to our EC2 instance; lost if our instance is stopped/terminated",
+    "definition": "Instance Store is a high-performance disk attached to an EC2 instance.",
+    "section": "EC2 Instance Summary"
+  },
+  {
+    "term": "EC2 Instance Store",
+    "definition": "Its data is lost when the instance stops or terminates.",
     "section": "EC2 Instance Summary"
   },
   {
     "term": "EFS",
-    "definition": "Network file system, can be attached to hundreds of instances in the same region; works across AZs",
+    "definition": "EFS is a regional network file system for hundreds of instances across AZs.",
     "section": "EC2 Instance Summary"
   },
   {
@@ -511,7 +606,7 @@
   },
   {
     "term": "Elasticity",
-    "definition": "Provision resources based on actual need; scale resources up and down to fit needs",
+    "definition": "Elasticity scales resources up or down to match actual needs.",
     "section": "ELB & ASG Summary"
   },
   {
@@ -521,7 +616,12 @@
   },
   {
     "term": "Horizontal Scalabililty (Scaling out or in)",
-    "definition": "Think elasticity; increase or decrease number of instances; duplicating resources, implies distributed systems",
+    "definition": "Horizontal scaling adds or removes instances to change their number.",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Horizontal Scalabililty (Scaling out or in)",
+    "definition": "It supports distributed systems.",
     "section": "ELB & ASG Summary"
   },
   {
@@ -531,7 +631,12 @@
   },
   {
     "term": "Elastic Load Balancers (ELB)",
-    "definition": "Distribute traffic across backend EC2 instances; can be multi-AZ; supports health checks",
+    "definition": "ELBs distribute traffic across backend EC2 instances and support health checks.",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Elastic Load Balancers (ELB)",
+    "definition": "They can span multiple AZs.",
     "section": "ELB & ASG Summary"
   },
   {
@@ -556,12 +661,22 @@
   },
   {
     "term": "Auto Scaling Groups (ASG)",
-    "definition": "Free to use; implements elasticity based on demand on system; can be multi-AZ; integrated with ELB; cannot change instance types",
+    "definition": "ASGs are free and scale capacity with demand across multiple AZs.",
+    "section": "ELB & ASG Summary"
+  },
+  {
+    "term": "Auto Scaling Groups (ASG)",
+    "definition": "They integrate with ELB but do not support changing instance types.",
     "section": "ELB & ASG Summary"
   },
   {
     "term": "Buckets",
-    "definition": "Global unique names; tied to region; best thought of as folders in file directory analogy",
+    "definition": "S3 bucket names are globally unique, and each bucket belongs to a Region.",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "Buckets",
+    "definition": "Buckets are analogous to folders.",
     "section": "S3 Summary"
   },
   {
@@ -611,27 +726,47 @@
   },
   {
     "term": "S3 Replication",
-    "definition": "Versioning must be enabled in source and destination buckets; asynchronous copying; cross-region replication (CRR) or same-region replication (SRR)",
+    "definition": "S3 replication requires versioning on source and destination buckets.",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 Replication",
+    "definition": "Copies are asynchronous and can be cross-Region or same-Region.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 CRR (Cross-Region Replication)",
-    "definition": "Copy bucket contents across regions; meet compliance requirements; minimize latency; increase operational efficiency",
+    "definition": "Cross-Region Replication copies bucket contents across Regions.",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 CRR (Cross-Region Replication)",
+    "definition": "It supports compliance, lower latency, and operational efficiency.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 SRR (Same-Region Replication)",
-    "definition": "Copy bucket contents within region; aggregate logs; configure live replication between prod and test accounts; abide by data sovereignty laws",
+    "definition": "Same-Region Replication copies bucket contents within a Region.",
+    "section": "S3 Summary"
+  },
+  {
+    "term": "S3 SRR (Same-Region Replication)",
+    "definition": "Use it to aggregate logs, replicate accounts, or meet data-residency rules.",
     "section": "S3 Summary"
   },
   {
     "term": "RDS (Relational Database Service)",
-    "definition": "OLTP; Managed DB service using SQL as query language; Postgres; MySQL; Oracle; MariaDB; Microsoft SQL Server",
+    "definition": "RDS is a managed relational database service queried with SQL.",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "RDS (Relational Database Service)",
+    "definition": "Supported engines include PostgreSQL, MySQL, Oracle, MariaDB, and SQL Server.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "Aurora",
-    "definition": "AWS implementation of PostgreSQL or MySQL as AuroraDb; \"cloud-optimized\" versions of same",
+    "definition": "Aurora is AWS's cloud-optimized implementation of PostgreSQL or MySQL.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -646,7 +781,12 @@
   },
   {
     "term": "DynamoDb",
-    "definition": "Serverless; fully managed NoSQL database replicated across 3 AZs; distributed \"serverless database\"; not relational database",
+    "definition": "DynamoDB is a serverless NoSQL database replicated across three AZs.",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DynamoDb",
+    "definition": "It is distributed and non-relational.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -656,12 +796,22 @@
   },
   {
     "term": "DynamoDb Global Tables",
-    "definition": "Makes DynamoDb table accessible in multiple regions; active-active replication enables read/write to any AWS region",
+    "definition": "DynamoDB Global Tables make a table available in multiple Regions.",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DynamoDb Global Tables",
+    "definition": "Active-active replication allows reads and writes in any participating Region.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "ElastiCache",
-    "definition": "AWS fully managed Redis or Memcached equivalent; in-memory database for read-intensive workloads",
+    "definition": "ElastiCache provides managed Redis or Memcached in-memory databases.",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "ElastiCache",
+    "definition": "It suits read-intensive workloads.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -681,7 +831,7 @@
   },
   {
     "term": "QuickSight",
-    "definition": "Serverless ML-powered business intelligence service to create interactive dashboards",
+    "definition": "QuickSight is a serverless, ML-powered business intelligence dashboard service.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -711,7 +861,12 @@
   },
   {
     "term": "DMS (Database Migration Service)",
-    "definition": "Homogenous or heterogenous migrations supported; source DB is available during migration",
+    "definition": "DMS supports homogeneous and heterogeneous database migrations.",
+    "section": "Databases & Analytics Summary in AWS Summary"
+  },
+  {
+    "term": "DMS (Database Migration Service)",
+    "definition": "The source database remains available during migration.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -746,17 +901,42 @@
   },
   {
     "term": "AWS Lambda",
-    "definition": "Serverless; FAAS (Function As A Service); run functions on-demand; billed by time run x RAM provisioned and by number of invocations; invocations capped at 15 minutes in length; use API Gateway to expose Lambda functions as HTTP API",
+    "definition": "Lambda runs functions on demand as serverless FaaS.",
+    "section": "AWS Lambda Summary"
+  },
+  {
+    "term": "AWS Lambda",
+    "definition": "Billing depends on runtime, provisioned RAM, and invocation count.",
+    "section": "AWS Lambda Summary"
+  },
+  {
+    "term": "AWS Lambda",
+    "definition": "Each invocation can run for at most 15 minutes.",
+    "section": "AWS Lambda Summary"
+  },
+  {
+    "term": "AWS Lambda",
+    "definition": "API Gateway can expose Lambda functions as HTTP APIs.",
     "section": "AWS Lambda Summary"
   },
   {
     "term": "CloudFormation (AWS)",
-    "definition": "Like Terraform; infrastructure as code, works with almost all AWS resources; repeat across regions and accounts",
+    "definition": "CloudFormation defines AWS infrastructure as code across most resources.",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "CloudFormation (AWS)",
+    "definition": "Reuse templates across Regions and accounts.",
     "section": "Deployment Summary"
   },
   {
     "term": "Elastic Beanstalk (AWS)",
-    "definition": "Platform as a Service, limited to certain programming languages or Docker; PHP, Java, .NET, Node, Python, etc.; Deploy code consistently with known architecture (ALB + EC2 + RDS)",
+    "definition": "Elastic Beanstalk is a PaaS for selected languages or Docker.",
+    "section": "Deployment Summary"
+  },
+  {
+    "term": "Elastic Beanstalk (AWS)",
+    "definition": "It deploys code on architectures such as ALB, EC2, and RDS.",
     "section": "Deployment Summary"
   },
   {
@@ -826,12 +1006,22 @@
   },
   {
     "term": "EventBridge",
-    "definition": "Scheduling processes; react to events in AWS, or trigger a rule/process on a schedule using Amazon EventBridge Scheduler",
+    "definition": "EventBridge reacts to AWS events and schedules processes.",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "EventBridge",
+    "definition": "Scheduler can trigger rules or processes on a schedule.",
     "section": "Cloud Monitoring Summary"
   },
   {
     "term": "CloudTrail",
-    "definition": "Account-specific activity and audit; audit API calls made within your AWS account, investigate after the fact",
+    "definition": "CloudTrail audits account activity by recording API calls.",
+    "section": "Cloud Monitoring Summary"
+  },
+  {
+    "term": "CloudTrail",
+    "definition": "Use its records to investigate activity after the fact.",
     "section": "Cloud Monitoring Summary"
   },
   {
@@ -841,7 +1031,7 @@
   },
   {
     "term": "X-Ray",
-    "definition": "Trace requests made through your distributed applications, investigate in real-time",
+    "definition": "X-Ray traces requests across distributed applications in real time.",
     "section": "Cloud Monitoring Summary"
   },
   {
@@ -861,7 +1051,17 @@
   },
   {
     "term": "VPC (Virtual Private Cloud)",
-    "definition": "Spans all AZs in region; provisioned logically isolated section of AWS cloud in which to launch resources in virtual network; can create subnets, select IP address range, and configure routing and network gateways; cannot connect on-prem network to cloud",
+    "definition": "A VPC is a logically isolated network spanning all AZs in a Region.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC (Virtual Private Cloud)",
+    "definition": "Create subnets, choose IP ranges, and configure routes and gateways.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC (Virtual Private Cloud)",
+    "definition": "A VPC alone cannot connect an on-premises network to the cloud.",
     "section": "VPC Summary"
   },
   {
@@ -881,17 +1081,37 @@
   },
   {
     "term": "VPC Endpoints",
-    "definition": "Provide private access to AWS services within VPC: two types are interface endpoints and gateway endpoints",
+    "definition": "VPC endpoints privately connect a VPC to AWS services.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Endpoints",
+    "definition": "The two types are gateway endpoints and interface endpoints.",
     "section": "VPC Summary"
   },
   {
     "term": "VPC Gateway Endpoint",
-    "definition": "AWS S3 & DynamoDb only; gateway specified by user as target for route in route table for traffic bound to AWS service",
+    "definition": "Gateway endpoints support S3 and DynamoDB only.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Gateway Endpoint",
+    "definition": "Add the endpoint as a route-table target for that service's traffic.",
     "section": "VPC Summary"
   },
   {
     "term": "VPC Interface Endpoint",
-    "definition": "All other AWS services (includes S3); elastic network interface with private subnet IP; entry point for traffic to supported AWS service",
+    "definition": "Interface endpoints support AWS services, including S3.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Interface Endpoint",
+    "definition": "They use an elastic network interface with a private subnet IP.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "VPC Interface Endpoint",
+    "definition": "The interface is an entry point to the supported service.",
     "section": "VPC Summary"
   },
   {
@@ -906,7 +1126,7 @@
   },
   {
     "term": "Subnets",
-    "definition": "Spans one AZ in region; part of a VPC; tied to AZ, represents network partition of VPC",
+    "definition": "A subnet is a VPC network partition tied to one Availability Zone.",
     "section": "VPC Summary"
   },
   {
@@ -916,17 +1136,37 @@
   },
   {
     "term": "NACL (Network Access Control List)",
-    "definition": "Stateless, subnet rules for inbound and outbound; IP addresses only, supports DENY and ALLOW rules",
+    "definition": "NACLs are stateless subnet-level rules for inbound and outbound traffic.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "NACL (Network Access Control List)",
+    "definition": "They use IP addresses and support both DENY and ALLOW rules.",
     "section": "VPC Summary"
   },
   {
     "term": "Security Groups",
-    "definition": "Stateful, operate at EC2 Instance level or ENI level; IP addresses and other security groups, ALLOW rules only",
+    "definition": "Security groups are stateful and apply at EC2 instance or ENI level.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Security Groups",
+    "definition": "They allow rules using IP addresses or other security groups.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Security Groups",
+    "definition": "Security groups support ALLOW rules only.",
     "section": "VPC Summary"
   },
   {
     "term": "AWS VPN",
-    "definition": "Establish secure connection from on-prem, remote offices or client devices to AWS global network; consists of Site-to-site VPN or Client VPN",
+    "definition": "AWS VPN securely connects offices, on-premises networks, or clients to AWS.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "AWS VPN",
+    "definition": "It includes Site-to-Site VPN and Client VPN.",
     "section": "VPC Summary"
   },
   {
@@ -941,7 +1181,12 @@
   },
   {
     "term": "Direct Connect",
-    "definition": "Direct private connection from on-prem straight to AWS, public internet not involved",
+    "definition": "Direct Connect privately links on-premises networks to AWS.",
+    "section": "VPC Summary"
+  },
+  {
+    "term": "Direct Connect",
+    "definition": "It avoids the public internet.",
     "section": "VPC Summary"
   },
   {
@@ -961,7 +1206,12 @@
   },
   {
     "term": "Shield Advanced",
-    "definition": "Additional fee; 24x7 DDoS response team on standby; detailed real-time metrics and reports available",
+    "definition": "Shield Advanced costs extra and provides 24/7 DDoS response support.",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Shield Advanced",
+    "definition": "It includes detailed real-time metrics and reports.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -991,12 +1241,17 @@
   },
   {
     "term": "GuardDuty",
-    "definition": "Protects AWS Account by checking VPC, DNS & CloudTrail logs to assess malicious activity/unauthorized behavior",
+    "definition": "GuardDuty analyzes VPC, DNS, and CloudTrail logs for malicious activity.",
     "section": "Security and Compliance Summary"
   },
   {
     "term": "Inspector",
-    "definition": "Automated protection of EC2 instances, ECR images and Lambda functions against exposure, vulnerabilities and deviations from best practices; also tests network accessibility of EC2 instances and security state of apps running on instances",
+    "definition": "Inspector checks EC2, ECR, and Lambda for exposure and vulnerabilities.",
+    "section": "Security and Compliance Summary"
+  },
+  {
+    "term": "Inspector",
+    "definition": "It also tests EC2 network access and instance app security.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1011,7 +1266,7 @@
   },
   {
     "term": "Macie",
-    "definition": "Find sensitive data (ex: PII or personally identificable information) in Amazon S3 buckets",
+    "definition": "Macie finds sensitive data, such as PII, in S3 buckets.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1046,7 +1301,7 @@
   },
   {
     "term": "AWS Secrets Manager",
-    "definition": "Rotate, manage and retrieve database credentials, API keys, etc. throughout lifecycle",
+    "definition": "Secrets Manager rotates and retrieves database credentials and API keys.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1106,7 +1361,12 @@
   },
   {
     "term": "Organizations",
-    "definition": "Centrally manage billing; control access, compliance and security; share resources across AWS accounts; automate account creation; create groups of accounts to reflect business needs; apply governance policies to groups",
+    "definition": "Organizations centralizes billing, access, compliance, security, and sharing.",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Organizations",
+    "definition": "It automates account creation and groups accounts for governance.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1131,7 +1391,7 @@
   },
   {
     "term": "Config",
-    "definition": "Resource-specific change history, audit and compliance; record all resources' configurations & compliance, over time",
+    "definition": "Config tracks resource changes, audits compliance, and records configurations.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1141,7 +1401,17 @@
   },
   {
     "term": "Trusted Advisor",
-    "definition": "High-level AWS account assessment provides insights, support plan adapted to your needs; helps provision resources following best practices for cost optimization, performance, security, fault tolerance, and service limits; full set of checks on Business or Enterprise Support Plan",
+    "definition": "Trusted Advisor assesses accounts and recommends best practices.",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Trusted Advisor",
+    "definition": "It covers cost, performance, security, fault tolerance, and service limits.",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "Trusted Advisor",
+    "definition": "Business and Enterprise plans include all checks.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1156,17 +1426,22 @@
   },
   {
     "term": "AWS Service Catalog",
-    "definition": "Users and organizations can create and manage catalogs of IT services approved for use on AWS; virtual machine images, servers, software",
+    "definition": "Service Catalog lets organizations manage approved IT service catalogs.",
+    "section": "Account Best Practices Summary"
+  },
+  {
+    "term": "AWS Service Catalog",
+    "definition": "Catalog items can include VM images, servers, and software.",
     "section": "Account Best Practices Summary"
   },
   {
     "term": "APN (AWS Partner Network) Consulting Partner",
-    "definition": "Professional services firm to help customers design, architect, build, migrate and manage workloads on AWS",
+    "definition": "AWS Consulting Partners help design, build, migrate, and manage AWS workloads.",
     "section": "Account Best Practices Summary"
   },
   {
     "term": "APN (AWS Partner Network) Technology Partner",
-    "definition": "Provide hardware, connectivity services, or software solutions hosted on or integrated with AWS Cloud",
+    "definition": "AWS Technology Partners provide hardware, connectivity, or software for AWS.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1176,7 +1451,12 @@
   },
   {
     "term": "Compute Optimizer",
-    "definition": "Uses machine learning to recommend optimal resource configurations to reduce cost; applies to some types of Ec2 instances, EC2 auto scaling groups, EBS volumes, and Lamda functions",
+    "definition": "Compute Optimizer uses ML to recommend cost-saving configurations.",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Compute Optimizer",
+    "definition": "It covers some EC2, Auto Scaling groups, EBS volumes, and Lambda.",
     "section": "Billing Summary"
   },
   {
@@ -1191,7 +1471,17 @@
   },
   {
     "term": "Cost Allocation Tags",
-    "definition": "Tag resources to create detailed reports; each tag key must be unique, and each tag key can have only one value; user must activate AWS-generated and user-defined tags separately to appear in Cost Explorer or reports",
+    "definition": "Cost allocation tags organize resources into detailed billing reports.",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost Allocation Tags",
+    "definition": "Each tag key must be unique and can have one value.",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Cost Allocation Tags",
+    "definition": "Activate AWS and user tags separately for reports or Cost Explorer.",
     "section": "Billing Summary"
   },
   {
@@ -1211,7 +1501,17 @@
   },
   {
     "term": "Budgets",
-    "definition": "More advanced than Billing Alarms, track usages, costs, RI, and get alerts; sends alerts as CloudWatch Billing Alarms and also when cost and usage are forecast to exceed budget; four budget types are Cost Budget, Usage Budget, Reservation Budget, and Savings Plans Budget",
+    "definition": "Budgets track usage, costs, reservations, and Savings Plans.",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Budgets",
+    "definition": "They alert through CloudWatch when actual or forecast use exceeds limits.",
+    "section": "Billing Summary"
+  },
+  {
+    "term": "Budgets",
+    "definition": "Types include cost, usage, reservation, and Savings Plans budgets.",
     "section": "Billing Summary"
   },
   {
@@ -1276,7 +1576,7 @@
   },
   {
     "term": "Elastic Transcoder",
-    "definition": "Converts media files stored in S3 into media file formats required by consumer playback devices",
+    "definition": "Elastic Transcoder converts S3 media into formats required by playback devices.",
     "section": "Other Services Summary"
   },
   {
@@ -1296,27 +1596,42 @@
   },
   {
     "term": "AWS Device Farm",
-    "definition": "Fully managed service to concurrently test web and mobile apps against desktop browsers, real mobile devices, tablets, etc.",
+    "definition": "Device Farm tests apps across browsers and devices concurrently.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Device Farm",
+    "definition": "It supports real phones, tablets, and desktop browsers.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Backup",
-    "definition": "Centrally manage and automated backups across AWS services, can be scheduled and restored",
+    "definition": "AWS Backup centrally manages scheduled backups and restores across services.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Elastic Disaster Recovery (DRS)",
-    "definition": "Quickly recover physical, virtual and cloud-based servers into AWS with continuous block-level replication for servers",
+    "definition": "Elastic Disaster Recovery recovers physical, virtual, and cloud servers to AWS.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Elastic Disaster Recovery (DRS)",
+    "definition": "It continuously replicates server data at block level.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS DataSync",
-    "definition": "Move lots of data from on-prem to AWS, supports scheduling, replication is incremental after first load",
+    "definition": "DataSync moves large datasets from on-premises to AWS.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS DataSync",
+    "definition": "It supports scheduling and incremental transfers after the initial copy.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Application Discovery Service",
-    "definition": "Plan migration projects by gathering info about on-prem data centers and dependency mapping",
+    "definition": "Application Discovery Service plans moves using datacenter data and dependencies.",
     "section": "Other Services Summary"
   },
   {
@@ -1326,7 +1641,12 @@
   },
   {
     "term": "AWS Application Discovery Agent",
-    "definition": "System config, perofmrance, processes, details of network connections between systems",
+    "definition": "The Discovery Agent collects system configuration, performance, and process data.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Application Discovery Agent",
+    "definition": "It records network connections between systems.",
     "section": "Other Services Summary"
   },
   {
@@ -1336,12 +1656,22 @@
   },
   {
     "term": "AWS Migration Evaluator",
-    "definition": "Builds data-driven business case for migration to AWS with baseline of current architecture",
+    "definition": "Migration Evaluator builds a data-driven AWS migration business case.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Migration Evaluator",
+    "definition": "It establishes a baseline of the current architecture.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Migration Hub",
-    "definition": "Central location collects servers and app inventory data for assessing, planning, tracking mgirations to AWS",
+    "definition": "Migration Hub gathers server and application inventory in one place.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Migration Hub",
+    "definition": "Use it to assess, plan, and track AWS migrations.",
     "section": "Other Services Summary"
   },
   {
@@ -1361,7 +1691,7 @@
   },
   {
     "term": "AWS Ground Station",
-    "definition": "Fully managed service to control satellite communications, process data, scale satellite operations",
+    "definition": "Ground Station manages satellite communications, processing, and operations.",
     "section": "Other Services Summary"
   },
   {
@@ -1371,7 +1701,12 @@
   },
   {
     "term": "AWS Global Accelerator",
-    "definition": "Availability and performance improvements; uses AWS global network to optimize path from users to applications; traffic improvements up to 60%",
+    "definition": "Global Accelerator improves availability and performance using AWS's network.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Global Accelerator",
+    "definition": "It optimizes user paths and can improve traffic by up to 60%.",
     "section": "Other Services Summary"
   },
   {
@@ -1381,32 +1716,62 @@
   },
   {
     "term": "AWS Marketplace",
-    "definition": "Any AWS account can be buyer (subscriber); register AWS account to become a seller (provider); digital catalog with thousands of software listings from independent software vendors; simplifies finding, testing, buying and deploying software to run on AWS",
+    "definition": "AWS Marketplace lets accounts subscribe as buyers or register as sellers.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Marketplace",
+    "definition": "Its catalog lists thousands of independent vendors' software.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Marketplace",
+    "definition": "It simplifies finding, testing, buying, and deploying AWS software.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS OpsWorks",
-    "definition": "Configuration management service that provides managed instances of Chef and Puppet to automate how servers are configured, deployed and managed across EC2 instances or on-prem",
+    "definition": "OpsWorks manages Chef and Puppet configuration instances.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS OpsWorks",
+    "definition": "It automates server setup on EC2 or on-premises.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Knowledge Center",
-    "definition": "Troubleshooting starting point; contains most frequent & common questions and request, and AWS-provided solutions for the same",
+    "definition": "Knowledge Center offers troubleshooting answers and AWS solutions.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Support Center",
-    "definition": "Hub for managing your support cases; Developer Support Plans and higher can chat or call engineers; Enterprise-level customers have dedicated TAM",
+    "definition": "Support Center manages support cases in one hub.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Support Center",
+    "definition": "Developer plans and higher can contact engineers by chat or phone.",
+    "section": "Other Services Summary"
+  },
+  {
+    "term": "AWS Support Center",
+    "definition": "Enterprise customers have a dedicated TAM.",
     "section": "Other Services Summary"
   },
   {
     "term": "Savings Plans",
-    "definition": "Applies to EC2 instances; Compute Savings Plans (66% cost reduction); EC2 Instance Savings Plan (up to 72% savings)",
+    "definition": "Savings Plans discount long-term AWS usage.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Savings Plans",
+    "definition": "Compute plans save up to 66%; EC2 Instance plans save up to 72%.",
     "section": "Cram Summary"
   },
   {
     "term": "Compute Savings Plan",
-    "definition": "Cost reduction up to 66%, apply automatically to EC2 instances, Fargate and Lambda",
+    "definition": "Compute Savings Plans save up to 66% on EC2, Fargate, and Lambda.",
     "section": "Cram Summary"
   },
   {
@@ -1441,22 +1806,32 @@
   },
   {
     "term": "Amazon Detective",
-    "definition": "Think internal security, GuardDuty plus; analyze VPC flow logs, CloudTrail and GuardDuty; examine resources, users and interactions between",
+    "definition": "Detective analyzes VPC Flow Logs, CloudTrail, and GuardDuty findings.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Amazon Detective",
+    "definition": "It investigates issues by examining resources, users, and their interactions.",
     "section": "Cram Summary"
   },
   {
     "term": "Amazon Inspector",
-    "definition": "Think external security, not \"Detective\"; test network accessibility of EC2 instances, security state of apps on those instances",
+    "definition": "Inspector focuses on external exposure, not Detective-style investigations.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Amazon Inspector",
+    "definition": "It tests EC2 network access and instance app security.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS CloudTrail",
-    "definition": "Think history, logging; provides visibility into user activity by recording actions taken on account",
+    "definition": "CloudTrail records account actions to show user activity over time.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Trusted Advisor",
-    "definition": "Think provisioned optimization; guidance to help provision resources following best practices",
+    "definition": "Trusted Advisor guides resource provisioning using AWS best practices.",
     "section": "Cram Summary"
   },
   {
@@ -1466,12 +1841,12 @@
   },
   {
     "term": "AppStream 2.0",
-    "definition": "Think desktop streaming; centrally manage desktop applications, stream to any computer",
+    "definition": "AppStream streams centrally managed desktop apps to computers.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Transfer Family",
-    "definition": "Think FTP; aggregated name for \"AWS Transfer for SFTP\", \"AWS Transfer for FPTS\", and \"AWS Transfer for FTP\"",
+    "definition": "Transfer Family groups AWS Transfer services for SFTP, FTPS, and FTP.",
     "section": "Cram Summary"
   },
   {
@@ -1486,7 +1861,12 @@
   },
   {
     "term": "Warm Standby Strategy",
-    "definition": "Think \"ready to go\"; scaled down functional copy in secondary region waiting for scale up",
+    "definition": "Warm standby keeps a scaled-down, working copy in a secondary Region.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Warm Standby Strategy",
+    "definition": "Scale it up when needed.",
     "section": "Cram Summary"
   },
   {
@@ -1496,22 +1876,22 @@
   },
   {
     "term": "EC2 Instance Types",
-    "definition": "Compute-optimized, Memory-optimized, Storage-optimized, Accelerated computing-optimized",
+    "definition": "EC2 families include compute, memory, storage, and accelerated types.",
     "section": "Cram Summary"
   },
   {
     "term": "Compute-Optimized Instance Types",
-    "definition": "Think \"HPC\"; designed for machine learning, high-perf web servers, scientific modeling, etc.",
+    "definition": "Compute-optimized instances suit HPC, ML, web servers, and science.",
     "section": "Cram Summary"
   },
   {
     "term": "Storage-Optimized Instance Types",
-    "definition": "Think \"read/write big data\"; used for data warehousing, log processing, very large datasets",
+    "definition": "Storage-optimized instances suit warehousing, logs, and large datasets.",
     "section": "Cram Summary"
   },
   {
     "term": "Accelerated compting-Optimized Instance Types",
-    "definition": "Think \"graphics\"; GPU compute, GPU graphics, and FPGA programmable hardware types available",
+    "definition": "Accelerated instances offer GPUs for compute or graphics and FPGA hardware.",
     "section": "Cram Summary"
   },
   {
@@ -1521,7 +1901,12 @@
   },
   {
     "term": "AWS Organizations",
-    "definition": "Think \"organizing accounts\"; can only make, organize and decorate accounts with minor billing capability (Consolidated Billing combines member accounts into management account for single bill)",
+    "definition": "Organizations groups accounts and provides limited billing features.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS Organizations",
+    "definition": "Consolidated Billing combines member bills under the management account.",
     "section": "Cram Summary"
   },
   {
@@ -1531,57 +1916,97 @@
   },
   {
     "term": "CloudTrail Events",
-    "definition": "Record of activity in an AWS account, has three types: management events (default), data events (opt-in, additional cost), CloudTrail Insights events (opt-in, additional cost)",
+    "definition": "CloudTrail records management, data, and Insights event types.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "CloudTrail Events",
+    "definition": "Management is default; Data and Insights events are optional and cost extra.",
     "section": "Cram Summary"
   },
   {
     "term": "Management Events",
-    "definition": "Default CloudTrail event type; describes management operations in account like setting up logging, registering devices, configuring routing; \"control plane operations\"",
+    "definition": "Management events are CloudTrail's default event type.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Management Events",
+    "definition": "They record account administration like logging, devices, and routing.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Management Events",
+    "definition": "These are control-plane operations.",
     "section": "Cram Summary"
   },
   {
     "term": "Data Events",
-    "definition": "High-volume events; opt-in CloudTrail event type at additional cost; describes operations on resources; S3 API, Lambda execution, S3 activity on AWS Outposts; \"data plan operations\"",
+    "definition": "Data events are high-volume CloudTrail events with opt-in costs.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Data Events",
+    "definition": "They record resource operations like S3 APIs and Lambda execution.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Data Events",
+    "definition": "These are data-plane operations, including S3 on Outposts.",
     "section": "Cram Summary"
   },
   {
     "term": "CloudTrail Insight Events",
-    "definition": "Opt-in CloudTrail event type; describe unusual activity in AWS account; disabled when trail is created, must be enabled",
+    "definition": "CloudTrail Insights identifies unusual account activity.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "CloudTrail Insight Events",
+    "definition": "It is opt-in and disabled when a trail is created.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Control Tower",
-    "definition": "Think \"landing zones\"; deploy and govern multi-account AWS environment, day-to-day reminders",
+    "definition": "Control Tower deploys and governs multi-account AWS landing zones.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Elastic Beanstalk",
-    "definition": "Think \"Free, easy EC2\"; no charge to deploy AWS Elastic Beanstalk, just pay for underlying resources consumed",
+    "definition": "Elastic Beanstalk has no deployment fee; pay for used resources.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Partner Solutions (Quick Starts)",
-    "definition": "Think \"reference deployments\"; compress procedures into several steps for specific workloads",
+    "definition": "Quick Starts provide reference deployments to simplify workload setup.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Architecture Center",
-    "definition": "Think \"architecture center\"; contains diagrams, solutions, patterns, and best practices for reference architectures",
+    "definition": "Architecture Center provides diagrams, solutions, patterns, and best practices.",
     "section": "Cram Summary"
   },
   {
     "term": "Infrastructure Event Management",
-    "definition": "Think \"bespoke Enterprise O-R plus\"; short-term engagement with AWS support for deeper understanding of customer use cases",
+    "definition": "Infrastructure Event Management is a short-term AWS Support engagement.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "Infrastructure Event Management",
+    "definition": "It helps AWS understand customer use cases in depth.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS Global Services",
-    "definition": "Think \"IAM, Route 53, and Work- stuff\"; Route 53, Chime, WorkDocs, WorkMail, WorkSpaces, and WorkLink",
+    "definition": "Route 53, Chime, WorkDocs, WorkMail, WorkSpaces, and WorkLink are global.",
     "section": "Cram Summary"
   },
   {
     "term": "AWS WAF Coverage",
-    "definition": "Think \"WAF CDN\"; tightly integrated with CloudFront, Application Load Balancer, API Gateway and AppSync which are all content delivery solutions",
+    "definition": "WAF integrates with CloudFront, ALB, API Gateway, and AppSync.",
+    "section": "Cram Summary"
+  },
+  {
+    "term": "AWS WAF Coverage",
+    "definition": "These services support content delivery.",
     "section": "Cram Summary"
   },
   {
