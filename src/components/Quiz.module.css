@@ -227,6 +227,13 @@
 .studyContent ul,
 .studyContent ol { padding-left: 1.5rem; }
 .studyContent li + li { margin-top: 0.35em; }
+.studyContent li > p {
+  margin: 0.45em 0 0.8em 0.25rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent, #8a9cff) 50%, transparent);
+}
+.studyContent li > p:first-child { margin-top: 0.45em; }
+.studyContent li > strong { display: inline-block; margin-top: 0.25em; }
 .studyContent a { color: #a9c7ff; }
 .studyContent pre {
   overflow: auto;
