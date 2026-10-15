@@ -56,19 +56,21 @@ export default defineConfig([
           This project is a small quiz app that generates flashcard-style multiple-choice questions from a Markdown notes file and provides a lightweight UI for practicing terms.
 
           Key files
-          - `src/data/terms.json` — generated JSON containing term/definition pairs used by the quiz.
-          - `scripts/extract-terms.js` — small extractor that parses your Markdown notes and writes `terms.json`.
+          - `src/data/terms.json` — generated CLF-C02 JSON containing term/definition pairs used by the quiz.
+          - `src/data/saa-terms.json` — generated SAA-C03 JSON containing term/definition pairs used by the quiz.
+          - `scripts/extract-terms.js` and `scripts/extract-saa-terms.js` — extract quiz terms from the corresponding study Markdown files.
 
           Notes extractor behavior
-          - The extractor looks for a file named `AWS Notes Summaries.md` (or similar). The file may live in the project root or under `src/data/` — the extractor now searches common locations and will scan `src/data` recursively to find the notes file.
-          - The extractor expects term lines in the form `Term // Definition` under headings that end with the word "Summary" (case-insensitive). The heading becomes the `section` for each term.
+          - The CLF-C02 extractor looks for `CLF-C02.md`; the SAA-C03 extractor reads `src/data/B/SAA-C03.md`.
+          - The CLF extractor expects term lines in the form `Term // Definition` under headings ending with "Summary". The SAA extractor parses `Term // Definition` entries under second-level section headings.
 
           How to generate `terms.json`
-          1. Place your Markdown notes file somewhere in the repo (recommended locations: project root, or `src/data/` subfolders). Name it `AWS Notes Summaries.md` or similar.
+          1. Keep `CLF-C02.md` and `SAA-C03.md` in `src/data/B/`.
           2. From the project root run:
 
           ```bash
           npm run extract-terms
+          npm run extract-saa-terms
           ```
 
           You should see output like:
@@ -95,7 +97,6 @@ export default defineConfig([
           3. Open `http://localhost:5173` in your browser.
 
           Further notes
-          - If you move the notes file, the extractor will attempt to find it automatically under `src/data`. If you prefer to keep your notes outside the repo, update `scripts/extract-terms.js` to point to your preferred path or run it from a wrapper script that sets an environment variable.
-          - The `extract-terms` script overwrites `src/data/terms.json` every time it runs.
+          - The extractors overwrite their corresponding JSON files whenever they run.
 
           Questions or issues? Open an issue or edit this README to add details about your note formats.

@@ -11,10 +11,8 @@ async function main() {
 
   // The notes file may have been moved. Try to find it in a few locations
   const candidates = [
-    path.join(projectRoot, 'AWS Notes Summaries.md'),
-    path.join(projectRoot, 'AWS Notes Summarized.md'),
-    path.join(projectRoot, 'src', 'data', 'AWS Notes Summaries.md'),
-    path.join(projectRoot, 'src', 'data', 'B', 'AWS Notes Summaries.md'),
+    path.join(projectRoot, 'CLF-C02.md'),
+    path.join(projectRoot, 'src', 'data', 'B', 'CLF-C02.md'),
   ];
 
   async function findFirstExisting(list) {
@@ -36,7 +34,7 @@ async function main() {
           const found = await walk(p);
           if (found) return found;
         } else {
-          if (/^AWS Notes Summaries\.md$/i.test(ent.name) || /^AWS Notes Summariz/.test(ent.name)) return p;
+          if (/^CLF-C02\.md$/i.test(ent.name)) return p;
         }
       }
       return null;
@@ -55,7 +53,7 @@ async function main() {
 
   const mdPath = await findFirstExisting(candidates);
   if (!mdPath) {
-    console.error('Could not find AWS Notes file. Searched common locations under project root.');
+    console.error('Could not find CLF-C02.md. Searched common locations under project root.');
     process.exit(1);
   }
   const outDir = path.join(projectRoot, 'src', 'data');

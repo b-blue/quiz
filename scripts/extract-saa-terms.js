@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const projectRoot = path.resolve(__dirname, '..');
-  const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'AWS Practice Test Concepts.md');
+  const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'SAA-C03.md');
   const outputPath = path.join(projectRoot, 'src', 'data', 'saa-terms.json');
   const markdown = await fs.readFile(sourcePath, 'utf8');
 

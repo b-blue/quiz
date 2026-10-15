@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import LightGrid from './LightGrid';
+
+const StudyPanel = lazy(() => import('./StudyPanel'));
 
 export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?: () => void; mode?: 'aws' | 'saa' }) {
   const terms = mode === 'saa' ? getSaaTerms() : getAllTerms();
@@ -13,6 +15,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection, terms));
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [showStudyView, setShowStudyView] = useState(false);
   // Buttons are simple press targets now (no drag-and-drop)
 
   // Game state: streaks (per-quiz), muted
@@ -35,6 +38,8 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     setTimedMode(next);
     try { localStorage.setItem(`${mode}:timedMode`, next ? '1' : '0'); } catch (e) {}
   }
+
+  const studyTitle = mode === 'saa' ? 'SAA-C03 Study Guide' : 'CLF-C02 Study Guide';
 
   function next() {
     // pick a new random question, but avoid returning the same definition immediately
@@ -145,8 +150,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
   useEffect(() => {
     // start timer for question when timedMode is enabled and answers not shown
     stopTimer();
-    setTimeLeft(timerDuration);
-    if (!timedMode) return;
+    if (!timedMode || showStudyView) return;
     timerRef.current = window.setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
@@ -165,7 +169,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     }, 1000);
     return () => stopTimer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [question, timedMode]);
+  }, [question, timedMode, showStudyView]);
 
   useEffect(() => {
     return () => {
@@ -186,6 +190,14 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
           <>No terms available. Run the extractor to generate data.</>
         )}
       </div>
+    );
+  }
+
+  if (showStudyView) {
+    return (
+      <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
+        <StudyPanel mode={mode} onBack={() => setShowStudyView(false)} />
+      </Suspense>
     );
   }
 
@@ -269,6 +281,14 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
               </div>
             );
           })()}
+          <button
+            className={`${styles.studyToggleButton} ${styles.btn3d}`}
+            onClick={() => setShowStudyView(true)}
+            aria-label={`Open ${studyTitle}`}
+            title={`Open ${studyTitle}`}
+          >
+            📖
+          </button>
           <button
             className={`${styles.clockBtn} ${styles.btn3d}`}
             onClick={toggleTimedMode}
