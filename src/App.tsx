@@ -8,7 +8,7 @@ function App() {
   // single dark theme only
   const [mode, setMode] = useState<'aws'|'saa'|'bio'|'settings'>(() => {
     const s = typeof window !== 'undefined' ? localStorage.getItem('app:startMode') : null;
-    return s === 'bio' || s === 'saa' ? s : 'aws';
+    return s === 'bio' || s === 'aws' || s === 'saa' ? s : 'saa';
   });
   const [prevMode, setPrevMode] = useState<'aws'|'saa'|'bio'>(() => mode === 'settings' ? 'aws' : mode);
 

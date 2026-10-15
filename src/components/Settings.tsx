@@ -6,7 +6,7 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
   const muted = localStorage.getItem('quiz:muted') === '1';
   const startMode = (() => {
     const v = localStorage.getItem('app:startMode');
-    return v === 'bio' || v === 'saa' ? v : 'aws';
+    return v === 'bio' || v === 'aws' || v === 'saa' ? v : 'saa';
   })();
   const sectionMode = startMode === 'saa' ? 'saa' : 'aws';
   const sections = sectionMode === 'saa' ? getSections(getSaaTerms()) : getSections();
@@ -67,7 +67,6 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
             <div style={{ display: 'flex', gap: 8 }}>
               <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>AWS</button>
               <button className={startMode === 'saa' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('saa')}>SAA</button>
-              <button className={startMode === 'bio' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('bio')}>BIO</button>
             </div>
           </div>
         </div>
