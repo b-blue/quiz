@@ -11,7 +11,7 @@ function formatTermDefinitions(markdown: string): string {
     if (!match) return line;
 
     const [, indentation, marker, term, definition] = match;
-    return `${indentation}${marker}**${term.trim()}**\n${indentation}  \n${indentation}  ${definition.trim()}`;
+    return `${indentation}${marker}**${term.trim()}**\n\n${indentation}  ${definition.trim()}`;
   }).join('\n');
 }
 

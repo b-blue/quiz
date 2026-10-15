@@ -208,8 +208,26 @@
   border-radius: 12px;
   background: var(--surface, rgba(18,24,33,0.92));
   color: var(--text);
+  text-align: left;
+  font-size: 1rem;
   line-height: 1.65;
   overflow-wrap: anywhere;
+}
+.studyContent h1 {
+  font-size: 1.8rem;
+  text-align: left;
+}
+.studyContent h2 {
+  font-size: 1.45rem;
+  text-align: left;
+}
+.studyContent h3 {
+  font-size: 1.2rem;
+  text-align: left;
+}
+.studyContent h4 {
+  font-size: 1.05rem;
+  text-align: left;
 }
 .studyContent h1,
 .studyContent h2,
@@ -227,13 +245,15 @@
 .studyContent ul,
 .studyContent ol { padding-left: 1.5rem; }
 .studyContent li + li { margin-top: 0.35em; }
-.studyContent li > p {
-  margin: 0.45em 0 0.8em 0.25rem;
+.studyContent li > p:first-child {
+  margin: 0.25em 0 0;
+}
+.studyContent li > p + p {
+  margin: 0.15em 0 0.8em 0.25rem;
   padding-left: 0.8rem;
   border-left: 2px solid color-mix(in srgb, var(--accent, #8a9cff) 50%, transparent);
+  color: var(--text);
 }
-.studyContent li > p:first-child { margin-top: 0.45em; }
-.studyContent li > strong { display: inline-block; margin-top: 0.25em; }
 .studyContent a { color: #a9c7ff; }
 .studyContent pre {
   overflow: auto;
