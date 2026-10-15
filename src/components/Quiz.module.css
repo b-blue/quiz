@@ -281,48 +281,8 @@
   color: white;
   box-shadow: 0 6px 18px rgba(46,110,255,0.14);
 }
-.lockBtn {
-  padding: 0.45rem 0.65rem;
-  border-radius: 8px;
-  border: 1px solid var(--btn-border);
-  background: transparent;
-  color: var(--text);
-  cursor: pointer;
-}
-.lockBtn.active {
-  background: linear-gradient(90deg, #444, #666);
-  color: #fff;
-}
-.lockBtnActive {
-  background: linear-gradient(90deg, #444, #666);
-  color: #fff;
-}
 .streaks { text-align: right; font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end; }
 .streaks > div { white-space: nowrap; }
-
-.lockIconBtn {
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  color: var(--text);
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: none; /* hidden by default; shown for phone portrait via media query */
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-.lockIconBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.lockIconBtn:active {
-  transform: translateY(0);
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
-}
 
 /* Gear button shares the same visual style but is always visible */
 .gearBtn {
@@ -344,11 +304,6 @@
 }
 .gearBtn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 .gearBtn:active { transform: translateY(0); box-shadow: inset 0 2px 6px rgba(0,0,0,0.15); }
-
-/* Show the lock icon when viewport is phone-like in portrait orientation */
-@media (max-width: 600px) {
-  .lockIconBtn { display: flex; }
-}
 
 /* 3D chunky button base (boxy/block shadow variant) */
 .btn3d {
@@ -396,7 +351,6 @@
 /* LED-style focus outlines for buttons inside the quiz container */
 .quizContainer button:focus-visible,
 .quizContainer .btn3d:focus-visible,
-.quizContainer .lockIconBtn:focus-visible,
 .quizContainer .gearBtn:focus-visible,
 .quizContainer .clockBtn:focus-visible,
 .quizContainer .timedBtn:focus-visible {
@@ -422,7 +376,7 @@
   height: 20px;
 }
 
-/* Clock button: shown with lock on small portrait screens */
+/* Timed-mode button */
 .clockBtn {
   padding: 0;
   border-radius: 8px;
@@ -442,12 +396,6 @@
 }
 .clockBtn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 .clockBtn:active { transform: translateY(0); box-shadow: inset 0 2px 6px rgba(0,0,0,0.15); }
-/* ensure lock button is also square when visible */
-.lockIconBtn { padding: 0; width: 48px; height: 48px; border-radius: 8px; align-items: center; justify-content: center; }
-.lockIconBtn > img, .lockIconBtn > svg { width: 20px; height: 20px; }
-
-/* clockBtn is always visible; lockIconBtn alone is shown only on small portrait screens */
-
 /* Animate streak value color changes and add a subtle pop when highlighted */
 .streaks strong {
   transition: color 300ms cubic-bezier(.2,.9,.2,1), transform 220ms ease;
@@ -654,6 +602,37 @@
   box-shadow: 0 8px 28px rgba(2,6,23,0.5);
 }
 
+.settingsStartMode,
+.settingsMuteSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.settingsModeButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+.settingsModeButton { width: 100%; }
+.settingsMuteSection {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.settingsMuteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 190px;
+  min-height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* Start mode switch */
 .startSwitch { display: flex; flex-direction: column; align-items: center; }
 .switchTrack {
@@ -828,6 +807,9 @@
   /* center settings content on small screens */
   .settingsCard { display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .settingsCard > div { width: 100%; }
+  .settingsStartMode, .settingsMuteSection { flex-direction: column; align-items: stretch; gap: 12px; }
+  .settingsModeButtons { width: 100%; min-width: 0; }
+  .settingsMuteButton { width: 100%; }
   .settingsCard .startSwitch { display: flex; justify-content: center; }
   .filterRow { flex-direction: column; align-items: center; }
   .filterRow .clearFilter { margin-left: 0; margin-top: 8px; }

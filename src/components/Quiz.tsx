@@ -29,15 +29,6 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
-  const [locked, setLocked] = useState<boolean>(() => localStorage.getItem('quiz:locked') === '1');
-
-  function toggleLock() {
-    const nextLocked = !locked;
-    setLocked(nextLocked);
-    try {
-      localStorage.setItem('quiz:locked', nextLocked ? '1' : '0');
-    } catch (e) {}
-  }
 
   function toggleTimedMode() {
     const next = !timedMode;
@@ -59,19 +50,6 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     setShowAnswer(false);
     setTimeLeft(timerDuration);
   }
-  // apply lock from persisted setting on mount
-  useEffect(() => {
-    try {
-      if (locked) {
-        document.body.style.overflow = 'hidden';
-        (document.documentElement as HTMLElement).style.touchAction = 'none';
-      } else {
-        document.body.style.overflow = '';
-        (document.documentElement as HTMLElement).style.touchAction = '';
-      }
-    } catch (e) {}
-  }, [locked]);
-
   function onSelect(i: number) {
     if (showAnswer) return;
     // stop timer while showing answer
@@ -196,15 +174,6 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     };
   }, []);
 
-  useEffect(() => {
-    return () => {
-      try {
-        document.body.style.overflow = '';
-        (document.documentElement as HTMLElement).style.touchAction = '';
-      } catch (e) {}
-    };
-  }, []);
-
   // framer-motion dynamic loading removed to avoid Vite import-analysis errors.
   // We use CSS transitions for hover/tap effects instead.
 
@@ -300,15 +269,6 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
               </div>
             );
           })()}
-          <button
-            className={`${styles.lockIconBtn} ${styles.btn3d}`}
-            onClick={toggleLock}
-            aria-label={locked ? 'Unlock scroll' : 'Lock scroll'}
-            title={locked ? 'Unlock scroll' : 'Lock scroll'}
-          >
-            {locked ? '🔒' : '🔓'}
-          </button>
-
           <button
             className={`${styles.clockBtn} ${styles.btn3d}`}
             onClick={toggleTimedMode}

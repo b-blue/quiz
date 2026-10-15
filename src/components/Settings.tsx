@@ -58,22 +58,31 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className={styles.settingsStartMode}>
           <div>
             <div style={{ fontWeight: 700 }}>Start Mode</div>
             <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Choose which quiz starts when the app loads</div>
           </div>
-          <div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button className={startMode === 'aws' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>AWS</button>
-              <button className={startMode === 'saa' ? `${styles.timedBtn} ${styles.timedBtnActive} ${styles.btn3d}` : `${styles.timedBtn} ${styles.btn3d}`} onClick={() => setStartMode('saa')}>SAA</button>
-            </div>
+          <div className={styles.settingsModeButtons}>
+            <button className={`${styles.timedBtn} ${styles.settingsModeButton} ${startMode === 'aws' ? styles.timedBtnActive : ''} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>CLF-C02</button>
+            <button className={`${styles.timedBtn} ${styles.settingsModeButton} ${startMode === 'saa' ? styles.timedBtnActive : ''} ${styles.btn3d}`} onClick={() => setStartMode('saa')}>SAA-C03</button>
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 16 }}>
-          <button className={`${styles.muteBtn} ${styles.btn3d}`} onClick={() => setMuted(!muted)}>{muted ? 'Unmute' : 'Mute'}</button>
-          {/* Ambient pulse feature removed — pulsing disabled globally */}
+        <div className={styles.settingsMuteSection}>
+          <div>
+            <div style={{ fontWeight: 700 }}>Audio</div>
+            <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Toggle quiz sound effects</div>
+          </div>
+          <button
+            className={`${styles.muteBtn} ${styles.settingsMuteButton} ${styles.btn3d}`}
+            onClick={() => setMuted(!muted)}
+            aria-label={muted ? 'Sound is muted. Click to unmute.' : 'Sound is on. Click to mute.'}
+            title={muted ? 'Sound is muted' : 'Sound is on'}
+          >
+            <span aria-hidden="true">{muted ? '🔇' : '🔊'}</span>
+            {muted ? 'Muted' : 'Sound on'}
+          </button>
         </div>
 
         <p style={{ color: 'var(--muted)', marginTop: 12 }}>Changes are applied immediately; the quiz will reload to pick up settings.</p>

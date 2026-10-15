@@ -97,13 +97,6 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
   const timerDuration = 15; // seconds per question when timedMode is on
   const [timeLeft, setTimeLeft] = useState<number>(timerDuration);
   const timerRef = useRef<number | null>(null);
-  const [locked, setLocked] = useState<boolean>(() => localStorage.getItem('quiz:locked') === '1');
-
-  function toggleLock() {
-    const next = !locked;
-    setLocked(next);
-    try { localStorage.setItem('quiz:locked', next ? '1' : '0'); } catch (e) {}
-  }
 
   function toggleTimedMode() {
     const next = !timedMode;
@@ -125,19 +118,6 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
     setShowAnswer(false);
     setTimeLeft(timerDuration);
   }
-
-  // Apply lock from persisted setting on mount
-  useEffect(() => {
-    try {
-      if (locked) {
-        document.body.style.overflow = 'hidden';
-        (document.documentElement as HTMLElement).style.touchAction = 'none';
-      } else {
-        document.body.style.overflow = '';
-        (document.documentElement as HTMLElement).style.touchAction = '';
-      }
-    } catch (e) {}
-  }, [locked]);
 
   if (!question) {
     return (
@@ -262,15 +242,6 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
     };
   }, []);
 
-  useEffect(() => {
-    return () => {
-      try {
-        document.body.style.overflow = '';
-        (document.documentElement as HTMLElement).style.touchAction = '';
-      } catch (e) {}
-    };
-  }, []);
-
   return (
     <div className={styles.quizContainer} data-variant="bio">
       {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
@@ -345,15 +316,6 @@ const BiologyQuiz: FC<{ onOpenSettings?: () => void }> = ({ onOpenSettings }) =>
               </div>
             );
           })()}
-          <button
-            className={`${styles.lockIconBtn} ${styles.btn3d}`}
-            onClick={toggleLock}
-            aria-label={locked ? 'Unlock scroll' : 'Lock scroll'}
-            title={locked ? 'Unlock scroll' : 'Lock scroll'}
-          >
-            {locked ? '🔒' : '🔓'}
-          </button>
-
           <button
             className={`${styles.clockBtn} ${styles.btn3d}`}
             onClick={toggleTimedMode}
