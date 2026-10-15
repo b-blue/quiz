@@ -71,22 +71,22 @@
   },
   {
     "term": "Business Capabilities",
-    "definition": "Business capabilities cover strategy, portfolios, innovation, and products.",
+    "definition": "It covers strategy, portfolios, innovation, and products.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Business Capabilities",
-    "definition": "They include partnerships, data monetization, insights, and data science.",
+    "definition": "It includes partnerships, data monetization, insights, and data science.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "People Capabilities",
-    "definition": "People capabilities cover culture, leadership, cloud fluency, and workforce.",
+    "definition": "It covers culture, leadership, cloud fluency, and workforce.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "People Capabilities",
-    "definition": "They cover organizational design, alignment, and change acceleration.",
+    "definition": "It includes organizational design, alignment, and change acceleration.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
@@ -101,12 +101,12 @@
   },
   {
     "term": "Platform Capabilities",
-    "definition": "Platform capabilities cover platform, data, and engineering architectures.",
+    "definition": "It covers platform, data, and engineering architectures.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
     "term": "Platform Capabilities",
-    "definition": "They include provisioning, orchestration, modern app development, and CI/CD.",
+    "definition": "It includes provisioning, orchestration, modern app development, and CI/CD.",
     "section": "AWS Cloud Adoption Framework Perspectives Capabilities Summary"
   },
   {
@@ -186,17 +186,12 @@
   },
   {
     "term": "Layer 4",
-    "definition": "Layer 4 is the transport layer for TCP and UDP; AWS Shield applies here.",
+    "definition": "TCP and UDP operate at the transport layer; AWS Shield applies here.",
     "section": "OSI Layer Architecture Summary"
   },
   {
     "term": "Layer 3",
-    "definition": "Layer 3 is the network layer, where physical network movement is determined.",
-    "section": "OSI Layer Architecture Summary"
-  },
-  {
-    "term": "Layer 3",
-    "definition": "AWS Shield also applies at this layer.",
+    "definition": "Packet routing is determined at the network layer; AWS Shield also applies here.",
     "section": "OSI Layer Architecture Summary"
   },
   {
@@ -221,7 +216,7 @@
   },
   {
     "term": "Relocate",
-    "definition": "Relocate applications to the cloud or move EC2 instances between VPCs or Regions.",
+    "definition": "Move apps to the cloud or migrate virtual instances between VPCs or Regions.",
     "section": "Cloud Migration - The 7 R's Summary"
   },
   {
@@ -251,12 +246,12 @@
   },
   {
     "term": "DynamoDB",
-    "definition": "DynamoDB Reserved Capacity can save when read/write throughput is predictable.",
+    "definition": "Reserved capacity can save when read/write throughput is predictable.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
     "term": "ElastiCache",
-    "definition": "ElastiCache Reserved Nodes require a low, one-time payment per cache node.",
+    "definition": "Reserved cache nodes require a low, one-time payment per node.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
@@ -266,7 +261,7 @@
   },
   {
     "term": "RDS",
-    "definition": "RDS Reserved Instances offer no-, partial-, and all-upfront payment options.",
+    "definition": "Database reserved instances offer no-, partial-, and all-upfront payment options.",
     "section": "Reservations to Optimize Costs Summary"
   },
   {
@@ -391,7 +386,7 @@
   },
   {
     "term": "Simple Routing",
-    "definition": "Simple routing directs a domain to one resource, such as a website server.",
+    "definition": "Direct a domain to one resource, such as a website server.",
     "section": "AWS Route 53 Routing Policies Summary"
   },
   {
@@ -406,7 +401,7 @@
   },
   {
     "term": "Latency Routing",
-    "definition": "Latency routing sends users to the AWS Region with the lowest latency.",
+    "definition": "Send users to the AWS Region with the lowest measured latency.",
     "section": "AWS Route 53 Routing Policies Summary"
   },
   {
@@ -581,7 +576,7 @@
   },
   {
     "term": "EFS",
-    "definition": "EFS is a regional network file system for hundreds of instances across AZs.",
+    "definition": "A regional network file system can serve hundreds of instances across AZs.",
     "section": "EC2 Instance Summary"
   },
   {
@@ -606,7 +601,7 @@
   },
   {
     "term": "Elasticity",
-    "definition": "Elasticity scales resources up or down to match actual needs.",
+    "definition": "Scale resources up or down to match actual needs.",
     "section": "ELB & ASG Summary"
   },
   {
@@ -671,12 +666,12 @@
   },
   {
     "term": "Buckets",
-    "definition": "S3 bucket names are globally unique, and each bucket belongs to a Region.",
+    "definition": "S3 names are globally unique, and each bucket belongs to a Region.",
     "section": "S3 Summary"
   },
   {
     "term": "Buckets",
-    "definition": "Buckets are analogous to folders.",
+    "definition": "They are analogous to folders.",
     "section": "S3 Summary"
   },
   {
@@ -726,32 +721,32 @@
   },
   {
     "term": "S3 Replication",
-    "definition": "S3 replication requires versioning on source and destination buckets.",
+    "definition": "Enable versioning on both source and destination buckets.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 Replication",
-    "definition": "Copies are asynchronous and can be cross-Region or same-Region.",
+    "definition": "Copies are asynchronous within or across Regions.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 CRR (Cross-Region Replication)",
-    "definition": "Cross-Region Replication copies bucket contents across Regions.",
+    "definition": "Copy bucket contents across Regions.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 CRR (Cross-Region Replication)",
-    "definition": "It supports compliance, lower latency, and operational efficiency.",
+    "definition": "This supports compliance, lower latency, and operational efficiency.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 SRR (Same-Region Replication)",
-    "definition": "Same-Region Replication copies bucket contents within a Region.",
+    "definition": "Copy bucket contents within a Region.",
     "section": "S3 Summary"
   },
   {
     "term": "S3 SRR (Same-Region Replication)",
-    "definition": "Use it to aggregate logs, replicate accounts, or meet data-residency rules.",
+    "definition": "Use this for log aggregation, account replication, or data residency.",
     "section": "S3 Summary"
   },
   {
@@ -766,7 +761,7 @@
   },
   {
     "term": "Aurora",
-    "definition": "Aurora is AWS's cloud-optimized implementation of PostgreSQL or MySQL.",
+    "definition": "AWS offers cloud-optimized implementations of PostgreSQL and MySQL.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -781,7 +776,7 @@
   },
   {
     "term": "DynamoDb",
-    "definition": "DynamoDB is a serverless NoSQL database replicated across three AZs.",
+    "definition": "A serverless NoSQL database is replicated across three AZs.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -796,22 +791,22 @@
   },
   {
     "term": "DynamoDb Global Tables",
-    "definition": "DynamoDB Global Tables make a table available in multiple Regions.",
+    "definition": "Tables can be available across Regions with active-active replication.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "DynamoDb Global Tables",
-    "definition": "Active-active replication allows reads and writes in any participating Region.",
+    "definition": "Clients can read and write in any participating Region.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "ElastiCache",
-    "definition": "ElastiCache provides managed Redis or Memcached in-memory databases.",
+    "definition": "Managed in-memory databases support Redis or Memcached.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
     "term": "ElastiCache",
-    "definition": "It suits read-intensive workloads.",
+    "definition": "They suit read-intensive workloads.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -831,7 +826,7 @@
   },
   {
     "term": "QuickSight",
-    "definition": "QuickSight is a serverless, ML-powered business intelligence dashboard service.",
+    "definition": "A serverless, ML-powered business intelligence service creates dashboards.",
     "section": "Databases & Analytics Summary in AWS Summary"
   },
   {
@@ -1006,22 +1001,22 @@
   },
   {
     "term": "EventBridge",
-    "definition": "EventBridge reacts to AWS events and schedules processes.",
+    "definition": "React to AWS events and schedule processes.",
     "section": "Cloud Monitoring Summary"
   },
   {
     "term": "EventBridge",
-    "definition": "Scheduler can trigger rules or processes on a schedule.",
+    "definition": "A scheduler can trigger rules or processes on a schedule.",
     "section": "Cloud Monitoring Summary"
   },
   {
     "term": "CloudTrail",
-    "definition": "CloudTrail audits account activity by recording API calls.",
+    "definition": "Audit account activity by recording API calls.",
     "section": "Cloud Monitoring Summary"
   },
   {
     "term": "CloudTrail",
-    "definition": "Use its records to investigate activity after the fact.",
+    "definition": "Use these records to investigate activity after the fact.",
     "section": "Cloud Monitoring Summary"
   },
   {
@@ -1031,7 +1026,7 @@
   },
   {
     "term": "X-Ray",
-    "definition": "X-Ray traces requests across distributed applications in real time.",
+    "definition": "Trace requests across distributed applications in real time.",
     "section": "Cloud Monitoring Summary"
   },
   {
@@ -1081,12 +1076,12 @@
   },
   {
     "term": "VPC Endpoints",
-    "definition": "VPC endpoints privately connect a VPC to AWS services.",
+    "definition": "Privately connect a virtual network to AWS services.",
     "section": "VPC Summary"
   },
   {
     "term": "VPC Endpoints",
-    "definition": "The two types are gateway endpoints and interface endpoints.",
+    "definition": "Endpoint types include gateway and interface.",
     "section": "VPC Summary"
   },
   {
@@ -1146,27 +1141,27 @@
   },
   {
     "term": "Security Groups",
-    "definition": "Security groups are stateful and apply at EC2 instance or ENI level.",
+    "definition": "Rules are stateful and apply at EC2 instance or ENI level.",
     "section": "VPC Summary"
   },
   {
     "term": "Security Groups",
-    "definition": "They allow rules using IP addresses or other security groups.",
+    "definition": "They allow rules using IP addresses or other rule groups.",
     "section": "VPC Summary"
   },
   {
     "term": "Security Groups",
-    "definition": "Security groups support ALLOW rules only.",
+    "definition": "Only ALLOW rules are supported.",
     "section": "VPC Summary"
   },
   {
     "term": "AWS VPN",
-    "definition": "AWS VPN securely connects offices, on-premises networks, or clients to AWS.",
+    "definition": "Securely connect offices, on-premises networks, or clients to AWS.",
     "section": "VPC Summary"
   },
   {
     "term": "AWS VPN",
-    "definition": "It includes Site-to-Site VPN and Client VPN.",
+    "definition": "Connection types include Site-to-Site and Client VPN.",
     "section": "VPC Summary"
   },
   {
@@ -1181,12 +1176,7 @@
   },
   {
     "term": "Direct Connect",
-    "definition": "Direct Connect privately links on-premises networks to AWS.",
-    "section": "VPC Summary"
-  },
-  {
-    "term": "Direct Connect",
-    "definition": "It avoids the public internet.",
+    "definition": "Privately link on-premises networks to AWS without using public internet.",
     "section": "VPC Summary"
   },
   {
@@ -1206,7 +1196,7 @@
   },
   {
     "term": "Shield Advanced",
-    "definition": "Shield Advanced costs extra and provides 24/7 DDoS response support.",
+    "definition": "The advanced DDoS plan costs extra and provides 24/7 response support.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1241,17 +1231,17 @@
   },
   {
     "term": "GuardDuty",
-    "definition": "GuardDuty analyzes VPC, DNS, and CloudTrail logs for malicious activity.",
+    "definition": "Analyze VPC, DNS, and CloudTrail logs to detect malicious activity.",
     "section": "Security and Compliance Summary"
   },
   {
     "term": "Inspector",
-    "definition": "Inspector checks EC2, ECR, and Lambda for exposure and vulnerabilities.",
+    "definition": "Check EC2, ECR, and Lambda for exposure and vulnerabilities.",
     "section": "Security and Compliance Summary"
   },
   {
     "term": "Inspector",
-    "definition": "It also tests EC2 network access and instance app security.",
+    "definition": "Also test EC2 network access and instance app security.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1266,7 +1256,7 @@
   },
   {
     "term": "Macie",
-    "definition": "Macie finds sensitive data, such as PII, in S3 buckets.",
+    "definition": "Find sensitive data, such as PII, in S3 buckets.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1301,7 +1291,7 @@
   },
   {
     "term": "AWS Secrets Manager",
-    "definition": "Secrets Manager rotates and retrieves database credentials and API keys.",
+    "definition": "Rotate and retrieve database credentials and API keys.",
     "section": "Security and Compliance Summary"
   },
   {
@@ -1361,12 +1351,12 @@
   },
   {
     "term": "Organizations",
-    "definition": "Organizations centralizes billing, access, compliance, security, and sharing.",
+    "definition": "Centralize billing, access, compliance, security, and resource sharing.",
     "section": "Account Best Practices Summary"
   },
   {
     "term": "Organizations",
-    "definition": "It automates account creation and groups accounts for governance.",
+    "definition": "Automate account creation and group accounts for governance.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1391,7 +1381,7 @@
   },
   {
     "term": "Config",
-    "definition": "Config tracks resource changes, audits compliance, and records configurations.",
+    "definition": "Track resource changes, audit compliance, and record resource settings.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1401,12 +1391,12 @@
   },
   {
     "term": "Trusted Advisor",
-    "definition": "Trusted Advisor assesses accounts and recommends best practices.",
+    "definition": "Assess accounts and recommend best practices.",
     "section": "Account Best Practices Summary"
   },
   {
     "term": "Trusted Advisor",
-    "definition": "It covers cost, performance, security, fault tolerance, and service limits.",
+    "definition": "Checks cover cost, performance, security, fault tolerance, and limits.",
     "section": "Account Best Practices Summary"
   },
   {
@@ -1451,12 +1441,12 @@
   },
   {
     "term": "Compute Optimizer",
-    "definition": "Compute Optimizer uses ML to recommend cost-saving configurations.",
+    "definition": "Use ML recommendations to find cost-saving resource configurations.",
     "section": "Billing Summary"
   },
   {
     "term": "Compute Optimizer",
-    "definition": "It covers some EC2, Auto Scaling groups, EBS volumes, and Lambda.",
+    "definition": "Coverage includes some EC2, Auto Scaling groups, EBS, and Lambda.",
     "section": "Billing Summary"
   },
   {
@@ -1471,12 +1461,12 @@
   },
   {
     "term": "Cost Allocation Tags",
-    "definition": "Cost allocation tags organize resources into detailed billing reports.",
+    "definition": "These tags organize resources into detailed billing reports.",
     "section": "Billing Summary"
   },
   {
     "term": "Cost Allocation Tags",
-    "definition": "Each tag key must be unique and can have one value.",
+    "definition": "Each key must be unique and can have one value.",
     "section": "Billing Summary"
   },
   {
@@ -1501,17 +1491,17 @@
   },
   {
     "term": "Budgets",
-    "definition": "Budgets track usage, costs, reservations, and Savings Plans.",
+    "definition": "Track usage, costs, reservations, and Savings Plans.",
     "section": "Billing Summary"
   },
   {
     "term": "Budgets",
-    "definition": "They alert through CloudWatch when actual or forecast use exceeds limits.",
+    "definition": "CloudWatch alerts when actual or forecast use exceeds limits.",
     "section": "Billing Summary"
   },
   {
     "term": "Budgets",
-    "definition": "Types include cost, usage, reservation, and Savings Plans budgets.",
+    "definition": "Types include cost, usage, reservation, and Savings Plans.",
     "section": "Billing Summary"
   },
   {
@@ -1576,7 +1566,7 @@
   },
   {
     "term": "Elastic Transcoder",
-    "definition": "Elastic Transcoder converts S3 media into formats required by playback devices.",
+    "definition": "Convert S3 media into formats required by playback devices.",
     "section": "Other Services Summary"
   },
   {
@@ -1606,7 +1596,7 @@
   },
   {
     "term": "AWS Backup",
-    "definition": "AWS Backup centrally manages scheduled backups and restores across services.",
+    "definition": "Centrally manage scheduled backups and restores across AWS services.",
     "section": "Other Services Summary"
   },
   {
@@ -1716,17 +1706,17 @@
   },
   {
     "term": "AWS Marketplace",
-    "definition": "AWS Marketplace lets accounts subscribe as buyers or register as sellers.",
+    "definition": "Accounts can subscribe as buyers or register as sellers.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Marketplace",
-    "definition": "Its catalog lists thousands of independent vendors' software.",
+    "definition": "The catalog lists thousands of independent vendors' software.",
     "section": "Other Services Summary"
   },
   {
     "term": "AWS Marketplace",
-    "definition": "It simplifies finding, testing, buying, and deploying AWS software.",
+    "definition": "It simplifies finding, testing, buying, and deploying software on AWS.",
     "section": "Other Services Summary"
   },
   {
@@ -1761,7 +1751,7 @@
   },
   {
     "term": "Savings Plans",
-    "definition": "Savings Plans discount long-term AWS usage.",
+    "definition": "Long-term commitments discount AWS usage.",
     "section": "Cram Summary"
   },
   {
@@ -1771,7 +1761,7 @@
   },
   {
     "term": "Compute Savings Plan",
-    "definition": "Compute Savings Plans save up to 66% on EC2, Fargate, and Lambda.",
+    "definition": "A compute commitment saves up to 66% on EC2, Fargate, and Lambda.",
     "section": "Cram Summary"
   },
   {
@@ -1926,12 +1916,7 @@
   },
   {
     "term": "Management Events",
-    "definition": "Management events are CloudTrail's default event type.",
-    "section": "Cram Summary"
-  },
-  {
-    "term": "Management Events",
-    "definition": "They record account administration like logging, devices, and routing.",
+    "definition": "The default type records account tasks like logging, devices, and routing.",
     "section": "Cram Summary"
   },
   {
@@ -1941,7 +1926,7 @@
   },
   {
     "term": "Data Events",
-    "definition": "Data events are high-volume CloudTrail events with opt-in costs.",
+    "definition": "These high-volume events have opt-in costs.",
     "section": "Cram Summary"
   },
   {
@@ -1986,7 +1971,7 @@
   },
   {
     "term": "Infrastructure Event Management",
-    "definition": "Infrastructure Event Management is a short-term AWS Support engagement.",
+    "definition": "This is a short-term AWS Support engagement.",
     "section": "Cram Summary"
   },
   {

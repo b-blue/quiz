@@ -6,7 +6,7 @@
   },
   {
     "term": "Batching",
-    "definition": "Batching messages per API call raises throughput.",
+    "definition": "Sending messages in API batches raises throughput.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -156,12 +156,12 @@
   },
   {
     "term": "PrivateLink",
-    "definition": "PrivateLink gives consumers private service access through interface endpoints.",
+    "definition": "Consumers privately access supported services through interface endpoints.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "PrivateLink",
-    "definition": "It avoids broad VPC-to-VPC network exposure.",
+    "definition": "This avoids broad VPC-to-VPC network exposure.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -186,12 +186,12 @@
   },
   {
     "term": "VPC peering",
-    "definition": "VPC peering connects two VPCs directly but is non-transitive.",
+    "definition": "Two VPCs connect directly, but the link is non-transitive.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "VPC peering",
-    "definition": "Hub-and-spoke peering does not enable spoke-to-spoke routing.",
+    "definition": "Hub-and-spoke links do not enable spoke-to-spoke routing.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -351,12 +351,12 @@
   },
   {
     "term": "Predictive scaling",
-    "definition": "Predictive scaling forecasts recurring demand from historical patterns.",
+    "definition": "Forecast recurring demand using historical patterns.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Predictive scaling",
-    "definition": "Pair it with target tracking for unexpected real-time changes.",
+    "definition": "Pair forecasts with target tracking for unexpected real-time changes.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -471,12 +471,12 @@
   },
   {
     "term": "EFS Infrequent Access",
-    "definition": "EFS Infrequent Access lowers storage costs for rarely accessed files.",
+    "definition": "A lower-cost file tier suits rarely accessed files.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "EFS Infrequent Access",
-    "definition": "It keeps EFS file-system semantics, unlike S3 object storage.",
+    "definition": "It keeps file-system semantics, unlike S3 object storage.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
@@ -506,17 +506,17 @@
   },
   {
     "term": "S3 lifecycle rules",
-    "definition": "S3 lifecycle rules transition or expire objects based on age.",
+    "definition": "Transition or expire objects based on age.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "S3 lifecycle rules",
-    "definition": "Lifecycle rules alone do not make data immutable.",
+    "definition": "Lifecycle policies alone do not make data immutable.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
     "term": "S3 Standard-IA",
-    "definition": "S3 Standard-IA supports infrequent access with millisecond retrieval.",
+    "definition": "This tier suits infrequent access with millisecond retrieval.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
@@ -586,12 +586,12 @@
   },
   {
     "term": "Aurora Serverless",
-    "definition": "Aurora Serverless automatically scales relational Aurora capacity.",
+    "definition": "Relational database capacity scales automatically.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Aurora Serverless",
-    "definition": "It suits variable or intermittent workloads.",
+    "definition": "This suits variable or intermittent workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -906,12 +906,12 @@
   },
   {
     "term": "AWS Backup Vault Lock",
-    "definition": "AWS Backup Vault Lock enforces immutable backup retention on a vault.",
+    "definition": "Enforce immutable backup retention on a backup vault.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
     "term": "AWS Backup Vault Lock",
-    "definition": "It differs from S3 Object Lock and Glacier Vault Lock.",
+    "definition": "This differs from S3 Object Lock and Glacier Vault Lock.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
@@ -956,7 +956,7 @@
   },
   {
     "term": "RDS SSL/TLS",
-    "definition": "RDS SSL/TLS encrypts database connections in transit.",
+    "definition": "SSL/TLS encrypts database connections in transit.",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
@@ -1126,12 +1126,12 @@
   },
   {
     "term": "S3 replication",
-    "definition": "S3 replication requires versioning on source and destination.",
+    "definition": "Enable versioning on source and destination buckets.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "S3 replication",
-    "definition": "Live copies new objects; Batch Replication can copy eligible existing ones.",
+    "definition": "Live copies new objects; batch jobs can copy eligible existing ones.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -1146,12 +1146,12 @@
   },
   {
     "term": "Aurora Global Database",
-    "definition": "Aurora Global Database replicates data across Regions with low lag.",
+    "definition": "Replicate data across Regions with low lag.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "Aurora Global Database",
-    "definition": "It supports regional DR and managed failover options.",
+    "definition": "This supports regional DR and managed failover options.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -1166,12 +1166,12 @@
   },
   {
     "term": "DynamoDB global tables",
-    "definition": "DynamoDB global tables replicate data across Regions.",
+    "definition": "Replicate table data across Regions.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
     "term": "DynamoDB global tables",
-    "definition": "They support local access and regional resilience.",
+    "definition": "This supports local access and regional resilience.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -1286,12 +1286,12 @@
   },
   {
     "term": "AWS Batch",
-    "definition": "AWS Batch schedules jobs and provisions capacity for queued workloads.",
+    "definition": "Schedule jobs and provision capacity for queued workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "EFS mount targets",
-    "definition": "Create EFS mount targets in client AZs and prefer the local target.",
+    "definition": "Create file-system mount targets in client AZs and prefer the local one.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -1326,12 +1326,12 @@
   },
   {
     "term": "S3 Transfer Acceleration",
-    "definition": "S3 Transfer Acceleration uses AWS edge networking for distant uploads.",
+    "definition": "Use AWS edge networking to accelerate long-distance uploads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "S3 Transfer Acceleration",
-    "definition": "Use it when the extra transfer charge is justified.",
+    "definition": "Choose it when the extra transfer charge is justified.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -1416,7 +1416,7 @@
   },
   {
     "term": "RDS read replicas",
-    "definition": "RDS read replicas asynchronously scale read-heavy relational workloads.",
+    "definition": "Asynchronous replicas scale read-heavy relational workloads.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -1466,12 +1466,12 @@
   },
   {
     "term": "Kinesis Data Analytics",
-    "definition": "Kinesis Data Analytics processes streaming records with managed analytics.",
+    "definition": "Process streaming records with managed analytics.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
     "term": "Kinesis Data Analytics",
-    "definition": "Use it for near-real-time transformations or insights.",
+    "definition": "Use this for near-real-time transformations or insights.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -1581,12 +1581,7 @@
   },
   {
     "term": "Amazon Quick",
-    "definition": "Amazon Quick provides managed business intelligence.",
-    "section": "Content Domain 3: Design High-Performing Architectures"
-  },
-  {
-    "term": "Amazon Quick",
-    "definition": "Build visualizations from supported data sources.",
+    "definition": "Managed business intelligence enables visualizations from supported data.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -1686,7 +1681,7 @@
   },
   {
     "term": "Cost allocation tags",
-    "definition": "Cost allocation tags help attribute spending.",
+    "definition": "These labels help attribute spending.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {

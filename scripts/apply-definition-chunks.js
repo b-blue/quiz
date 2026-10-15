@@ -1,5 +1,9 @@
 export const MAX_QUIZ_DEFINITION_LENGTH = 81;
 
+function normalizeForComparison(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
 export function applyDefinitionChunks(entries, overrides, examName) {
   const usedIndexes = new Set();
   const expanded = [];
@@ -25,6 +29,10 @@ export function applyDefinitionChunks(entries, overrides, examName) {
       }
       if (definition.length > MAX_QUIZ_DEFINITION_LENGTH) {
         throw new Error(`${examName} definition ${index} chunk exceeds ${MAX_QUIZ_DEFINITION_LENGTH} characters (${definition.length})`);
+      }
+      const normalizedTerm = normalizeForComparison(entry.term);
+      if (normalizedTerm.length >= 3 && normalizeForComparison(definition).includes(normalizedTerm)) {
+        throw new Error(`${examName} definition ${index} chunk repeats its answer term "${entry.term}"`);
       }
       expanded.push({ ...entry, definition });
     }
