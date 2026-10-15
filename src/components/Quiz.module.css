@@ -197,7 +197,12 @@
 }
 .studyContent {
   max-height: calc(100vh - 150px);
+  max-height: calc(100dvh - 150px);
+  min-height: 0;
   overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: clamp(16px, 3vw, 32px);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
@@ -847,7 +852,7 @@
   .studyHeaderContent { gap: 8px; }
   .studyTitle { font-size: 1.05rem; }
   .studyBackButton { margin-left: auto; padding: 0.45rem; font-size: 0.85rem; }
-  .studyContent { max-height: none; padding: 14px; }
+  .studyContent { max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); padding: 14px; }
 
   .quizNext {
     width: 100%;
