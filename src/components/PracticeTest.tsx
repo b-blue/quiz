@@ -11,6 +11,7 @@ interface Session {
   index: number;
   answers: Record<number, number[]>; // submitted selections per question id
   score: number;
+  flagged?: number[]; // question ids marked for review
 }
 
 const storageKey = (n: number) => `practice:session:${n}`;
@@ -167,34 +168,38 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     );
   }
 
+  const flaggedIds = session.flagged ?? [];
+
   if (view === 'grid') {
     const unanswered = total - answeredCount;
     return (
       <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa">
-          <div className={styles.questionText}>{title}: all questions</div>
           <div className={styles.ptScore} aria-live="polite">
             <span>{answeredCount} of {total} answered</span>
+            <span className={styles.ptPill}>Test {test}</span>
             <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
           </div>
         </QuizHeader>
         <div className={styles.ptLegend}>
           <span><span className={`${styles.ptGridDot} ${styles.ptGridAnswered}`} /> Answered</span>
           <span><span className={styles.ptGridDot} /> Not answered</span>
+          <span><span className={styles.ptFlagIcon}>⚑</span> Flagged</span>
         </div>
         <div className={styles.ptGrid}>
           {session.order.map((id, i) => {
             const done = session.answers[id] !== undefined;
+            const flagged = flaggedIds.includes(id);
             return (
               <button
                 key={id}
                 type="button"
-                className={`${styles.ptGridBtn} ${done ? styles.ptGridAnswered : ''} ${i === session.index ? styles.ptGridCurrent : ''}`}
-                aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}`}
+                className={`${styles.ptGridBtn} ${done ? styles.ptGridAnswered : ''} ${flagged ? styles.ptGridFlagged : ''} ${i === session.index ? styles.ptGridCurrent : ''}`}
+                aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}${flagged ? ', flagged' : ''}`}
                 aria-current={i === session.index ? 'true' : undefined}
                 onClick={() => { setSelected([]); setConfirmSubmit(false); commit({ ...session, index: i }); setView('question'); }}
               >
-                {done ? '✓' : ''}<span className={styles.ptGridNum}>{i + 1}</span>
+                {done ? '✓' : ''}<span className={styles.ptGridNum}>{i + 1}</span>{flagged && <span className={`${styles.ptFlagIcon} ${styles.ptGridFlag}`} aria-hidden="true">⚑</span>}
               </button>
             );
           })}
@@ -255,17 +260,41 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     commit({ ...session!, index: session!.index + 1 });
   }
 
+  function prev() {
+    if (session!.index === 0) return;
+    setSelected([]);
+    commit({ ...session!, index: session!.index - 1 });
+  }
+
+  function toggleFlag() {
+    const cur = session!.flagged ?? [];
+    commit({ ...session!, flagged: cur.includes(qid) ? cur.filter(x => x !== qid) : [...cur, qid] });
+  }
+  const isFlagged = flaggedIds.includes(qid);
+
   return (
     <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
       <QuizHeader variant="saa">
-        <div className={styles.questionText}>{title}</div>
         <div className={styles.ptScore} aria-live="polite">
           <span>Question {session.index + 1} of {total}</span>
-          <button type="button" className={styles.ptLinkBtn} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
+          <span className={styles.ptHeaderGroup}>
+            <button type="button" className={styles.ptLinkBtn} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
+            <span className={styles.ptPill}>Test {test}</span>
+          </span>
           <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
         </div>
       </QuizHeader>
 
+      <div className={styles.ptQuestionBar}>
+        <button
+          type="button"
+          className={`${styles.ptFlagBtn} ${isFlagged ? styles.ptFlagBtnOn : ''}`}
+          aria-pressed={isFlagged}
+          onClick={toggleFlag}
+        >
+          <span aria-hidden="true">⚑</span> {isFlagged ? 'Flagged' : 'Flag for review'}
+        </button>
+      </div>
       <div className={styles.ptPrompt}>{q.prompt}</div>
       {q.multi && <div className={styles.ptHint}>Select {q.requiredCount}.</div>}
 
@@ -313,6 +342,12 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           </div>
         </>
       )}
+
+      <div className={styles.ptArrowNav}>
+        <button type="button" className={styles.ptArrowBtn} onClick={prev} disabled={session.index === 0} aria-label="Previous question">←</button>
+        <span className={styles.ptArrowLabel}>{session.index + 1} / {total}</span>
+        <button type="button" className={styles.ptArrowBtn} onClick={next} aria-label={isLast ? 'Review all questions' : 'Next question'}>→</button>
+      </div>
     </div>
   );
 }
