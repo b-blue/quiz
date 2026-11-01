@@ -982,3 +982,5 @@
 .ptArrowBtn { flex: 1; padding: 0.7rem 1rem; font-size: 1.5rem; line-height: 1; border-radius: 10px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); cursor: pointer; }
 .ptArrowBtn:disabled { opacity: 0.35; cursor: not-allowed; }
 .ptArrowLabel { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+.ptArrowNavTop { margin-top: 0.75rem; }
+.ptArrowNavTop .ptArrowNav { margin-top: 0; }

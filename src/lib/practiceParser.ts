@@ -28,13 +28,28 @@ function splitOptions(body: string, optionCount: number): { prompt: string; opti
     const optionParas = paras.slice(first);
     const tagged = optionParas.filter(p => TAG.test(p.split('\n')[0])).length;
     if (tagged > 0) {
-      return {
-        prompt: paras.slice(0, first).join('\n\n'),
-        options: optionParas.map(toOption),
-      };
+      const options = optionParas.map(toOption);
+      const embedded = extractLeadingBlock(options[0].text);
+      let prompt = paras.slice(0, first).join('\n\n');
+      if (embedded) {
+        prompt += '\n\n' + embedded.block;
+        options[0] = { ...options[0], text: embedded.rest };
+      }
+      return { prompt, options };
     }
   }
   return splitCodeOptions(body);
+}
+
+// A code block in the prompt can sit directly against the first option with no blank line.
+function extractLeadingBlock(text: string): { block: string; rest: string } | null {
+  const lines = text.split('\n');
+  if (lines[0] !== '{') return null;
+  const end = lines.findIndex(l => l === '}');
+  if (end < 0 || end === lines.length - 1) return null;
+  const rest = lines.slice(end + 1).join('\n').trim();
+  if (!rest || rest.startsWith('{')) return null;
+  return { block: lines.slice(0, end + 1).join('\n'), rest };
 }
 
 function toOption(p: string): PracticeOption {

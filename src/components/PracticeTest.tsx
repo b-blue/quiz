@@ -83,6 +83,12 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     return () => { cancelled = true; };
   }, [test]);
 
+  const currentIndex = session?.index;
+  useEffect(() => {
+    document.querySelector('[data-pt-scroll]')?.scrollTo(0, 0);
+    window.scrollTo(0, 0);
+  }, [currentIndex, view, test]);
+
   const byId = useMemo(() => new Map((questions ?? []).map(q => [q.id, q])), [questions]);
 
   function commit(next: Session) {
@@ -173,7 +179,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   if (view === 'grid') {
     const unanswered = total - answeredCount;
     return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
         <QuizHeader variant="saa">
           <div className={styles.ptScore} aria-live="polite">
             <span>{answeredCount} of {total} answered</span>
@@ -272,8 +278,16 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   }
   const isFlagged = flaggedIds.includes(qid);
 
+  const arrowNav = (
+    <div className={styles.ptArrowNav}>
+      <button type="button" className={styles.ptArrowBtn} onClick={prev} disabled={session.index === 0} aria-label="Previous question">←</button>
+      <span className={styles.ptArrowLabel}>{session.index + 1} / {total}</span>
+      <button type="button" className={styles.ptArrowBtn} onClick={next} aria-label={isLast ? 'Review all questions' : 'Next question'}>→</button>
+    </div>
+  );
+
   return (
-    <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
+    <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
       <QuizHeader variant="saa">
         <div className={styles.ptScore} aria-live="polite">
           <span>Question {session.index + 1} of {total}</span>
@@ -285,6 +299,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         </div>
       </QuizHeader>
 
+      <div className={styles.ptArrowNavTop}>{arrowNav}</div>
       <div className={styles.ptQuestionBar}>
         <button
           type="button"
@@ -343,11 +358,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         </>
       )}
 
-      <div className={styles.ptArrowNav}>
-        <button type="button" className={styles.ptArrowBtn} onClick={prev} disabled={session.index === 0} aria-label="Previous question">←</button>
-        <span className={styles.ptArrowLabel}>{session.index + 1} / {total}</span>
-        <button type="button" className={styles.ptArrowBtn} onClick={next} aria-label={isLast ? 'Review all questions' : 'Next question'}>→</button>
-      </div>
+      {arrowNav}
     </div>
   );
 }
