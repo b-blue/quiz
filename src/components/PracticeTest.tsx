@@ -106,7 +106,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   if (error) {
     return (
-      <div className={styles.quizContainer} data-variant="saa">
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
         <p>Could not load this test: {error}</p>
         <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to settings</button>
@@ -116,7 +116,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   if (!questions) {
     return (
-      <div className={styles.quizContainer} data-variant="saa">
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
         <p>Loading…</p>
       </div>
@@ -126,7 +126,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   if (saved) {
     const done = Object.keys(saved.answers).length;
     return (
-      <div className={styles.quizContainer} data-variant="saa">
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
         <div className={styles.ptPrompt}>
           You have a test in progress: {done} of {questions.length} questions answered, {saved.score} correct.
@@ -148,7 +148,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   if (finished) {
     return (
-      <div className={styles.quizContainer} data-variant="saa">
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa"><div className={styles.questionText}>{title} complete</div></QuizHeader>
         <div className={styles.ptResult}>
           <div className={styles.ptResultPct}>{pct(session.score, total)}%</div>
@@ -198,7 +198,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   }
 
   return (
-    <div className={styles.quizContainer} data-variant="saa">
+    <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
       <QuizHeader variant="saa">
         <div className={styles.questionText}>{title}</div>
         <div className={styles.ptScore} aria-live="polite">

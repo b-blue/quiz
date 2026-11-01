@@ -960,3 +960,4 @@
 .ptResult { text-align: center; padding: 2rem 1rem; }
 .ptResultPct { font-size: 3.5rem; font-weight: 800; }
 .ptTestGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.6rem; margin-top: 0.5rem; }
+.ptContainer { height: 100vh; height: 100dvh; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; padding-bottom: 2rem; }
