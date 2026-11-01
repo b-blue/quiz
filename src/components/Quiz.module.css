@@ -961,3 +961,12 @@
 .ptResultPct { font-size: 3.5rem; font-weight: 800; }
 .ptTestGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.6rem; margin-top: 0.5rem; }
 .ptContainer { height: 100vh; height: 100dvh; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; padding-bottom: 2rem; }
+.ptLinkBtn { padding: 0.25rem 0.7rem; font-size: 0.9rem; border-radius: 8px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); cursor: pointer; }
+.ptLegend { display: flex; gap: 1.25rem; margin-top: 0.75rem; color: var(--muted); font-size: 0.9rem; }
+.ptGridDot { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 3px; border: 1px solid var(--btn-border); background: var(--btn-bg); vertical-align: -1px; }
+.ptGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(2.6rem, 1fr)); gap: 0.35rem; margin-top: 0.75rem; }
+.ptGridBtn { position: relative; aspect-ratio: 1; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+.ptGridNum { position: absolute; top: 2px; left: 4px; font-size: 0.65rem; font-weight: 500; opacity: 0.8; }
+.ptGridAnswered { background: #1d4f7a; border-color: #4ea8ff; }
+.ptGridCurrent { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ptGridBtn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }

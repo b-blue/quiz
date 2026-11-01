@@ -65,6 +65,8 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [saved, setSaved] = useState<Session | null>(null);
   const [selected, setSelected] = useState<number[]>([]);
   const [finished, setFinished] = useState(false);
+  const [view, setView] = useState<'question' | 'grid'>('question');
+  const [confirmSubmit, setConfirmSubmit] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -91,6 +93,8 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     if (!questions) return;
     setSelected([]);
     setFinished(false);
+    setView('question');
+    setConfirmSubmit(false);
     setSaved(null);
     commit(newSession(questions));
   }
@@ -98,6 +102,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   function resume() {
     if (!saved) return;
     setSelected([]);
+    setView('question');
     setSession(saved);
     setSaved(null);
   }
@@ -162,6 +167,60 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     );
   }
 
+  if (view === 'grid') {
+    const unanswered = total - answeredCount;
+    return (
+      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
+        <QuizHeader variant="saa">
+          <div className={styles.questionText}>{title}: all questions</div>
+          <div className={styles.ptScore} aria-live="polite">
+            <span>{answeredCount} of {total} answered</span>
+            <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+          </div>
+        </QuizHeader>
+        <div className={styles.ptLegend}>
+          <span><span className={`${styles.ptGridDot} ${styles.ptGridAnswered}`} /> Answered</span>
+          <span><span className={styles.ptGridDot} /> Not answered</span>
+        </div>
+        <div className={styles.ptGrid}>
+          {session.order.map((id, i) => {
+            const done = session.answers[id] !== undefined;
+            return (
+              <button
+                key={id}
+                type="button"
+                className={`${styles.ptGridBtn} ${done ? styles.ptGridAnswered : ''} ${i === session.index ? styles.ptGridCurrent : ''}`}
+                aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}`}
+                aria-current={i === session.index ? 'true' : undefined}
+                onClick={() => { setSelected([]); setConfirmSubmit(false); commit({ ...session, index: i }); setView('question'); }}
+              >
+                {done ? '✓' : ''}<span className={styles.ptGridNum}>{i + 1}</span>
+              </button>
+            );
+          })}
+        </div>
+        {confirmSubmit && unanswered > 0 && (
+          <div className={`${styles.ptVerdict} ${styles.ptVerdictWrong}`} role="alert">
+            {unanswered} question{unanswered === 1 ? ' is' : 's are'} unanswered and will count as incorrect. Submit anyway?
+          </div>
+        )}
+        <div className={styles.ptActions}>
+          <button
+            className={styles.ptPrimaryBtn}
+            onClick={() => {
+              if (unanswered > 0 && !confirmSubmit) { setConfirmSubmit(true); return; }
+              save(test, null);
+              setFinished(true);
+            }}
+          >
+            {confirmSubmit && unanswered > 0 ? 'Yes, submit test' : 'Submit test'}
+          </button>
+          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => { setConfirmSubmit(false); setView('question'); }}>Back to question {session.index + 1}</button>
+        </div>
+      </div>
+    );
+  }
+
   const qid = session.order[session.index];
   const q = byId.get(qid)!;
   const optionOrder = session.optionOrders[qid];
@@ -190,8 +249,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   function next() {
     setSelected([]);
     if (isLast) {
-      save(test, null);
-      setFinished(true);
+      setView('grid');
       return;
     }
     commit({ ...session!, index: session!.index + 1 });
@@ -203,6 +261,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         <div className={styles.questionText}>{title}</div>
         <div className={styles.ptScore} aria-live="polite">
           <span>Question {session.index + 1} of {total}</span>
+          <button type="button" className={styles.ptLinkBtn} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
           <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
         </div>
       </QuizHeader>
@@ -250,7 +309,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>
           {q.domain && <div className={styles.ptDomain}>Domain: {q.domain}</div>}
           <div className={styles.ptActions}>
-            <button className={styles.ptPrimaryBtn} onClick={next}>{isLast ? 'Finish test' : 'Next question →'}</button>
+            <button className={styles.ptPrimaryBtn} onClick={next}>{isLast ? 'Review all questions →' : 'Next question →'}</button>
           </div>
         </>
       )}
