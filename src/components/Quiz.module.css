@@ -930,3 +930,33 @@
   .gizmoWell { display: flex; }
   .terminalFooter { display: block; }
 }
+
+/* Practice Test mode */
+.ptScore { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: baseline; color: var(--muted); font-size: 0.95rem; }
+.ptScoreValue { color: var(--text); font-weight: 700; font-size: 1.05rem; }
+.ptPrompt { text-align: left; white-space: pre-wrap; line-height: 1.5; margin-top: 0.75rem; padding: 1rem; border-radius: 8px; background: var(--surface); border: 1px solid rgba(78,168,255,0.08); }
+.ptHint { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+.ptOptions { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+.ptOption { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.75rem 0.9rem; border-radius: 12px; border: 1px solid var(--btn-border); background: linear-gradient(180deg, rgba(255,255,255,0.04), var(--btn-bg)); color: var(--text); cursor: pointer; text-align: left; width: 100%; font: inherit; white-space: pre-wrap; }
+.ptOption:disabled { cursor: default; }
+.ptOption:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.ptMarker { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; border: 2px solid var(--muted); display: inline-block; box-sizing: border-box; }
+.ptMarkerRadio { border-radius: 50%; }
+.ptMarkerCheck { border-radius: 4px; }
+.ptSelected { border-color: var(--primary); box-shadow: inset 0 0 0 2px rgba(122,133,255,0.35); }
+.ptSelected .ptMarker { background: var(--primary); border-color: var(--primary); }
+.ptCorrect { background: var(--correct-bg); border-color: var(--correct-border); box-shadow: inset 0 0 0 2px var(--correct-border); }
+.ptWrong { background: var(--incorrect-bg); border-color: var(--incorrect-border); box-shadow: inset 0 0 0 2px var(--incorrect-border); }
+.ptVerdict { margin-top: 1rem; padding: 0.6rem 0.9rem; border-radius: 8px; font-weight: 700; }
+.ptVerdictRight { background: var(--correct-bg); border: 1px solid var(--correct-border); }
+.ptVerdictWrong { background: var(--incorrect-bg); border: 1px solid var(--incorrect-border); }
+.ptExplanation { text-align: left; margin-top: 0.75rem; padding: 1rem; border-radius: 8px; background: var(--surface); line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ptExplanation a { color: #a9c7ff; }
+.ptDomain { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+.ptActions { margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.ptPrimaryBtn { width: 100%; padding: 1rem 1.25rem; font-size: 1.1rem; font-weight: 700; border-radius: 12px; border: 2px solid var(--primary); background: var(--primary); color: #0b1020; cursor: pointer; }
+.ptPrimaryBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+.ptPrimaryBtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.ptResult { text-align: center; padding: 2rem 1rem; }
+.ptResultPct { font-size: 3.5rem; font-weight: 800; }
+.ptTestGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.6rem; margin-top: 0.5rem; }

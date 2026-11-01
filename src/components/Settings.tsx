@@ -1,8 +1,9 @@
 import { getSections, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import QuizHeader from './QuizHeader';
+import { PRACTICE_TEST_NUMBERS } from '../lib/practiceTests';
 
-export default function Settings({ onBack }: { onBack?: () => void }) {
+export default function Settings({ onBack, onStartPractice }: { onBack?: () => void; onStartPractice?: (test: number) => void }) {
   const muted = localStorage.getItem('quiz:muted') === '1';
   const startMode = (() => {
     const v = localStorage.getItem('app:startMode');
@@ -60,6 +61,16 @@ export default function Settings({ onBack }: { onBack?: () => void }) {
           <div className={styles.settingsModeButtons}>
             <button className={`${styles.timedBtn} ${styles.settingsModeButton} ${startMode === 'aws' ? styles.timedBtnActive : ''} ${styles.btn3d}`} onClick={() => setStartMode('aws')}>CLF-C02</button>
             <button className={`${styles.timedBtn} ${styles.settingsModeButton} ${startMode === 'saa' ? styles.timedBtnActive : ''} ${styles.btn3d}`} onClick={() => setStartMode('saa')}>SAA-C03</button>
+          </div>
+        </div>
+
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontWeight: 700 }}>Practice Test</div>
+          <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Take a full 65-question practice test in random order</div>
+          <div className={styles.ptTestGrid}>
+            {PRACTICE_TEST_NUMBERS.map(n => (
+              <button key={n} className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => onStartPractice?.(n)}>Test {n}</button>
+            ))}
           </div>
         </div>
 
