@@ -972,8 +972,10 @@
 .ptGridBtn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .ptHeaderGroup { display: flex; align-items: center; gap: 0.5rem; width: 100%; }
 .ptHeaderFill { flex: 1; text-align: center; }
+.ptHeaderRow { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.1rem 0.5rem; font-size: 0.8rem; }
+.ptHeaderRow > span { white-space: nowrap; }
 .ptStretch { display: block; text-align: justify; text-align-last: justify; }
-.ptSmallCaps { font-variant: small-caps; letter-spacing: 0.08em; }
+.ptSmallCaps { font-variant: small-caps; letter-spacing: 0.04em; }
 .ptPill { display: inline-block; padding: 0.15rem 0.7rem; border-radius: 999px; background: var(--primary); color: #0b1020; font-weight: 700; font-size: 0.85rem; }
 .ptFlagIcon { color: #f0b429; }
 .ptGridFlagged { border-color: #f0b429; box-shadow: inset 0 0 0 1px #f0b429; }

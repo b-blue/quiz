@@ -186,12 +186,14 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
         <QuizHeader variant="saa">
           <div className={styles.ptScore} aria-live="polite">
-            <span className={styles.ptStretch}>{answeredCount} of {total} answered</span>
+            <div className={styles.ptHeaderRow}>
+              <span>{answeredCount} of {total} answered</span>
+              <span>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+            </div>
             <span className={styles.ptHeaderGroup}>
               <span className={styles.ptHeaderFill}>Test</span>
               <span className={styles.ptPill}>{test}</span>
             </span>
-            <span className={styles.ptStretch}>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
           </div>
         </QuizHeader>
         <div className={styles.ptLegend}>
@@ -336,12 +338,14 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     >
       <QuizHeader variant="saa">
         <div className={styles.ptScore} aria-live="polite">
-          <span className={`${styles.ptStretch} ${styles.ptSmallCaps}`}>Question {session.index + 1} of {total}</span>
+          <div className={styles.ptHeaderRow}>
+            <span className={styles.ptSmallCaps}>Question {session.index + 1} of {total}</span>
+            <span>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+          </div>
           <span className={styles.ptHeaderGroup}>
             <button type="button" className={`${styles.ptLinkBtn} ${styles.ptHeaderFill}`} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
             <span className={styles.ptPill}>{test}</span>
           </span>
-          <span className={styles.ptStretch}>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
         </div>
       </QuizHeader>
 
