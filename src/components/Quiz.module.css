@@ -932,7 +932,7 @@
 }
 
 /* Practice Test mode */
-.ptScore { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: baseline; color: var(--muted); font-size: 0.95rem; }
+.ptScore { display: flex; flex-direction: column; width: 100%; gap: 0.5rem; align-items: stretch; color: var(--muted); font-size: 0.95rem; }
 .ptScoreValue { color: var(--text); font-weight: 700; font-size: 1.05rem; }
 .ptPrompt { text-align: left; white-space: pre-wrap; line-height: 1.5; margin-top: 0.75rem; padding: 1rem; border-radius: 8px; background: var(--surface); border: 1px solid rgba(78,168,255,0.08); }
 .ptHint { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
@@ -970,17 +970,21 @@
 .ptGridAnswered { background: #1d4f7a; border-color: #4ea8ff; }
 .ptGridCurrent { outline: 2px solid var(--accent); outline-offset: 1px; }
 .ptGridBtn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
-.ptHeaderGroup { display: inline-flex; align-items: center; gap: 0.5rem; }
+.ptHeaderGroup { display: flex; align-items: center; gap: 0.5rem; width: 100%; }
+.ptHeaderFill { flex: 1; text-align: center; }
+.ptStretch { display: block; text-align: justify; text-align-last: justify; }
+.ptSmallCaps { font-variant: small-caps; letter-spacing: 0.08em; }
 .ptPill { display: inline-block; padding: 0.15rem 0.7rem; border-radius: 999px; background: var(--primary); color: #0b1020; font-weight: 700; font-size: 0.85rem; }
-.ptQuestionBar { display: flex; justify-content: flex-end; margin-top: 0.75rem; }
-.ptFlagBtn { padding: 0.35rem 0.8rem; border-radius: 8px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); cursor: pointer; font-size: 0.9rem; }
-.ptFlagBtnOn { background: #5a4310; border-color: #f0b429; color: #ffd978; }
 .ptFlagIcon { color: #f0b429; }
 .ptGridFlagged { border-color: #f0b429; box-shadow: inset 0 0 0 1px #f0b429; }
 .ptGridFlag { position: absolute; top: 1px; right: 4px; font-size: 0.8rem; }
-.ptArrowNav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
-.ptArrowBtn { flex: 1; padding: 0.7rem 1rem; font-size: 1.5rem; line-height: 1; border-radius: 10px; border: 1px solid var(--btn-border); background: var(--btn-bg); color: var(--text); cursor: pointer; }
-.ptArrowBtn:disabled { opacity: 0.35; cursor: not-allowed; }
-.ptArrowLabel { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
-.ptArrowNavTop { margin-top: 0.75rem; }
-.ptArrowNavTop .ptArrowNav { margin-top: 0; }
+
+.ptPrompt { position: relative; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.ptPromptFlag { position: absolute; top: 0.25rem; right: 0.5rem; color: #f0b429; font-size: 1.1rem; }
+.ptCram { display: flex; align-items: flex-start; gap: 0.75rem; width: 100%; text-align: left; margin-top: 0.75rem; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid rgba(78,168,255,0.25); background: var(--surface); color: var(--text); cursor: pointer; font: inherit; line-height: 1.45; }
+.ptCramText { flex: 1; }
+.ptCramCaret { color: var(--muted); }
+.ptRefs { margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(78,168,255,0.25); background: var(--surface); text-align: left; }
+.ptRefsTitle { margin: 0 0 0.5rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ptRefsList { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; overflow-wrap: anywhere; }
+.ptRefs a { color: #a9c7ff; }

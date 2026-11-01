@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { loadPracticeTest } from '../lib/practiceTests';
 import type { PracticeQuestion } from '../lib/practiceTests';
@@ -68,6 +68,10 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [finished, setFinished] = useState(false);
   const [view, setView] = useState<'question' | 'grid'>('question');
   const [confirmSubmit, setConfirmSubmit] = useState(false);
+  const [cramOpenId, setCramOpenId] = useState<number | null>(null);
+  const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
+  const pressTimer = useRef<number | null>(null);
+  const pressFired = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -182,9 +186,12 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
         <QuizHeader variant="saa">
           <div className={styles.ptScore} aria-live="polite">
-            <span>{answeredCount} of {total} answered</span>
-            <span className={styles.ptPill}>Test {test}</span>
-            <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+            <span className={styles.ptStretch}>{answeredCount} of {total} answered</span>
+            <span className={styles.ptHeaderGroup}>
+              <span className={styles.ptHeaderFill}>Test</span>
+              <span className={styles.ptPill}>{test}</span>
+            </span>
+            <span className={styles.ptStretch}>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
           </div>
         </QuizHeader>
         <div className={styles.ptLegend}>
@@ -277,40 +284,75 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     commit({ ...session!, flagged: cur.includes(qid) ? cur.filter(x => x !== qid) : [...cur, qid] });
   }
   const isFlagged = flaggedIds.includes(qid);
+  const cramOpen = cramOpenId === qid;
 
-  const arrowNav = (
-    <div className={styles.ptArrowNav}>
-      <button type="button" className={styles.ptArrowBtn} onClick={prev} disabled={session.index === 0} aria-label="Previous question">←</button>
-      <span className={styles.ptArrowLabel}>{session.index + 1} / {total}</span>
-      <button type="button" className={styles.ptArrowBtn} onClick={next} aria-label={isLast ? 'Review all questions' : 'Next question'}>→</button>
-    </div>
-  );
+  function clearPress() {
+    if (pressTimer.current !== null) { window.clearTimeout(pressTimer.current); pressTimer.current = null; }
+  }
 
+  function onPromptTouchStart() {
+    pressFired.current = false;
+    clearPress();
+    pressTimer.current = window.setTimeout(() => {
+      pressFired.current = true;
+      pressTimer.current = null;
+      toggleFlag();
+    }, 500);
+  }
+
+  function onTouchStart(e: React.TouchEvent) {
+    const t = e.touches[0];
+    touch.current = { x: t.clientX, y: t.clientY, moved: false };
+  }
+
+  function onTouchMove(e: React.TouchEvent) {
+    const st = touch.current;
+    if (!st) return;
+    const t = e.touches[0];
+    if (Math.hypot(t.clientX - st.x, t.clientY - st.y) > 10) { st.moved = true; clearPress(); }
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    clearPress();
+    const st = touch.current;
+    touch.current = null;
+    if (!st || pressFired.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - st.x;
+    const dy = t.clientY - st.y;
+    if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    if (dx < 0) next();
+    else prev();
+  }
   return (
-    <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
+    <div
+      className={`${styles.quizContainer} ${styles.ptContainer}`}
+      data-pt-scroll
+      data-variant="saa"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      onTouchCancel={() => { clearPress(); touch.current = null; }}
+    >
       <QuizHeader variant="saa">
         <div className={styles.ptScore} aria-live="polite">
-          <span>Question {session.index + 1} of {total}</span>
+          <span className={`${styles.ptStretch} ${styles.ptSmallCaps}`}>Question {session.index + 1} of {total}</span>
           <span className={styles.ptHeaderGroup}>
-            <button type="button" className={styles.ptLinkBtn} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
-            <span className={styles.ptPill}>Test {test}</span>
+            <button type="button" className={`${styles.ptLinkBtn} ${styles.ptHeaderFill}`} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
+            <span className={styles.ptPill}>{test}</span>
           </span>
-          <span>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+          <span className={styles.ptStretch}>Score: <span className={styles.ptScoreValue}>{session.score} / {answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
         </div>
       </QuizHeader>
 
-      <div className={styles.ptArrowNavTop}>{arrowNav}</div>
-      <div className={styles.ptQuestionBar}>
-        <button
-          type="button"
-          className={`${styles.ptFlagBtn} ${isFlagged ? styles.ptFlagBtnOn : ''}`}
-          aria-pressed={isFlagged}
-          onClick={toggleFlag}
-        >
-          <span aria-hidden="true">⚑</span> {isFlagged ? 'Flagged' : 'Flag for review'}
-        </button>
+      <div
+        className={styles.ptPrompt}
+        onTouchStart={onPromptTouchStart}
+        onContextMenu={e => e.preventDefault()}
+      >
+        {isFlagged && <span className={styles.ptPromptFlag} aria-label="Flagged">⚑</span>}
+        {q.prompt}
       </div>
-      <div className={styles.ptPrompt}>{q.prompt}</div>
       {q.multi && <div className={styles.ptHint}>Select {q.requiredCount}.</div>}
 
       <div className={styles.ptOptions} role={q.multi ? 'group' : 'radiogroup'} aria-label="Answer choices">
@@ -350,15 +392,37 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           <div className={`${styles.ptVerdict} ${wasRight ? styles.ptVerdictRight : styles.ptVerdictWrong}`} role="status">
             {wasRight ? 'Correct' : 'Incorrect'}
           </div>
-          <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>
+          {q.cram ? (
+            <>
+              <button
+                type="button"
+                className={styles.ptCram}
+                aria-expanded={cramOpen}
+                onClick={() => setCramOpenId(cramOpen ? null : qid)}
+              >
+                <span className={styles.ptCramText}><strong>Cram:</strong> {q.cram}</span>
+                <span className={styles.ptCramCaret} aria-hidden="true">{cramOpen ? '▾' : '▸'}</span>
+              </button>
+              {cramOpen && <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>}
+            </>
+          ) : (
+            <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>
+          )}
           {q.domain && <div className={styles.ptDomain}>Domain: {q.domain}</div>}
+          {q.references.length > 0 && (
+            <section className={styles.ptRefs} aria-labelledby="pt-refs-title">
+              <h3 id="pt-refs-title" className={styles.ptRefsTitle}>References</h3>
+              <ul className={styles.ptRefsList}>
+                {q.references.map(r => <li key={r}><a href={r} target="_blank" rel="noreferrer">{r}</a></li>)}
+              </ul>
+            </section>
+          )}
           <div className={styles.ptActions}>
             <button className={styles.ptPrimaryBtn} onClick={next}>{isLast ? 'Review all questions →' : 'Next question →'}</button>
           </div>
         </>
       )}
 
-      {arrowNav}
     </div>
   );
 }

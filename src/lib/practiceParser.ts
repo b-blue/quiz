@@ -10,6 +10,8 @@ export interface PracticeQuestion {
   multi: boolean;
   requiredCount: number;
   explanation: string;
+  references: string[];
+  cram?: string;
   domain: string;
 }
 
@@ -103,6 +105,17 @@ export function parseTest(raw: string): PracticeQuestion[] {
       .join('\n')
       .replace(/\n{3,}/g, '\n\n')
       .trim();
+    const references: string[] = [];
+    const explanationBody = explanation
+      .split('\n')
+      .filter(l => {
+        const t = l.trim();
+        if (/^https?:\/\/\S+$/.test(t)) { references.push(t); return false; }
+        return !/^References?:?$/i.test(t);
+      })
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
     const domain = domainIdx >= 0 ? tail.slice(domainIdx + '\nDomain\n'.length).split('\n')[0].trim() : '';
 
     const body = head.split('\n').slice(2).join('\n');
@@ -118,7 +131,8 @@ export function parseTest(raw: string): PracticeQuestion[] {
       options,
       multi: requiredCount > 1,
       requiredCount: options.filter(o => o.correct).length || requiredCount,
-      explanation,
+      explanation: explanationBody,
+      references,
       domain,
     };
   });
