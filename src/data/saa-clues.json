@@ -274,7 +274,8 @@
   ],
   "Aurora Global Database": [
     "Meet tight regional recovery targets with low-lag Aurora replication.",
-    "Promote an Aurora secondary cluster after a Region-wide outage."
+    "Promote an Aurora secondary cluster after a Region-wide outage.",
+    "Serve global relational reads locally; promote a secondary Region for recovery."
   ],
   "DynamoDB point-in-time recovery (PITR)": [
     "Undo a bad table write by restoring to a specific second before corruption.",
@@ -793,19 +794,13 @@
     "Pool connections between scaled-out apps and Aurora."
   ],
   "Aurora Replicas": [
-    "Scale Aurora reads with shared cluster storage and very low replica lag."
+    "Scale Aurora reads with shared cluster storage and very low replica lag.",
+    "Scale Aurora reads with shared-storage replicas and very low replication lag.",
+    "Add read capacity on Aurora’s shared cluster volume."
   ],
   "EBS Fast Snapshot Restore": [
     "New volumes from snapshots need full performance immediately.",
     "Provide immediate full volume performance for a large-scale test copy."
-  ],
-  "Amazon Aurora Global Database": [
-    "Serve global relational reads locally; promote a secondary Region for recovery.",
-    "Replicate Aurora across Regions for local reads and low-lag recovery."
-  ],
-  "Amazon Aurora Replicas": [
-    "Scale Aurora reads with shared-storage replicas and very low replication lag.",
-    "Add read capacity on Aurora’s shared cluster volume."
   ],
   "Amazon FSx for Lustre": [
     "HPC jobs need a parallel file system that can link directly to an S3 data set.",

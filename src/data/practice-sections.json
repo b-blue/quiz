@@ -3,7 +3,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -14,11 +14,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -30,7 +30,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -41,7 +41,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -52,7 +52,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -64,7 +64,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -76,11 +76,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -92,11 +92,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -108,11 +108,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -124,7 +124,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -135,7 +135,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -146,7 +146,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -157,11 +157,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -173,7 +173,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -185,7 +185,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -196,11 +196,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
-   },
-   {
-    "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -213,7 +209,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -224,7 +220,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -235,7 +231,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -246,7 +242,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -257,7 +253,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -268,7 +264,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -279,7 +275,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -290,7 +286,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -301,7 +297,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -312,7 +308,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -323,7 +319,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -334,7 +330,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -345,7 +341,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -356,7 +352,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -367,7 +363,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -378,7 +374,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -391,7 +387,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -402,7 +398,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -413,7 +409,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -424,7 +420,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -435,7 +431,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -446,7 +442,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -457,7 +453,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -469,7 +465,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -480,7 +476,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -491,7 +487,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -503,7 +499,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -515,7 +511,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -526,11 +522,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -542,11 +538,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -558,7 +554,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -570,7 +566,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -581,7 +577,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -593,7 +589,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -605,7 +601,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -616,7 +612,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -627,7 +623,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -638,7 +634,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -649,7 +645,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -660,7 +656,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -673,7 +669,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -686,7 +682,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -697,7 +693,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -708,7 +704,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -719,7 +715,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -730,7 +726,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -741,7 +737,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -752,7 +748,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -763,7 +759,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -774,7 +770,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -785,7 +781,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -797,15 +793,15 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -821,11 +817,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -837,11 +833,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -853,11 +849,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -870,7 +866,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -881,7 +877,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -892,7 +888,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -903,11 +899,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -920,11 +916,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -937,7 +933,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -948,7 +944,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -959,7 +955,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -970,15 +966,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
-   },
-   {
-    "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -991,11 +983,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1007,11 +999,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1024,15 +1016,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
-   },
-   {
-    "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1045,11 +1033,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1061,7 +1049,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -1072,11 +1060,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1088,7 +1076,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -1099,11 +1087,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1115,11 +1103,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1131,11 +1119,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1147,7 +1135,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -1158,11 +1146,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1174,11 +1162,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1190,11 +1178,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1206,7 +1194,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": [
@@ -1217,11 +1205,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1234,7 +1222,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1245,7 +1233,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1256,7 +1244,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1267,7 +1255,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1278,11 +1266,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1294,7 +1282,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1305,11 +1293,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1322,11 +1310,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1340,7 +1328,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1351,7 +1339,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1362,7 +1350,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1373,7 +1361,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1384,7 +1372,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1396,7 +1384,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1407,7 +1395,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1419,7 +1407,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1430,7 +1418,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1441,7 +1429,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1452,7 +1440,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1463,7 +1451,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -1474,7 +1462,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -1485,7 +1473,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1497,24 +1485,19 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
-   },
-   {
-    "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
    "RDS read replicas",
-   "Aurora Replicas",
-   "Amazon Aurora Replicas"
+   "Aurora Replicas"
   ]
  },
  "T5Q10": {
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1525,7 +1508,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1537,7 +1520,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1550,7 +1533,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1561,7 +1544,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1572,7 +1555,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1583,7 +1566,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1594,7 +1577,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1605,7 +1588,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1616,7 +1599,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1627,7 +1610,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1638,11 +1621,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
-   },
-   {
-    "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1655,7 +1634,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1666,11 +1645,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.1"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -1682,7 +1661,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1693,7 +1672,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -1704,7 +1683,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1715,7 +1694,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1726,7 +1705,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1737,7 +1716,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1748,7 +1727,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1761,7 +1740,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1773,15 +1752,11 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
-   },
-   {
-    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.1"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1794,7 +1769,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1805,7 +1780,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1818,7 +1793,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1829,11 +1804,11 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.1"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1846,7 +1821,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": [
@@ -1857,7 +1832,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1869,11 +1844,11 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1885,7 +1860,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1896,11 +1871,11 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1912,7 +1887,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1923,7 +1898,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1934,7 +1909,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1945,7 +1920,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1956,7 +1931,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1967,7 +1942,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1979,7 +1954,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -1991,7 +1966,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2002,7 +1977,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2013,7 +1988,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2024,7 +1999,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2035,7 +2010,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2046,7 +2021,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2057,11 +2032,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
-   },
-   {
-    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Tasks 4.2–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2073,7 +2044,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2084,7 +2055,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2095,7 +2066,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2106,7 +2077,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2117,7 +2088,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -2128,7 +2099,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -2139,7 +2110,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -2150,7 +2121,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -2161,7 +2132,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -2172,7 +2143,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -2183,7 +2154,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -2194,7 +2165,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.1"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": [
@@ -2205,7 +2176,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": [
@@ -2216,7 +2187,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Practice-test additions — Task 1.2"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": [
@@ -2227,7 +2198,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Practice-test additions — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -2238,7 +2209,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Practice-test additions — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -2249,7 +2220,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Practice-test additions — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": [
@@ -2260,7 +2231,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Practice-test additions — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": [
@@ -2271,7 +2242,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -2282,7 +2253,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -2293,7 +2264,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -2304,7 +2275,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": [
@@ -2315,7 +2286,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -2326,7 +2297,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -2337,29 +2308,29 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
-   "Amazon Aurora Global Database"
+   "Aurora Global Database"
   ]
  },
  "T2Q55": {
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
-   "Amazon Aurora Global Database"
+   "Aurora Global Database"
   ]
  },
  "T4Q43": {
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -2370,7 +2341,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": [
@@ -2381,7 +2352,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": [
@@ -2392,7 +2363,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.1"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2403,7 +2374,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.1"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2414,7 +2385,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.1"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2425,7 +2396,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Tasks 4.2–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2436,7 +2407,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.2"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": [
@@ -2447,7 +2418,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2456,7 +2427,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2465,7 +2436,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2474,7 +2445,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -2483,7 +2454,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -2492,7 +2463,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2501,7 +2472,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2510,7 +2481,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -2519,11 +2490,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2532,7 +2503,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2541,7 +2512,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2550,7 +2521,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2559,11 +2530,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -2572,7 +2543,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -2581,11 +2552,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -2594,11 +2565,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -2607,7 +2578,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -2616,11 +2587,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2629,11 +2600,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2642,7 +2613,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -2651,7 +2622,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -2660,7 +2631,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -2669,7 +2640,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -2678,7 +2649,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2687,7 +2658,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2696,7 +2667,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2705,7 +2676,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -2714,7 +2685,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2723,7 +2694,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2732,11 +2703,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    },
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -2745,7 +2716,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -2754,7 +2725,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2763,7 +2734,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2772,7 +2743,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -2781,7 +2752,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -2790,7 +2761,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2799,11 +2770,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -2812,7 +2783,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -2821,7 +2792,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -2830,7 +2801,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -2839,7 +2810,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2848,7 +2819,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2857,7 +2828,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -2866,11 +2837,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -2879,7 +2850,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2888,7 +2859,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -2897,7 +2868,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -2906,7 +2877,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -2915,7 +2886,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -2924,11 +2895,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.2"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -2937,7 +2908,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -2946,11 +2917,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -2959,11 +2930,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -2972,11 +2943,11 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -2985,7 +2956,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -2994,7 +2965,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3003,7 +2974,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3012,7 +2983,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3021,7 +2992,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -3030,7 +3001,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3039,7 +3010,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3048,7 +3019,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3057,7 +3028,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3066,7 +3037,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3075,7 +3046,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3084,7 +3055,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -3093,7 +3064,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3102,7 +3073,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3111,7 +3082,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3120,7 +3091,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3129,7 +3100,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3138,7 +3109,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3147,7 +3118,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3156,7 +3127,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3165,7 +3136,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3174,7 +3145,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3183,7 +3154,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3192,7 +3163,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3201,7 +3172,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3210,7 +3181,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3219,7 +3190,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3228,7 +3199,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3237,7 +3208,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3246,7 +3217,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3255,7 +3226,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3264,7 +3235,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3273,7 +3244,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3282,7 +3253,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3291,7 +3262,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -3300,7 +3271,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3309,7 +3280,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3318,7 +3289,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3327,7 +3298,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3336,7 +3307,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3345,7 +3316,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3354,7 +3325,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3363,7 +3334,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3372,7 +3343,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3381,7 +3352,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3390,7 +3361,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3399,7 +3370,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3408,7 +3379,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3417,7 +3388,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3426,7 +3397,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3435,7 +3406,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3444,7 +3415,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3453,11 +3424,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -3466,7 +3437,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3475,11 +3446,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -3488,11 +3459,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3501,11 +3472,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3514,11 +3485,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3527,7 +3498,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -3536,7 +3507,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -3545,7 +3516,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -3554,7 +3525,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -3563,7 +3534,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3572,7 +3543,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost and Operations — Tasks 4.1–4.4"
+    "sub": "Cost and Operations \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -3581,7 +3552,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3590,7 +3561,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3599,7 +3570,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3608,7 +3579,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3617,11 +3588,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3630,7 +3601,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Practice-test additions — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3639,7 +3610,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -3648,7 +3619,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3657,11 +3628,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3670,7 +3641,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3679,7 +3650,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3688,7 +3659,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3697,7 +3668,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -3706,7 +3677,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3715,7 +3686,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3724,7 +3695,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3733,11 +3704,11 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3746,7 +3717,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3755,7 +3726,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3764,7 +3735,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3773,7 +3744,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3782,11 +3753,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+    "sub": "Elastic compute and storage \u2014 Tasks 3.1\u20133.2"
    }
   ],
   "terms": []
@@ -3795,7 +3766,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3804,7 +3775,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3813,7 +3784,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3822,7 +3793,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3831,11 +3802,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3844,11 +3815,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3857,7 +3828,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -3866,7 +3837,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -3875,7 +3846,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -3884,7 +3855,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -3893,7 +3864,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3902,7 +3873,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -3911,7 +3882,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -3920,7 +3891,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -3929,7 +3900,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -3938,11 +3909,11 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3951,7 +3922,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3960,7 +3931,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -3969,11 +3940,11 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    },
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3982,7 +3953,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Serverless Web and Content Delivery — Task 2.1"
+    "sub": "Serverless Web and Content Delivery \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -3991,7 +3962,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4000,7 +3971,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -4009,7 +3980,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -4018,11 +3989,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -4031,7 +4002,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -4040,7 +4011,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4049,7 +4020,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4058,7 +4029,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4067,7 +4038,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4076,7 +4047,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+    "sub": "Databases, Analytics, and Migration \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4085,7 +4056,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -4094,7 +4065,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -4103,7 +4074,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4112,7 +4083,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4121,11 +4092,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "VPC and Hybrid Networking — Task 3.4"
+    "sub": "VPC and Hybrid Networking \u2014 Task 3.4"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -4134,7 +4105,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    }
   ],
   "terms": []
@@ -4143,7 +4114,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -4152,7 +4123,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -4161,11 +4132,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+    "sub": "Availability, backup, and disaster recovery \u2014 Task 2.2"
    }
   ],
   "terms": []
@@ -4174,7 +4145,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4183,7 +4154,7 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    }
   ],
   "terms": []
@@ -4192,7 +4163,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+    "sub": "Storage, Backup, and Data Protection \u2014 Task 4.1"
    }
   ],
   "terms": []
@@ -4201,11 +4172,11 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    },
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Practice-test additions — Task 4.2"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -4214,11 +4185,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Data security controls — Task 1.3"
+    "sub": "Data security controls \u2014 Task 1.3"
    },
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Practice-test additions — Task 3.3"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4227,7 +4198,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+    "sub": "Database and data-ingestion performance \u2014 Tasks 3.3 and 3.5"
    }
   ],
   "terms": []
@@ -4236,7 +4207,7 @@
   "sections": [
    {
     "domain": "Content Domain 4: Design Cost-Optimized Architectures",
-    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+    "sub": "Cost-aware storage, compute, and network choices \u2014 Tasks 4.1\u20134.4"
    }
   ],
   "terms": []
@@ -4245,11 +4216,11 @@
   "sections": [
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+    "sub": "Multi-account governance and secure workloads \u2014 Tasks 1.1\u20131.2"
    },
    {
     "domain": "Content Domain 1: Design Secure Architectures",
-    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+    "sub": "IAM and Application Security \u2014 Tasks 1.1\u20131.3"
    }
   ],
   "terms": []
@@ -4258,7 +4229,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+    "sub": "EC2, Load Balancing, and Scaling \u2014 Task 3.2"
    }
   ],
   "terms": []
@@ -4267,7 +4238,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []
@@ -4276,7 +4247,7 @@
   "sections": [
    {
     "domain": "Content Domain 2: Design Resilient Architectures",
-    "sub": "Messaging and Event Processing — Task 2.1"
+    "sub": "Messaging and Event Processing \u2014 Task 2.1"
    }
   ],
   "terms": []
@@ -4285,7 +4256,7 @@
   "sections": [
    {
     "domain": "Content Domain 3: Design High-Performing Architectures",
-    "sub": "Scalable network architectures — Task 3.4"
+    "sub": "Scalable network architectures \u2014 Task 3.4"
    }
   ],
   "terms": []

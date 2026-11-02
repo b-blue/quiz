@@ -22,6 +22,8 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - EventBridge archive and replay // Archive all or filtered events delivered to an event bus for a chosen period or indefinitely, then replay them to the bus for reprocessing.
 - S3 Event Notifications versus EventBridge // Send object events directly to Lambda, SQS, or SNS with optional key-name filtering; choose EventBridge for all bucket events, JSON filtering, more destinations, and archive/replay.
 - SQS long polling // Wait 1–20 seconds for messages when polling an empty queue, reducing API calls and improving efficiency; the slides recommend the 20-second wait over short polling.
+- Amazon MQ // Use a managed broker for applications built on open messaging protocols when re-engineering to SQS/SNS is undesirable; it supports queue/topic patterns and Multi-AZ failover but scales less than those cloud-native services.
+- SQS delay queues // Delay queues postpone when newly sent messages become visible to consumers, for up to 15 minutes; visibility timeout starts after a message is received.
 
 ## Content Domain 1: Design Secure Architectures
 
@@ -38,6 +40,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - AWS WAF rate-based rule // Limit or block web requests that exceed a configured request rate; WAF can protect supported resources including CloudFront, ALB, and API Gateway
 - Amazon Cognito // User Pools provide app sign-in, MFA, and federation; Identity Pools exchange user identities for temporary AWS credentials that can authorize direct access to AWS resources.
 - AWS Directory Services selection // Use AWS Managed Microsoft AD for a managed domain that can trust on-premises AD, AD Connector as a proxy to an existing directory, or Simple AD for an AWS-hosted compatible directory that cannot join on-premises AD.
+- IAM Roles for Service Accounts (IRSA) // Associate a Kubernetes service account with an IAM role so Pods receive temporary AWS credentials with permissions scoped to that workload.
 
 ## Content Domain 3: Design High-Performing Architectures
 
@@ -158,6 +161,11 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - VPC Flow Logs // Record network-flow metadata at VPC, subnet, or ENI scope, including managed interfaces; send it to S3, CloudWatch Logs, or Firehose for IP/port analysis and ACCEPT/REJECT troubleshooting.
 - VPC Traffic Mirroring // Copy selected inbound or outbound packets from source ENIs to an ENI or Network Load Balancer target for inspection; sources and targets can be in peered VPCs.
 - CloudFormation service role // Let CloudFormation create, update, or delete stack resources through an IAM service role, so stack users need not hold those resource permissions but must have iam:PassRole.
+- Route 53 Resolver inbound and outbound endpoints // Use inbound endpoints for on-premises DNS queries into a VPC and outbound endpoints with forwarding rules for VPC queries to on-premises DNS.
+- AWS WAF geographic match rule // Use a geographic match statement in a web ACL to allow or block web requests based on the country of origin.
+- Amazon Security Lake // Automatically centralize security data from AWS, on-premises, and third-party sources in an S3-based data lake normalized to OCSF.
+- AWS Organizations tag policy // Standardize tag keys and allowed values across an organization and report compliance; supported tagging operations can reject noncompliant tags, but the policy has no effect on resources that have no tags.
+- AWS Config managed rules // Evaluate recorded resource configurations on change and/or periodically; rules detect noncompliance but do not block actions, while configured remediation can use Systems Manager Automation documents.
 
 ### Data security controls — Task 1.3
 
@@ -185,6 +193,9 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - S3 SSE-C encryption // Encrypt server-side with a customer-managed key kept outside AWS; provide the key in HTTPS headers on every request because S3 does not store it.
 - S3 CORS configuration // Allow browser requests from specified origins by configuring the bucket's CORS response headers for the required origin; a wildcard can allow all origins.
 - Amazon S3 presigned URLs // Grant temporary GET or PUT access to a private object using the permissions of the principal that generated the URL; access is bounded by the URL expiration.
+- Amazon S3 Access Points // Give applications or groups separate DNS names and policies for a shared bucket; a VPC-origin access point requires a VPC endpoint whose policy permits the bucket and access point.
+- AWS IAM Access Analyzer // Analyze resource-based policies to identify access granted to principals outside an account or organization and generate findings.
+- S3 SSE-KMS encryption // Encrypt objects server-side with a KMS key for auditable key use and key control; each upload or download calls KMS, so KMS request quotas can constrain throughput.
 
 ## Content Domain 2: Design Resilient Architectures
 
@@ -202,7 +213,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - AWS Backup policies with Organizations // Centrally apply backup plans to selected organization accounts and resources
 - S3 replication // Replication requires versioning on source and destination; for SSE-KMS objects, enable replication, authorize source-key decrypt and destination-key encrypt, and select the destination key—S3 still decrypts and re-encrypts objects even with multi-Region keys.
 - RDS Multi-AZ deployment // Provide managed high availability and failover; a traditional standby is not a read-scaling endpoint
-- Aurora Global Database // Replicate Aurora data across Regions for low-lag regional disaster recovery and managed failover options
+- Aurora Global Database // Replicate Aurora across Regions with a read/write primary Region and up to 10 read-only secondary Regions (replication under 1 second); supports local reads and cross-Region recovery with an RTO under 1 minute when promoting a secondary Region.
 - DynamoDB point-in-time recovery (PITR) // Restore a table to a selected point within the configured backup retention window
 - DynamoDB deletion protection // Block accidental table deletion; enable PITR separately for recoverability
 - DynamoDB global tables // Replicate a table active-active across Regions so applications can read and write locally; DynamoDB Streams must be enabled as a prerequisite.
@@ -220,6 +231,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - S3 replication (CRR/SRR) // Asynchronously copy new objects between versioned source and destination buckets in the same or different Regions; existing objects need S3 Batch Replication, and deletes with a version ID are not replicated.
 - Secrets Manager multi-Region secrets // Replicate a secret to other Regions with read replicas kept in sync with the primary, and promote a replica to a standalone secret when needed.
 - AWS Elastic Disaster Recovery (DRS) // Continuously replicate servers at block level into low-cost AWS staging resources, then launch recovered EC2 instances and EBS volumes for failover; supports failback.
+- Amazon RDS storage autoscaling // Increase allocated storage automatically up to a configured maximum when free space stays below 10% for at least 5 minutes and 6 hours have elapsed since the previous storage change.
 
 ## Content Domain 3: Design High-Performing Architectures
 
@@ -248,6 +260,12 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - Elastic Beanstalk // A managed application deployment service that provisions and operates resources such as EC2, Auto Scaling, and load balancing while developers supply application code; the service is free, but its underlying resources are billed.
 - Amazon ECR // Store and manage Docker images in private or public repositories; IAM controls access, and image scanning, tags, versioning, and lifecycle features support container deployment workflows.
 - CloudWatch Unified Agent // Run on EC2 or on-premises servers to send logs and guest system metrics such as RAM, disk, network, and process data; its configuration can be centralized in Systems Manager Parameter Store.
+- EC2 hibernation // Save RAM to an encrypted EBS root volume and restore running processes on start; requires a supported non-bare-metal instance, under 150 GB RAM, and hibernation for no more than 60 days.
+- Auto Scaling AZ rebalancing // When an Auto Scaling group is uneven across Availability Zones, it launches replacement capacity before terminating instances to rebalance distribution.
+- Auto Scaling on SQS backlog // Scale worker capacity using backlog per instance, commonly ApproximateNumberOfMessages divided by the number of running instances.
+- EBS Fast Snapshot Restore // Make volumes created from a snapshot fully initialized at provisioned performance immediately after creation, avoiding lazy-load latency, at additional cost.
+- S3 per-prefix request performance // Spread object requests across key prefixes to scale S3 throughput; each prefix supports at least 3,500 write-class or 5,500 GET/HEAD requests per second.
+- Amazon FSx for Lustre // Provide a parallel file system for HPC workloads; scratch is temporary and unreplicated with burst performance, while persistent storage replicates within one AZ and replaces failed files.
 
 ### Scalable network architectures — Task 3.4
 
@@ -267,6 +285,9 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - Regional NAT Gateway // A VPC-associated NAT service shares outbound translation across Availability Zones, maintains its own route tables, and automatically expands as resources use new zones without requiring per-zone public subnets.
 - Egress-only Internet Gateway // IPv6-only gateway that lets VPC instances initiate outbound internet connections while blocking internet-initiated inbound connections; route ::/0 through it.
 - AWS VPN CloudHub // Low-cost hub-and-spoke connectivity among multiple sites using Site-to-Site VPNs on one VGW; configure dynamic routing and route tables, with traffic traversing the public internet.
+- NAT instance capabilities // A self-managed EC2 NAT instance can support port forwarding and security groups and can be used as a bastion, but requires customer-managed availability and scaling.
+- Availability Zone IDs // AZ IDs identify the same physical Availability Zone consistently across accounts; AZ names can map to different physical zones in different accounts.
+- Route 53 geoproximity routing // Route 53 geoproximity routes based on resource and user locations; a bias expands or shrinks the geographic area serving a resource.
 
 ### Database and data-ingestion performance — Tasks 3.3 and 3.5
 - RDS read replicas // Use up to 15 asynchronously replicated, eventually consistent replicas (within an AZ, cross-AZ, or cross-Region) to scale SELECT reads; applications must route reads to them, and a replica can be promoted to its own database.
@@ -294,6 +315,11 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - Amazon Comprehend custom entity recognition // Use managed NLP to identify domain-specific entities in text rather than operating a custom model
 - Database read scaling and caching // Use read replicas for supported relational read workloads, ElastiCache for general-purpose low-latency caching, and DAX for DynamoDB reads
 - ElastiCache Redis vs. Memcached // Redis supports Multi-AZ failover, read replicas, persistence, and sorted sets; Memcached is nonpersistent and multi-threaded, and supports sharding but not replication-based high availability.
+- Amazon RDS Proxy // Pool and share database connections to prevent Lambda traffic spikes from exhausting database connections; the proxy is private, so Lambda must be VPC-attached, and IAM authentication or Secrets Manager credentials can be used.
+- Aurora Replicas // Share Aurora cluster storage and provide read scaling with sub-10-ms lag, up to 15 replicas, and a reader endpoint; replicas can scale automatically, and writer failover completes in under 30 seconds.
+- Amazon Redshift Serverless // Run and scale a Redshift data warehouse without provisioning or managing a fixed cluster.
+- Aurora I/O-Optimized // Choose Aurora storage pricing without per-I/O charges for applications with high or unpredictable database I/O.
+- DynamoDB on-demand capacity mode // Pay per request and let capacity scale without planning for unpredictable workloads or sudden spikes; it typically costs more than provisioned capacity for steady, predictable traffic.
 
 ## Content Domain 4: Design Cost-Optimized Architectures
 
@@ -316,100 +342,10 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - AWS Storage Gateway stored volumes // Present iSCSI block volumes to on-premises applications while keeping the full dataset on premises and scheduling backups to S3 as EBS snapshots.
 - AWS Storage Gateway Tape Gateway // Expose a virtual tape library over iSCSI for existing tape-based backup software, with virtual tapes stored in S3 and archived tapes in Glacier.
 - DynamoDB time to live (TTL) // Automatically delete items after their per-item expiry timestamp, reducing retained data and supporting uses such as session expiration.
-
-## Content Domain 1: Design Secure Architectures
-
-### Practice-test additions — Task 1.2
-
-- Route 53 Resolver inbound and outbound endpoints // Use inbound endpoints for on-premises DNS queries into a VPC and outbound endpoints with forwarding rules for VPC queries to on-premises DNS.
-- AWS WAF geographic match rule // Use a geographic match statement in a web ACL to allow or block web requests based on the country of origin.
-- Amazon Security Lake // Automatically centralize security data from AWS, on-premises, and third-party sources in an S3-based data lake normalized to OCSF.
-- AWS Organizations tag policy // Standardize tag keys and allowed values across an organization and report compliance; supported tagging operations can reject noncompliant tags, but the policy has no effect on resources that have no tags.
-- AWS Config managed rules // Evaluate recorded resource configurations on change and/or periodically; rules detect noncompliance but do not block actions, while configured remediation can use Systems Manager Automation documents.
-- Amazon S3 Access Points // Give applications or groups separate DNS names and policies for a shared bucket; a VPC-origin access point requires a VPC endpoint whose policy permits the bucket and access point.
-
-## Content Domain 1: Design Secure Architectures
-
-### Practice-test additions — Task 1.3
-
-- AWS IAM Access Analyzer // Analyze resource-based policies to identify access granted to principals outside an account or organization and generate findings.
-- S3 SSE-KMS encryption // Encrypt objects server-side with a KMS key for auditable key use and key control; each upload or download calls KMS, so KMS request quotas can constrain throughput.
-
-## Content Domain 1: Design Secure Architectures
-
-### Practice-test additions — Task 1.1
-
-- IAM Roles for Service Accounts (IRSA) // Associate a Kubernetes service account with an IAM role so Pods receive temporary AWS credentials with permissions scoped to that workload.
-
-## Content Domain 2: Design Resilient Architectures
-
-### Practice-test additions — Task 2.1
-
-- Amazon MQ // Use a managed broker for applications built on open messaging protocols when re-engineering to SQS/SNS is undesirable; it supports queue/topic patterns and Multi-AZ failover but scales less than those cloud-native services.
-- SQS delay queues // Delay queues postpone when newly sent messages become visible to consumers, for up to 15 minutes; visibility timeout starts after a message is received.
-
-## Content Domain 2: Design Resilient Architectures
-
-### Practice-test additions — Task 2.2
-
-- Amazon RDS storage autoscaling // Increase allocated storage automatically up to a configured maximum when free space stays below 10% for at least 5 minutes and 6 hours have elapsed since the previous storage change.
-
-## Content Domain 3: Design High-Performing Architectures
-
-### Practice-test additions — Task 3.2
-
-- EC2 hibernation // Save RAM to an encrypted EBS root volume and restore running processes on start; requires a supported non-bare-metal instance, under 150 GB RAM, and hibernation for no more than 60 days.
-- Auto Scaling AZ rebalancing // When an Auto Scaling group is uneven across Availability Zones, it launches replacement capacity before terminating instances to rebalance distribution.
-- Auto Scaling on SQS backlog // Scale worker capacity using backlog per instance, commonly ApproximateNumberOfMessages divided by the number of running instances.
-- EBS Fast Snapshot Restore // Force-initialize snapshot-backed volumes to full provisioned performance on first use, avoiding lazy-load latency at additional cost.
-- EBS Fast Snapshot Restore // Make volumes created from a snapshot fully initialized at provisioned performance immediately after creation.
-- S3 per-prefix request performance // Spread object requests across key prefixes to scale S3 throughput; each prefix supports at least 3,500 write-class or 5,500 GET/HEAD requests per second.
-
-## Content Domain 3: Design High-Performing Architectures
-
-### Practice-test additions — Task 3.4
-
-- NAT instance capabilities // A self-managed EC2 NAT instance can support port forwarding and security groups and can be used as a bastion, but requires customer-managed availability and scaling.
-- Availability Zone IDs // AZ IDs identify the same physical Availability Zone consistently across accounts; AZ names can map to different physical zones in different accounts.
-- Route 53 geoproximity routing // Route 53 geoproximity routes based on resource and user locations; a bias expands or shrinks the geographic area serving a resource.
-
-## Content Domain 3: Design High-Performing Architectures
-
-### Practice-test additions — Task 3.3
-
-- Amazon RDS Proxy // Pool and share database connections to prevent Lambda traffic spikes from exhausting database connections; the proxy is private, so Lambda must be VPC-attached, and IAM authentication or Secrets Manager credentials can be used.
-- Aurora Replicas // Share Aurora cluster storage and provide read scaling with sub-10-ms lag, up to 15 replicas, and a reader endpoint; replicas can scale automatically, and writer failover completes in under 30 seconds.
-- Amazon Aurora Global Database // Use one read/write primary Region and up to 10 read-only secondary Regions with replication under 1 second; it supports local reads and cross-Region recovery with an RTO under 1 minute when promoting another Region.
-- Amazon RDS Proxy // Pool and reuse database connections to improve application scalability and resilience for supported relational databases.
-- Amazon Aurora Replicas // Scale Aurora reads with replicas that share the cluster volume and can be added automatically as demand changes.
-- Amazon Redshift Serverless // Run and scale a Redshift data warehouse without provisioning or managing a fixed cluster.
-- Aurora I/O-Optimized // Choose Aurora storage pricing without per-I/O charges for applications with high or unpredictable database I/O.
-- DynamoDB on-demand capacity mode // Pay per request and let capacity scale without planning for unpredictable workloads or sudden spikes; it typically costs more than provisioned capacity for steady, predictable traffic.
-
-## Content Domain 3: Design High-Performing Architectures
-
-### Practice-test additions — Task 3.1
-
-- Amazon FSx for Lustre // Provide a parallel file system for HPC workloads; scratch is temporary and unreplicated with burst performance, while persistent storage replicates within one AZ and replaces failed files.
-
-## Content Domain 4: Design Cost-Optimized Architectures
-
-### Practice-test additions — Task 4.1
-
 - S3 Standard // General-purpose object storage for frequently accessed data; no retrieval charge or minimum storage duration applies.
 - S3 One Zone-IA // Lower-cost S3 storage for infrequently accessed, noncritical or recreatable data kept in one Availability Zone; it is less resilient than multi-AZ classes.
 - AWS Storage Gateway cached volumes // Present iSCSI block volumes to on-premises applications, keep frequently accessed data in a local cache, and store primary volume data in S3.
 - S3 Storage Class Analysis // Use access-pattern reports to guide transitions from S3 Standard to Standard-IA; it does not transition objects and does not analyze One Zone-IA or Glacier.
-
-## Content Domain 4: Design Cost-Optimized Architectures
-
-### Practice-test additions — Tasks 4.2–4.4
-
 - AWS Cost Anomaly Detection // Use machine learning to identify unusual spending patterns and alert stakeholders without requiring a fixed spend threshold.
 - AWS Cost Optimization Hub // Consolidate and prioritize cost-saving recommendations from AWS services and accounts, including rightsizing and idle-resource opportunities.
-
-## Content Domain 4: Design Cost-Optimized Architectures
-
-### Practice-test additions — Task 4.2
-
 - EC2 Dedicated Hosts // Reserve a physical EC2 server for one customer to gain host-level visibility and support eligible server-bound software licenses.

@@ -706,7 +706,9 @@
       "Cross-account and cross-Region backup"
     ],
     "practice": [
-      "T6Q1"
+      "T6Q1",
+      "T2Q52",
+      "T2Q55"
     ]
   },
   "DynamoDB point-in-time recovery (PITR)": {
@@ -1439,7 +1441,7 @@
   "RDS read replicas": {
     "lookalikes": [
       "RDS Multi-AZ deployment",
-      "Amazon Aurora Global Database",
+      "Aurora Global Database",
       "Database read scaling and caching"
     ],
     "practice": [
@@ -2168,7 +2170,8 @@
     "lookalikes": [
       "RDS read replicas",
       "Aurora Global Database",
-      "Amazon ElastiCache for Redis"
+      "Amazon ElastiCache for Redis",
+      "RDS Multi-AZ deployment"
     ],
     "practice": [
       "T3Q43"
@@ -2182,27 +2185,6 @@
     ],
     "practice": [
       "T5Q37"
-    ]
-  },
-  "Amazon Aurora Global Database": {
-    "lookalikes": [
-      "RDS read replicas",
-      "DynamoDB global tables",
-      "RDS Multi-AZ deployment"
-    ],
-    "practice": [
-      "T2Q52",
-      "T2Q55"
-    ]
-  },
-  "Amazon Aurora Replicas": {
-    "lookalikes": [
-      "RDS read replicas",
-      "Amazon Aurora Global Database",
-      "RDS Multi-AZ deployment"
-    ],
-    "practice": [
-      "T3Q43"
     ]
   },
   "Amazon FSx for Lustre": {
@@ -2227,7 +2209,7 @@
   },
   "Aurora I/O-Optimized": {
     "lookalikes": [
-      "Amazon Aurora Global Database",
+      "Aurora Global Database",
       "RDS read replicas",
       "EBS General Purpose SSD versus Provisioned IOPS SSD"
     ],
@@ -2416,7 +2398,7 @@
   "RDS Multi-AZ standby": {
     "lookalikes": [
       "RDS read replicas",
-      "Amazon Aurora Global Database",
+      "Aurora Global Database",
       "Backup and restore DR"
     ],
     "practice": []
