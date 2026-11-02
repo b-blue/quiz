@@ -25,3 +25,6 @@ src/data/B/test-*.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Never commit exam PDFs
+src/data/B/*.pdf

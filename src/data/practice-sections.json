@@ -1,0 +1,4293 @@
+{
+ "T1Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "IAM permissions boundary"
+  ]
+ },
+ "T2Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": [
+   "IAM permissions boundary",
+   "Amazon CloudFront"
+  ]
+ },
+ "T1Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "IAM least privilege"
+  ]
+ },
+ "T2Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "IAM least privilege"
+  ]
+ },
+ "T1Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "Cross-account IAM role",
+   "Cross-account access credentials"
+  ]
+ },
+ "T2Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "Cross-account IAM role",
+   "Cross-account access credentials"
+  ]
+ },
+ "T2Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM policy `aws:SourceIp` condition",
+   "IAM policy evaluation"
+  ]
+ },
+ "T2Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM policy `aws:SourceIp` condition",
+   "IAM policy evaluation"
+  ]
+ },
+ "T4Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM policy `aws:SourceIp` condition",
+   "IAM policy evaluation"
+  ]
+ },
+ "T6Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "IAM groups"
+  ]
+ },
+ "T2Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "API Gateway resource policy"
+  ]
+ },
+ "T4Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": [
+   "IAM database authentication"
+  ]
+ },
+ "T6Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "AWS WAF rate-based rule",
+   "AWS WAF and Shield"
+  ]
+ },
+ "T3Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Service Control Policies (SCPs)",
+   "SCP and IAM evaluation"
+  ]
+ },
+ "T2Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Service Control Policies (SCPs)"
+  ]
+ },
+ "T5Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "Service Control Policies (SCPs)",
+   "SCP and IAM evaluation",
+   "AWS Organizations tag policy"
+  ]
+ },
+ "T6Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "AWS Control Tower"
+  ]
+ },
+ "T2Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM role for an AWS workload"
+  ]
+ },
+ "T3Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM role for an AWS workload"
+  ]
+ },
+ "T1Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Root user protection"
+  ]
+ },
+ "T6Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Root user protection"
+  ]
+ },
+ "T1Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM Identity Center federation"
+  ]
+ },
+ "T4Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "IAM Identity Center federation"
+  ]
+ },
+ "T3Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Security groups and network ACLs"
+  ]
+ },
+ "T6Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Security groups and network ACLs"
+  ]
+ },
+ "T2Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "Security groups and network ACLs"
+  ]
+ },
+ "T3Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "AWS WAF and Shield"
+  ]
+ },
+ "T5Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "AWS WAF and Shield"
+  ]
+ },
+ "T6Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": [
+   "AWS Firewall Manager"
+  ]
+ },
+ "T5Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 Object Lock Compliance mode"
+  ]
+ },
+ "T1Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 Object Lock Compliance mode"
+  ]
+ },
+ "T4Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 Object Lock Compliance mode",
+   "S3 Object Lock Governance mode",
+   "S3 Glacier Vault Lock"
+  ]
+ },
+ "T5Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 Glacier Vault Lock"
+  ]
+ },
+ "T5Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 SSE-KMS Bucket Keys"
+  ]
+ },
+ "T2Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "KMS multi-Region keys"
+  ]
+ },
+ "T2Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "RDS encryption at rest"
+  ]
+ },
+ "T2Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "RDS encryption at rest"
+  ]
+ },
+ "T4Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "RDS SSL/TLS"
+  ]
+ },
+ "T5Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "CloudFront Origin Access Control (OAC)",
+   "AWS Certificate Manager and CloudFront"
+  ]
+ },
+ "T3Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "CloudFront Origin Access Control (OAC)"
+  ]
+ },
+ "T6Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "CloudFront Origin Access Control (OAC)"
+  ]
+ },
+ "T3Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "Amazon Macie",
+   "Amazon GuardDuty"
+  ]
+ },
+ "T1Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "Amazon GuardDuty",
+   "Amazon Inspector"
+  ]
+ },
+ "T6Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": [
+   "Amazon GuardDuty"
+  ]
+ },
+ "T3Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "CloudTrail versus CloudWatch versus Config",
+   "AWS Config managed rules"
+  ]
+ },
+ "T2Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "CloudTrail versus CloudWatch versus Config",
+   "AWS Config managed rules"
+  ]
+ },
+ "T1Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS FIFO queues",
+   "Batching"
+  ]
+ },
+ "T1Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS FIFO queues"
+  ]
+ },
+ "T3Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS FIFO queues",
+   "Batching"
+  ]
+ },
+ "T1Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS standard queues",
+   "AWS Lambda SQS event source mapping"
+  ]
+ },
+ "T2Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS buffering"
+  ]
+ },
+ "T3Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS buffering"
+  ]
+ },
+ "T5Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SQS dead-letter queue (DLQ)"
+  ]
+ },
+ "T5Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Multi-stage SQS workflow"
+  ]
+ },
+ "T1Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon SNS"
+  ]
+ },
+ "T6Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "Recovery Time Objective (RTO)",
+   "Recovery Point Objective (RPO)",
+   "Aurora Global Database"
+  ]
+ },
+ "T5Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "Recovery Point Objective (RPO)",
+   "AWS Backup service selection",
+   "Cross-account and cross-Region backup"
+  ]
+ },
+ "T4Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "Warm standby DR"
+  ]
+ },
+ "T4Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "S3 replication"
+  ]
+ },
+ "T5Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "S3 replication"
+  ]
+ },
+ "T1Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "RDS Multi-AZ deployment"
+  ]
+ },
+ "T2Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "RDS Multi-AZ deployment"
+  ]
+ },
+ "T3Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "RDS Multi-AZ deployment"
+  ]
+ },
+ "T3Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "DynamoDB point-in-time recovery (PITR)"
+  ]
+ },
+ "T4Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "DynamoDB deletion protection"
+  ]
+ },
+ "T4Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "ElastiCache Multi-AZ failover"
+  ]
+ },
+ "T5Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": [
+   "Availability Zone capacity planning",
+   "Multi-AZ minimum capacity"
+  ]
+ },
+ "T2Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "PrivateLink",
+   "Direct Connect private VIF",
+   "AWS Site-to-Site VPN versus Direct Connect",
+   "VPC endpoint selection",
+   "Amazon DataSync",
+   "DataSync to EFS over Direct Connect"
+  ]
+ },
+ "T1Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": [
+   "VPC peering",
+   "AWS Transit Gateway versus VPC peering"
+  ]
+ },
+ "T4Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Transit Gateway",
+   "AWS Transit Gateway versus VPC peering"
+  ]
+ },
+ "T4Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Transit Gateway",
+   "Transit Gateway VPN ECMP",
+   "AWS Transit Gateway versus VPC peering"
+  ]
+ },
+ "T1Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Global Accelerator"
+  ]
+ },
+ "T3Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Global Accelerator"
+  ]
+ },
+ "T4Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Global Accelerator"
+  ]
+ },
+ "T2Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Amazon CloudFront",
+   "Amazon CloudFront caching",
+   "Amazon S3 and CloudFront static delivery"
+  ]
+ },
+ "T3Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Amazon CloudFront",
+   "Amazon CloudFront caching",
+   "Amazon S3 and CloudFront static delivery"
+  ]
+ },
+ "T1Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 Instance Store"
+  ]
+ },
+ "T6Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 Instance Store"
+  ]
+ },
+ "T2Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 user data"
+  ]
+ },
+ "T1Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": [
+   "Auto Scaling `ReplaceUnhealthy` process",
+   "EC2 Auto Scaling health checks",
+   "Auto Scaling AZ rebalancing"
+  ]
+ },
+ "T1Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Target tracking vs. step/scheduled scaling",
+   "EC2 Auto Scaling policy selection"
+  ]
+ },
+ "T3Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Target tracking vs. step/scheduled scaling",
+   "ECS Service Auto Scaling",
+   "EC2 Auto Scaling policy selection"
+  ]
+ },
+ "T6Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": [
+   "Target tracking vs. step/scheduled scaling",
+   "EC2 Auto Scaling policy selection",
+   "Auto Scaling on SQS backlog"
+  ]
+ },
+ "T3Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Network Load Balancer (NLB)",
+   "Application Load Balancer versus Network Load Balancer"
+  ]
+ },
+ "T6Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "Network Load Balancer (NLB)"
+  ]
+ },
+ "T5Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Network Load Balancer (NLB)",
+   "Application Load Balancer versus Network Load Balancer"
+  ]
+ },
+ "T4Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "Cross-zone load balancing"
+  ]
+ },
+ "T6Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "ECS/EKS with Fargate",
+   "ECS, EKS, and Fargate"
+  ]
+ },
+ "T3Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "ECS/EKS with Fargate",
+   "ECS, EKS, and Fargate"
+  ]
+ },
+ "T1Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "ECS/EKS with Fargate",
+   "ECS, EKS, and Fargate"
+  ]
+ },
+ "T3Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 tenancy"
+  ]
+ },
+ "T1Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EC2 cluster placement group",
+   "EC2 placement groups"
+  ]
+ },
+ "T4Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EC2 cluster placement group",
+   "EC2 placement groups"
+  ]
+ },
+ "T4Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EC2 cluster placement group",
+   "EC2 placement groups"
+  ]
+ },
+ "T6Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 Elastic Fabric Adapter (EFA)"
+  ]
+ },
+ "T1Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon ElastiCache for Redis",
+   "DynamoDB Accelerator (DAX)",
+   "Database read scaling and caching"
+  ]
+ },
+ "T4Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon ElastiCache for Redis"
+  ]
+ },
+ "T5Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon ElastiCache for Redis"
+  ]
+ },
+ "T4Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "DynamoDB Accelerator (DAX)"
+  ]
+ },
+ "T6Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "DynamoDB Accelerator (DAX)"
+  ]
+ },
+ "T2Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Athena",
+   "AWS Glue and Data Catalog"
+  ]
+ },
+ "T4Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Neptune"
+  ]
+ },
+ "T5Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS DMS Serverless",
+   "AWS Database Migration Service (DMS)",
+   "AWS Schema Conversion Tool (SCT)"
+  ]
+ },
+ "T1Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS SCT and DMS",
+   "Babelfish for Aurora PostgreSQL",
+   "AWS Database Migration Service (DMS)",
+   "AWS Schema Conversion Tool (SCT)"
+  ]
+ },
+ "T5Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EC2 purchasing options"
+  ]
+ },
+ "T6Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "AWS Batch"
+  ]
+ },
+ "T4Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EFS mount targets"
+  ]
+ },
+ "T3Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "EFS throughput modes"
+  ]
+ },
+ "T1Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "S3 multipart upload",
+   "S3 Transfer Acceleration"
+  ]
+ },
+ "T5Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "S3 multipart upload"
+  ]
+ },
+ "T6Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "S3 multipart upload",
+   "S3 Transfer Acceleration"
+  ]
+ },
+ "T6Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "S3 byte-range GET"
+  ]
+ },
+ "T3Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "S3 Transfer Acceleration"
+  ]
+ },
+ "T1Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Amazon CloudFront caching"
+  ]
+ },
+ "T3Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": [
+   "Amazon S3 and CloudFront static delivery"
+  ]
+ },
+ "T1Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": [
+   "AWS Site-to-Site VPN versus Direct Connect"
+  ]
+ },
+ "T2Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": [
+   "Route 53 latency routing"
+  ]
+ },
+ "T3Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "RDS read replicas",
+   "Database read scaling and caching"
+  ]
+ },
+ "T3Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "RDS read replicas",
+   "Aurora Replicas",
+   "Amazon Aurora Replicas"
+  ]
+ },
+ "T5Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Kinesis Data Streams"
+  ]
+ },
+ "T6Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Kinesis Data Streams",
+   "Kinesis on-demand capacity"
+  ]
+ },
+ "T4Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Kinesis Data Streams",
+   "Amazon Data Firehose",
+   "Kinesis Data Analytics"
+  ]
+ },
+ "T5Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Kinesis enhanced fan-out"
+  ]
+ },
+ "T5Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Kinesis producer batching"
+  ]
+ },
+ "T1Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Kinesis Data Analytics"
+  ]
+ },
+ "T4Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS DMS S3-to-Kinesis integration"
+  ]
+ },
+ "T3Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon DataSync"
+  ]
+ },
+ "T5Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon DataSync"
+  ]
+ },
+ "T3Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS Transfer Family"
+  ]
+ },
+ "T6Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS Application Migration Service (MGN)"
+  ]
+ },
+ "T1Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "AWS Glue and Data Catalog",
+   "Amazon Redshift and Spectrum",
+   "Amazon Redshift Serverless"
+  ]
+ },
+ "T2Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "AWS Lake Formation"
+  ]
+ },
+ "T1Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.1"
+   }
+  ],
+  "terms": [
+   "Amazon EMR",
+   "Amazon FSx for Lustre"
+  ]
+ },
+ "T1Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Amazon Comprehend custom entity recognition"
+  ]
+ },
+ "T3Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": [
+   "Database read scaling and caching"
+  ]
+ },
+ "T2Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "EFS Infrequent Access"
+  ]
+ },
+ "T6Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "EFS Infrequent Access"
+  ]
+ },
+ "T1Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "AWS Storage Gateway File Gateway"
+  ]
+ },
+ "T5Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "AWS Storage Gateway File Gateway"
+  ]
+ },
+ "T2Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "AWS Snowball Edge",
+   "S3 lifecycle rules",
+   "S3 Glacier retrieval classes"
+  ]
+ },
+ "T5Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "AWS Snowball Edge",
+   "S3 Glacier retrieval classes"
+  ]
+ },
+ "T1Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 lifecycle rules",
+   "S3 Intelligent-Tiering",
+   "S3 One Zone-IA"
+  ]
+ },
+ "T4Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 lifecycle rules"
+  ]
+ },
+ "T6Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 lifecycle rules",
+   "S3 Standard-IA",
+   "S3 Glacier retrieval classes"
+  ]
+ },
+ "T1Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 Standard-IA"
+  ]
+ },
+ "T5Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 Standard-IA",
+   "S3 Glacier retrieval classes",
+   "S3 One Zone-IA"
+  ]
+ },
+ "T6Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 Standard-IA"
+  ]
+ },
+ "T6Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Compute Savings Plans",
+   "SageMaker Savings Plans"
+  ]
+ },
+ "T6Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "AWS Budgets Savings Plans coverage budget",
+   "AWS Budgets"
+  ]
+ },
+ "T1Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EBS volume selection"
+  ]
+ },
+ "T4Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EBS volume selection",
+   "EBS General Purpose SSD versus Provisioned IOPS SSD"
+  ]
+ },
+ "T5Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Cost of data egress"
+  ]
+ },
+ "T6Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Cost of data egress"
+  ]
+ },
+ "T5Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "S3 Intelligent-Tiering"
+  ]
+ },
+ "T5Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "S3 Intelligent-Tiering"
+  ]
+ },
+ "T6Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "S3 Intelligent-Tiering"
+  ]
+ },
+ "T1Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EC2 Savings Plans versus Reserved Instances",
+   "Spot Instances"
+  ]
+ },
+ "T2Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EC2 Savings Plans versus Reserved Instances",
+   "Spot Instances"
+  ]
+ },
+ "T2Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EC2 Savings Plans versus Reserved Instances"
+  ]
+ },
+ "T2Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Spot Instances"
+  ]
+ },
+ "T3Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Spot Instances"
+  ]
+ },
+ "T6Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Spot Instances"
+  ]
+ },
+ "T6Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "Spot Instances"
+  ]
+ },
+ "T6Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "AWS Budgets"
+  ]
+ },
+ "T4Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Tasks 4.2–4.4"
+   }
+  ],
+  "terms": [
+   "AWS Compute Optimizer",
+   "AWS Cost Optimization Hub"
+  ]
+ },
+ "T3Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "VPC endpoint and NAT cost tradeoff"
+  ]
+ },
+ "T6Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "VPC endpoint and NAT cost tradeoff"
+  ]
+ },
+ "T2Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EC2 and Auto Scaling right-sizing"
+  ]
+ },
+ "T4Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": [
+   "EC2 and Auto Scaling right-sizing"
+  ]
+ },
+ "T1Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "Route 53 Resolver inbound and outbound endpoints"
+  ]
+ },
+ "T3Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "Route 53 Resolver inbound and outbound endpoints"
+  ]
+ },
+ "T5Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.3"
+   }
+  ],
+  "terms": [
+   "AWS IAM Access Analyzer"
+  ]
+ },
+ "T1Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 SSE-KMS encryption"
+  ]
+ },
+ "T2Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.3"
+   }
+  ],
+  "terms": [
+   "S3 SSE-KMS encryption"
+  ]
+ },
+ "T1Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "AWS WAF geographic match rule"
+  ]
+ },
+ "T5Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "AWS WAF geographic match rule"
+  ]
+ },
+ "T1Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.1"
+   }
+  ],
+  "terms": [
+   "IAM Roles for Service Accounts (IRSA)"
+  ]
+ },
+ "T2Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "Amazon Security Lake"
+  ]
+ },
+ "T2Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Practice-test additions — Task 1.2"
+   }
+  ],
+  "terms": [
+   "Amazon S3 Access Points"
+  ]
+ },
+ "T2Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Practice-test additions — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon MQ"
+  ]
+ },
+ "T6Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Practice-test additions — Task 2.1"
+   }
+  ],
+  "terms": [
+   "Amazon MQ"
+  ]
+ },
+ "T6Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Practice-test additions — Task 2.1"
+   }
+  ],
+  "terms": [
+   "SQS delay queues"
+  ]
+ },
+ "T2Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Practice-test additions — Task 2.2"
+   }
+  ],
+  "terms": [
+   "Amazon RDS storage autoscaling"
+  ]
+ },
+ "T2Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EC2 hibernation"
+  ]
+ },
+ "T3Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.4"
+   }
+  ],
+  "terms": [
+   "NAT instance capabilities"
+  ]
+ },
+ "T3Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.4"
+   }
+  ],
+  "terms": [
+   "Availability Zone IDs"
+  ]
+ },
+ "T4Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.4"
+   }
+  ],
+  "terms": [
+   "Route 53 geoproximity routing"
+  ]
+ },
+ "T1Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "Amazon RDS Proxy"
+  ]
+ },
+ "T5Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": [
+   "EBS Fast Snapshot Restore"
+  ]
+ },
+ "T2Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "Amazon Aurora Global Database"
+  ]
+ },
+ "T2Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "Amazon Aurora Global Database"
+  ]
+ },
+ "T4Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "Aurora I/O-Optimized"
+  ]
+ },
+ "T1Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": [
+   "S3 per-prefix request performance"
+  ]
+ },
+ "T4Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": [
+   "DynamoDB on-demand capacity mode"
+  ]
+ },
+ "T1Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 Standard"
+  ]
+ },
+ "T4Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.1"
+   }
+  ],
+  "terms": [
+   "AWS Storage Gateway cached volumes"
+  ]
+ },
+ "T6Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.1"
+   }
+  ],
+  "terms": [
+   "S3 Storage Class Analysis"
+  ]
+ },
+ "T1Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Tasks 4.2–4.4"
+   }
+  ],
+  "terms": [
+   "AWS Cost Anomaly Detection"
+  ]
+ },
+ "T6Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.2"
+   }
+  ],
+  "terms": [
+   "EC2 Dedicated Hosts"
+  ]
+ },
+ "T1Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q14": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q26": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T1Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q2": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q12": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   },
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T2Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q8": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q9": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q23": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T3Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q6": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q24": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q31": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q45": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q46": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost and Operations — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q60": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q61": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Practice-test additions — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T4Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q1": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q3": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q4": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q7": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q11": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q13": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q17": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q21": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q22": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q27": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q32": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Elastic compute and storage — Tasks 3.1–3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q33": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q34": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q36": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q38": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q41": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q54": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q56": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q59": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q62": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   },
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Serverless Web and Content Delivery — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T5Q65": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q5": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q10": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q15": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q16": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q18": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q19": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q20": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q25": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q28": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Databases, Analytics, and Migration — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q29": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q30": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q35": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q37": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q39": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "VPC and Hybrid Networking — Task 3.4"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q40": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q42": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q43": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q44": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Availability, backup, and disaster recovery — Task 2.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q47": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q48": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q49": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Storage, Backup, and Data Protection — Task 4.1"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q50": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   },
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Practice-test additions — Task 4.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q51": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Data security controls — Task 1.3"
+   },
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Practice-test additions — Task 3.3"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q52": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Database and data-ingestion performance — Tasks 3.3 and 3.5"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q53": {
+  "sections": [
+   {
+    "domain": "Content Domain 4: Design Cost-Optimized Architectures",
+    "sub": "Cost-aware storage, compute, and network choices — Tasks 4.1–4.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q55": {
+  "sections": [
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "Multi-account governance and secure workloads — Tasks 1.1–1.2"
+   },
+   {
+    "domain": "Content Domain 1: Design Secure Architectures",
+    "sub": "IAM and Application Security — Tasks 1.1–1.3"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q57": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "EC2, Load Balancing, and Scaling — Task 3.2"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q58": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q63": {
+  "sections": [
+   {
+    "domain": "Content Domain 2: Design Resilient Architectures",
+    "sub": "Messaging and Event Processing — Task 2.1"
+   }
+  ],
+  "terms": []
+ },
+ "T6Q64": {
+  "sections": [
+   {
+    "domain": "Content Domain 3: Design High-Performing Architectures",
+    "sub": "Scalable network architectures — Task 3.4"
+   }
+  ],
+  "terms": []
+ }
+}

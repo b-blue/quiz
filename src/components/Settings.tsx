@@ -1,9 +1,12 @@
+import { useState } from 'react';
+import { SHOW_SECTION_KEY, showSectionEnabled } from '../lib/studySections';
 import { getSections, getSaaTerms } from '../lib/terms';
 import styles from './Quiz.module.css';
 import QuizHeader from './QuizHeader';
 import { PRACTICE_TEST_NUMBERS } from '../lib/practiceTests';
 
 export default function Settings({ onBack, onStartPractice }: { onBack?: () => void; onStartPractice?: (test: number) => void }) {
+  const [showSection, setShowSection] = useState(showSectionEnabled());
   const muted = localStorage.getItem('quiz:muted') === '1';
   const startMode = (() => {
     const v = localStorage.getItem('app:startMode');
@@ -72,6 +75,20 @@ export default function Settings({ onBack, onStartPractice }: { onBack?: () => v
               <button key={n} className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => onStartPractice?.(n)}>Test {n}</button>
             ))}
           </div>
+        </div>
+
+        <div className={styles.settingsMuteSection}>
+          <div>
+            <div style={{ fontWeight: 700 }}>Study guide topic</div>
+            <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Show each practice question's study-guide section at the top</div>
+          </div>
+          <button
+            className={`${styles.timedBtn} ${showSection ? styles.timedBtnActive : ''} ${styles.btn3d}`}
+            onClick={() => { const next = !showSection; try { localStorage.setItem(SHOW_SECTION_KEY, next ? '1' : '0'); } catch { /* ignore */ } setShowSection(next); }}
+            aria-pressed={showSection}
+          >
+            {showSection ? 'On' : 'Off'}
+          </button>
         </div>
 
         <div className={styles.settingsMuteSection}>

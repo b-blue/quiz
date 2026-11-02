@@ -2332,5 +2332,444 @@
     "practice": [
       "T6Q60"
     ]
+  },
+  "EBS Multi-Attach": {
+    "lookalikes": [
+      "EBS volume selection",
+      "EC2 Instance Store",
+      "EFS mount targets"
+    ],
+    "practice": []
+  },
+  "EBS snapshots": {
+    "lookalikes": [
+      "EBS volume selection",
+      "EBS Fast Snapshot Restore",
+      "EC2 Instance Store"
+    ],
+    "practice": []
+  },
+  "EFS performance modes": {
+    "lookalikes": [
+      "EFS throughput modes",
+      "EFS mount targets",
+      "EFS Infrequent Access"
+    ],
+    "practice": []
+  },
+  "EFS storage classes": {
+    "lookalikes": [
+      "EFS Infrequent Access",
+      "EFS mount targets",
+      "EBS volume selection"
+    ],
+    "practice": []
+  },
+  "Gateway Load Balancer (GWLB)": {
+    "lookalikes": [
+      "Application Load Balancer (ALB) path routing",
+      "Network Load Balancer (NLB)",
+      "Application Load Balancer versus Network Load Balancer"
+    ],
+    "practice": []
+  },
+  "EC2 Capacity Reservations": {
+    "lookalikes": [
+      "EC2 purchasing options",
+      "EC2 Savings Plans versus Reserved Instances",
+      "Spot Instances"
+    ],
+    "practice": []
+  },
+  "Elastic Load Balancer stickiness": {
+    "lookalikes": [
+      "Application Load Balancer (ALB) path routing",
+      "Network Load Balancer (NLB)",
+      "Cross-zone load balancing"
+    ],
+    "practice": []
+  },
+  "Elastic Network Interfaces (ENI)": {
+    "lookalikes": [
+      "EC2 Auto Scaling health checks",
+      "EC2 tenancy",
+      "EC2 user data"
+    ],
+    "practice": []
+  },
+  "Load balancer Server Name Indication (SNI)": {
+    "lookalikes": [
+      "Application Load Balancer (ALB) path routing",
+      "Network Load Balancer (NLB)",
+      "AWS Certificate Manager and CloudFront"
+    ],
+    "practice": []
+  },
+  "Auto Scaling cooldown": {
+    "lookalikes": [
+      "Target tracking vs. step/scheduled scaling",
+      "Auto Scaling health checks",
+      "SQS queue-based Auto Scaling"
+    ],
+    "practice": []
+  },
+  "RDS Multi-AZ standby": {
+    "lookalikes": [
+      "RDS read replicas",
+      "Amazon Aurora Global Database",
+      "Backup and restore DR"
+    ],
+    "practice": []
+  },
+  "RDS and Aurora automated backups and snapshots": {
+    "lookalikes": [
+      "Amazon RDS storage autoscaling",
+      "RDS read replicas",
+      "Backup and restore DR"
+    ],
+    "practice": []
+  },
+  "Route 53 alias records": {
+    "lookalikes": [
+      "Route 53 failover routing",
+      "Route 53 latency routing",
+      "Route 53 geoproximity routing"
+    ],
+    "practice": []
+  },
+  "Route 53 geolocation routing": {
+    "lookalikes": [
+      "Route 53 latency routing",
+      "Route 53 geoproximity routing",
+      "Route 53 failover routing"
+    ],
+    "practice": []
+  },
+  "Route 53 weighted routing": {
+    "lookalikes": [
+      "Route 53 latency routing",
+      "Route 53 geoproximity routing",
+      "Route 53 failover routing"
+    ],
+    "practice": []
+  },
+  "Route 53 health checks for private endpoints": {
+    "lookalikes": [
+      "Route 53 failover routing",
+      "Route 53 private hosted zone prerequisites",
+      "Route 53 Resolver inbound and outbound endpoints"
+    ],
+    "practice": []
+  },
+  "S3 replication (CRR/SRR)": {
+    "lookalikes": [
+      "One-time S3 bucket copy",
+      "S3 lifecycle rules",
+      "Amazon S3 Access Points"
+    ],
+    "practice": []
+  },
+  "S3 Express One Zone": {
+    "lookalikes": [
+      "S3 Standard",
+      "S3 One Zone-IA",
+      "S3 Standard-IA"
+    ],
+    "practice": []
+  },
+  "ElastiCache Redis vs. Memcached": {
+    "lookalikes": [
+      "Amazon ElastiCache for Redis",
+      "DynamoDB Accelerator (DAX)",
+      "RDS read replicas"
+    ],
+    "practice": []
+  },
+  "Elastic Beanstalk": {
+    "lookalikes": [
+      "AWS CloudFormation",
+      "ECS/EKS with Fargate",
+      "Application Load Balancer (ALB) path routing"
+    ],
+    "practice": []
+  },
+  "S3 SSE-S3 encryption": {
+    "lookalikes": [
+      "S3 SSE-KMS encryption",
+      "S3 SSE-KMS Bucket Keys",
+      "AWS KMS envelope encryption"
+    ],
+    "practice": []
+  },
+  "S3 DSSE-KMS encryption": {
+    "lookalikes": [
+      "S3 SSE-KMS encryption",
+      "S3 SSE-KMS Bucket Keys",
+      "AWS KMS envelope encryption"
+    ],
+    "practice": []
+  },
+  "S3 SSE-C encryption": {
+    "lookalikes": [
+      "S3 SSE-KMS encryption",
+      "S3 SSE-KMS Bucket Keys",
+      "AWS KMS envelope encryption"
+    ],
+    "practice": []
+  },
+  "S3 CORS configuration": {
+    "lookalikes": [
+      "Amazon S3 Access Points",
+      "CloudFront Origin Access Control (OAC)",
+      "CloudFront signed URLs and signed cookies"
+    ],
+    "practice": []
+  },
+  "Amazon S3 presigned URLs": {
+    "lookalikes": [
+      "CloudFront signed URLs and signed cookies",
+      "CloudFront Origin Access Control (OAC)",
+      "Amazon S3 Access Points"
+    ],
+    "practice": []
+  },
+  "S3 EventBridge notifications": {
+    "lookalikes": [
+      "Amazon SNS",
+      "Amazon SQS standard queues",
+      "EventBridge scheduled rule"
+    ],
+    "practice": []
+  },
+  "S3 Requester Pays": {
+    "lookalikes": [
+      "S3 Standard",
+      "S3 lifecycle rules",
+      "AWS Organizations consolidated billing"
+    ],
+    "practice": []
+  },
+  "AWS Storage Gateway stored volumes": {
+    "lookalikes": [
+      "AWS Storage Gateway cached volumes",
+      "AWS Storage Gateway File Gateway"
+    ],
+    "practice": []
+  },
+  "AWS Storage Gateway Tape Gateway": {
+    "lookalikes": [
+      "AWS Storage Gateway File Gateway",
+      "AWS Storage Gateway cached volumes",
+      "S3 Glacier retrieval classes"
+    ],
+    "practice": []
+  },
+  "SQS message visibility timeout": {
+    "lookalikes": [
+      "Amazon SQS standard queues",
+      "Amazon SQS FIFO queues",
+      "SQS delay queues"
+    ],
+    "practice": []
+  },
+  "SQS long polling": {
+    "lookalikes": [
+      "Amazon SQS standard queues",
+      "Amazon SNS",
+      "AWS Lambda SQS event source mapping"
+    ],
+    "practice": []
+  },
+  "ECS task role": {
+    "lookalikes": [
+      "IAM role for an AWS workload",
+      "ECS, EKS, and Fargate",
+      "ECS Service Auto Scaling"
+    ],
+    "practice": []
+  },
+  "Amazon ECR": {
+    "lookalikes": [
+      "ECS, EKS, and Fargate",
+      "ECS Service Auto Scaling",
+      "AWS Batch"
+    ],
+    "practice": []
+  },
+  "Amazon Cognito": {
+    "lookalikes": [
+      "IAM Identity Center federation",
+      "IAM role for an AWS workload",
+      "Cross-account IAM role"
+    ],
+    "practice": []
+  },
+  "API Gateway endpoint types": {
+    "lookalikes": [
+      "API Gateway resource policy",
+      "Amazon CloudFront caching",
+      "PrivateLink"
+    ],
+    "practice": []
+  },
+  "CloudFront Functions vs. Lambda@Edge": {
+    "lookalikes": [
+      "Amazon CloudFront caching",
+      "Lambda and API Gateway",
+      "AWS Lambda SQS event source mapping"
+    ],
+    "practice": []
+  },
+  "DynamoDB Streams": {
+    "lookalikes": [
+      "Amazon Kinesis Data Streams",
+      "DynamoDB global tables",
+      "AWS Lambda SQS event source mapping"
+    ],
+    "practice": []
+  },
+  "DynamoDB time to live (TTL)": {
+    "lookalikes": [
+      "DynamoDB deletion protection",
+      "DynamoDB point-in-time recovery (PITR)",
+      "S3 lifecycle rules"
+    ],
+    "practice": []
+  },
+  "CloudWatch Logs subscriptions": {
+    "lookalikes": [
+      "Amazon Data Firehose",
+      "Amazon Kinesis Data Streams",
+      "Amazon OpenSearch Service"
+    ],
+    "practice": []
+  },
+  "CloudWatch Unified Agent": {
+    "lookalikes": [
+      "Detailed CloudWatch monitoring",
+      "CloudTrail versus CloudWatch versus Config",
+      "EC2 instance family selection"
+    ],
+    "practice": []
+  },
+  "EventBridge archive and replay": {
+    "lookalikes": [
+      "EventBridge scheduled rule",
+      "Amazon SNS",
+      "AWS Step Functions"
+    ],
+    "practice": []
+  },
+  "CloudTrail data events": {
+    "lookalikes": [
+      "CloudTrail versus CloudWatch versus Config",
+      "Amazon GuardDuty",
+      "AWS Config managed rules"
+    ],
+    "practice": []
+  },
+  "VPC subnet usable IPv4 capacity": {
+    "lookalikes": [
+      "Internet Gateway connectivity",
+      "NAT Gateway high availability",
+      "VPC endpoint selection"
+    ],
+    "practice": []
+  },
+  "Regional NAT Gateway": {
+    "lookalikes": [
+      "NAT Gateway high availability",
+      "NAT instance capabilities",
+      "Internet Gateway connectivity"
+    ],
+    "practice": []
+  },
+  "IAM `aws:RequestedRegion` condition": {
+    "lookalikes": [
+      "IAM policy `aws:SourceIp` condition",
+      "SCP and IAM evaluation",
+      "IAM least privilege"
+    ],
+    "practice": []
+  },
+  "AWS Directory Services selection": {
+    "lookalikes": [
+      "IAM Identity Center federation",
+      "Cross-account IAM role",
+      "AWS Control Tower"
+    ],
+    "practice": []
+  },
+  "Secrets Manager multi-Region secrets": {
+    "lookalikes": [
+      "AWS Secrets Manager versus Parameter Store",
+      "KMS multi-Region keys",
+      "Cross-account IAM role"
+    ],
+    "practice": []
+  },
+  "AWS Network Firewall": {
+    "lookalikes": [
+      "AWS Firewall Manager",
+      "AWS WAF and Shield",
+      "Security groups and network ACLs"
+    ],
+    "practice": []
+  },
+  "VPC Flow Logs": {
+    "lookalikes": [
+      "CloudTrail versus CloudWatch versus Config",
+      "Security groups and network ACLs",
+      "Amazon GuardDuty"
+    ],
+    "practice": []
+  },
+  "VPC Traffic Mirroring": {
+    "lookalikes": [
+      "AWS WAF and Shield",
+      "Security groups and network ACLs",
+      "Amazon GuardDuty"
+    ],
+    "practice": []
+  },
+  "Egress-only Internet Gateway": {
+    "lookalikes": [
+      "NAT Gateway high availability",
+      "Internet Gateway connectivity"
+    ],
+    "practice": []
+  },
+  "AWS VPN CloudHub": {
+    "lookalikes": [
+      "AWS Transit Gateway",
+      "AWS Site-to-Site VPN versus Direct Connect",
+      "VPC peering"
+    ],
+    "practice": []
+  },
+  "AWS Elastic Disaster Recovery (DRS)": {
+    "lookalikes": [
+      "AWS Application Migration Service (MGN)",
+      "Backup and restore DR",
+      "Pilot light DR"
+    ],
+    "practice": []
+  },
+  "S3 Event Notifications versus EventBridge": {
+    "lookalikes": [
+      "EventBridge scheduled rule",
+      "Amazon SQS standard queues",
+      "Amazon SNS",
+      "AWS Lambda SQS event source mapping"
+    ],
+    "practice": []
+  },
+  "CloudFormation service role": {
+    "lookalikes": [
+      "AWS CloudFormation",
+      "IAM role for an AWS workload",
+      "IAM permissions boundary"
+    ],
+    "practice": []
   }
 }

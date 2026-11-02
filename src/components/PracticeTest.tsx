@@ -1,9 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { loadPracticeTest } from '../lib/practiceTests';
 import type { PracticeQuestion } from '../lib/practiceTests';
 import QuizHeader from './QuizHeader';
 import styles from './Quiz.module.css';
+import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
+import type { StudyFocus } from '../lib/studySections';
+
+const StudyPanel = lazy(() => import('./StudyPanel'));
 
 interface Session {
   order: number[]; // question ids in the randomized order
@@ -68,6 +72,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [finished, setFinished] = useState(false);
   const [view, setView] = useState<'question' | 'grid'>('question');
   const [confirmSubmit, setConfirmSubmit] = useState(false);
+  const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(null);
   const [cramOpenId, setCramOpenId] = useState<number | null>(null);
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
   const pressTimer = useRef<number | null>(null);
@@ -326,6 +331,16 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     if (dx < 0) next();
     else prev();
   }
+  if (studyFocus) {
+    return (
+      <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
+        <StudyPanel mode="saa" focus={studyFocus} backLabel="← Back to question" onBack={() => setStudyFocus(null)} />
+      </Suspense>
+    );
+  }
+
+  const sectionInfo = showSectionEnabled() ? getPracticeSections(test, q.id) : undefined;
+
   return (
     <div
       className={`${styles.quizContainer} ${styles.ptContainer}`}
@@ -348,6 +363,28 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           </span>
         </div>
       </QuizHeader>
+
+      {sectionInfo && sectionInfo.sections.length > 0 && (
+        <div className={styles.ptSectionArea}>
+          <div className={styles.ptSectionText}>
+            {sectionInfo.sections.map(sec => (
+              <div key={sec.sub}>
+                <div className={styles.ptSectionDomain}>{sec.domain}</div>
+                <div className={styles.ptSectionSub}>{sec.sub}</div>
+              </div>
+            ))}
+          </div>
+          <button
+            type="button"
+            className={`${styles.ptSectionBook} ${styles.btn3d}`}
+            aria-label="Open this topic in the study guide"
+            title="Open this topic in the study guide"
+            onClick={() => setStudyFocus({ sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms })}
+          >
+            📖
+          </button>
+        </div>
+      )}
 
       <div
         className={styles.ptPrompt}

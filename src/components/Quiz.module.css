@@ -257,6 +257,14 @@
   border-left: 2px solid color-mix(in srgb, var(--accent, #8a9cff) 50%, transparent);
   color: var(--text);
 }
+.studyContent li.studyFocusTerm > p + p {
+  border-left: 4px solid #ffb454;
+}
+.studyContent li.studyFocusTerm > p:first-child strong { color: #ffd08a; }
+.studyContent .studyFocusHeading {
+  padding-left: 0.6rem;
+  border-left: 4px solid #ffb454;
+}
 .studyContent a { color: #a9c7ff; }
 .studyContent pre {
   overflow: auto;
@@ -993,3 +1001,9 @@
 .ptRefsTitle { margin: 0 0 0.5rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .ptRefsList { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; overflow-wrap: anywhere; }
 .ptRefs a { color: #a9c7ff; }
+
+.ptSectionArea { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: 0.5rem 0; padding: 0.45rem 0.7rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(255,255,255,0.04); }
+.ptSectionText { min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.ptSectionDomain { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.ptSectionSub { font-size: 0.85rem; font-weight: 600; }
+.ptSectionBook { flex: none; padding: 0.3rem 0.5rem; font-size: 1.1rem; line-height: 1; border-radius: 8px; cursor: pointer; }

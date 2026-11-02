@@ -854,5 +854,188 @@
   "EC2 Dedicated Hosts": [
     "License-bound software needs visibility into physical server allocation.",
     "Reuse eligible server-bound licenses with host-level placement control."
+  ],
+  "EBS Multi-Attach": [
+    "A cluster needs shared block access from up to 16 instances in one AZ."
+  ],
+  "EBS snapshots": [
+    "An AZ migration needs a point-in-time backup copied and restored elsewhere."
+  ],
+  "EFS performance modes": [
+    "A highly parallel data-processing workload accepts higher latency for throughput."
+  ],
+  "EFS storage classes": [
+    "Cold shared files need lower cost, but retrieval fees and AZ durability matter."
+  ],
+  "Gateway Load Balancer (GWLB)": [
+    "Traffic must pass through a fleet of virtual firewalls or inspection appliances."
+  ],
+  "EC2 Capacity Reservations": [
+    "Capacity in a particular AZ must be guaranteed even if it may sit idle."
+  ],
+  "Elastic Load Balancer stickiness": [
+    "A stateful client must keep reaching its original backend, accepting uneven load."
+  ],
+  "Elastic Network Interfaces (ENI)": [
+    "Move a preconfigured virtual card to a standby to retain network identity."
+  ],
+  "Load balancer Server Name Indication (SNI)": [
+    "Several HTTPS sites share an endpoint; handshake hostname picks its certificate."
+  ],
+  "Auto Scaling cooldown": [
+    "A scaling event should pause follow-up capacity changes while metrics settle."
+  ],
+  "RDS Multi-AZ standby": [
+    "Need DB failover without changing the app's connection endpoint."
+  ],
+  "RDS and Aurora automated backups and snapshots": [
+    "Restore to just before failure, or retain an on-demand copy indefinitely."
+  ],
+  "Route 53 alias records": [
+    "Point a root domain at an AWS load balancer where a CNAME is not permitted."
+  ],
+  "Route 53 geolocation routing": [
+    "Serve country-specific content or restrict access by user location."
+  ],
+  "Route 53 weighted routing": [
+    "Send a controlled share of DNS answers to a canary using record weights."
+  ],
+  "Route 53 health checks for private endpoints": [
+    "The endpoint is inside a VPC, so global probes cannot test it directly."
+  ],
+  "S3 replication (CRR/SRR)": [
+    "Mirror new objects between version-enabled buckets across Regions or accounts."
+  ],
+  "S3 Express One Zone": [
+    "An AZ-local hot-data workload needs hundreds of thousands of requests per second."
+  ],
+  "ElastiCache Redis vs. Memcached": [
+    "Need persistent sorted-set rankings or failover, not a sharded disposable cache."
+  ],
+  "Elastic Beanstalk": [
+    "Supply app code; let a managed environment configure scaling and load balancing."
+  ],
+  "S3 SSE-S3 encryption": [
+    "New objects need server-side encryption without a customer-managed key.",
+    "Choose the AWS-owned AES-256 key option enabled by default."
+  ],
+  "S3 DSSE-KMS encryption": [
+    "A compliance requirement calls for two server-side encryption layers.",
+    "Use the dual-key layer option despite added cost and latency."
+  ],
+  "S3 SSE-C encryption": [
+    "The customer retains the key and sends it securely with every request.",
+    "The storage service must not retain the encryption key."
+  ],
+  "S3 CORS configuration": [
+    "A browser page at one origin must fetch objects hosted at another.",
+    "The target bucket must return headers permitting a cross-origin browser request."
+  ],
+  "Amazon S3 presigned URLs": [
+    "Temporarily let a user upload or download a private object without a new account.",
+    "The recipient's access comes from the permissions of the link creator."
+  ],
+  "S3 EventBridge notifications": [
+    "Filter bucket events by metadata or object size and route to several services.",
+    "Retain events for replay instead of using only direct notifications."
+  ],
+  "S3 Requester Pays": [
+    "Share a large dataset while shifting request and download charges to users.",
+    "Authenticated consumers pay request and download charges; owner pays storage."
+  ],
+  "AWS Storage Gateway stored volumes": [
+    "Keep the block dataset locally and send scheduled snapshots to AWS.",
+    "On-premises servers need iSCSI volumes with cloud backups."
+  ],
+  "AWS Storage Gateway Tape Gateway": [
+    "Replace physical tapes while preserving existing backup software.",
+    "Move archived virtual tapes to Glacier without changing backup software."
+  ],
+  "SQS message visibility timeout": [
+    "Prevent another worker from receiving a job during its processing window.",
+    "A message reappears if its processing window expires."
+  ],
+  "SQS long polling": [
+    "Reduce empty receive calls by waiting briefly for a message to arrive.",
+    "Prefer a queue consumer that waits up to twenty seconds before returning."
+  ],
+  "ECS task role": [
+    "Give each running container workload its own AWS permissions.",
+    "Separate app API access from permissions used by the host agent."
+  ],
+  "Amazon ECR": [
+    "Push and pull tagged container images from a managed AWS registry.",
+    "Use an IAM-controlled image repository integrated with deployment services."
+  ],
+  "Amazon Cognito": [
+    "A mobile app needs hosted sign-in, password reset, and social or SAML federation.",
+    "App users need temporary AWS credentials for direct access to their own S3 data."
+  ],
+  "API Gateway endpoint types": [
+    "Global callers need edge routing, but the API must remain in a single Region.",
+    "Only clients in a VPC should reach the API through an interface endpoint."
+  ],
+  "CloudFront Functions vs. Lambda@Edge": [
+    "Normalize cache keys or rewrite viewer URLs with sub-millisecond JavaScript.",
+    "Run viewer or origin logic that needs network, filesystem, or body access."
+  ],
+  "DynamoDB Streams": [
+    "React to ordered item-level writes and deletes from a table for 24 hours."
+  ],
+  "DynamoDB time to live (TTL)": [
+    "Expire session records automatically using a per-item timestamp.",
+    "Remove stale table items without application-managed cleanup."
+  ],
+  "CloudWatch Logs subscriptions": [
+    "Continuously stream filtered log events for near-real-time processing.",
+    "Aggregate logs across accounts without waiting for an S3 export."
+  ],
+  "CloudWatch Unified Agent": [
+    "Need guest RAM/process metrics or host logs from EC2 or on-prem servers."
+  ],
+  "EventBridge archive and replay": [
+    "Reprocess previously received bus messages after correcting a consumer or rule."
+  ],
+  "CloudTrail data events": [
+    "Audit object reads/writes or function invocations omitted from default trails."
+  ],
+  "VPC subnet usable IPv4 capacity": [
+    "Choose a CIDR for 29 instances after subtracting the five addresses AWS reserves."
+  ],
+  "Regional NAT Gateway": [
+    "One VPC-wide egress service must cover private subnets across multiple zones."
+  ],
+  "IAM `aws:RequestedRegion` condition": [
+    "Deny API calls targeting disallowed Regions, regardless of caller IP."
+  ],
+  "AWS Directory Services selection": [
+    "Managed domain, on-prem directory proxy, or lightweight AD-compatible directory?"
+  ],
+  "Secrets Manager multi-Region secrets": [
+    "Keep credential replicas in sync across Regions and promote one for recovery."
+  ],
+  "AWS Network Firewall": [
+    "Inspect VPC ingress, egress, east-west, and hybrid flows with managed rules."
+  ],
+  "VPC Flow Logs": [
+    "Trace IP/port metadata and ACCEPT/REJECT outcomes to diagnose blocked paths."
+  ],
+  "VPC Traffic Mirroring": [
+    "Send copied packets to an appliance for content or threat inspection."
+  ],
+  "Egress-only Internet Gateway": [
+    "Let private IPv6 hosts start internet sessions but block unsolicited inbound."
+  ],
+  "AWS VPN CloudHub": [
+    "Connect offices through one VPC gateway using dynamically routed VPN links."
+  ],
+  "AWS Elastic Disaster Recovery (DRS)": [
+    "Maintain block replicas for DR, then fail workloads over and later fail back."
+  ],
+  "S3 Event Notifications versus EventBridge": [
+    "Need richer filters, multiple targets, or archive and replay for bucket changes."
+  ],
+  "CloudFormation service role": [
+    "Deploy stack resources via a role operators can pass but cannot use."
   ]
 }
