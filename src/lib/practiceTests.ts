@@ -18,3 +18,9 @@ export async function loadPracticeTest(n: number): Promise<PracticeQuestion[]> {
   const cram = await cramLoaders[cramKey]();
   return questions.map(q => ({ ...q, cram: cram[String(q.id)] || undefined }));
 }
+
+export async function loadCramText(n: number, id: number): Promise<string | undefined> {
+  const key = Object.keys(cramLoaders).find(k => k.endsWith(`/cram-${n}.json`));
+  if (!key) return undefined;
+  return (await cramLoaders[key]())[String(id)];
+}

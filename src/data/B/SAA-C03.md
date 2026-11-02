@@ -6,7 +6,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 
 ### Messaging and Event Processing — Task 2.1
 
-- Amazon SQS FIFO queues // Preserve message order; use when processing order matters
+- Amazon SQS FIFO queues // Preserve strict message order within each message group; FIFO deduplication can suppress duplicate sends during its deduplication interval.
   - Batching // Multiple messages per API operation increases throughput; size batches to meet the required rate while respecting the queue's current throughput quota
 - Amazon SQS standard queues // High-throughput queues with best-effort ordering and at-least-once delivery
 - Amazon SQS buffering // Decouple producers from slower consumers; messages remain queued during traffic spikes or consumer outages and can be retried
@@ -22,7 +22,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 
 - IAM permissions boundary // Sets the maximum permissions a user or role can receive; effective permissions are the intersection of the boundary and attached permission policies
 - IAM least privilege // Grant only the required actions on the narrowest resource ARN; for S3, bucket actions such as ListBucket use the bucket ARN, while object actions such as DeleteObject use `bucket-name/*`
-- Cross-account IAM role // A principal assumes a role in the resource account for temporary credentials; the role's permissions and the resource policy (such as an S3 bucket policy) must both allow cross-account access
+- Cross-account IAM role // Let a trusted principal assume a role in the resource account and use that role's permissions; direct cross-account resource access instead requires authorization on both the caller and resource sides.
 - IAM policy `aws:SourceIp` condition // Evaluates the caller's source IP, not the public or private IP assigned to a resource being created
 - IAM groups // Attach a policy once to a group and manage access by adding or removing users
 - API Gateway resource policy // Restrict API invocation by principal, source IP range, or other supported conditions; API Gateway itself is not placed in a customer subnet or protected by a security group
@@ -79,14 +79,14 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 
 ### Storage, Backup, and Data Protection — Task 4.1
 
-- EFS Infrequent Access // Lower-cost file storage for rarely accessed files; retains EFS file-system semantics, unlike S3 object storage
-- Amazon FSx for Windows File Server // Managed Windows file storage with native SMB support and Active Directory integration
-- AWS Storage Gateway File Gateway // Hybrid SMB/NFS access to S3 with local caching for on-premises applications
-- AWS Snowball Edge // Physical transfer for large offline data migrations; ingest into S3, then use lifecycle rules to transition objects to archive classes
-- S3 lifecycle rules // Transition objects between storage classes or expire them according to age; lifecycle rules alone do not make data immutable
-- S3 Standard-IA // Infrequently accessed data that still requires millisecond retrieval and multi-AZ resilience; retrieval charges and minimum storage duration apply
-- S3 Glacier retrieval classes // Instant Retrieval supports immediate access; Flexible Retrieval and Deep Archive are for data that can tolerate restore delays
-- One-time S3 bucket copy // Use `aws s3 sync` for large copies; S3 Batch Replication is another option for existing objects when replication semantics are desired
+- EFS Infrequent Access // Lower-cost EFS file storage for rarely accessed data that still needs immediate, POSIX/NFS file access; unlike S3, it remains a shared file system.
+- Amazon FSx for Windows File Server // Managed Windows file shares with native SMB support and Active Directory integration.
+- AWS Storage Gateway File Gateway // Hybrid file access for on-premises applications: expose S3-backed files over NFS or SMB and cache frequently accessed data locally.
+- AWS Snowball Edge // Use a shipped physical device for large offline data transfers; import the data into S3, then apply lifecycle transitions to archive it.
+- S3 lifecycle rules // Automatically transition objects between supported storage classes or expire them by age or other configured criteria; lifecycle rules alone do not make data immutable.
+- S3 Standard-IA // For infrequently accessed data needing millisecond retrieval and multi-AZ resilience; retrieval charges and a 30-day minimum storage duration apply.
+- S3 Glacier retrieval classes // S3 Glacier Instant Retrieval supports immediate access; Flexible Retrieval and Deep Archive require restore requests and tolerate retrieval delays.
+- One-time S3 bucket copy // Use `aws s3 sync` for a one-time bulk copy; S3 Batch Replication is an option when existing objects need replication semantics.
 
 ## Content Domain 3: Design High-Performing Architectures
 
@@ -116,12 +116,12 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 
 ### Cost and Operations — Tasks 4.1–4.4
 
-- Compute Savings Plans // Flexible compute discounts across eligible EC2, Fargate, and Lambda usage
-- SageMaker Savings Plans // Separate commitment-based discounts for eligible SageMaker usage
-- AWS Budgets Savings Plans coverage budget // Alert when the percentage of eligible usage covered by Savings Plans falls below a threshold
-- AWS CloudFormation // Infrastructure as code; CloudFormation itself has no additional charge, but provisioned resources incur their normal charges
-- EBS volume selection // General Purpose SSD suits broad workloads with burstable performance; Provisioned IOPS SSD suits sustained, I/O-intensive workloads; HDD types suit throughput-oriented or cold data
-- Cost of data egress // Keep chatty components such as analytics tools near their data source when practical, reducing large response transfers out of AWS
+- Compute Savings Plans // Commit to an hourly spend for discounts across eligible EC2, Fargate, and Lambda usage, with more flexibility than EC2 Instance Savings Plans.
+- SageMaker Savings Plans // Commitment-based discounts apply to eligible SageMaker machine-learning usage, separately from Compute Savings Plans.
+- AWS Budgets Savings Plans coverage budget // Alert when the percentage of eligible usage covered by Savings Plans falls below a configured threshold.
+- AWS CloudFormation // Infrastructure as code provisions and updates AWS resources from templates; the service adds no charge, but provisioned resources incur their normal charges.
+- EBS volume selection // Choose general-purpose SSD (gp2/gp3) for broad workloads, Provisioned IOPS SSD for sustained I/O-intensive needs, and HDD types for throughput-oriented or cold data; gp2 bursts, while gp3 provisions performance independently of size.
+- Cost of data egress // Co-locate chatty analytics clients with their data source when practical, avoiding transfer charges on large query results crossing Direct Connect or internet links.
 
 ## Content Domain 1: Design Secure Architectures
 
@@ -151,7 +151,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - S3 Object Lock Governance mode // Permit specially authorized users to bypass retention when the request and policy allow it
 - AWS Backup Vault Lock // Enforce immutable backup retention controls on a backup vault, distinct from S3 Object Lock and Glacier Vault Lock
 - S3 Glacier Vault Lock // Enforce an immutable vault policy for long-term Glacier archives; it is separate from S3 Object Lock and AWS Backup Vault Lock
-- S3 SSE-KMS Bucket Keys // Reduce S3-to-KMS request volume and associated KMS costs while retaining SSE-KMS encryption
+- S3 SSE-KMS Bucket Keys // Reduce S3-to-KMS requests and associated KMS request costs, potentially by up to 99%, while retaining SSE-KMS encryption.
 - KMS multi-Region keys // Related regional KMS keys share key material and key ID for multi-Region encryption workflows, while each key remains a regional resource
 - RDS encryption at rest // To encrypt an unencrypted DB instance, create and encrypt a snapshot copy, restore a new instance, then migrate clients
 - RDS SSL/TLS // Encrypt database connections in transit; this does not replace encryption at rest or database authorization
@@ -183,7 +183,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - Aurora Global Database // Replicate Aurora data across Regions for low-lag regional disaster recovery and managed failover options
 - DynamoDB point-in-time recovery (PITR) // Restore a table to a selected point within the configured backup retention window
 - DynamoDB deletion protection // Block accidental table deletion; enable PITR separately for recoverability
-- DynamoDB global tables // Replicate table data across Regions to support local access and regional resilience
+- DynamoDB global tables // Replicate table data across Regions as a multi-Region, multi-active table to support local reads and writes and regional resilience.
 - AWS Step Functions // Orchestrate multi-step serverless workflows with task, choice, parallel, wait, and retry behavior
 - Step Functions Standard versus Express // Standard workflows suit long-running auditable executions; Express workflows suit short-duration, high-volume processing
 - ElastiCache Multi-AZ failover // Use Multi-AZ and automatic failover to improve cache availability; read replicas alone primarily add read capacity
@@ -203,7 +203,7 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 - ECS, EKS, and Fargate // ECS and EKS orchestrate containers; Fargate runs supported container tasks without managing EC2 worker instances
 - AWS Batch // Schedule batch jobs and provision compute capacity appropriate to queued workloads
 - EFS mount targets // Create mount targets in the AZs where clients run and prefer the local-AZ target to reduce latency and cross-AZ transfer
-- EFS throughput modes // Choose bursting for variable workloads or provisioned/elastic throughput for sustained or changing throughput needs
+- EFS throughput modes // Use bursting for workloads tied to stored data, provisioned for a set throughput, or elastic for automatically scaling throughput.
 - S3 multipart upload // Upload large objects in parallel parts and retry failed parts independently to improve throughput and resilience
 - S3 byte-range GET // Fetch only a requested portion of an object, enabling parallel or partial reads
 - S3 Transfer Acceleration // Use AWS edge networking to speed long-distance uploads to S3 when the extra transfer charge is justified
@@ -249,15 +249,112 @@ The four section names follow the exam guide's design domains (Secure 30%, Resil
 
 ### Cost-aware storage, compute, and network choices — Tasks 4.1–4.4
 
-- S3 Intelligent-Tiering // Automatically move eligible objects between access tiers when access patterns are uncertain and monitoring cost is justified
-- EBS General Purpose SSD versus Provisioned IOPS SSD // Select general-purpose volumes for broad workloads and provisioned IOPS for sustained, I/O-intensive requirements
-- EC2 Savings Plans versus Reserved Instances // Compare commitment flexibility and eligible usage coverage against workload stability and required discount
-- Spot Instances // Use discounted interruptible capacity for flexible workloads designed to checkpoint, retry, or tolerate interruption
-- AWS Cost Explorer // Explore historical and forecast costs and review commitment purchase recommendations
-- AWS Budgets // Set cost, usage, or commitment thresholds and send alerts when actual or forecast values cross them
-- AWS Cost and Usage Report // Export detailed billing and usage data for deeper analysis, commonly stored in S3 for Athena queries
-- Cost allocation tags // Apply and activate consistent project, team, or environment tags to attribute costs
-- AWS Compute Optimizer // Use utilization analysis and recommendations to right-size supported compute and storage resources
-- VPC endpoint and NAT cost tradeoff // Evaluate endpoint charges against NAT processing and data-transfer charges for private AWS-service access
-- AWS Organizations consolidated billing // Combine eligible account usage on one bill; eligible volume pricing and commitment benefits may be shared across accounts
-- EC2 and Auto Scaling right-sizing // Use workload metrics to select instance size and minimum capacity rather than paying for idle headroom
+- S3 Intelligent-Tiering // Automatically moves eligible objects between access tiers as patterns change; monitoring and automation charges apply, and optional archive tiers may require restore requests.
+- EBS General Purpose SSD versus Provisioned IOPS SSD // Use general-purpose SSD for broad workloads; choose Provisioned IOPS SSD when sustained, I/O-intensive performance justifies its higher cost.
+- EC2 Savings Plans versus Reserved Instances // Compare the broader eligible-usage flexibility of Compute Savings Plans with EC2-only Reserved Instance discounts; match the commitment to predictable workload and required discount.
+- Spot Instances // Use discounted spare EC2 capacity for workloads that can checkpoint, retry, or tolerate interruption; interruption notices are typically provided two minutes ahead when possible.
+- AWS Cost Explorer // Explore historical and forecasted costs and review commitment purchase recommendations.
+- AWS Budgets // Set cost, usage, or commitment thresholds and alert or take configured actions when actual or forecasted values cross them.
+- AWS Cost and Usage Report // Export detailed billing and usage records, commonly to S3, for granular analysis with tools such as Athena.
+- Cost allocation tags // Apply consistent project, team, or environment tags to resources and activate them for cost attribution in billing tools.
+- AWS Compute Optimizer // Analyze utilization metrics to recommend right-sizing for supported compute and storage resources; it does not itself change resources.
+- VPC endpoint and NAT cost tradeoff // For private AWS-service access, compare endpoint hourly and data-processing charges with NAT Gateway processing and transfer charges at expected traffic volume.
+- AWS Organizations consolidated billing // Consolidate member-account bills; eligible volume pricing and Savings Plans or Reserved Instance benefits may be shared across accounts, subject to benefit-sharing settings.
+- EC2 and Auto Scaling right-sizing // Use workload metrics to choose instance sizes and minimum capacity that meet demand and failure requirements without paying for idle headroom.
+
+## Content Domain 1: Design Secure Architectures
+
+### Practice-test additions — Task 1.2
+
+- Route 53 Resolver inbound and outbound endpoints // Use inbound endpoints for on-premises DNS queries into a VPC and outbound endpoints with forwarding rules for VPC queries to on-premises DNS.
+- AWS WAF geographic match rule // Use a geographic match statement in a web ACL to allow or block web requests based on the country of origin.
+- Amazon Security Lake // Automatically centralize security data from AWS, on-premises, and third-party sources in an S3-based data lake normalized to OCSF.
+- AWS Organizations tag policy // Standardize tags across accounts by defining required tag keys, capitalization, and allowed values; tag policies alone do not prevent untagged resource creation.
+- AWS Config managed rules // Continuously evaluate recorded resource configurations against managed or custom rules and retain configuration history for compliance review.
+- Amazon S3 Access Points // Create named network and policy entry points to a shared S3 bucket, each with access controls tailored to an application or user group.
+
+## Content Domain 1: Design Secure Architectures
+
+### Practice-test additions — Task 1.3
+
+- AWS IAM Access Analyzer // Analyze resource-based policies to identify access granted to principals outside an account or organization and generate findings.
+- S3 SSE-KMS encryption // Use server-side encryption with a KMS key for S3 objects when managed key control and auditable key-use events are required.
+
+## Content Domain 1: Design Secure Architectures
+
+### Practice-test additions — Task 1.1
+
+- IAM Roles for Service Accounts (IRSA) // Associate a Kubernetes service account with an IAM role so Pods receive temporary AWS credentials with permissions scoped to that workload.
+
+## Content Domain 2: Design Resilient Architectures
+
+### Practice-test additions — Task 2.1
+
+- Amazon MQ // A managed Apache ActiveMQ or RabbitMQ broker, useful for migrating broker-based applications with minimal changes.
+- SQS delay queues // Delay queues postpone when newly sent messages become visible to consumers, for up to 15 minutes; visibility timeout starts after a message is received.
+
+## Content Domain 2: Design Resilient Architectures
+
+### Practice-test additions — Task 2.2
+
+- Amazon RDS storage autoscaling // Automatically increase allocated database storage as free space runs low, up to a configured maximum, without changing the DB instance class.
+
+## Content Domain 3: Design High-Performing Architectures
+
+### Practice-test additions — Task 3.2
+
+- EC2 hibernation // Hibernation saves RAM contents to the encrypted EBS root volume and restores running processes on start; the instance must meet hibernation prerequisites.
+- Auto Scaling AZ rebalancing // When an Auto Scaling group is uneven across Availability Zones, it launches replacement capacity before terminating instances to rebalance distribution.
+- Auto Scaling on SQS backlog // Scale worker capacity using backlog per instance, commonly ApproximateNumberOfMessages divided by the number of running instances.
+- EBS Fast Snapshot Restore // Fast Snapshot Restore initializes volumes created from a snapshot so they deliver full provisioned performance immediately.
+- EBS Fast Snapshot Restore // Make volumes created from a snapshot fully initialized at provisioned performance immediately after creation.
+- S3 per-prefix request performance // Distribute high request rates across multiple object key prefixes to scale S3 request throughput.
+
+## Content Domain 3: Design High-Performing Architectures
+
+### Practice-test additions — Task 3.4
+
+- NAT instance capabilities // A self-managed EC2 NAT instance can support port forwarding and security groups and can be used as a bastion, but requires customer-managed availability and scaling.
+- Availability Zone IDs // AZ IDs identify the same physical Availability Zone consistently across accounts; AZ names can map to different physical zones in different accounts.
+- Route 53 geoproximity routing // Route 53 geoproximity routes based on resource and user locations; a bias expands or shrinks the geographic area serving a resource.
+
+## Content Domain 3: Design High-Performing Architectures
+
+### Practice-test additions — Task 3.3
+
+- Amazon RDS Proxy // RDS Proxy pools and shares database connections, reducing connection pressure and improving application resilience during failover.
+- Aurora Replicas // Aurora Replicas share the cluster volume, provide read scaling with low replication lag, and can be added automatically with Aurora Auto Scaling.
+- Amazon Aurora Global Database // Replicate an Aurora cluster across Regions for low-latency local reads and cross-Region disaster recovery.
+- Amazon RDS Proxy // Pool and reuse database connections to improve application scalability and resilience for supported relational databases.
+- Amazon Aurora Replicas // Scale Aurora reads with replicas that share the cluster volume and can be added automatically as demand changes.
+- Amazon Redshift Serverless // Run and scale a Redshift data warehouse without provisioning or managing a fixed cluster.
+- Aurora I/O-Optimized // Choose Aurora storage pricing without per-I/O charges for applications with high or unpredictable database I/O.
+- DynamoDB on-demand capacity mode // Pay per request and let DynamoDB adapt read/write capacity for unpredictable workloads without capacity planning.
+
+## Content Domain 3: Design High-Performing Architectures
+
+### Practice-test additions — Task 3.1
+
+- Amazon FSx for Lustre // Provide a high-performance parallel file system for compute-intensive workloads, with optional linkage to S3 data.
+
+## Content Domain 4: Design Cost-Optimized Architectures
+
+### Practice-test additions — Task 4.1
+
+- S3 Standard // General-purpose object storage for frequently accessed data; no retrieval charge or minimum storage duration applies.
+- S3 One Zone-IA // Lower-cost S3 storage for infrequently accessed, noncritical or recreatable data kept in one Availability Zone; it is less resilient than multi-AZ classes.
+- AWS Storage Gateway cached volumes // Present iSCSI block volumes to on-premises applications, keep frequently accessed data in a local cache, and store primary volume data in S3.
+- S3 Storage Class Analysis // Analyze object access patterns to recommend when data may move from S3 Standard to S3 Standard-IA; it does not automatically transition objects.
+
+## Content Domain 4: Design Cost-Optimized Architectures
+
+### Practice-test additions — Tasks 4.2–4.4
+
+- AWS Cost Anomaly Detection // Use machine learning to identify unusual spending patterns and alert stakeholders without requiring a fixed spend threshold.
+- AWS Cost Optimization Hub // Consolidate and prioritize cost-saving recommendations from AWS services and accounts, including rightsizing and idle-resource opportunities.
+
+## Content Domain 4: Design Cost-Optimized Architectures
+
+### Practice-test additions — Task 4.2
+
+- EC2 Dedicated Hosts // Reserve a physical EC2 server for one customer to gain host-level visibility and support eligible server-bound software licenses.

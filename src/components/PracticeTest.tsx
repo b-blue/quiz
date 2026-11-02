@@ -412,7 +412,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           ) : (
             <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>
           )}
-          {q.domain && <div className={styles.ptDomain}>Domain: {q.domain}</div>}
+          {q.domain && <div className={styles.ptDomain}>Domain: {q.domain} · Ref T{test}Q{q.id}</div>}
           {q.references.length > 0 && (
             <section className={styles.ptRefs} aria-labelledby="pt-refs-title">
               <h3 id="pt-refs-title" className={styles.ptRefsTitle}>References</h3>

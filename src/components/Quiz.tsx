@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
-import { getRandomQuestion, getAllTerms, getSaaTerms } from '../lib/terms';
+import { getRandomQuestion, getAllTerms, getSaaTerms, getPracticeRefs } from '../lib/terms';
+import { loadCramText } from '../lib/practiceTests';
 import styles from './Quiz.module.css';
 import QuizHeader from './QuizHeader';
 
@@ -16,6 +17,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [showStudyView, setShowStudyView] = useState(false);
+  const [cramHint, setCramHint] = useState<string | null>(null);
   // Buttons are simple press targets now (no drag-and-drop)
 
   // Game state: streaks (per-quiz), muted
@@ -53,6 +55,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     setQuestion(nextQ);
     setSelected(null);
     setShowAnswer(false);
+    setCramHint(null);
     setTimeLeft(timerDuration);
   }
   function onSelect(i: number) {
@@ -61,6 +64,11 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
     stopTimer();
     setSelected(i);
     setShowAnswer(true);
+
+    const firstRef = mode === 'saa' && question?.term ? getPracticeRefs(question.term)[0]?.match(/^T(\d)Q(\d+)$/) : null;
+    if (firstRef) {
+      loadCramText(Number(firstRef[1]), Number(firstRef[2])).then(t => setCramHint(t ?? null)).catch(() => {});
+    }
 
     const correct = i === question!.correctIndex;
     if (correct) {
@@ -253,6 +261,11 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
                     const selectedEntry = terms.find((t) => t.term === selectedTerm);
                     if (selectedEntry?.definition) lines.push(`${selectedTerm} — ${selectedEntry.definition}`);
                   }
+                }
+                const refs = mode === 'saa' && question.term ? getPracticeRefs(question.term) : [];
+                if (refs.length > 0) {
+                  lines.push(`Seen in practice: ${refs.join(' · ')}`);
+                  if (cramHint) lines.push(`${refs[0]} cram — ${cramHint}`);
                 }
                 return lines.map((l, idx) => (
                   <div key={idx} className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>{l}</div>

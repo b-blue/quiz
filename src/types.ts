@@ -8,4 +8,5 @@ export type QuizQuestion = {
   definition: string;
   options: string[]; // candidate terms
   correctIndex: number;
+  term?: string; // the correct term
 };

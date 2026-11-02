@@ -1,14 +1,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { applyDefinitionChunks } from './apply-definition-chunks.js';
+import { MAX_QUIZ_DEFINITION_LENGTH } from './apply-definition-chunks.js';
 
 async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const projectRoot = path.resolve(__dirname, '..');
   const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'SAA-C03.md');
   const outputPath = path.join(projectRoot, 'src', 'data', 'saa-terms.json');
-  const chunksPath = path.join(projectRoot, 'src', 'data', 'saa-definition-chunks.json');
+  const cluesPath = path.join(projectRoot, 'src', 'data', 'saa-clues.json');
   const markdown = await fs.readFile(sourcePath, 'utf8');
 
   const results = [];
@@ -35,8 +35,27 @@ async function main() {
     });
   }
 
-  const chunkOverrides = JSON.parse(await fs.readFile(chunksPath, 'utf8'));
-  const expandedResults = applyDefinitionChunks(results, chunkOverrides, 'SAA-C03');
+  // Quiz clues are curated per term; the study-guide definition is only used when it is short enough.
+  const clues = JSON.parse(await fs.readFile(cluesPath, 'utf8'));
+  const expandedResults = [];
+  const usedTerms = new Set();
+  for (const entry of results) {
+    const termClues = clues[entry.term];
+    if (termClues) {
+      usedTerms.add(entry.term);
+      for (const definition of termClues) {
+        if (definition.length > MAX_QUIZ_DEFINITION_LENGTH) throw new Error(`Clue for "${entry.term}" exceeds ${MAX_QUIZ_DEFINITION_LENGTH} characters`);
+        expandedResults.push({ ...entry, definition });
+      }
+    } else if (entry.definition.length <= MAX_QUIZ_DEFINITION_LENGTH) {
+      expandedResults.push(entry);
+    } else {
+      throw new Error(`"${entry.term}" needs curated clues in saa-clues.json`);
+    }
+  }
+  for (const term of Object.keys(clues)) {
+    if (!usedTerms.has(term)) throw new Error(`Clue entry "${term}" does not match any term in SAA-C03.md`);
+  }
 
   await fs.writeFile(outputPath, JSON.stringify(expandedResults, null, 2), 'utf8');
   console.log(`Wrote ${expandedResults.length} term definition chunk(s) to ${outputPath}`);

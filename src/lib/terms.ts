@@ -1,5 +1,6 @@
 import raw from '../data/terms.json';
 import saaRaw from '../data/saa-terms.json';
+import saaMetaRaw from '../data/saa-quiz-meta.json';
 import type { Term, QuizQuestion } from '../types';
 
 function normalizeTerms(input: unknown): Term[] {
@@ -7,6 +8,13 @@ function normalizeTerms(input: unknown): Term[] {
     ...t,
     section: typeof t.section === 'string' ? t.section.trim() : t.section,
   }));
+}
+
+type QuizMeta = { lookalikes?: string[]; practice?: string[] };
+const SAA_META = saaMetaRaw as Record<string, QuizMeta>;
+
+export function getPracticeRefs(term: string): string[] {
+  return SAA_META[term]?.practice ?? [];
 }
 
 const TERMS = normalizeTerms(raw);
@@ -54,6 +62,14 @@ function pickDistractors(correct: Term, count = 3, pool: Term[] = TERMS): string
 
   const chosen: string[] = [];
 
+  // Curated look-alikes (services the practice tests pit against each other) come first.
+  const known = new Set(others.map((t) => t.term));
+  const lookalikes = (SAA_META[correctTerm]?.lookalikes ?? []).filter((n) => known.has(n));
+  for (const n of shuffle(lookalikes)) {
+    if (chosen.length >= count) break;
+    chosen.push(n);
+  }
+
   function takeFrom(list: string[]) {
     for (const candidate of shuffle(uniqueStrings(list))) {
       if (chosen.length >= count) break;
@@ -91,6 +107,7 @@ export function getRandomQuestion(section?: string | null, terms: Term[] = TERMS
     definition: correct.definition,
     options,
     correctIndex,
+    term: correct.term,
   };
 }
 
@@ -101,5 +118,5 @@ export function getQuestionFromDefinition(def: string, terms: Term[] = TERMS): Q
   const distractors = pickDistractors(entry, 3, terms);
   const options = shuffle([entry.term, ...distractors]);
   const correctIndex = options.findIndex((o) => o === entry.term);
-  return { definition: entry.definition, options, correctIndex };
+  return { definition: entry.definition, options, correctIndex, term: entry.term };
 }

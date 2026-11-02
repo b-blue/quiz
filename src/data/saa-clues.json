@@ -1,0 +1,858 @@
+{
+  "IAM permissions boundary": [
+    "Attached to a user or role to cap even newly attached managed-policy access.",
+    "Per-user/role cap intersects identity grants; no org-wide guardrail is involved."
+  ],
+  "IAM least privilege": [
+    "For S3 deletion, scope s3:DeleteObject to the object ARN, not the bucket ARN.",
+    "Separate bucket-level listing from object-level reads or writes."
+  ],
+  "Cross-account IAM role": [
+    "Target account grants temporary access when a principal assumes its role.",
+    "Direct cross-account Lambda-to-S3 needs role and bucket-policy allows."
+  ],
+  "IAM policy `aws:SourceIp` condition": [
+    "For RunInstances, the condition checks the API caller's IP, not the new instance.",
+    "A CIDR condition filters request origin, not the target resource's address."
+  ],
+  "IAM groups": [
+    "Give 50 of 200 users extra access: attach one policy, then add those users.",
+    "Centralize shared identity permissions without editing each user policy."
+  ],
+  "API Gateway resource policy": [
+    "Attach invoke rules to the API; it has no customer subnet or security group.",
+    "Restrict public API calls by caller IP without network appliances."
+  ],
+  "Cross-account access credentials": [
+    "Never share permanent user keys with partners; use expiring credentials.",
+    "Avoid long-lived keys in scripts when workloads call other accounts."
+  ],
+  "IAM database authentication": [
+    "PostgreSQL sign-in token expires after 15 minutes instead of storing a password.",
+    "Grant rds-db:connect to the workload role; this handles login, not TLS."
+  ],
+  "AWS WAF rate-based rule": [
+    "Block clients exceeding a configured request count in the evaluation window.",
+    "Throttle abusive HTTP(S) bursts at the application layer, not volumetric DDoS."
+  ],
+  "Service Control Policies (SCPs)": [
+    "Organization guardrail caps member-account root too, but grants no access.",
+    "This control does not restrict the Organizations management account."
+  ],
+  "SCP and IAM evaluation": [
+    "In a member account, an IAM allow cannot exceed the org guardrail.",
+    "Explicit deny wins; service-linked roles are exempt from the org control."
+  ],
+  "AWS Control Tower": [
+    "Provision governed accounts and guardrails rather than repeat a stack template.",
+    "Automate multi-account landing-zone setup, account provisioning, and guardrails."
+  ],
+  "AWS CloudFormation StackSets": [
+    "Roll out the same infrastructure template to many accounts and Regions.",
+    "Centrally manage repeated stack deployments without creating accounts."
+  ],
+  "IAM policy evaluation": [
+    "An explicit deny overrides an allow; no applicable allow means implicit denial.",
+    "A condition on the request can make an otherwise matching allow inapplicable."
+  ],
+  "AWS shared responsibility model": [
+    "AWS secures physical infrastructure; customers manage identities and data.",
+    "Customer security duties vary with the service's level of management."
+  ],
+  "IAM role for an AWS workload": [
+    "Give EC2 temporary credentials through its instance profile, not a stored key.",
+    "Let a workload access AWS APIs with a narrowly scoped attached role."
+  ],
+  "Root user protection": [
+    "Protect the account owner with MFA and avoid creating its access keys.",
+    "Use a delegated identity for routine work; reserve this login for required tasks."
+  ],
+  "IAM Identity Center federation": [
+    "Use permission sets for workforce SSO access across multiple AWS accounts.",
+    "Federate employees from an existing directory instead of duplicating cloud users."
+  ],
+  "Security groups and network ACLs": [
+    "Stateful instance filters allow replies without ephemeral-port rules.",
+    "A stateless subnet filter must allow inbound service and outbound return traffic."
+  ],
+  "AWS WAF and Shield": [
+    "Filter or block web requests with Layer 7 rules, not just DDoS mitigation.",
+    "Use managed edge protection against volumetric and application-layer DDoS."
+  ],
+  "AWS Firewall Manager": [
+    "Centralize web and network policies across accounts, not threat findings.",
+    "Apply consistent supported security policies across accounts in an organization."
+  ],
+  "AWS Systems Manager Session Manager": [
+    "Open an auditable shell to a managed instance without inbound port 22.",
+    "Avoid bastion hosts while retaining centrally controlled instance access."
+  ],
+  "IAM Access Advisor and credential report": [
+    "Review services a principal last used, not resources shared externally.",
+    "Audit account-wide IAM credential status such as MFA and access-key state."
+  ],
+  "AWS Secrets Manager versus Parameter Store": [
+    "Need managed DB-secret rotation? Choose this over hierarchical configuration.",
+    "Use hierarchical SecureString config when managed rotation is unnecessary."
+  ],
+  "AWS KMS envelope encryption": [
+    "Encrypt bulk bytes with a data key, then protect that key with a managed key.",
+    "Use data-key wrapping when payloads exceed the direct-encryption size limit."
+  ],
+  "AWS KMS versus CloudHSM": [
+    "Choose dedicated HSM hardware for direct control of HSM users and keys.",
+    "Use managed key APIs rather than operating a dedicated HSM cluster."
+  ],
+  "S3 Object Lock Compliance mode": [
+    "A locked object version cannot be deleted early by anyone, including root.",
+    "Choose strict WORM retention when privileged bypass is prohibited."
+  ],
+  "S3 Object Lock Governance mode": [
+    "Authorized users may bypass retention and delete early.",
+    "Choose the S3 retention mode that permits authorized override."
+  ],
+  "AWS Backup Vault Lock": [
+    "Make backup recovery points immutable with enforced retention controls.",
+    "Protect recovery points, not object versions or archive-vault policies."
+  ],
+  "S3 Glacier Vault Lock": [
+    "Lock an archive-vault policy to enforce long-term WORM retention.",
+    "Apply immutable retention to cold archives, not backup recovery points."
+  ],
+  "S3 SSE-KMS Bucket Keys": [
+    "Reduce per-object key-service calls while retaining customer-managed encryption.",
+    "Lower key-service request costs without switching to S3-managed encryption."
+  ],
+  "KMS multi-Region keys": [
+    "Regional replicas share material and ID, allowing cross-Region decryption.",
+    "Each replica remains regional despite shared cryptographic material."
+  ],
+  "RDS encryption at rest": [
+    "Cannot encrypt an existing DB in place: encrypt a snapshot copy.",
+    "Restore a new encrypted instance from the copied snapshot, then move clients."
+  ],
+  "RDS SSL/TLS": [
+    "Encrypt database traffic in transit; stored data and login auth are separate.",
+    "Protect the connection, not the database files or snapshot."
+  ],
+  "CloudFront Origin Access Control (OAC)": [
+    "Block direct access to private S3 origin while allowing signed CDN requests.",
+    "Grant the distribution's origin requests access through the bucket policy."
+  ],
+  "CloudFront signed URLs and signed cookies": [
+    "Grant viewers timed access to private content, not CDN-to-origin access.",
+    "Give viewers expiry-limited access to one private file or a set of files."
+  ],
+  "AWS Certificate Manager and CloudFront": [
+    "A global distribution's custom-domain TLS certificate must be in us-east-1.",
+    "The certificate Region is fixed even when the content origin is elsewhere."
+  ],
+  "Amazon Macie": [
+    "Find sensitive S3 data such as PII, not malicious activity.",
+    "Identify sensitive-data exposure in object storage for investigation."
+  ],
+  "Amazon GuardDuty": [
+    "Detect suspicious account behavior from audit, network-flow, and DNS signals.",
+    "Investigate threat findings, not software-vulnerability scan results."
+  ],
+  "Amazon Inspector": [
+    "Find vulnerabilities in supported compute resources and container images.",
+    "Scan workloads for CVEs; do not use this service to classify S3 PII."
+  ],
+  "AWS Security Hub": [
+    "Aggregate findings and security-standard checks from detection services.",
+    "Consolidate findings from threat, vulnerability, and sensitive-data scans."
+  ],
+  "CloudTrail versus CloudWatch versus Config": [
+    "Need resource history or compliance-rule checks? Review configuration state.",
+    "Need metrics, alarms, or application logs? Monitor operational telemetry.",
+    "Need to know who called which API? Review the account's API event history."
+  ],
+  "Amazon SQS FIFO queues": [
+    "Permit submissions need ordered processing with duplicate sends suppressed.",
+    "Messages in each group must be processed in the order sent."
+  ],
+  "Batching": [
+    "Use SendMessageBatch for several entries to reduce request overhead.",
+    "Reduce request overhead while sending or receiving several messages together."
+  ],
+  "Amazon SQS standard queues": [
+    "Throughput first; duplicates and reordering are acceptable.",
+    "Work items need durable queuing, but strict ordering is not required."
+  ],
+  "Amazon SQS buffering": [
+    "Producers outrun workers; retain work until consumers catch up.",
+    "Absorb bursts without forcing the producer to wait for downstream processing."
+  ],
+  "Amazon SQS dead-letter queue (DLQ)": [
+    "After repeated receives, isolate poison messages for troubleshooting.",
+    "Stop a repeatedly failing message from cycling through the main queue."
+  ],
+  "SQS queue-based Auto Scaling": [
+    "Scale EC2 workers to maintain a target number of visible messages per worker.",
+    "Use queue backlog per in-service instance as the consumer-fleet scaling metric."
+  ],
+  "Multi-stage SQS workflow": [
+    "Fast and slow tiers need separate queues and independently scaled workers.",
+    "Scale each stage from the backlog waiting specifically for that stage."
+  ],
+  "AWS Lambda SQS event source mapping": [
+    "Use managed queue polling to invoke serverless code with message batches.",
+    "Serverless code should consume queued messages without poller servers."
+  ],
+  "Amazon SNS": [
+    "One event must be pushed to multiple subscribers without topic polling.",
+    "Fan out notifications to subscribed endpoints as soon as they are published."
+  ],
+  "Lambda and API Gateway": [
+    "Expose synchronous HTTP requests as API endpoints backed by on-demand code.",
+    "Pre-initialize function capacity to reduce latency-sensitive API cold starts."
+  ],
+  "EventBridge scheduled rule": [
+    "Run a target on a recurring cron or rate schedule without an incoming event.",
+    "Start a function on a regular timetable rather than in response to a request."
+  ],
+  "Lambda layers": [
+    "Share a dependency bundle across functions instead of copying it per deployment.",
+    "Keep reusable libraries separate from individual function packages."
+  ],
+  "VPC-enabled Lambda internet access": [
+    "Private-subnet function calls a public API; provide an outbound NAT route.",
+    "Private functions need NAT for public APIs; endpoints reach AWS services."
+  ],
+  "Lambda monitoring": [
+    "Alert when invocation or concurrency metrics spike unexpectedly.",
+    "Detect function errors and duration changes before they affect callers."
+  ],
+  "Recovery Time Objective (RTO)": [
+    "Business can tolerate no more than 15 minutes before service is restored.",
+    "Measure the maximum downtime allowed after an outage."
+  ],
+  "Recovery Point Objective (RPO)": [
+    "After a failure, losing at most five minutes of recent writes is acceptable.",
+    "Measure the maximum age of data that recovery may lose."
+  ],
+  "Backup and restore DR": [
+    "Minimize standby cost; rebuild from backups after a disaster.",
+    "No running recovery environment is needed before the incident."
+  ],
+  "Pilot light DR": [
+    "Keep data and core components ready; launch the rest only at failover.",
+    "Only the core of the recovery environment runs before a disaster."
+  ],
+  "Warm standby DR": [
+    "A smaller complete environment is running and can scale up during an outage.",
+    "The recovery site is functional before disaster, not just holding core data."
+  ],
+  "Multi-site active-active DR": [
+    "Both sites serve production now; route users to the survivor after failure.",
+    "Both sites are already serving; shift traffic to the healthy one."
+  ],
+  "AWS Backup plans and vaults": [
+    "Set schedules, retention, lifecycle, and copies for supported resources.",
+    "Store centrally managed recovery points in a vault with specified retention."
+  ],
+  "AWS Backup service selection": [
+    "Coordinate backup policy and copies across different AWS resource types.",
+    "Manage backups for many services together, not in each service separately."
+  ],
+  "Cross-account and cross-Region backup": [
+    "A source-account compromise must not expose the only recovery copy.",
+    "Copy recovery points to another account or Region for isolation."
+  ],
+  "AWS Backup policies with Organizations": [
+    "Apply central backup plans to selected organization accounts.",
+    "Manage backup policies across accounts from the organization level."
+  ],
+  "S3 replication": [
+    "Auto-copy new objects to another bucket; enable versioning on both.",
+    "Use a batch job when eligible existing objects also need to be copied."
+  ],
+  "RDS Multi-AZ deployment": [
+    "A same-Region sync standby should take over on the existing endpoint.",
+    "Need database failover across AZs, not an additional endpoint for read queries."
+  ],
+  "Aurora Global Database": [
+    "Meet tight regional recovery targets with low-lag Aurora replication.",
+    "Promote an Aurora secondary cluster after a Region-wide outage."
+  ],
+  "DynamoDB point-in-time recovery (PITR)": [
+    "Undo a bad table write by restoring to a specific second before corruption.",
+    "Need continuous recovery points rather than a manually timed backup."
+  ],
+  "DynamoDB deletion protection": [
+    "Prevent an operator from deleting a table until protection is disabled.",
+    "Stop deletion itself; do not rely on restoring data after deletion."
+  ],
+  "DynamoDB global tables": [
+    "A multi-Region key-value table needs local reads and writes in every Region.",
+    "Use multi-Region active-active replication for a NoSQL table."
+  ],
+  "AWS Step Functions": [
+    "Coordinate branching, waits, retries, and parallel tasks as a workflow.",
+    "Track state across serverless workflow steps, branches, and retries."
+  ],
+  "Step Functions Standard versus Express": [
+    "Choose durable workflow history for executions longer than five minutes.",
+    "Choose the execution mode built for short, high-volume workflows."
+  ],
+  "ElastiCache Multi-AZ failover": [
+    "Promote a replica automatically when the cache primary in another AZ fails.",
+    "Read replicas alone are insufficient when the deciding need is cache failover."
+  ],
+  "Availability Zone capacity planning": [
+    "Keep enough capacity to serve minimum load after one zone fails.",
+    "Plan the baseline for surviving an AZ loss, before relying on scale-out."
+  ],
+  "Multi-AZ minimum capacity": [
+    "Set the group minimum to retain required capacity after one AZ fails.",
+    "Keep two instances per AZ; allow more capacity for peaks."
+  ],
+  "Internet Gateway connectivity": [
+    "Public IP + subnet route + permitted inbound traffic are all required."
+  ],
+  "PrivateLink": [
+    "Reach a supported service privately through an ENI, without broad VPC routing."
+  ],
+  "S3 gateway VPC endpoint": [
+    "Private S3 access without NAT: attach the service route to selected route tables."
+  ],
+  "NAT Gateway high availability": [
+    "Private egress resilience: one gateway per AZ, with local-AZ routes."
+  ],
+  "VPC peering": [
+    "Two VPCs connect directly, but a third cannot transit through either link."
+  ],
+  "AWS Transit Gateway": [
+    "Connect many VPCs and on-premises networks through a transitive routing hub."
+  ],
+  "AWS Global Accelerator": [
+    "Fixed anycast IPs carry TCP/UDP over AWS global network; no cache needed."
+  ],
+  "AWS Resource Access Manager (RAM) subnet sharing": [
+    "Let organization accounts launch resources in subnets of a central VPC."
+  ],
+  "AWS Direct Connect Gateway": [
+    "One hybrid attachment can associate multiple regional virtual private gateways."
+  ],
+  "Direct Connect public VIF": [
+    "Reach public AWS service endpoints from on premises over a dedicated link."
+  ],
+  "Direct Connect private VIF": [
+    "A dedicated hybrid path reaches a VPC through its virtual private gateway."
+  ],
+  "Transit Gateway VPN ECMP": [
+    "Several dynamic VPN tunnels share traffic beyond one tunnel throughput limits."
+  ],
+  "Private IP for same-VPC/AZ workloads": [
+    "Use private addresses for same-VPC, same-AZ traffic to avoid public-path charges."
+  ],
+  "Amazon CloudFront": [
+    "Cache HTTP(S) content near viewers; not a choice for arbitrary UDP traffic."
+  ],
+  "Route 53 private hosted zone prerequisites": [
+    "Private hosted zones need DNS support and hostnames enabled in associated VPCs."
+  ],
+  "EC2 Instance Store": [
+    "Need high random I/O for replicated scratch data? Choose host-local disks."
+  ],
+  "EC2 user data": [
+    "By default, bootstrap runs on first launch as root; reruns need configuration."
+  ],
+  "EC2 reboot alarm action": [
+    "Instance-check alarms can reboot; system-check failures use recovery."
+  ],
+  "EC2 Auto Scaling Standby": [
+    "Take a group member out of service for maintenance, keeping it in the group."
+  ],
+  "Auto Scaling `ReplaceUnhealthy` process": [
+    "Pause automatic replacement during maintenance; resume it afterward."
+  ],
+  "Auto Scaling health checks": [
+    "Use load-balancer health checks; grace time protects newly launched instances."
+  ],
+  "Predictive scaling": [
+    "Forecast recurring peaks from history; pair forecasts with reactive scaling."
+  ],
+  "Target tracking vs. step/scheduled scaling": [
+    "Maintain a metric goal; step reacts to alarms, scheduled scaling to dates."
+  ],
+  "Spot request types": [
+    "A persistent request can relaunch after interruption; stopped instances wait."
+  ],
+  "Canceling a Spot request": [
+    "Canceling a bid request alone leaves an already-running instance running."
+  ],
+  "Spot Fleet": [
+    "Replace terminated Spot capacity to maintain a requested fleet size."
+  ],
+  "Application Load Balancer (ALB) path routing": [
+    "Route web requests to different target groups according to URL path patterns."
+  ],
+  "Network Load Balancer (NLB)": [
+    "Need fixed addresses and Layer 4 TCP/UDP forwarding, including SSH?"
+  ],
+  "Cross-zone load balancing": [
+    "When enabled, a node can route requests to targets in other enabled AZs."
+  ],
+  "ECS Service Auto Scaling": [
+    "Scale container task count against service metrics such as CPU or memory."
+  ],
+  "ECS/EKS with Fargate": [
+    "Run containers without managing EC2 worker hosts; supports jobs over 15 minutes."
+  ],
+  "EC2 tenancy": [
+    "Either the VPC or launch template can make launched instances single-tenant."
+  ],
+  "EC2 cluster placement group": [
+    "Pack tightly coupled nodes within one AZ for low latency and high throughput."
+  ],
+  "EC2 Elastic Fabric Adapter (EFA)": [
+    "HPC nodes need low-latency OS-bypass communication beyond standard networking."
+  ],
+  "Detailed CloudWatch monitoring": [
+    "Need EC2 metrics each minute instead of the default five-minute cadence?"
+  ],
+  "Amazon ElastiCache for Redis": [
+    "Relational or geospatial reads need sub-ms in-memory caching."
+  ],
+  "DynamoDB Accelerator (DAX)": [
+    "Add transparent microsecond reads to DynamoDB without rewriting read calls."
+  ],
+  "Amazon Athena": [
+    "Query S3 files with ad hoc SQL; partitions and columnar data reduce scans."
+  ],
+  "Amazon Neptune": [
+    "Model highly connected entities when queries repeatedly traverse relationships."
+  ],
+  "Aurora Serverless": [
+    "Automatically scale relational Aurora capacity for intermittent demand."
+  ],
+  "AWS DMS Serverless": [
+    "Provision and scale replication compute for migration and CDC."
+  ],
+  "AWS SCT and DMS": [
+    "When changing database engines, convert the schema and migrate the records."
+  ],
+  "Babelfish for Aurora PostgreSQL": [
+    "Keep T-SQL application changes low on a PostgreSQL-compatible engine."
+  ],
+  "Amazon Redshift cold-data offload": [
+    "Move rarely queried warehouse records to object storage for ad hoc SQL access."
+  ],
+  "EC2 instance family selection": [
+    "Choose compute-optimized capacity for CPU-bound batch work.",
+    "Choose memory-optimized capacity when the working set must stay in RAM."
+  ],
+  "EC2 purchasing options": [
+    "Choose flexible, committed, or interruptible capacity for EC2.",
+    "Commit to a predictable baseline; avoid commitments for short experiments."
+  ],
+  "EC2 placement groups": [
+    "Tightly coupled nodes need low-latency, high-throughput networking in one AZ.",
+    "Choose isolated hardware for a small set of critical instances.",
+    "Partition large distributed fleets across separate racks."
+  ],
+  "EC2 Auto Scaling policy selection": [
+    "Keep average CPU near a set value without choosing each capacity adjustment.",
+    "Known daily demand peaks call for capacity changes scheduled in advance.",
+    "Alarm thresholds need different capacity changes at different breach levels."
+  ],
+  "EC2 Auto Scaling health checks": [
+    "Replace instances if the load balancer marks their targets unhealthy.",
+    "Allow boot and initialization time before judging a new instance unhealthy."
+  ],
+  "Application Load Balancer versus Network Load Balancer": [
+    "Route web requests by hostname, path, or HTTP header.",
+    "Front a TCP or UDP service that needs static IP addresses."
+  ],
+  "ECS, EKS, and Fargate": [
+    "Run containers without provisioning or patching worker instances.",
+    "Choose between AWS-native orchestration and Kubernetes API compatibility."
+  ],
+  "AWS Batch": [
+    "Queue and schedule jobs, scaling compute for large parallel workloads.",
+    "Need managed job queues and compute environments, not a long-running service."
+  ],
+  "EFS mount targets": [
+    "For shared file access across AZs, mount through a target in each client AZ.",
+    "Keep frequent shared-file traffic in the same AZ to reduce transfer cost."
+  ],
+  "EFS throughput modes": [
+    "Scale throughput automatically, independent of stored data size.",
+    "A small file system needs predictable high throughput independent of its size."
+  ],
+  "S3 multipart upload": [
+    "Parallelize a very large object upload and retry only the failed pieces.",
+    "Resume interrupted large uploads without restarting from byte zero."
+  ],
+  "S3 byte-range GET": [
+    "Read the first few hundred bytes of each huge object without downloading it all.",
+    "Use an HTTP Range header to retrieve a specific slice of an existing object."
+  ],
+  "S3 Transfer Acceleration": [
+    "Remote offices send large objects to one bucket over optimized edge paths.",
+    "Accelerate long-distance transfers to S3, not delivery of cached web content."
+  ],
+  "Amazon CloudFront caching": [
+    "Serve cached web objects from edge locations close to worldwide viewers.",
+    "Use an on-premises web server as the origin while caching responses globally."
+  ],
+  "Amazon S3 and CloudFront static delivery": [
+    "A serverless static site needs durable object storage plus global edge caching.",
+    "Keep static reports out of the application servers and serve them near viewers."
+  ],
+  "AWS Outposts and Wavelength": [
+    "Run AWS-managed infrastructure on premises to meet local data or latency needs.",
+    "Place eligible applications close to mobile users on a carrier 5G network."
+  ],
+  "AWS Site-to-Site VPN versus Direct Connect": [
+    "Need quick encrypted hybrid connectivity over the public internet.",
+    "Need a dedicated private path; use IPsec separately for encryption."
+  ],
+  "AWS Transit Gateway versus VPC peering": [
+    "Connect many VPCs and on-premises networks through a central routing hub.",
+    "A pair of VPCs can communicate directly, but not route through each other."
+  ],
+  "VPC endpoint selection": [
+    "Reach S3 or DynamoDB privately by adding a destination to route tables.",
+    "Privately access a supported service through endpoint network interfaces."
+  ],
+  "Route 53 failover routing": [
+    "Return a standby endpoint when health checks show the primary is unhealthy.",
+    "Choose active-passive DNS recovery, not the lowest-latency Region."
+  ],
+  "Route 53 latency routing": [
+    "Direct each DNS query to the Region measured to respond fastest for that user.",
+    "Optimize regional selection for response time rather than geographic containment."
+  ],
+  "RDS read replicas": [
+    "Offload reporting SELECT queries from the primary relational database.",
+    "Asynchronous replication can lag; this is not synchronous Multi-AZ failover."
+  ],
+  "Amazon Kinesis Data Streams": [
+    "Multiple applications independently consume retained records and can replay them.",
+    "Preserve order for records sharing a partition key while processing live events."
+  ],
+  "Kinesis on-demand capacity": [
+    "Handle unpredictable stream spikes without preselecting shard counts.",
+    "Choose automatic stream capacity scaling rather than fixed provisioned shards."
+  ],
+  "Kinesis enhanced fan-out": [
+    "Several consumers need isolated read bandwidth from the same stream shards.",
+    "Give each registered consumer a dedicated 2 MB/s per-shard read pipe."
+  ],
+  "Kinesis producer batching": [
+    "Producers hit request throttling; group records into fewer API calls.",
+    "Use shard write capacity more efficiently without adding shards."
+  ],
+  "Amazon Data Firehose": [
+    "Managed buffering delivers records to S3 or another supported destination.",
+    "Prefer managed stream delivery over building and operating consumer applications."
+  ],
+  "Kinesis Data Analytics": [
+    "Compute live insights from an incoming event stream.",
+    "Analyze a continuous stream rather than run ad hoc SQL over stored files."
+  ],
+  "AWS DMS S3-to-Kinesis integration": [
+    "Load existing files and then stream ongoing S3 changes to a records stream.",
+    "Use a managed full-load and change-capture bridge instead of custom polling."
+  ],
+  "Amazon DataSync": [
+    "Move files among NFS, SMB, S3, EFS, and FSx with scheduling and integrity checks.",
+    "Accelerate bulk online file transfer, not managed SFTP client access."
+  ],
+  "DataSync to EFS over Direct Connect": [
+    "Move NFS files on a schedule to shared file storage over a private VIF.",
+    "Use a source-side agent and private endpoint for service access."
+  ],
+  "AWS Transfer Family": [
+    "External partners need a managed SFTP endpoint that writes directly to S3.",
+    "Accept legacy file-transfer protocols without operating an FTP server."
+  ],
+  "AWS Database Migration Service (DMS)": [
+    "Keep source online during initial load and ongoing change replication.",
+    "Move database records with change data capture, not whole server disks."
+  ],
+  "AWS Application Migration Service (MGN)": [
+    "Replicate VM disks continuously; test launches before final cutover.",
+    "Replicate whole server disks rather than convert database schemas."
+  ],
+  "AWS Schema Conversion Tool (SCT)": [
+    "Translate schema and code when moving between database engines.",
+    "Prepare target schema; a separate service transfers the table data."
+  ],
+  "Six migration strategies (6 Rs)": [
+    "Classify an app move as rehost, modernize, replace, or retire.",
+    "Decide to retain an app unchanged or redesign it for cloud-native use."
+  ],
+  "AWS Glue and Data Catalog": [
+    "Infer schemas from files in S3 and register tables for later SQL queries.",
+    "Run managed data transformation and catalog the resulting dataset metadata."
+  ],
+  "AWS Lake Formation": [
+    "Centralize fine-grained access controls for data lake tables and columns.",
+    "Manage lake permissions rather than perform ETL or run SQL analytics."
+  ],
+  "Amazon EMR": [
+    "Run distributed Spark jobs with control of the cluster environment.",
+    "Choose managed Hadoop/Spark clusters, not a serverless ETL job."
+  ],
+  "Amazon Redshift and Spectrum": [
+    "Run analytical SQL in an MPP warehouse and scan S3 data in place.",
+    "Query S3 data from the warehouse without first loading it."
+  ],
+  "Amazon OpenSearch Service": [
+    "Build low-latency text search and log exploration with indexed documents.",
+    "Use a search engine for logs, not relational joins or BI dashboards."
+  ],
+  "Amazon Quick": [
+    "Create interactive dashboards and business visualizations for analysts.",
+    "Choose a BI visualization layer, not a SQL query engine or stream processor."
+  ],
+  "Amazon Comprehend custom entity recognition": [
+    "Extract organization-specific labels such as product ingredients from text.",
+    "Use managed natural-language entity extraction, not image recognition."
+  ],
+  "Database read scaling and caching": [
+    "Choose a cache for repeated hot keys based on database type.",
+    "Offload reports to a relational replica instead of adding cache."
+  ],
+  "EFS Infrequent Access": [
+    "A POSIX/NFS shared file system must serve rarely read data immediately.",
+    "Lower file-storage cost matters, but object APIs are not compatible."
+  ],
+  "Amazon FSx for Windows File Server": [
+    "Windows workloads need managed SMB shares joined to Active Directory.",
+    "Existing applications require native Windows file-share semantics."
+  ],
+  "AWS Storage Gateway File Gateway": [
+    "On-premises apps need an NFS/SMB share backed by S3 with local caching.",
+    "Keep existing file protocols while placing durable objects in cloud storage."
+  ],
+  "AWS Snowball Edge": [
+    "Petabytes must move offline by shipped device, then land in S3 before archiving.",
+    "A one-time transfer is too large or slow for a network connection."
+  ],
+  "S3 lifecycle rules": [
+    "Transition objects to cheaper tiers after a set age, then expire them later.",
+    "Age-based object movement is needed; it does not enforce immutable retention."
+  ],
+  "S3 Standard-IA": [
+    "Predictably rare reads need immediate, multi-AZ access despite retrieval fees.",
+    "Data is rarely read, but must be available in milliseconds across AZs."
+  ],
+  "S3 Glacier retrieval classes": [
+    "Archived data can tolerate restore delays instead of millisecond reads.",
+    "Archive restores offer expedited, standard, or bulk options."
+  ],
+  "One-time S3 bucket copy": [
+    "No ongoing mirror is needed: copy the current object set once with aws s3 sync.",
+    "Move existing objects in bulk without maintaining continuous replication."
+  ],
+  "Compute Savings Plans": [
+    "One hourly commitment can discount eligible EC2, Fargate, and Lambda use.",
+    "Need compute discounts that can follow eligible usage across services."
+  ],
+  "SageMaker Savings Plans": [
+    "Discounts cover eligible model training, inference, and notebook use.",
+    "A separate commitment discounts ML service use, not general compute."
+  ],
+  "AWS Budgets Savings Plans coverage budget": [
+    "Alert when eligible commitment coverage falls below a target percentage.",
+    "Monitor commitment coverage daily and notify owners when it drops under target."
+  ],
+  "AWS CloudFormation": [
+    "Templates deploy stacks; only created resources incur service charges.",
+    "Repeatable infrastructure is deployed from declarative templates."
+  ],
+  "EBS volume selection": [
+    "Cold sequential workloads favor throughput HDD over expensive random-I/O SSD.",
+    "Choose throughput HDD for cold data when IOPS are not the priority."
+  ],
+  "Cost of data egress": [
+    "Large query results? Put the chatty analytics client beside the warehouse.",
+    "Send only the small interface across the link instead of each large result."
+  ],
+  "S3 Intelligent-Tiering": [
+    "Access is unpredictable; automatic tier changes avoid custom age-based rules.",
+    "Reduce manual tier tuning when the same objects' access patterns keep changing."
+  ],
+  "EBS General Purpose SSD versus Provisioned IOPS SSD": [
+    "Sustained high IOPS needs provisioned performance; broad workloads favor gp3.",
+    "Avoid paying for provisioned IOPS when demand is occasional and burstable."
+  ],
+  "EC2 Savings Plans versus Reserved Instances": [
+    "Compare a flexible hourly compute commitment with fixed EC2 usage discounts.",
+    "Choose by discount depth, service coverage, and workload stability."
+  ],
+  "Spot Instances": [
+    "Restartable workers can trade continuity for discounted spare capacity.",
+    "Checkpoint or retry the job; the capacity may be reclaimed with short notice."
+  ],
+  "AWS Cost Explorer": [
+    "Review past and forecast spend plus commitment purchase recommendations.",
+    "Explore cost trends rather than trigger alerts at spending thresholds."
+  ],
+  "AWS Budgets": [
+    "Alert or trigger an action when actual or forecast account spend crosses a limit.",
+    "Set a threshold for spend or usage rather than explore historical cost trends."
+  ],
+  "AWS Cost and Usage Report": [
+    "Need detailed line-item billing and usage exported for later SQL analysis.",
+    "Build custom analysis from granular billing records stored in S3."
+  ],
+  "Cost allocation tags": [
+    "Activate consistent project or team labels to attribute service spend.",
+    "Split bills by business owner using resource metadata."
+  ],
+  "AWS Compute Optimizer": [
+    "Get sizing guidance from utilization telemetry, not idle-spend inventory.",
+    "Use workload history to select a better-fit supported resource configuration."
+  ],
+  "VPC endpoint and NAT cost tradeoff": [
+    "At high traffic, compare fixed route fees with per-GB forwarding charges.",
+    "Private access choice depends on route charges versus traffic-based forwarding."
+  ],
+  "AWS Organizations consolidated billing": [
+    "Pool eligible usage for volume pricing and commitment benefits on one bill.",
+    "Multiple member accounts share eligible discounts through a single payer."
+  ],
+  "EC2 and Auto Scaling right-sizing": [
+    "Trim idle fleet capacity but preserve the failure-survival minimum.",
+    "Use measured demand to reduce excess instance size or baseline capacity."
+  ],
+  "Route 53 Resolver inbound and outbound endpoints": [
+    "VPC queries for on-prem domains need forwarding across the VPN to corporate DNS.",
+    "On-premises DNS must resolve private names hosted inside a VPC."
+  ],
+  "AWS IAM Access Analyzer": [
+    "Find unintended external access by analyzing resource policies across an account.",
+    "Report which resources are reachable by principals outside the organization."
+  ],
+  "S3 SSE-KMS encryption": [
+    "Need key-use audit for S3? Choose KMS encryption, not request savings.",
+    "S3-managed keys lack the requested per-key usage audit trail."
+  ],
+  "AWS WAF geographic match rule": [
+    "Restrict ALB web requests by country code; security groups cannot geo-filter.",
+    "Country-based filtering on an ALB is not CloudFront's viewer geo restriction."
+  ],
+  "IAM Roles for Service Accounts (IRSA)": [
+    "Give each Pod AWS permissions through a separate Kubernetes identity.",
+    "Avoid sharing node credentials with every Pod in the cluster."
+  ],
+  "Amazon Security Lake": [
+    "Normalize security events from AWS and third parties to OCSF in S3.",
+    "Collect security data without building custom parsing and ingestion pipelines."
+  ],
+  "AWS Organizations tag policy": [
+    "Standardize a tag key's capitalization and allowed values across accounts.",
+    "Pair tag standardization with a preventive policy to block untagged launches."
+  ],
+  "AWS Config managed rules": [
+    "Evaluate resource settings against compliance requirements and retain history.",
+    "Check whether imported certificates are nearing expiration."
+  ],
+  "Amazon S3 Access Points": [
+    "Give each application a distinct S3 entry point and prefix-scoped policy.",
+    "Simplify per-service access to a shared bucket without a huge bucket policy."
+  ],
+  "Amazon MQ": [
+    "Keep clients using AMQP while moving to a managed message broker.",
+    "Migrate a broker app without rewriting clients to queue or pub/sub APIs."
+  ],
+  "SQS delay queues": [
+    "Hide newly sent work for a configured interval, up to 15 minutes.",
+    "Delay visibility after send, not after a consumer receives the message."
+  ],
+  "Amazon RDS storage autoscaling": [
+    "Trigger at <10% free space for 5 min, after a 6-hour cooldown.",
+    "Increase database storage automatically, without migration or read replicas."
+  ],
+  "EC2 hibernation": [
+    "Resume processes with RAM state intact after stopping an eligible instance."
+  ],
+  "Auto Scaling AZ rebalancing": [
+    "Uneven AZ counts? Launch new capacity before removing old capacity."
+  ],
+  "Auto Scaling on SQS backlog": [
+    "Scale workers with queue backlog per running worker, not CPU alone."
+  ],
+  "NAT instance capabilities": [
+    "Need port forwarding or attachable security groups for private-subnet egress?"
+  ],
+  "Availability Zone IDs": [
+    "Zone names can map differently between accounts; use the account-independent ID."
+  ],
+  "Route 53 geoproximity routing": [
+    "Dynamically enlarge or shrink the geographic serving area with a bias setting."
+  ],
+  "Amazon RDS Proxy": [
+    "Pool application connections to protect a database from sudden connection surges.",
+    "Pool connections between scaled-out apps and Aurora."
+  ],
+  "Aurora Replicas": [
+    "Scale Aurora reads with shared cluster storage and very low replica lag."
+  ],
+  "EBS Fast Snapshot Restore": [
+    "New volumes from snapshots need full performance immediately.",
+    "Provide immediate full volume performance for a large-scale test copy."
+  ],
+  "Amazon Aurora Global Database": [
+    "Serve global relational reads locally; promote a secondary Region for recovery.",
+    "Replicate Aurora across Regions for local reads and low-lag recovery."
+  ],
+  "Amazon Aurora Replicas": [
+    "Scale Aurora reads with shared-storage replicas and very low replication lag.",
+    "Add read capacity on Aurora’s shared cluster volume."
+  ],
+  "Amazon FSx for Lustre": [
+    "HPC jobs need a parallel file system that can link directly to an S3 data set.",
+    "Use high-throughput shared scratch storage for tightly coupled compute workloads."
+  ],
+  "Amazon Redshift Serverless": [
+    "Use a serverless MPP warehouse for SQL analytics on transformed lake data.",
+    "Run warehouse analytics without sizing a provisioned cluster."
+  ],
+  "Aurora I/O-Optimized": [
+    "Avoid per-I/O charges on high-activity database workloads.",
+    "Prefer predictable database storage cost during sudden read/write spikes."
+  ],
+  "S3 per-prefix request performance": [
+    "Distribute many concurrent uploads across key prefixes within one bucket.",
+    "Avoid creating customer-specific buckets just to increase parallel request rates."
+  ],
+  "DynamoDB on-demand capacity mode": [
+    "Absorb unpredictable request spikes without specifying read/write capacity.",
+    "Avoid setting capacity units for workloads that stop overnight and surge by day."
+  ],
+  "S3 Standard": [
+    "Heavy reads and short retention favor no retrieval fee or minimum duration.",
+    "Keep transient query results hot for a day without IA retrieval charges."
+  ],
+  "S3 One Zone-IA": [
+    "Re-creatable data can trade multi-AZ resilience for a lower storage price.",
+    "A single-AZ tier fits noncritical data that can be recreated."
+  ],
+  "AWS Storage Gateway cached volumes": [
+    "Hybrid iSCSI apps cache hot blocks locally; primary data stays in object storage.",
+    "Existing block-storage applications need local reads with cloud-backed capacity."
+  ],
+  "S3 Storage Class Analysis": [
+    "Recommendations use access history and cover Standard-to-IA transitions only.",
+    "Observe object usage before deciding on a Standard-to-infrequent-access move."
+  ],
+  "AWS Cost Anomaly Detection": [
+    "Detect unusual spend shifts from learned patterns without a preset threshold.",
+    "Alert on unexpected cost changes rather than a fixed budget limit."
+  ],
+  "AWS Cost Optimization Hub": [
+    "One prioritized view consolidates idle-resource and rightsizing findings.",
+    "Aggregate recommendations from multiple AWS optimization services and accounts."
+  ],
+  "EC2 Dedicated Hosts": [
+    "License-bound software needs visibility into physical server allocation.",
+    "Reuse eligible server-bound licenses with host-level placement control."
+  ]
+}
