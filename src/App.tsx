@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { blueTheme, greenTheme } from './theme'
+import ErrorBoundary from './components/ErrorBoundary'
 import Quiz from './components/Quiz'
 import Hub from './components/Hub'
 import PracticeTest from './components/PracticeTest'
@@ -44,10 +45,12 @@ function App() {
     <ThemeProvider theme={theme} defaultMode="system">
     <CssBaseline />
     <NavContext.Provider value={nav}>
+    <ErrorBoundary>
       {current.view === 'aws' ? <Quiz key={`aws${nonce}`} mode="aws" />
         : current.view === 'saa' ? <Quiz key={`saa${nonce}`} mode="saa" />
         : current.view === 'practice' && current.test ? <PracticeTest key={current.test} test={current.test} onExit={nav.openHub} />
         : <Hub onStartQuiz={nav.openQuiz} onStartPractice={(n) => { saveStudy(null); pushScreen({ view: 'practice', test: n }); setCurrent({ view: 'practice', test: n }); }} />}
+    </ErrorBoundary>
     </NavContext.Provider>
     </ThemeProvider>
   )
