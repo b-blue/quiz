@@ -432,11 +432,15 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         data-flagged={isFlagged || undefined}
       >
         <Paper
-          sx={{
+          sx={(theme) => ({
             p: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none',
-            WebkitTapHighlightColor: 'transparent', bgcolor: 'background.paper', '&::selection, & *::selection': { background: 'transparent' },
+            WebkitTapHighlightColor: 'transparent', '&::selection, & *::selection': { background: 'transparent' },
             ...(isFlagged && { borderRadius: 1 }),
-          }}
+            backgroundColor: '#fff !important',
+            backgroundImage: 'none !important',
+            color: '#000',
+            ...theme.applyStyles('dark', { backgroundColor: '#1e1e1e !important', color: '#fff' }),
+          })}
           onTouchStart={onPromptTouchStart}
           onContextMenu={e => e.preventDefault()}
         >
