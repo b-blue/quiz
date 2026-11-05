@@ -58,3 +58,21 @@ export function showScoreEnabled(): boolean {
 export function saveShowScore(on: boolean) {
   try { localStorage.setItem(SHOW_SCORE_KEY, on ? '1' : '0'); } catch { /* storage unavailable */ }
 }
+
+export const TOP_INSET_KEY = 'ui:topInset';
+export const MAX_TOP_INSET = 64;
+
+export function loadTopInset(): number {
+  try {
+    const n = Number(localStorage.getItem(TOP_INSET_KEY));
+    return Number.isFinite(n) ? Math.min(MAX_TOP_INSET, Math.max(0, n)) : 0;
+  } catch { return 0; }
+}
+
+// Extra space above the header for phones where the app runs edge-to-edge.
+export function applyTopInset(px: number, persist = false) {
+  document.documentElement.style.setProperty('--app-top-inset', `${px}px`);
+  if (persist) {
+    try { localStorage.setItem(TOP_INSET_KEY, String(px)); } catch { /* storage unavailable */ }
+  }
+}

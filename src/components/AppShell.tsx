@@ -84,11 +84,11 @@ export default function AppShell({ title, subtitle, extra, actions, children, ..
 
   return (
     <Box {...touch} sx={{ minHeight: '100dvh', bgcolor: 'background.default', color: 'text.primary', pb: actions ? 11 : 4 }}>
-      <AppBar position="sticky" elevation={2}>
+      <AppBar position="sticky" elevation={2} sx={{ pt: 'calc(env(safe-area-inset-top, 0px) + var(--app-top-inset, 0px))' }}>
         <Container maxWidth={false} disableGutters sx={{ maxWidth: PAGE_WIDTH }}>
           <Toolbar sx={{ gap: 1.5, minHeight: 64 }}>
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Typography variant="subtitle1" component="h1" sx={{ fontWeight: 500, lineHeight: 1.3, overflowWrap: 'anywhere' }}>{title}</Typography>
+              <Typography variant="subtitle1" component="h1" sx={{ fontWeight: 500, lineHeight: 1.25, overflowWrap: 'anywhere' }}>{title}</Typography>
               {subtitle && <Typography variant="caption" sx={{ opacity: 0.85, display: 'block' }}>{subtitle}</Typography>}
             </Box>
             <ButtonBase

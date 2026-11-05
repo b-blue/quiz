@@ -152,7 +152,7 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
     const t = e.changedTouches[0];
     const dx = t.clientX - s.x;
     const dy = t.clientY - s.y;
-    if (dx > 70 && dx > Math.abs(dy) * 1.5) onBack();
+    if (dx < -70 && -dx > Math.abs(dy) * 1.5) onBack();
   }
 
   const focusComponents = focus ? {

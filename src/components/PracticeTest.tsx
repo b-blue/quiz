@@ -19,7 +19,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
-import { loadStudy, saveStudy, showScoreEnabled, saveShowScore } from '../lib/appState';
+import { loadStudy, saveStudy, showScoreEnabled } from '../lib/appState';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -88,7 +88,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [finished, setFinished] = useState(false);
   const [view, setView] = useState<'question' | 'grid'>('question');
   const [confirmSubmit, setConfirmSubmit] = useState(false);
-  const [showScore, setShowScore] = useState(showScoreEnabled);
+  const showScore = showScoreEnabled();
   const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(() => { const st = loadStudy(); return st?.from === 'practice' ? st.focus ?? { sections: [], terms: [] } : null; });
   const [cramOpenId, setCramOpenId] = useState<number | null>(null);
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
@@ -139,12 +139,6 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     setView('question');
     setSession(saved);
     setSaved(null);
-  }
-
-  function toggleScore() {
-    const next = !showScore;
-    saveShowScore(next);
-    setShowScore(next);
   }
 
   const title = `Practice Test ${test}`;
@@ -201,24 +195,12 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   const flaggedIds = session.flagged ?? [];
 
-  const scoreChip = (
-    <Chip
-      clickable
-      onClick={toggleScore}
-      aria-pressed={showScore}
-      title={showScore ? 'Tap to hide score' : 'Tap to show score'}
-      color={showScore ? 'primary' : 'default'}
-      variant={showScore ? 'filled' : 'outlined'}
-      label={showScore ? `Score ${session.score}/${answeredCount} (${pct(session.score, answeredCount)}%)` : 'Score hidden'}
-    />
-  );
-
   if (view === 'grid') {
     const unanswered = total - answeredCount;
     return (
       <AppShell
         title={title}
-        subtitle={`${answeredCount} of ${total} answered`}
+        subtitle={`${answeredCount} of ${total} answered${showScore ? ` · Score ${session.score}/${answeredCount} (${pct(session.score, answeredCount)}%)` : ''}`}
         actions={
           <>
             <Button variant="outlined" onClick={() => { setConfirmSubmit(false); setView('question'); }}>Question {session.index + 1}</Button>
@@ -236,8 +218,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           </>
         }
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5, gap: 1 }} aria-live="polite">
-          {scoreChip}
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1 }}>
           <Button size="small" onClick={onExit}>Back to hub</Button>
         </Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1.5, fontSize: 13, color: 'text.secondary', alignItems: 'center' }}>
@@ -391,7 +372,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   return (
     <AppShell
       title={title}
-      subtitle={`Question ${session.index + 1} of ${total}${showScore ? ` · Score ${session.score}/${answeredCount}` : ''}`}
+      subtitle={`Question ${session.index + 1} of ${total}${showScore ? ` · Score ${session.score}/${answeredCount} (${pct(session.score, answeredCount)}%)` : ''}`}
       actions={actions}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
@@ -399,8 +380,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       onTouchCancel={() => { clearPress(); touch.current = null; }}
     >
       <LinearProgress variant="determinate" value={(answeredCount / total) * 100} sx={{ height: 6, borderRadius: 3, mb: 1.5 }} aria-label="Test progress" />
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 1.5 }} aria-live="polite">
-        {scoreChip}
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1.5 }}>
         <Button size="small" startIcon={<GridViewIcon />} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</Button>
       </Box>
 
