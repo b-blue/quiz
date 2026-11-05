@@ -2,8 +2,21 @@ import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { loadPracticeTest } from '../lib/practiceTests';
 import type { PracticeQuestion } from '../lib/practiceTests';
-import QuizHeader from './QuizHeader';
-import styles from './Quiz.module.css';
+import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
+import Link from '@mui/material/Link';
+import LinearProgress from '@mui/material/LinearProgress';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { alpha } from '@mui/material/styles';
+import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
+import FlagIcon from '@mui/icons-material/Flag';
+import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
+import GridViewIcon from '@mui/icons-material/GridViewOutlined';
+import CheckIcon from '@mui/icons-material/Check';
+import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
 import { loadStudy, saveStudy, showScoreEnabled, saveShowScore } from '../lib/appState';
@@ -18,6 +31,8 @@ interface Session {
   score: number;
   flagged?: number[]; // question ids marked for review
 }
+
+const wrapChip = { height: 'auto', maxWidth: '100%', py: 0.25, '& .MuiChip-label': { whiteSpace: 'normal' } } as const;
 
 const storageKey = (n: number) => `practice:session:${n}`;
 
@@ -59,7 +74,7 @@ function sameSet(a: number[], b: number[]) {
 function linkify(text: string): ReactNode[] {
   return text.split(/(https?:\/\/\S+)/g).map((part, i) =>
     /^https?:\/\//.test(part)
-      ? <a key={i} href={part} target="_blank" rel="noreferrer">{part}</a>
+      ? <Link key={i} href={part} target="_blank" rel="noreferrer" sx={{ overflowWrap: 'anywhere' }}>{part}</Link>
       : part,
   );
 }
@@ -136,37 +151,30 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   if (error) {
     return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
-        <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
-        <p>Could not load this test: {error}</p>
-        <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
-      </div>
+      <AppShell title={title}>
+        <Alert severity="error" sx={{ mb: 2 }}>Could not load this test: {error}</Alert>
+        <Button variant="contained" onClick={onExit}>Back to hub</Button>
+      </AppShell>
     );
   }
 
   if (!questions) {
-    return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
-        <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
-        <p>Loading…</p>
-      </div>
-    );
+    return <AppShell title={title}><Typography>Loading…</Typography></AppShell>;
   }
 
   if (saved) {
     const done = Object.keys(saved.answers).length;
     return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
-        <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
-        <div className={styles.ptPrompt}>
+      <AppShell title={title}>
+        <Paper sx={{ p: 2, mb: 2 }}>
           You have a test in progress: {done} of {questions.length} questions answered, {saved.score} correct.
-        </div>
-        <div className={styles.ptActions}>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={resume}>Resume</button>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={start}>Start over (reshuffle)</button>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
-        </div>
-      </div>
+        </Paper>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+          <Button variant="contained" onClick={resume}>Resume</Button>
+          <Button variant="outlined" onClick={start}>Start over (reshuffle)</Button>
+          <Button onClick={onExit}>Back to hub</Button>
+        </Box>
+      </AppShell>
     );
   }
 
@@ -178,83 +186,91 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   if (finished) {
     return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
-        <QuizHeader variant="saa"><div className={styles.questionText}>{title} complete</div></QuizHeader>
-        <div className={styles.ptResult}>
-          <div className={styles.ptResultPct}>{pct(session.score, total)}%</div>
-          <p>You answered {session.score} of {total} questions correctly.</p>
-          <div className={styles.ptActions} style={{ justifyContent: 'center' }}>
-            <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={start}>Retake (new random order)</button>
-            <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
-          </div>
-        </div>
-      </div>
+      <AppShell title={`${title} complete`}>
+        <Paper sx={{ p: 4, textAlign: 'center' }}>
+          <Typography variant="h2" color="primary" sx={{ fontWeight: 700 }}>{pct(session.score, total)}%</Typography>
+          <Typography sx={{ my: 2 }}>You answered {session.score} of {total} questions correctly.</Typography>
+          <Box sx={{ display: 'flex', gap: 1.5, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button variant="contained" onClick={start}>Retake (new random order)</Button>
+            <Button variant="outlined" onClick={onExit}>Back to hub</Button>
+          </Box>
+        </Paper>
+      </AppShell>
     );
   }
 
   const flaggedIds = session.flagged ?? [];
 
+  const scoreChip = (
+    <Chip
+      clickable
+      onClick={toggleScore}
+      aria-pressed={showScore}
+      title={showScore ? 'Tap to hide score' : 'Tap to show score'}
+      color={showScore ? 'primary' : 'default'}
+      variant={showScore ? 'filled' : 'outlined'}
+      label={showScore ? `Score ${session.score}/${answeredCount} (${pct(session.score, answeredCount)}%)` : 'Score hidden'}
+    />
+  );
+
   if (view === 'grid') {
     const unanswered = total - answeredCount;
     return (
-      <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-pt-scroll data-variant="saa">
-        <QuizHeader variant="saa">
-          <div className={styles.ptScore} aria-live="polite">
-            <div className={styles.ptHeaderRow}>
-              <span>{answeredCount} of {total} answered</span>
-              <button type="button" className={styles.ptScoreToggle} onClick={toggleScore} aria-pressed={showScore} title={showScore ? 'Tap to hide score' : 'Tap to show score'}>
-                {showScore ? <>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</> : 'Score hidden'}
-              </button>
-            </div>
-            <span className={styles.ptHeaderGroup}>
-              <span className={styles.ptHeaderFill}>Test</span>
-              <span className={styles.ptPill}>{test}</span>
-            </span>
-          </div>
-        </QuizHeader>
-        <div className={styles.ptLegend}>
-          <span><span className={`${styles.ptGridDot} ${styles.ptGridAnswered}`} /> Answered</span>
-          <span><span className={styles.ptGridDot} /> Not answered</span>
-          <span><span className={styles.ptFlagIcon}>⚑</span> Flagged</span>
-        </div>
-        <div className={styles.ptGrid}>
+      <AppShell
+        title={title}
+        subtitle={`${answeredCount} of ${total} answered`}
+        actions={
+          <>
+            <Button variant="outlined" onClick={() => { setConfirmSubmit(false); setView('question'); }}>Question {session.index + 1}</Button>
+            <Button
+              variant="contained"
+              sx={{ flex: 1 }}
+              onClick={() => {
+                if (unanswered > 0 && !confirmSubmit) { setConfirmSubmit(true); return; }
+                save(test, null);
+                setFinished(true);
+              }}
+            >
+              {confirmSubmit && unanswered > 0 ? 'Yes, submit test' : 'Submit test'}
+            </Button>
+          </>
+        }
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5, gap: 1 }} aria-live="polite">
+          {scoreChip}
+          <Button size="small" onClick={onExit}>Back to hub</Button>
+        </Box>
+        <Box sx={{ display: 'flex', gap: 2, mb: 1.5, fontSize: 13, color: 'text.secondary', alignItems: 'center' }}>
+          <span><CheckIcon sx={{ fontSize: 14, verticalAlign: -2, color: 'success.main' }} /> Answered</span>
+          <span>Not answered</span>
+          <span><FlagIcon sx={{ fontSize: 14, verticalAlign: -2, color: 'warning.main' }} /> Flagged</span>
+        </Box>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(52px, 1fr))', gap: 1 }}>
           {session.order.map((id, i) => {
             const done = session.answers[id] !== undefined;
             const flagged = flaggedIds.includes(id);
             return (
-              <button
+              <Button
                 key={id}
-                type="button"
-                className={`${styles.ptGridBtn} ${done ? styles.ptGridAnswered : ''} ${flagged ? styles.ptGridFlagged : ''} ${i === session.index ? styles.ptGridCurrent : ''}`}
+                variant={i === session.index ? 'contained' : 'outlined'}
+                color={done ? 'success' : 'primary'}
                 aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}${flagged ? ', flagged' : ''}`}
                 aria-current={i === session.index ? 'true' : undefined}
                 onClick={() => { setSelected([]); setConfirmSubmit(false); commit({ ...session, index: i }); setView('question'); }}
+                sx={{ minWidth: 0, p: 0.5, height: 48, position: 'relative', borderRadius: 2, fontWeight: done ? 700 : 400 }}
               >
-                {done ? '✓' : ''}<span className={styles.ptGridNum}>{i + 1}</span>{flagged && <span className={`${styles.ptFlagIcon} ${styles.ptGridFlag}`} aria-hidden="true">⚑</span>}
-              </button>
+                {i + 1}
+                {flagged && <FlagIcon aria-hidden sx={{ position: 'absolute', top: 1, right: 1, fontSize: 14, color: 'warning.main' }} />}
+              </Button>
             );
           })}
-        </div>
+        </Box>
         {confirmSubmit && unanswered > 0 && (
-          <div className={`${styles.ptVerdict} ${styles.ptVerdictWrong}`} role="alert">
+          <Alert severity="warning" sx={{ mt: 2 }}>
             {unanswered} question{unanswered === 1 ? ' is' : 's are'} unanswered and will count as incorrect. Submit anyway?
-          </div>
+          </Alert>
         )}
-        <div className={styles.ptActions}>
-          <button
-            className={styles.ptPrimaryBtn}
-            onClick={() => {
-              if (unanswered > 0 && !confirmSubmit) { setConfirmSubmit(true); return; }
-              save(test, null);
-              setFinished(true);
-            }}
-          >
-            {confirmSubmit && unanswered > 0 ? 'Yes, submit test' : 'Submit test'}
-          </button>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => { setConfirmSubmit(false); setView('question'); }}>Back to question {session.index + 1}</button>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
-        </div>
-      </div>
+      </AppShell>
     );
   }
 
@@ -345,145 +361,143 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   }
   if (studyFocus) {
     return (
-      <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
+      <Suspense fallback={<AppShell title={title}><Typography>Loading study guide…</Typography></AppShell>}>
         <StudyPanel mode="saa" focus={studyFocus} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setStudyFocus(null); }} />
       </Suspense>
     );
   }
 
   const sectionInfo = showSectionEnabled() ? getPracticeSections(test, q.id) : undefined;
+  const hasSections = !!sectionInfo && sectionInfo.sections.length > 0;
+
+  function openStudy() {
+    if (!sectionInfo) return;
+    const focus = { sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms };
+    if (session) save(test, session);
+    saveStudy({ from: 'practice', focus });
+    setStudyFocus(focus);
+  }
+
+  const actions = (
+    <>
+      {hasSections && <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={openStudy}>Guide</Button>}
+      <Button variant="outlined" startIcon={isFlagged ? <FlagIcon /> : <FlagOutlinedIcon />} color={isFlagged ? 'warning' : 'primary'} onClick={toggleFlag} aria-pressed={isFlagged}>Flag</Button>
+      {!isSubmitted
+        ? <Button variant="contained" sx={{ flex: 1 }} onClick={submit} disabled={selected.length === 0}>Submit</Button>
+        : <Button variant="contained" sx={{ flex: 1 }} onClick={next}>{isLast ? 'Review all' : 'Next'}</Button>}
+    </>
+  );
 
   return (
-    <div
-      className={`${styles.quizContainer} ${styles.ptContainer}`}
-      data-pt-scroll
-      data-variant="saa"
+    <AppShell
+      title={title}
+      subtitle={`Question ${session.index + 1} of ${total}${showScore ? ` · Score ${session.score}/${answeredCount}` : ''}`}
+      actions={actions}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onTouchCancel={() => { clearPress(); touch.current = null; }}
     >
-      <QuizHeader variant="saa">
-        <div className={styles.ptScore} aria-live="polite">
-          <div className={styles.ptHeaderRow}>
-            <span className={styles.ptSmallCaps}>Question {session.index + 1} of {total}</span>
-            <button type="button" className={styles.ptScoreToggle} onClick={toggleScore} aria-pressed={showScore} title={showScore ? 'Tap to hide score' : 'Tap to show score'}>
-                {showScore ? <>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</> : 'Score hidden'}
-              </button>
-          </div>
-          <span className={styles.ptHeaderGroup}>
-            <button type="button" className={`${styles.ptLinkBtn} ${styles.ptHeaderFill}`} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
-            <span className={styles.ptPill}>{test}</span>
-          </span>
-        </div>
-      </QuizHeader>
+      <LinearProgress variant="determinate" value={(answeredCount / total) * 100} sx={{ height: 6, borderRadius: 3, mb: 1.5 }} aria-label="Test progress" />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, mb: 1.5 }} aria-live="polite">
+        {scoreChip}
+        <Button size="small" startIcon={<GridViewIcon />} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</Button>
+      </Box>
 
-      {sectionInfo && sectionInfo.sections.length > 0 && (
-        <div className={styles.ptSectionArea}>
-          <div className={styles.ptSectionText}>
-            {sectionInfo.sections.map(sec => (
-              <div key={sec.sub}>
-                <div className={styles.ptSectionDomain}>{sec.domain}</div>
-                <div className={styles.ptSectionSub}>{sec.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {hasSections && sectionInfo!.sections.map((sec, idx, all) => (
+        <Box key={sec.sub} sx={{ mb: 1 }}>
+          {all.findIndex(x => x.domain === sec.domain) === idx && <Chip size="small" color="primary" variant="outlined" label={sec.domain} sx={{ ...wrapChip, mr: 0.5, mb: 0.5 }} />}
+          <Chip size="small" label={sec.sub} sx={{ ...wrapChip, mb: 0.5 }} />
+        </Box>
+      ))}
 
-      <div
-        className={styles.ptPrompt}
+      <Paper
+        sx={{ p: 2, mt: 1, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none' }}
         onTouchStart={onPromptTouchStart}
         onContextMenu={e => e.preventDefault()}
       >
-        {isFlagged && <span className={styles.ptPromptFlag} aria-label="Flagged">⚑</span>}
+        {isFlagged && <FlagIcon aria-label="Flagged" sx={{ fontSize: 18, verticalAlign: -3, mr: 0.5, color: 'warning.main' }} />}
         {q.prompt}
-      </div>
-      {q.multi && <div className={styles.ptHint}>Select {q.requiredCount}.</div>}
+      </Paper>
+      {q.multi && <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>Select {q.requiredCount}.</Typography>}
 
-      <div className={styles.ptOptions} role={q.multi ? 'group' : 'radiogroup'} aria-label="Answer choices">
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 1.5 }} role={q.multi ? 'group' : 'radiogroup'} aria-label="Answer choices">
         {optionOrder.map(i => {
           const opt = q.options[i];
           const chosen = (isSubmitted ? submitted : selected).includes(i);
-          let cls = styles.ptOption;
-          if (isSubmitted) {
-            if (opt.correct) cls += ` ${styles.ptCorrect}`;
-            else if (chosen) cls += ` ${styles.ptWrong}`;
-          } else if (chosen) cls += ` ${styles.ptSelected}`;
+          const state = isSubmitted ? (opt.correct ? 'success' : chosen ? 'error' : null) : null;
           return (
-            <button
+            <Paper
               key={i}
+              component="button"
               type="button"
-              className={cls}
+              variant="outlined"
               role={q.multi ? 'checkbox' : 'radio'}
               aria-checked={chosen}
               disabled={isSubmitted}
               onClick={() => toggle(i)}
+              sx={(theme) => ({
+                display: 'flex',
+                gap: 1.5,
+                alignItems: 'flex-start',
+                textAlign: 'left',
+                font: 'inherit',
+                color: 'text.primary',
+                p: 1.5,
+                width: '100%',
+                whiteSpace: 'pre-wrap',
+                cursor: isSubmitted ? 'default' : 'pointer',
+                borderColor: state ? theme.palette[state].main : chosen ? theme.palette.primary.main : undefined,
+                bgcolor: state ? alpha(theme.palette[state].main, 0.15) : chosen ? alpha(theme.palette.primary.main, 0.12) : 'background.paper',
+              })}
             >
-              <span className={`${styles.ptMarker} ${q.multi ? styles.ptMarkerCheck : styles.ptMarkerRadio}`} aria-hidden="true" />
+              <Box
+                aria-hidden
+                sx={{
+                  flex: 'none', width: 18, height: 18, mt: '2px', border: 2, borderColor: chosen ? 'primary.main' : 'text.secondary',
+                  borderRadius: q.multi ? '4px' : '50%',
+                  bgcolor: chosen ? 'primary.main' : 'transparent',
+                  boxShadow: chosen && !q.multi ? (theme) => `inset 0 0 0 3px ${theme.palette.background.paper}` : 'none',
+                }}
+              />
               <span>{opt.text}</span>
-            </button>
+            </Paper>
           );
         })}
-      </div>
-
-      {sectionInfo && sectionInfo.sections.length > 0 && (
-        <button
-          type="button"
-          className={`${styles.ptStudyLink} ${styles.btn3d}`}
-          onClick={() => {
-            const focus = { sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms };
-            if (session) save(test, session);
-            saveStudy({ from: 'practice', focus });
-            setStudyFocus(focus);
-          }}
-        >
-          <span aria-hidden="true">📖</span> Study guide
-        </button>
-      )}
-
-      {!isSubmitted && (
-        <div className={styles.ptActions}>
-          <button className={`${styles.ptPrimaryBtn}`} onClick={submit} disabled={selected.length === 0}>Submit answer</button>
-        </div>
-      )}
+      </Box>
 
       {isSubmitted && (
-        <>
-          <div className={`${styles.ptVerdict} ${wasRight ? styles.ptVerdictRight : styles.ptVerdictWrong}`} role="status">
-            {wasRight ? 'Correct' : 'Incorrect'}
-          </div>
+        <Box sx={{ mt: 2 }}>
+          <Alert severity={wasRight ? 'success' : 'error'} role="status" sx={{ fontWeight: 500 }}>{wasRight ? 'Correct' : 'Incorrect'}</Alert>
           {q.cram ? (
             <>
-              <button
+              <Paper
+                component="button"
                 type="button"
-                className={styles.ptCram}
+                variant="outlined"
                 aria-expanded={cramOpen}
                 onClick={() => setCramOpenId(cramOpen ? null : qid)}
+                sx={{ display: 'flex', justifyContent: 'space-between', gap: 1, width: '100%', textAlign: 'left', font: 'inherit', color: 'text.primary', p: 1.5, mt: 1.5, cursor: 'pointer', borderColor: 'primary.main' }}
               >
-                <span className={styles.ptCramText}><strong>Cram:</strong> {q.cram}</span>
-                <span className={styles.ptCramCaret} aria-hidden="true">{cramOpen ? '▾' : '▸'}</span>
-              </button>
-              {cramOpen && <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>}
+                <span><strong>Cram:</strong> {q.cram}</span>
+                <span aria-hidden="true">{cramOpen ? '▾' : '▸'}</span>
+              </Paper>
+              {cramOpen && <Paper sx={{ p: 2, mt: 1, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{linkify(q.explanation)}</Paper>}
             </>
           ) : (
-            <div className={styles.ptExplanation}>{linkify(q.explanation)}</div>
+            <Paper sx={{ p: 2, mt: 1.5, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>{linkify(q.explanation)}</Paper>
           )}
-          {q.domain && <div className={styles.ptDomain}>Domain: {q.domain} · Ref T{test}Q{q.id}</div>}
+          {q.domain && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>Domain: {q.domain} · Ref T{test}Q{q.id}</Typography>}
           {q.references.length > 0 && (
-            <section className={styles.ptRefs} aria-labelledby="pt-refs-title">
-              <h3 id="pt-refs-title" className={styles.ptRefsTitle}>References</h3>
-              <ul className={styles.ptRefsList}>
-                {q.references.map(r => <li key={r}><a href={r} target="_blank" rel="noreferrer">{r}</a></li>)}
-              </ul>
-            </section>
+            <Box component="section" aria-labelledby="pt-refs-title" sx={{ mt: 1.5 }}>
+              <Typography id="pt-refs-title" variant="subtitle2" component="h3">References</Typography>
+              <Box component="ul" sx={{ m: 0, pl: 2.5, fontSize: 14 }}>
+                {q.references.map(r => <li key={r}><Link href={r} target="_blank" rel="noreferrer" sx={{ overflowWrap: 'anywhere' }}>{r}</Link></li>)}
+              </Box>
+            </Box>
           )}
-          <div className={styles.ptActions}>
-            <button className={styles.ptPrimaryBtn} onClick={next}>{isLast ? 'Review all questions →' : 'Next question →'}</button>
-          </div>
-        </>
+        </Box>
       )}
-
-    </div>
+    </AppShell>
   );
 }

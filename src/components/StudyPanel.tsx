@@ -4,8 +4,14 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import clfStudyMarkdown from '../data/B/CLF-C02.md?raw';
 import saaStudyMarkdown from '../data/B/SAA-C03.md?raw';
-import styles from './Quiz.module.css';
-import QuizHeader from './QuizHeader';
+import IconButton from '@mui/material/IconButton';
+import InputBase from '@mui/material/InputBase';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { alpha } from '@mui/material/styles';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import AppShell from './AppShell';
 import { sectionSlug } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
 import { patchStudy } from '../lib/appState';
@@ -90,7 +96,7 @@ function highlight(children: ReactNode, query: string): ReactNode {
   const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
   const walk = (n: ReactNode): ReactNode => {
     if (typeof n === 'string') {
-      return n.split(re).map((part, idx) => (idx % 2 === 1 ? <mark key={idx} className={styles.studyMark}>{part}</mark> : part));
+      return n.split(re).map((part, idx) => (idx % 2 === 1 ? <mark key={idx} style={{ background: '#fff176', color: '#000', borderRadius: 2 }}>{part}</mark> : part));
     }
     if (Array.isArray(n)) return n.map((c, idx) => <span key={idx} style={{ display: 'contents' }}>{walk(c)}</span>);
     return n;
@@ -102,7 +108,7 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
   const isSaa = mode === 'saa';
   const title = isSaa ? 'SAA-C03 Study Guide' : 'CLF-C02 Study Guide';
   const markdown = isSaa ? saaStudyMarkdown : clfStudyMarkdown;
-  const contentRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const [query, setQuery] = useState(restore?.query ?? '');
 
@@ -113,28 +119,26 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
   useEffect(() => {
     const el = contentRef.current;
     if (!el) return;
-    if (restore?.scroll) el.scrollTop = restore.scroll;
+    if (restore?.scroll) window.scrollTo(0, restore.scroll);
     else el.querySelector('[data-focus="true"]')?.scrollIntoView({ block: 'start' });
     // Runs once when the guide opens.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    const el = contentRef.current;
-    if (!el) return;
     let t: number | undefined;
     const onScroll = () => {
       window.clearTimeout(t);
-      t = window.setTimeout(() => patchStudy({ scroll: el.scrollTop }), 200);
+      t = window.setTimeout(() => patchStudy({ scroll: window.scrollY }), 200);
     };
-    el.addEventListener('scroll', onScroll, { passive: true });
-    return () => { window.clearTimeout(t); el.removeEventListener('scroll', onScroll); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { window.clearTimeout(t); window.removeEventListener('scroll', onScroll); };
   }, []);
 
   function onQuery(v: string) {
     setQuery(v);
     patchStudy({ query: v, scroll: 0 });
-    if (contentRef.current) contentRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
   }
 
   function onTouchStart(e: React.TouchEvent) {
@@ -155,36 +159,51 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
     h3: ({ children }: { children?: ReactNode }) => {
       const t = textOf(children);
       const hit = focus.sections.includes(t);
-      return <h3 id={sectionSlug(t)} data-focus={hit ? 'true' : undefined} className={hit ? styles.studyFocusHeading : undefined}>{children}</h3>;
+      return <h3 id={sectionSlug(t)} data-focus={hit ? 'true' : undefined} className={hit ? 'studyFocusHeading' : undefined}>{children}</h3>;
     },
     li: ({ node, children }: { node?: unknown; children?: ReactNode }) => {
       const kids = (node as HastNode | undefined)?.children ?? [];
       const para = kids.find(k => k.type === 'element' && k.tagName === 'p');
       const strong = para?.children?.find(k => k.type === 'element' && k.tagName === 'strong');
       const hit = !!strong && focus.terms.includes(hastText(strong).trim());
-      return <li className={hit ? styles.studyFocusTerm : undefined}>{children}</li>;
+      return <li className={hit ? 'studyFocusTerm' : undefined}>{children}</li>;
     },
   } : {
     h3: ({ children }: { children?: ReactNode }) => <h3 id={sectionSlug(textOf(children))}>{children}</h3>,
   };
 
+  const searchBox = (
+    <Paper elevation={0} sx={{ display: 'flex', alignItems: 'center', px: 1.5, borderRadius: 6, bgcolor: 'background.paper' }}>
+      <SearchIcon fontSize="small" color="action" />
+      <InputBase
+        type="search"
+        value={query}
+        onChange={e => onQuery(e.target.value)}
+        placeholder="Search terms and definitions"
+        slotProps={{ input: { 'aria-label': 'Search the study guide' } }}
+        sx={{ flex: 1, ml: 1, py: 0.5, color: 'text.primary', '& input:focus::placeholder': { opacity: '0 !important', color: 'transparent' }, '& input::-webkit-search-cancel-button': { display: 'none' } }}
+      />
+      {query && <IconButton size="small" aria-label="Clear search" onClick={() => onQuery('')}><CloseIcon fontSize="small" /></IconButton>}
+    </Paper>
+  );
+
   return (
-    <div className={styles.quizContainer} data-variant={mode} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      <QuizHeader variant={mode}>
-        <div className={styles.studyHeaderContent}>
-          <h1 className={styles.studyTitle}>{title}</h1>
-          <input
-            type="search"
-            className={styles.studySearch}
-            value={query}
-            onChange={e => onQuery(e.target.value)}
-            placeholder="Search terms and definitions"
-            aria-label="Search the study guide"
-          />
-        </div>
-      </QuizHeader>
-      <article className={styles.studyContent} ref={contentRef}>
-        {noMatches ? <p>No terms match “{query.trim()}”.</p> : (
+    <AppShell title={title} extra={searchBox} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+      <Paper
+        ref={contentRef}
+        sx={(theme) => ({
+          p: { xs: 2, sm: 3 },
+          lineHeight: 1.6,
+          '& h2': { fontSize: '1.35rem', mt: 3, '&:first-of-type': { mt: 0 } },
+          '& h3': { fontSize: '1.1rem', mt: 3, color: 'primary.main', scrollMarginTop: '150px' },
+          '& ul': { pl: 2.5 },
+          '& li': { mb: 1.5 },
+          '& li > p': { my: 0.25 },
+          '& h3.studyFocusHeading': { borderLeft: `4px solid ${theme.palette.warning.main}`, pl: 1.5 },
+          '& li.studyFocusTerm': { borderLeft: `4px solid ${theme.palette.warning.main}`, bgcolor: alpha(theme.palette.warning.main, 0.18), pl: 1, listStylePosition: 'inside' },
+        })}
+      >
+        {noMatches ? <Typography>No terms match “{query.trim()}”.</Typography> : (
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
@@ -196,7 +215,7 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
             {rendered}
           </ReactMarkdown>
         )}
-      </article>
-    </div>
+      </Paper>
+    </AppShell>
   );
 }
