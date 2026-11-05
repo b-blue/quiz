@@ -165,6 +165,16 @@
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
+    "term": "SQS temporary queues",
+    "definition": "Multiplex ephemeral request-response channels onto one physical queue",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "SQS temporary queues",
+    "definition": "Reduce API calls when each reply channel has sparse traffic",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
     "term": "IAM permissions boundary",
     "definition": "Attached to a user or role to cap even newly attached managed-policy access.",
     "section": "Content Domain 1: Design Secure Architectures"
@@ -280,6 +290,56 @@
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
+    "term": "IAM policy `aws:RequestedRegion` condition",
+    "definition": "Constrains API calls to specified AWS Regions, regardless of caller location",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM policy `aws:RequestedRegion` condition",
+    "definition": "Use it to restrict where an action is requested, not where the caller sits",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS WAF IP match rule",
+    "definition": "Block requests whose observed source address matches a configured IP set",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS WAF IP match rule",
+    "definition": "Filter malicious web traffic by caller address",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "API Gateway HTTP API JWT authorizer",
+    "definition": "Native HTTP API validation for OIDC-issued tokens and route scopes",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "API Gateway HTTP API JWT authorizer",
+    "definition": "Avoid custom code to validate bearer tokens on each request",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon S3 bucket policy",
+    "definition": "Resource-side JSON permissions can name principals in another AWS account",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon S3 bucket policy",
+    "definition": "Attach this policy to the bucket to authorize cross-account access",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM Identity Center permission sets",
+    "definition": "Map federated directory groups to tailored access across AWS accounts",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM Identity Center permission sets",
+    "definition": "Centralize role-based assignments without per-user IAM identities",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
     "term": "Internet Gateway connectivity",
     "definition": "Public IP + subnet route + permitted inbound traffic are all required.",
     "section": "Content Domain 3: Design High-Performing Architectures"
@@ -352,6 +412,21 @@
   {
     "term": "Route 53 private hosted zone prerequisites",
     "definition": "Private hosted zones need DNS support and hostnames enabled in associated VPCs.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon EFS cross-account access",
+    "definition": "Partner-owned shared NFS storage",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon EFS cross-account access",
+    "definition": "A mount target is reachable across accounts",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon EFS cross-account access",
+    "definition": "Use a resource policy and access point",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -455,6 +530,141 @@
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
+    "term": "Amazon Machine Image (AMI) sharing and copying",
+    "definition": "Reuse a launch image in another account",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Machine Image (AMI) sharing and copying",
+    "definition": "Replicate an image between Regions",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Machine Image (AMI) sharing and copying",
+    "definition": "Encrypted snapshots stay encrypted when copied",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 instance recovery",
+    "definition": "Preserve the instance identity after host failure",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 instance recovery",
+    "definition": "An EBS-backed workload fails a system check",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EC2 instance recovery",
+    "definition": "The public address remains attached after recovery",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Auto Scaling termination policy",
+    "definition": "Choose which instance leaves when capacity decreases",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Auto Scaling termination policy",
+    "definition": "Compare AZ counts before launch-template age",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Auto Scaling termination policy",
+    "definition": "Default scale-in selection rule",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Kubernetes Cluster Autoscaler",
+    "definition": "Pending Pods cannot be placed on current nodes",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Kubernetes Cluster Autoscaler",
+    "definition": "Change EKS worker-node group size",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Kubernetes Cluster Autoscaler",
+    "definition": "Scale node capacity from scheduling demand",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Systems Manager patching behind a load balancer",
+    "definition": "Patch an ALB target without serving requests",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Systems Manager patching behind a load balancer",
+    "definition": "Drain requests before maintenance",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Systems Manager patching behind a load balancer",
+    "definition": "Schedule the automation with a maintenance window",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora Serverless v2 capacity scaling",
+    "definition": "Variable relational database demand",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora Serverless v2 capacity scaling",
+    "definition": "Scale database capacity without managing instances",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora Serverless v2 capacity scaling",
+    "definition": "MySQL-compatible managed database tier",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora MySQL read scaling and availability",
+    "definition": "Offload reads from a relational writer",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora MySQL read scaling and availability",
+    "definition": "Add a reader in another Availability Zone",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Aurora MySQL read scaling and availability",
+    "definition": "Scale the web tier independently",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon RDS Multi-AZ failover",
+    "definition": "Keep a relational database available after an AZ failure",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon RDS Multi-AZ failover",
+    "definition": "Synchronous standby is not a read replica",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon RDS Multi-AZ failover",
+    "definition": "Separate web-tier scaling from DB failover",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudWatch Logs agent on EC2",
+    "definition": "Retain application logs after an instance is removed",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudWatch Logs agent on EC2",
+    "definition": "Stream host files to a managed log service",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudWatch Logs agent on EC2",
+    "definition": "Metrics collection does not capture log files",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
     "term": "EFS Infrequent Access",
     "definition": "A POSIX/NFS shared file system must serve rarely read data immediately.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
@@ -535,6 +745,46 @@
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   },
   {
+    "term": "Shared storage for load-balanced applications",
+    "definition": "Uploads must remain visible whichever instance handles the next request.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Shared storage for load-balanced applications",
+    "definition": "Choose shared file or object storage, not per-instance block volumes.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon FSx for NetApp ONTAP",
+    "definition": "One shared dataset must be mounted through two common file protocols.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon FSx for NetApp ONTAP",
+    "definition": "Mixed desktop and server operating systems need the same files.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EBS Snapshot Recycle Bin",
+    "definition": "Recover snapshots after accidental deletion for a configured period.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EBS Snapshot Recycle Bin",
+    "definition": "Retention rules can preserve a deleted backup for seven days.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon S3 Storage Lens",
+    "definition": "Use an organization-wide dashboard to inspect bucket configurations.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon S3 Storage Lens",
+    "definition": "Advanced metrics can surface versioning status across Regions.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
     "term": "Amazon ElastiCache for Redis",
     "definition": "Relational or geospatial reads need sub-ms in-memory caching.",
     "section": "Content Domain 3: Design High-Performing Architectures"
@@ -577,6 +827,46 @@
   {
     "term": "Amazon Redshift cold-data offload",
     "definition": "Move rarely queried warehouse records to object storage for ad hoc SQL access.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon DynamoDB",
+    "definition": "A serverless NoSQL datastore can scale for frequent key lookups.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon DynamoDB",
+    "definition": "Item expiry can remove records after a configured retention interval.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Transcribe",
+    "definition": "Convert recorded speech into text before querying its contents.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Transcribe",
+    "definition": "Audio-to-text output can be stored for later SQL analysis.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Comprehend sentiment analysis",
+    "definition": "Classify written feedback as positive, negative, neutral, or mixed.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Comprehend sentiment analysis",
+    "definition": "Use managed NLP instead of hosting a sentiment model.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon ElastiCache for Memcached",
+    "definition": "Use multiple cores to accelerate read-heavy query caching.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon ElastiCache for Memcached",
+    "definition": "Cached data can be discarded and rebuilt from its database.",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -627,6 +917,26 @@
   {
     "term": "Lambda monitoring",
     "definition": "Detect function errors and duration changes before they affect callers.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon EventBridge Scheduler",
+    "definition": "Run a container task on a recurring cron schedule without servers.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon EventBridge Scheduler",
+    "definition": "Schedules can target ECS tasks directly.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon EventBridge event bus",
+    "definition": "Route matching application or SaaS events to independent targets.",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon EventBridge event bus",
+    "definition": "Decouple producers and consumers with JSON event rules.",
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
@@ -930,6 +1240,76 @@
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
+    "term": "Amazon EFS access control",
+    "definition": "Which policy and network controls limit NFS clients?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon EFS access control",
+    "definition": "Which port must clients reach on a file system mount target?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM security best practices",
+    "definition": "What controls protect privileged users and audit IAM changes?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "IAM security best practices",
+    "definition": "Which trail records identity and permission changes?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Managed Microsoft AD",
+    "definition": "Which managed directory supports a trust with existing on-premises AD?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Managed Microsoft AD",
+    "definition": "Which directory runs AD-aware applications in AWS?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Systems Manager patch management",
+    "definition": "Which automation drains and patches a load-balanced instance?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "AWS Systems Manager patch management",
+    "definition": "How can patching be scheduled and coordinated with an ALB?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "EC2 Instance Connect",
+    "definition": "Which feature injects a temporary public key for SSH?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "EC2 Instance Connect",
+    "definition": "What avoids distributing permanent SSH keys to operators?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Single-instance EC2 Auto Scaling recovery",
+    "definition": "How can one monolithic instance recover across zones?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Single-instance EC2 Auto Scaling recovery",
+    "definition": "Which address can be reassociated with a replacement instance?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Cognito identity pools and private S3 access",
+    "definition": "How do signed-in app users receive temporary AWS credentials?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Cognito identity pools and private S3 access",
+    "definition": "What keeps private-subnet S3 traffic on AWS networking?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
     "term": "AWS KMS envelope encryption",
     "definition": "Encrypt bulk bytes with a data key, then protect that key with a managed key.",
     "section": "Content Domain 1: Design Secure Architectures"
@@ -1197,6 +1577,61 @@
   {
     "term": "S3 SSE-KMS encryption",
     "definition": "S3-managed keys lack the requested per-key usage audit trail.",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 Versioning and MFA Delete",
+    "definition": "Which bucket features preserve prior versions and gate permanent deletion?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "S3 Versioning and MFA Delete",
+    "definition": "What helps recover an object deleted by mistake?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront origins and field-level encryption",
+    "definition": "How can a distribution route requests to distinct backends?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront origins and field-level encryption",
+    "definition": "Which feature protects selected fields in a POST body?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront origins and field-level encryption",
+    "definition": "What configures primary-to-secondary origin failover?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon EBS encryption",
+    "definition": "What does enabling encryption on a block volume protect?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Amazon EBS encryption",
+    "definition": "Do snapshots inherit encryption from an encrypted volume?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Client-side encryption",
+    "definition": "How can data use a proprietary algorithm before upload?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "Client-side encryption",
+    "definition": "Where is encryption performed when AWS receives only ciphertext?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront and Aurora read scaling",
+    "definition": "Which edge service caches content near viewers?",
+    "section": "Content Domain 1: Design Secure Architectures"
+  },
+  {
+    "term": "CloudFront and Aurora read scaling",
+    "definition": "How can an Aurora database spread read-only queries?",
     "section": "Content Domain 1: Design Secure Architectures"
   },
   {
@@ -1470,6 +1905,46 @@
     "section": "Content Domain 2: Design Resilient Architectures"
   },
   {
+    "term": "Amazon RDS Custom for Oracle",
+    "definition": "Host OS and database customization with managed failover",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon RDS Custom for Oracle",
+    "definition": "Choose when standard managed RDS blocks required access",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Prebuilt AMI recovery",
+    "definition": "Install the stack before an outage and copy images to each Region",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Prebuilt AMI recovery",
+    "definition": "Launch prepared instances instead of reinstalling software",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon RDS cross-Region disaster recovery",
+    "definition": "Promote an asynchronous replica after a regional outage",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Amazon RDS cross-Region disaster recovery",
+    "definition": "Copy automated recovery points to another Region",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Multi-tier application high availability and scaling",
+    "definition": "Balance healthy web instances across AZs and scale them automatically",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
+    "term": "Multi-tier application high availability and scaling",
+    "definition": "Pair resilient compute with database failover or read scaling",
+    "section": "Content Domain 2: Design Resilient Architectures"
+  },
+  {
     "term": "EC2 instance family selection",
     "definition": "Choose compute-optimized capacity for CPU-bound batch work.",
     "section": "Content Domain 3: Design High-Performing Architectures"
@@ -1725,6 +2200,61 @@
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
+    "term": "AMI copying across Regions",
+    "definition": "Image copy creates a destination-region backing snapshot",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AMI copying across Regions",
+    "definition": "Launching from the copy creates a regional instance",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Shared storage for EC2 fleets",
+    "definition": "Instance-local block volumes do not share files across a fleet",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Shared storage for EC2 fleets",
+    "definition": "Move uploads to shared NFS or object storage",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudFront origins, failover, and field-level encryption",
+    "definition": "One distribution can route content types to distinct backends",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudFront origins, failover, and field-level encryption",
+    "definition": "Origin groups support primary-secondary failover",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "CloudFront origins, failover, and field-level encryption",
+    "definition": "Encrypt selected POST fields at the edge",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EKS Cluster Autoscaler",
+    "definition": "Adds worker nodes for pods that cannot be scheduled",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "EKS Cluster Autoscaler",
+    "definition": "Complements pod-level horizontal scaling",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Transfer Family with EFS",
+    "definition": "Managed SFTP endpoint backed by shared POSIX storage",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "AWS Transfer Family with EFS",
+    "definition": "Restrict sources with endpoint networking and users with mappings",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
     "term": "AWS Site-to-Site VPN versus Direct Connect",
     "definition": "Need quick encrypted hybrid connectivity over the public internet.",
     "section": "Content Domain 3: Design High-Performing Architectures"
@@ -1852,6 +2382,36 @@
   {
     "term": "Route 53 geoproximity routing",
     "definition": "Dynamically enlarge or shrink the geographic serving area with a bias setting.",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Geographic content access controls",
+    "definition": "Block viewers by country at the CDN layer",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Geographic content access controls",
+    "definition": "DNS location policy selects an endpoint, not content authorization",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Route 53 CNAME records",
+    "definition": "Maps a subdomain to another DNS name",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Route 53 CNAME records",
+    "definition": "Cannot be created at the zone apex",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "DNS TTL caching",
+    "definition": "Resolvers retain old answers until their cache lifetime expires",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "DNS TTL caching",
+    "definition": "Record edits do not instantly invalidate DNS caches",
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
@@ -2145,6 +2705,16 @@
     "section": "Content Domain 3: Design High-Performing Architectures"
   },
   {
+    "term": "AWS Glue DataBrew",
+    "definition": "Point-and-click data preparation with reusable recipes and built-in profiling",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
+    "term": "Amazon Comprehend",
+    "definition": "Managed NLP finds sentiment and common entities without custom model training",
+    "section": "Content Domain 3: Design High-Performing Architectures"
+  },
+  {
     "term": "S3 Intelligent-Tiering",
     "definition": "Access is unpredictable; automatic tier changes avoid custom age-based rules.",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
@@ -2377,6 +2947,16 @@
   {
     "term": "EC2 Dedicated Hosts",
     "definition": "Reuse eligible server-bound licenses with host-level placement control.",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "Amazon ECS launch type pricing",
+    "definition": "Underlying hosts and volumes versus task-requested vCPU and memory billing",
+    "section": "Content Domain 4: Design Cost-Optimized Architectures"
+  },
+  {
+    "term": "EC2 Dedicated Instances",
+    "definition": "Single-customer physical isolation without reserving a whole host",
     "section": "Content Domain 4: Design Cost-Optimized Architectures"
   }
 ]

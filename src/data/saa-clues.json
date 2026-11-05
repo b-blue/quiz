@@ -1032,5 +1032,229 @@
   ],
   "CloudFormation service role": [
     "Deploy stack resources via a role operators can pass but cannot use."
+  ],
+  "IAM policy `aws:RequestedRegion` condition": [
+    "Constrains API calls to specified AWS Regions, regardless of caller location",
+    "Use it to restrict where an action is requested, not where the caller sits"
+  ],
+  "AWS WAF IP match rule": [
+    "Block requests whose observed source address matches a configured IP set",
+    "Filter malicious web traffic by caller address"
+  ],
+  "API Gateway HTTP API JWT authorizer": [
+    "Native HTTP API validation for OIDC-issued tokens and route scopes",
+    "Avoid custom code to validate bearer tokens on each request"
+  ],
+  "Amazon S3 bucket policy": [
+    "Resource-side JSON permissions can name principals in another AWS account",
+    "Attach this policy to the bucket to authorize cross-account access"
+  ],
+  "IAM Identity Center permission sets": [
+    "Map federated directory groups to tailored access across AWS accounts",
+    "Centralize role-based assignments without per-user IAM identities"
+  ],
+  "SQS temporary queues": [
+    "Multiplex ephemeral request-response channels onto one physical queue",
+    "Reduce API calls when each reply channel has sparse traffic"
+  ],
+  "Amazon EFS cross-account access": [
+    "Partner-owned shared NFS storage",
+    "A mount target is reachable across accounts",
+    "Use a resource policy and access point"
+  ],
+  "Amazon Machine Image (AMI) sharing and copying": [
+    "Reuse a launch image in another account",
+    "Replicate an image between Regions",
+    "Encrypted snapshots stay encrypted when copied"
+  ],
+  "EC2 instance recovery": [
+    "Preserve the instance identity after host failure",
+    "An EBS-backed workload fails a system check",
+    "The public address remains attached after recovery"
+  ],
+  "Auto Scaling termination policy": [
+    "Choose which instance leaves when capacity decreases",
+    "Compare AZ counts before launch-template age",
+    "Default scale-in selection rule"
+  ],
+  "Kubernetes Cluster Autoscaler": [
+    "Pending Pods cannot be placed on current nodes",
+    "Change EKS worker-node group size",
+    "Scale node capacity from scheduling demand"
+  ],
+  "Systems Manager patching behind a load balancer": [
+    "Patch an ALB target without serving requests",
+    "Drain requests before maintenance",
+    "Schedule the automation with a maintenance window"
+  ],
+  "Aurora Serverless v2 capacity scaling": [
+    "Variable relational database demand",
+    "Scale database capacity without managing instances",
+    "MySQL-compatible managed database tier"
+  ],
+  "Aurora MySQL read scaling and availability": [
+    "Offload reads from a relational writer",
+    "Add a reader in another Availability Zone",
+    "Scale the web tier independently"
+  ],
+  "Amazon RDS Multi-AZ failover": [
+    "Keep a relational database available after an AZ failure",
+    "Synchronous standby is not a read replica",
+    "Separate web-tier scaling from DB failover"
+  ],
+  "CloudWatch Logs agent on EC2": [
+    "Retain application logs after an instance is removed",
+    "Stream host files to a managed log service",
+    "Metrics collection does not capture log files"
+  ],
+  "Shared storage for load-balanced applications": [
+    "Uploads must remain visible whichever instance handles the next request.",
+    "Choose shared file or object storage, not per-instance block volumes."
+  ],
+  "Amazon FSx for NetApp ONTAP": [
+    "One shared dataset must be mounted through two common file protocols.",
+    "Mixed desktop and server operating systems need the same files."
+  ],
+  "EBS Snapshot Recycle Bin": [
+    "Recover snapshots after accidental deletion for a configured period.",
+    "Retention rules can preserve a deleted backup for seven days."
+  ],
+  "Amazon S3 Storage Lens": [
+    "Use an organization-wide dashboard to inspect bucket configurations.",
+    "Advanced metrics can surface versioning status across Regions."
+  ],
+  "Amazon DynamoDB": [
+    "A serverless NoSQL datastore can scale for frequent key lookups.",
+    "Item expiry can remove records after a configured retention interval."
+  ],
+  "Amazon Transcribe": [
+    "Convert recorded speech into text before querying its contents.",
+    "Audio-to-text output can be stored for later SQL analysis."
+  ],
+  "Amazon Comprehend sentiment analysis": [
+    "Classify written feedback as positive, negative, neutral, or mixed.",
+    "Use managed NLP instead of hosting a sentiment model."
+  ],
+  "Amazon ElastiCache for Memcached": [
+    "Use multiple cores to accelerate read-heavy query caching.",
+    "Cached data can be discarded and rebuilt from its database."
+  ],
+  "Amazon EventBridge Scheduler": [
+    "Run a container task on a recurring cron schedule without servers.",
+    "Schedules can target ECS tasks directly."
+  ],
+  "Amazon EventBridge event bus": [
+    "Route matching application or SaaS events to independent targets.",
+    "Decouple producers and consumers with JSON event rules."
+  ],
+  "Amazon EFS access control": [
+    "Which policy and network controls limit NFS clients?",
+    "Which port must clients reach on a file system mount target?"
+  ],
+  "IAM security best practices": [
+    "What controls protect privileged users and audit IAM changes?",
+    "Which trail records identity and permission changes?"
+  ],
+  "AWS Managed Microsoft AD": [
+    "Which managed directory supports a trust with existing on-premises AD?",
+    "Which directory runs AD-aware applications in AWS?"
+  ],
+  "AWS Systems Manager patch management": [
+    "Which automation drains and patches a load-balanced instance?",
+    "How can patching be scheduled and coordinated with an ALB?"
+  ],
+  "EC2 Instance Connect": [
+    "Which feature injects a temporary public key for SSH?",
+    "What avoids distributing permanent SSH keys to operators?"
+  ],
+  "Single-instance EC2 Auto Scaling recovery": [
+    "How can one monolithic instance recover across zones?",
+    "Which address can be reassociated with a replacement instance?"
+  ],
+  "Cognito identity pools and private S3 access": [
+    "How do signed-in app users receive temporary AWS credentials?",
+    "What keeps private-subnet S3 traffic on AWS networking?"
+  ],
+  "S3 Versioning and MFA Delete": [
+    "Which bucket features preserve prior versions and gate permanent deletion?",
+    "What helps recover an object deleted by mistake?"
+  ],
+  "CloudFront origins and field-level encryption": [
+    "How can a distribution route requests to distinct backends?",
+    "Which feature protects selected fields in a POST body?",
+    "What configures primary-to-secondary origin failover?"
+  ],
+  "Amazon EBS encryption": [
+    "What does enabling encryption on a block volume protect?",
+    "Do snapshots inherit encryption from an encrypted volume?"
+  ],
+  "Client-side encryption": [
+    "How can data use a proprietary algorithm before upload?",
+    "Where is encryption performed when AWS receives only ciphertext?"
+  ],
+  "CloudFront and Aurora read scaling": [
+    "Which edge service caches content near viewers?",
+    "How can an Aurora database spread read-only queries?"
+  ],
+  "Amazon RDS Custom for Oracle": [
+    "Host OS and database customization with managed failover",
+    "Choose when standard managed RDS blocks required access"
+  ],
+  "Prebuilt AMI recovery": [
+    "Install the stack before an outage and copy images to each Region",
+    "Launch prepared instances instead of reinstalling software"
+  ],
+  "Amazon RDS cross-Region disaster recovery": [
+    "Promote an asynchronous replica after a regional outage",
+    "Copy automated recovery points to another Region"
+  ],
+  "Multi-tier application high availability and scaling": [
+    "Balance healthy web instances across AZs and scale them automatically",
+    "Pair resilient compute with database failover or read scaling"
+  ],
+  "AMI copying across Regions": [
+    "Image copy creates a destination-region backing snapshot",
+    "Launching from the copy creates a regional instance"
+  ],
+  "Shared storage for EC2 fleets": [
+    "Instance-local block volumes do not share files across a fleet",
+    "Move uploads to shared NFS or object storage"
+  ],
+  "CloudFront origins, failover, and field-level encryption": [
+    "One distribution can route content types to distinct backends",
+    "Origin groups support primary-secondary failover",
+    "Encrypt selected POST fields at the edge"
+  ],
+  "EKS Cluster Autoscaler": [
+    "Adds worker nodes for pods that cannot be scheduled",
+    "Complements pod-level horizontal scaling"
+  ],
+  "AWS Transfer Family with EFS": [
+    "Managed SFTP endpoint backed by shared POSIX storage",
+    "Restrict sources with endpoint networking and users with mappings"
+  ],
+  "Geographic content access controls": [
+    "Block viewers by country at the CDN layer",
+    "DNS location policy selects an endpoint, not content authorization"
+  ],
+  "Route 53 CNAME records": [
+    "Maps a subdomain to another DNS name",
+    "Cannot be created at the zone apex"
+  ],
+  "DNS TTL caching": [
+    "Resolvers retain old answers until their cache lifetime expires",
+    "Record edits do not instantly invalidate DNS caches"
+  ],
+  "AWS Glue DataBrew": [
+    "Point-and-click data preparation with reusable recipes and built-in profiling"
+  ],
+  "Amazon Comprehend": [
+    "Managed NLP finds sentiment and common entities without custom model training"
+  ],
+  "Amazon ECS launch type pricing": [
+    "Underlying hosts and volumes versus task-requested vCPU and memory billing"
+  ],
+  "EC2 Dedicated Instances": [
+    "Single-customer physical isolation without reserving a whole host"
   ]
 }

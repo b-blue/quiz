@@ -6,6 +6,7 @@ import QuizHeader from './QuizHeader';
 import styles from './Quiz.module.css';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
+import { loadStudy, saveStudy, showScoreEnabled, saveShowScore } from '../lib/appState';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -72,7 +73,8 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [finished, setFinished] = useState(false);
   const [view, setView] = useState<'question' | 'grid'>('question');
   const [confirmSubmit, setConfirmSubmit] = useState(false);
-  const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(null);
+  const [showScore, setShowScore] = useState(showScoreEnabled);
+  const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(() => { const st = loadStudy(); return st?.from === 'practice' ? st.focus ?? { sections: [], terms: [] } : null; });
   const [cramOpenId, setCramOpenId] = useState<number | null>(null);
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
   const pressTimer = useRef<number | null>(null);
@@ -85,7 +87,8 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         if (cancelled) return;
         setQuestions(qs);
         const prior = readSaved(test, qs);
-        if (prior && Object.keys(prior.answers).length > 0) setSaved(prior);
+        if (prior && loadStudy()?.from === 'practice') setSession(prior);
+        else if (prior && Object.keys(prior.answers).length > 0) setSaved(prior);
         else setSession(newSession(qs));
       })
       .catch(e => { if (!cancelled) setError(String(e)); });
@@ -123,6 +126,12 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     setSaved(null);
   }
 
+  function toggleScore() {
+    const next = !showScore;
+    saveShowScore(next);
+    setShowScore(next);
+  }
+
   const title = `Practice Test ${test}`;
 
   if (error) {
@@ -130,7 +139,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       <div className={`${styles.quizContainer} ${styles.ptContainer}`} data-variant="saa">
         <QuizHeader variant="saa"><div className={styles.questionText}>{title}</div></QuizHeader>
         <p>Could not load this test: {error}</p>
-        <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to settings</button>
+        <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
       </div>
     );
   }
@@ -155,7 +164,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         <div className={styles.ptActions}>
           <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={resume}>Resume</button>
           <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={start}>Start over (reshuffle)</button>
-          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to settings</button>
+          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
         </div>
       </div>
     );
@@ -176,7 +185,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           <p>You answered {session.score} of {total} questions correctly.</p>
           <div className={styles.ptActions} style={{ justifyContent: 'center' }}>
             <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={start}>Retake (new random order)</button>
-            <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to settings</button>
+            <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
           </div>
         </div>
       </div>
@@ -193,7 +202,9 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           <div className={styles.ptScore} aria-live="polite">
             <div className={styles.ptHeaderRow}>
               <span>{answeredCount} of {total} answered</span>
-              <span>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+              <button type="button" className={styles.ptScoreToggle} onClick={toggleScore} aria-pressed={showScore} title={showScore ? 'Tap to hide score' : 'Tap to show score'}>
+                {showScore ? <>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</> : 'Score hidden'}
+              </button>
             </div>
             <span className={styles.ptHeaderGroup}>
               <span className={styles.ptHeaderFill}>Test</span>
@@ -241,6 +252,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
             {confirmSubmit && unanswered > 0 ? 'Yes, submit test' : 'Submit test'}
           </button>
           <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => { setConfirmSubmit(false); setView('question'); }}>Back to question {session.index + 1}</button>
+          <button className={`${styles.timedBtn} ${styles.btn3d}`} onClick={onExit}>Back to hub</button>
         </div>
       </div>
     );
@@ -334,7 +346,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   if (studyFocus) {
     return (
       <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
-        <StudyPanel mode="saa" focus={studyFocus} backLabel="← Back to question" onBack={() => setStudyFocus(null)} />
+        <StudyPanel mode="saa" focus={studyFocus} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setStudyFocus(null); }} />
       </Suspense>
     );
   }
@@ -355,7 +367,9 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         <div className={styles.ptScore} aria-live="polite">
           <div className={styles.ptHeaderRow}>
             <span className={styles.ptSmallCaps}>Question {session.index + 1} of {total}</span>
-            <span>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</span>
+            <button type="button" className={styles.ptScoreToggle} onClick={toggleScore} aria-pressed={showScore} title={showScore ? 'Tap to hide score' : 'Tap to show score'}>
+                {showScore ? <>Score: <span className={styles.ptScoreValue}>{session.score}/{answeredCount}</span> ({pct(session.score, answeredCount)}%)</> : 'Score hidden'}
+              </button>
           </div>
           <span className={styles.ptHeaderGroup}>
             <button type="button" className={`${styles.ptLinkBtn} ${styles.ptHeaderFill}`} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</button>
@@ -374,15 +388,6 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
               </div>
             ))}
           </div>
-          <button
-            type="button"
-            className={`${styles.ptSectionBook} ${styles.btn3d}`}
-            aria-label="Open this topic in the study guide"
-            title="Open this topic in the study guide"
-            onClick={() => setStudyFocus({ sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms })}
-          >
-            📖
-          </button>
         </div>
       )}
 
@@ -421,6 +426,21 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           );
         })}
       </div>
+
+      {sectionInfo && sectionInfo.sections.length > 0 && (
+        <button
+          type="button"
+          className={`${styles.ptStudyLink} ${styles.btn3d}`}
+          onClick={() => {
+            const focus = { sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms };
+            if (session) save(test, session);
+            saveStudy({ from: 'practice', focus });
+            setStudyFocus(focus);
+          }}
+        >
+          <span aria-hidden="true">📖</span> Study guide
+        </button>
+      )}
 
       {!isSubmitted && (
         <div className={styles.ptActions}>

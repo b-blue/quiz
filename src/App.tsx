@@ -1,26 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Quiz from './components/Quiz'
-import BiologyQuiz from './components/BiologyQuiz'
-import Settings from './components/Settings'
+import Hub from './components/Hub'
 import PracticeTest from './components/PracticeTest'
+import { loadView, saveView, saveStudy } from './lib/appState'
+import type { SavedView } from './lib/appState'
 import './App.css'
 
 function App() {
-  // single dark theme only
-  const [mode, setMode] = useState<'aws'|'saa'|'bio'|'settings'|'practice'>(() => {
-    const s = typeof window !== 'undefined' ? localStorage.getItem('app:startMode') : null;
-    return s === 'bio' || s === 'aws' || s === 'saa' ? s : 'saa';
-  });
-  const [prevMode, setPrevMode] = useState<'aws'|'saa'|'bio'>(() => mode === 'settings' || mode === 'practice' ? 'aws' : mode);
+  const [current, setCurrent] = useState<SavedView>(() => loadView());
 
-  const [practiceTest, setPracticeTest] = useState<number>(1);
+  useEffect(() => { saveView(current); }, [current]);
+
+  function go(next: SavedView) {
+    saveStudy(null);
+    setCurrent(next);
+  }
+
+  const openHub = () => go({ view: 'hub' });
 
   return (
     <div>
       <header style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '0.5rem 1rem' }}>
       </header>
       <main>
-        {mode === 'aws' ? <Quiz mode="aws" onOpenSettings={() => { setPrevMode('aws'); setMode('settings'); }} /> : mode === 'saa' ? <Quiz mode="saa" onOpenSettings={() => { setPrevMode('saa'); setMode('settings'); }} /> : mode === 'bio' ? <BiologyQuiz onOpenSettings={() => { setPrevMode('bio'); setMode('settings'); }} /> : mode === 'practice' ? <PracticeTest key={practiceTest} test={practiceTest} onExit={() => setMode('settings')} /> : <Settings onBack={() => setMode(prevMode)} onStartPractice={(n) => { setPracticeTest(n); setMode('practice'); }} />}
+        {current.view === 'aws' ? <Quiz mode="aws" onOpenHub={openHub} />
+          : current.view === 'saa' ? <Quiz mode="saa" onOpenHub={openHub} />
+          : current.view === 'practice' && current.test ? <PracticeTest key={current.test} test={current.test} onExit={openHub} />
+          : <Hub onStartQuiz={(m) => go({ view: m })} onStartPractice={(n) => go({ view: 'practice', test: n })} />}
       </main>
     </div>
   )

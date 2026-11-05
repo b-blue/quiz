@@ -4,19 +4,17 @@ import { getRandomQuestion, getAllTerms, getSaaTerms, getPracticeRefs } from '..
 import { loadCramText } from '../lib/practiceTests';
 import styles from './Quiz.module.css';
 import QuizHeader from './QuizHeader';
+import { loadStudy, saveStudy } from '../lib/appState';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
-export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?: () => void; mode?: 'aws' | 'saa' }) {
+export default function Quiz({ onOpenHub, mode = 'aws' }: { onOpenHub?: () => void; mode?: 'aws' | 'saa' }) {
   const terms = mode === 'saa' ? getSaaTerms() : getAllTerms();
-  const selectedSection: string | null = (() => {
-    const v = localStorage.getItem(`${mode}:selectedSection`);
-    return v === null ? null : (typeof v === 'string' ? v.trim() : v);
-  })();
+  const selectedSection: string | null = null;
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection, terms));
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [showStudyView, setShowStudyView] = useState(false);
+  const [showStudyView, setShowStudyView] = useState(() => loadStudy()?.from === 'quiz');
   const [cramHint, setCramHint] = useState<string | null>(null);
   // Buttons are simple press targets now (no drag-and-drop)
 
@@ -204,7 +202,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
   if (showStudyView) {
     return (
       <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
-        <StudyPanel mode={mode} onBack={() => setShowStudyView(false)} />
+        <StudyPanel mode={mode} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setShowStudyView(false); }} />
       </Suspense>
     );
   }
@@ -290,7 +288,7 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
           })()}
           <button
             className={`${styles.studyToggleButton} ${styles.btn3d}`}
-            onClick={() => setShowStudyView(true)}
+            onClick={() => { saveStudy({ from: 'quiz' }); setShowStudyView(true); }}
             aria-label={`Open ${studyTitle}`}
             title={`Open ${studyTitle}`}
           >
@@ -307,11 +305,11 @@ export default function Quiz({ onOpenSettings, mode = 'aws' }: { onOpenSettings?
 
           <button
             className={`${styles.gearBtn} ${styles.btn3d}`}
-            onClick={() => onOpenSettings?.()}
-            aria-label="Open settings"
-            title="Open settings"
+            onClick={() => onOpenHub?.()}
+            aria-label="Open hub"
+            title="Open hub"
           >
-            ⚙️
+            ☰
           </button>
         </div>
       </div>

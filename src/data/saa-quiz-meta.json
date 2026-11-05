@@ -29,7 +29,8 @@
     ],
     "practice": [
       "T1Q9",
-      "T2Q6"
+      "T2Q6",
+      "T4Q47"
     ]
   },
   "IAM policy `aws:SourceIp` condition": {
@@ -134,7 +135,9 @@
       "AWS CloudFormation",
       "Service Control Policies (SCPs)"
     ],
-    "practice": []
+    "practice": [
+      "T3Q8"
+    ]
   },
   "IAM policy evaluation": {
     "lookalikes": [
@@ -186,7 +189,8 @@
     ],
     "practice": [
       "T1Q43",
-      "T4Q26"
+      "T4Q26",
+      "T6Q55"
     ]
   },
   "Security groups and network ACLs": {
@@ -198,7 +202,15 @@
     "practice": [
       "T3Q26",
       "T6Q6",
-      "T2Q14"
+      "T2Q14",
+      "T2Q49",
+      "T3Q27",
+      "T4Q37",
+      "T4Q39",
+      "T4Q42",
+      "T4Q44",
+      "T5Q3",
+      "T5Q18"
     ]
   },
   "AWS WAF and Shield": {
@@ -210,7 +222,8 @@
     "practice": [
       "T3Q49",
       "T5Q24",
-      "T6Q23"
+      "T6Q23",
+      "T5Q42"
     ]
   },
   "AWS Firewall Manager": {
@@ -332,7 +345,8 @@
     ],
     "practice": [
       "T2Q3",
-      "T2Q33"
+      "T2Q33",
+      "T2Q16"
     ]
   },
   "RDS SSL/TLS": {
@@ -363,7 +377,9 @@
       "AWS Certificate Manager and CloudFront",
       "API Gateway resource policy"
     ],
-    "practice": []
+    "practice": [
+      "T6Q10"
+    ]
   },
   "AWS Certificate Manager and CloudFront": {
     "lookalikes": [
@@ -436,7 +452,8 @@
     "practice": [
       "T1Q1",
       "T1Q28",
-      "T3Q61"
+      "T3Q61",
+      "T2Q51"
     ]
   },
   "Batching": {
@@ -459,7 +476,8 @@
       "Amazon SQS dead-letter queue (DLQ)"
     ],
     "practice": [
-      "T1Q5"
+      "T1Q5",
+      "T6Q63"
     ]
   },
   "Amazon SQS buffering": {
@@ -471,7 +489,9 @@
     ],
     "practice": [
       "T2Q5",
-      "T3Q64"
+      "T3Q64",
+      "T4Q45",
+      "T5Q62"
     ]
   },
   "Amazon SQS dead-letter queue (DLQ)": {
@@ -513,7 +533,8 @@
       "AWS Step Functions"
     ],
     "practice": [
-      "T1Q5"
+      "T1Q5",
+      "T2Q23"
     ]
   },
   "Amazon SNS": {
@@ -524,7 +545,8 @@
       "EventBridge scheduled rule"
     ],
     "practice": [
-      "T1Q38"
+      "T1Q38",
+      "T1Q39"
     ]
   },
   "Lambda and API Gateway": {
@@ -534,7 +556,14 @@
       "Lambda layers",
       "AWS Step Functions"
     ],
-    "practice": []
+    "practice": [
+      "T1Q13",
+      "T3Q16",
+      "T3Q53",
+      "T4Q28",
+      "T5Q62",
+      "T5Q64"
+    ]
   },
   "EventBridge scheduled rule": {
     "lookalikes": [
@@ -543,7 +572,9 @@
       "Lambda layers",
       "Amazon SNS"
     ],
-    "practice": []
+    "practice": [
+      "T3Q1"
+    ]
   },
   "Lambda layers": {
     "lookalikes": [
@@ -552,7 +583,9 @@
       "AWS Step Functions",
       "EventBridge scheduled rule"
     ],
-    "practice": []
+    "practice": [
+      "T4Q11"
+    ]
   },
   "VPC-enabled Lambda internet access": {
     "lookalikes": [
@@ -561,7 +594,9 @@
       "NAT Gateway high availability",
       "Internet Gateway connectivity"
     ],
-    "practice": []
+    "practice": [
+      "T4Q11"
+    ]
   },
   "Lambda monitoring": {
     "lookalikes": [
@@ -570,7 +605,9 @@
       "Detailed CloudWatch monitoring",
       "AWS Systems Manager Session Manager"
     ],
-    "practice": []
+    "practice": [
+      "T4Q11"
+    ]
   },
   "Recovery Time Objective (RTO)": {
     "lookalikes": [
@@ -695,7 +732,10 @@
     "practice": [
       "T1Q11",
       "T2Q29",
-      "T3Q33"
+      "T3Q33",
+      "T2Q36",
+      "T4Q46",
+      "T6Q29"
     ]
   },
   "Aurora Global Database": {
@@ -708,7 +748,8 @@
     "practice": [
       "T6Q1",
       "T2Q52",
-      "T2Q55"
+      "T2Q55",
+      "T1Q19"
     ]
   },
   "DynamoDB point-in-time recovery (PITR)": {
@@ -740,7 +781,10 @@
       "Cross-account and cross-Region backup",
       "DynamoDB point-in-time recovery (PITR)"
     ],
-    "practice": []
+    "practice": [
+      "T5Q11",
+      "T5Q40"
+    ]
   },
   "AWS Step Functions": {
     "lookalikes": [
@@ -800,7 +844,11 @@
       "S3 gateway VPC endpoint",
       "VPC peering"
     ],
-    "practice": []
+    "practice": [
+      "T3Q51",
+      "T4Q42",
+      "T5Q3"
+    ]
   },
   "PrivateLink": {
     "lookalikes": [
@@ -810,7 +858,9 @@
       "Direct Connect private VIF"
     ],
     "practice": [
-      "T2Q7"
+      "T2Q7",
+      "T1Q16",
+      "T5Q4"
     ]
   },
   "S3 gateway VPC endpoint": {
@@ -819,7 +869,11 @@
       "NAT Gateway high availability",
       "VPC peering"
     ],
-    "practice": []
+    "practice": [
+      "T4Q40",
+      "T5Q22",
+      "T6Q39"
+    ]
   },
   "NAT Gateway high availability": {
     "lookalikes": [
@@ -828,7 +882,11 @@
       "PrivateLink",
       "VPC peering"
     ],
-    "practice": []
+    "practice": [
+      "T3Q29",
+      "T3Q63",
+      "T6Q18"
+    ]
   },
   "VPC peering": {
     "lookalikes": [
@@ -837,7 +895,8 @@
       "S3 gateway VPC endpoint"
     ],
     "practice": [
-      "T1Q57"
+      "T1Q57",
+      "T4Q31"
     ]
   },
   "AWS Transit Gateway": {
@@ -848,7 +907,11 @@
     ],
     "practice": [
       "T4Q33",
-      "T4Q4"
+      "T4Q4",
+      "T2Q19",
+      "T3Q34",
+      "T5Q13",
+      "T6Q37"
     ]
   },
   "AWS Global Accelerator": {
@@ -860,7 +923,12 @@
     "practice": [
       "T1Q44",
       "T3Q5",
-      "T4Q63"
+      "T4Q63",
+      "T2Q40",
+      "T2Q53",
+      "T3Q48",
+      "T5Q17",
+      "T5Q30"
     ]
   },
   "AWS Resource Access Manager (RAM) subnet sharing": {
@@ -869,7 +937,10 @@
       "AWS Transit Gateway",
       "PrivateLink"
     ],
-    "practice": []
+    "practice": [
+      "T2Q8",
+      "T3Q35"
+    ]
   },
   "AWS Direct Connect Gateway": {
     "lookalikes": [
@@ -877,7 +948,10 @@
       "Direct Connect public VIF",
       "AWS Transit Gateway"
     ],
-    "practice": []
+    "practice": [
+      "T3Q34",
+      "T4Q5"
+    ]
   },
   "Direct Connect public VIF": {
     "lookalikes": [
@@ -885,7 +959,9 @@
       "AWS Direct Connect Gateway",
       "S3 gateway VPC endpoint"
     ],
-    "practice": []
+    "practice": [
+      "T6Q25"
+    ]
   },
   "Direct Connect private VIF": {
     "lookalikes": [
@@ -933,7 +1009,10 @@
       "VPC peering",
       "AWS Transit Gateway"
     ],
-    "practice": []
+    "practice": [
+      "T2Q2",
+      "T6Q19"
+    ]
   },
   "EC2 Instance Store": {
     "lookalikes": [
@@ -943,7 +1022,9 @@
     ],
     "practice": [
       "T1Q37",
-      "T6Q2"
+      "T6Q2",
+      "T5Q38",
+      "T5Q56"
     ]
   },
   "EC2 user data": {
@@ -953,7 +1034,10 @@
       "AWS Systems Manager Session Manager"
     ],
     "practice": [
-      "T2Q28"
+      "T2Q28",
+      "T4Q29",
+      "T6Q5",
+      "T6Q15"
     ]
   },
   "EC2 reboot alarm action": {
@@ -962,7 +1046,9 @@
       "Auto Scaling `ReplaceUnhealthy` process",
       "CloudTrail versus CloudWatch versus Config"
     ],
-    "practice": []
+    "practice": [
+      "T5Q1"
+    ]
   },
   "EC2 Auto Scaling Standby": {
     "lookalikes": [
@@ -970,7 +1056,9 @@
       "Auto Scaling health checks",
       "EC2 Auto Scaling policy selection"
     ],
-    "practice": []
+    "practice": [
+      "T1Q4"
+    ]
   },
   "Auto Scaling `ReplaceUnhealthy` process": {
     "lookalikes": [
@@ -988,7 +1076,14 @@
       "EC2 Auto Scaling Standby",
       "EC2 reboot alarm action"
     ],
-    "practice": []
+    "practice": [
+      "T1Q25",
+      "T2Q12",
+      "T2Q25",
+      "T4Q44",
+      "T5Q27",
+      "T6Q15"
+    ]
   },
   "Predictive scaling": {
     "lookalikes": [
@@ -1007,7 +1102,10 @@
     "practice": [
       "T1Q54",
       "T3Q11",
-      "T6Q32"
+      "T6Q32",
+      "T1Q26",
+      "T4Q7",
+      "T4Q56"
     ]
   },
   "Spot request types": {
@@ -1032,7 +1130,10 @@
       "EC2 Auto Scaling Standby",
       "EC2 Auto Scaling policy selection"
     ],
-    "practice": []
+    "practice": [
+      "T4Q45",
+      "T5Q33"
+    ]
   },
   "Application Load Balancer (ALB) path routing": {
     "lookalikes": [
@@ -1040,7 +1141,13 @@
       "Cross-zone load balancing",
       "AWS Global Accelerator"
     ],
-    "practice": []
+    "practice": [
+      "T1Q8",
+      "T2Q15",
+      "T2Q25",
+      "T4Q24",
+      "T4Q32"
+    ]
   },
   "Network Load Balancer (NLB)": {
     "lookalikes": [
@@ -1051,7 +1158,11 @@
     "practice": [
       "T3Q47",
       "T6Q8",
-      "T5Q43"
+      "T5Q43",
+      "T4Q10",
+      "T6Q30",
+      "T6Q43",
+      "T6Q57"
     ]
   },
   "Cross-zone load balancing": {
@@ -1061,7 +1172,8 @@
       "EC2 cluster placement group"
     ],
     "practice": [
-      "T4Q64"
+      "T4Q64",
+      "T3Q3"
     ]
   },
   "ECS Service Auto Scaling": {
@@ -1093,7 +1205,9 @@
       "EC2 Auto Scaling policy selection"
     ],
     "practice": [
-      "T3Q10"
+      "T3Q10",
+      "T2Q59",
+      "T6Q50"
     ]
   },
   "EC2 cluster placement group": {
@@ -1124,7 +1238,10 @@
       "Auto Scaling health checks",
       "CloudTrail versus CloudWatch versus Config"
     ],
-    "practice": []
+    "practice": [
+      "T5Q25",
+      "T5Q59"
+    ]
   },
   "Amazon ElastiCache for Redis": {
     "lookalikes": [
@@ -1135,7 +1252,9 @@
     "practice": [
       "T1Q3",
       "T4Q16",
-      "T5Q53"
+      "T5Q53",
+      "T4Q19",
+      "T5Q54"
     ]
   },
   "DynamoDB Accelerator (DAX)": {
@@ -1147,7 +1266,8 @@
     "practice": [
       "T1Q3",
       "T4Q59",
-      "T6Q33"
+      "T6Q33",
+      "T1Q21"
     ]
   },
   "Amazon Athena": {
@@ -1157,7 +1277,9 @@
       "Amazon Data Firehose"
     ],
     "practice": [
-      "T2Q26"
+      "T2Q26",
+      "T5Q7",
+      "T5Q36"
     ]
   },
   "Amazon Neptune": {
@@ -1176,7 +1298,10 @@
       "AWS DMS Serverless",
       "Amazon ElastiCache for Redis"
     ],
-    "practice": []
+    "practice": [
+      "T2Q63",
+      "T6Q20"
+    ]
   },
   "AWS DMS Serverless": {
     "lookalikes": [
@@ -1195,7 +1320,8 @@
       "AWS Database Migration Service (DMS)"
     ],
     "practice": [
-      "T1Q10"
+      "T1Q10",
+      "T3Q28"
     ]
   },
   "Babelfish for Aurora PostgreSQL": {
@@ -1288,7 +1414,10 @@
     "practice": [
       "T6Q36",
       "T3Q41",
-      "T1Q30"
+      "T1Q30",
+      "T1Q36",
+      "T2Q64",
+      "T4Q6"
     ]
   },
   "AWS Batch": {
@@ -1318,7 +1447,8 @@
       "EBS General Purpose SSD versus Provisioned IOPS SSD"
     ],
     "practice": [
-      "T3Q20"
+      "T3Q20",
+      "T4Q17"
     ]
   },
   "S3 multipart upload": {
@@ -1330,7 +1460,9 @@
     "practice": [
       "T1Q47",
       "T5Q31",
-      "T6Q11"
+      "T6Q11",
+      "T1Q12",
+      "T4Q57"
     ]
   },
   "S3 byte-range GET": {
@@ -1352,7 +1484,9 @@
     "practice": [
       "T1Q47",
       "T3Q37",
-      "T6Q11"
+      "T6Q11",
+      "T1Q12",
+      "T1Q65"
     ]
   },
   "Amazon CloudFront caching": {
@@ -1364,7 +1498,10 @@
     "practice": [
       "T1Q62",
       "T2Q4",
-      "T3Q2"
+      "T3Q2",
+      "T3Q36",
+      "T4Q41",
+      "T1Q21"
     ]
   },
   "Amazon S3 and CloudFront static delivery": {
@@ -1376,7 +1513,9 @@
     "practice": [
       "T2Q4",
       "T3Q2",
-      "T3Q14"
+      "T3Q14",
+      "T1Q21",
+      "T3Q36"
     ]
   },
   "AWS Outposts and Wavelength": {
@@ -1385,7 +1524,9 @@
       "Amazon CloudFront",
       "AWS Direct Connect Gateway"
     ],
-    "practice": []
+    "practice": [
+      "T1Q17"
+    ]
   },
   "AWS Site-to-Site VPN versus Direct Connect": {
     "lookalikes": [
@@ -1395,7 +1536,12 @@
     ],
     "practice": [
       "T1Q33",
-      "T2Q7"
+      "T2Q7",
+      "T3Q57",
+      "T4Q36",
+      "T5Q34",
+      "T5Q48",
+      "T6Q64"
     ]
   },
   "AWS Transit Gateway versus VPC peering": {
@@ -1417,7 +1563,9 @@
       "NAT Gateway high availability"
     ],
     "practice": [
-      "T2Q7"
+      "T2Q7",
+      "T3Q22",
+      "T6Q35"
     ]
   },
   "Route 53 failover routing": {
@@ -1426,7 +1574,10 @@
       "AWS Global Accelerator",
       "Route 53 private hosted zone prerequisites"
     ],
-    "practice": []
+    "practice": [
+      "T2Q20",
+      "T5Q35"
+    ]
   },
   "Route 53 latency routing": {
     "lookalikes": [
@@ -1446,7 +1597,12 @@
     ],
     "practice": [
       "T3Q62",
-      "T3Q43"
+      "T3Q43",
+      "T2Q61",
+      "T4Q34",
+      "T5Q21",
+      "T6Q47",
+      "T6Q52"
     ]
   },
   "Amazon Kinesis Data Streams": {
@@ -1458,7 +1614,11 @@
     "practice": [
       "T5Q10",
       "T6Q21",
-      "T4Q52"
+      "T4Q52",
+      "T1Q61",
+      "T3Q13",
+      "T3Q40",
+      "T5Q49"
     ]
   },
   "Kinesis on-demand capacity": {
@@ -1551,7 +1711,9 @@
       "Amazon SQS standard queues"
     ],
     "practice": [
-      "T3Q60"
+      "T3Q60",
+      "T2Q44",
+      "T5Q32"
     ]
   },
   "AWS Database Migration Service (DMS)": {
@@ -1641,7 +1803,9 @@
       "Amazon Quick",
       "Amazon Athena"
     ],
-    "practice": []
+    "practice": [
+      "T5Q49"
+    ]
   },
   "Amazon Quick": {
     "lookalikes": [
@@ -1649,7 +1813,9 @@
       "Amazon OpenSearch Service",
       "Amazon Athena"
     ],
-    "practice": []
+    "practice": [
+      "T5Q49"
+    ]
   },
   "Amazon Comprehend custom entity recognition": {
     "lookalikes": [
@@ -1670,7 +1836,8 @@
     "practice": [
       "T1Q3",
       "T3Q12",
-      "T3Q62"
+      "T3Q62",
+      "T6Q51"
     ]
   },
   "EFS Infrequent Access": {
@@ -1691,7 +1858,14 @@
       "EFS Infrequent Access",
       "AWS Storage Gateway cached volumes"
     ],
-    "practice": []
+    "practice": [
+      "T1Q64",
+      "T2Q11",
+      "T2Q58",
+      "T3Q19",
+      "T3Q25",
+      "T3Q56"
+    ]
   },
   "AWS Storage Gateway File Gateway": {
     "lookalikes": [
@@ -1701,7 +1875,8 @@
     ],
     "practice": [
       "T1Q59",
-      "T5Q44"
+      "T5Q44",
+      "T3Q56"
     ]
   },
   "AWS Snowball Edge": {
@@ -1755,7 +1930,8 @@
       "T2Q50",
       "T5Q12",
       "T5Q28",
-      "T6Q22"
+      "T6Q22",
+      "T5Q38"
     ]
   },
   "One-time S3 bucket copy": {
@@ -1807,7 +1983,10 @@
       "AWS Control Tower",
       "AWS Organizations consolidated billing"
     ],
-    "practice": []
+    "practice": [
+      "T4Q39",
+      "T4Q55"
+    ]
   },
   "EBS volume selection": {
     "lookalikes": [
@@ -1818,7 +1997,9 @@
     ],
     "practice": [
       "T1Q15",
-      "T4Q15"
+      "T4Q15",
+      "T1Q14",
+      "T3Q9"
     ]
   },
   "Cost of data egress": {
@@ -1855,7 +2036,9 @@
       "EFS throughput modes"
     ],
     "practice": [
-      "T4Q15"
+      "T4Q15",
+      "T5Q50",
+      "T6Q53"
     ]
   },
   "EC2 Savings Plans versus Reserved Instances": {
@@ -1999,7 +2182,8 @@
     ],
     "practice": [
       "T1Q31",
-      "T2Q46"
+      "T2Q46",
+      "T4Q48"
     ]
   },
   "AWS WAF geographic match rule": {
@@ -2072,7 +2256,8 @@
     ],
     "practice": [
       "T2Q18",
-      "T6Q59"
+      "T6Q59",
+      "T4Q62"
     ]
   },
   "SQS delay queues": {
@@ -2123,7 +2308,8 @@
       "ECS Service Auto Scaling"
     ],
     "practice": [
-      "T6Q32"
+      "T6Q32",
+      "T3Q4"
     ]
   },
   "NAT instance capabilities": {
@@ -2174,7 +2360,11 @@
       "RDS Multi-AZ deployment"
     ],
     "practice": [
-      "T3Q43"
+      "T3Q43",
+      "T2Q43",
+      "T5Q65",
+      "T6Q51",
+      "T2Q24"
     ]
   },
   "EBS Fast Snapshot Restore": {
@@ -2245,7 +2435,9 @@
       "S3 Glacier retrieval classes"
     ],
     "practice": [
-      "T1Q23"
+      "T1Q23",
+      "T5Q38",
+      "T6Q16"
     ]
   },
   "S3 One Zone-IA": {
@@ -2268,7 +2460,8 @@
       "AWS Snowball Edge"
     ],
     "practice": [
-      "T4Q35"
+      "T4Q35",
+      "T3Q54"
     ]
   },
   "S3 Storage Class Analysis": {
@@ -2337,7 +2530,9 @@
       "EFS mount targets",
       "EFS Infrequent Access"
     ],
-    "practice": []
+    "practice": [
+      "T2Q38"
+    ]
   },
   "EFS storage classes": {
     "lookalikes": [
@@ -2401,7 +2596,9 @@
       "Aurora Global Database",
       "Backup and restore DR"
     ],
-    "practice": []
+    "practice": [
+      "T5Q41"
+    ]
   },
   "RDS and Aurora automated backups and snapshots": {
     "lookalikes": [
@@ -2409,7 +2606,9 @@
       "RDS read replicas",
       "Backup and restore DR"
     ],
-    "practice": []
+    "practice": [
+      "T2Q16"
+    ]
   },
   "Route 53 alias records": {
     "lookalikes": [
@@ -2417,7 +2616,9 @@
       "Route 53 latency routing",
       "Route 53 geoproximity routing"
     ],
-    "practice": []
+    "practice": [
+      "T3Q38"
+    ]
   },
   "Route 53 geolocation routing": {
     "lookalikes": [
@@ -2425,7 +2626,9 @@
       "Route 53 geoproximity routing",
       "Route 53 failover routing"
     ],
-    "practice": []
+    "practice": [
+      "T1Q55"
+    ]
   },
   "Route 53 weighted routing": {
     "lookalikes": [
@@ -2481,7 +2684,9 @@
       "S3 SSE-KMS Bucket Keys",
       "AWS KMS envelope encryption"
     ],
-    "practice": []
+    "practice": [
+      "T3Q65"
+    ]
   },
   "S3 DSSE-KMS encryption": {
     "lookalikes": [
@@ -2497,7 +2702,9 @@
       "S3 SSE-KMS Bucket Keys",
       "AWS KMS envelope encryption"
     ],
-    "practice": []
+    "practice": [
+      "T2Q60"
+    ]
   },
   "S3 CORS configuration": {
     "lookalikes": [
@@ -2544,7 +2751,9 @@
       "AWS Storage Gateway cached volumes",
       "S3 Glacier retrieval classes"
     ],
-    "practice": []
+    "practice": [
+      "T4Q27"
+    ]
   },
   "SQS message visibility timeout": {
     "lookalikes": [
@@ -2560,7 +2769,9 @@
       "Amazon SNS",
       "AWS Lambda SQS event source mapping"
     ],
-    "practice": []
+    "practice": [
+      "T3Q39"
+    ]
   },
   "ECS task role": {
     "lookalikes": [
@@ -2727,7 +2938,9 @@
       "AWS Site-to-Site VPN versus Direct Connect",
       "VPC peering"
     ],
-    "practice": []
+    "practice": [
+      "T6Q58"
+    ]
   },
   "AWS Elastic Disaster Recovery (DRS)": {
     "lookalikes": [
@@ -2753,5 +2966,565 @@
       "IAM permissions boundary"
     ],
     "practice": []
+  },
+  "IAM policy `aws:RequestedRegion` condition": {
+    "lookalikes": [
+      "IAM policy `aws:SourceIp` condition",
+      "API Gateway resource policy",
+      "AWS WAF rate-based rule"
+    ],
+    "practice": [
+      "T2Q34"
+    ]
+  },
+  "AWS WAF IP match rule": {
+    "lookalikes": [
+      "AWS WAF rate-based rule",
+      "IAM policy `aws:SourceIp` condition",
+      "API Gateway resource policy"
+    ],
+    "practice": [
+      "T2Q37"
+    ]
+  },
+  "API Gateway HTTP API JWT authorizer": {
+    "lookalikes": [
+      "Amazon Cognito",
+      "API Gateway resource policy",
+      "IAM database authentication"
+    ],
+    "practice": [
+      "T3Q23"
+    ]
+  },
+  "Amazon S3 bucket policy": {
+    "lookalikes": [
+      "Cross-account IAM role",
+      "Cross-account access credentials",
+      "IAM least privilege"
+    ],
+    "practice": [
+      "T4Q65"
+    ]
+  },
+  "IAM Identity Center permission sets": {
+    "lookalikes": [
+      "IAM groups",
+      "IAM least privilege",
+      "IAM permissions boundary"
+    ],
+    "practice": [
+      "T6Q55"
+    ]
+  },
+  "SQS temporary queues": {
+    "lookalikes": [
+      "SQS delay queues",
+      "Amazon SQS dead-letter queue (DLQ)",
+      "Amazon SQS FIFO queues"
+    ],
+    "practice": [
+      "T6Q42"
+    ]
+  },
+  "Amazon EFS cross-account access": {
+    "lookalikes": [
+      "PrivateLink",
+      "VPC peering",
+      "AWS Resource Access Manager (RAM) subnet sharing"
+    ],
+    "practice": [
+      "T1Q58"
+    ]
+  },
+  "Amazon Machine Image (AMI) sharing and copying": {
+    "lookalikes": [
+      "EC2 Instance Store",
+      "EC2 user data",
+      "Spot Fleet",
+      "EC2 tenancy"
+    ],
+    "practice": [
+      "T3Q24",
+      "T4Q29"
+    ]
+  },
+  "EC2 instance recovery": {
+    "lookalikes": [
+      "EC2 reboot alarm action",
+      "EC2 Instance Store",
+      "Detailed CloudWatch monitoring"
+    ],
+    "practice": [
+      "T3Q32",
+      "T3Q52"
+    ]
+  },
+  "Auto Scaling termination policy": {
+    "lookalikes": [
+      "Auto Scaling `ReplaceUnhealthy` process",
+      "EC2 Auto Scaling Standby",
+      "Auto Scaling health checks"
+    ],
+    "practice": [
+      "T4Q60",
+      "T2Q45"
+    ]
+  },
+  "Kubernetes Cluster Autoscaler": {
+    "lookalikes": [
+      "ECS Service Auto Scaling",
+      "ECS/EKS with Fargate",
+      "Target tracking vs. step/scheduled scaling"
+    ],
+    "practice": [
+      "T4Q61"
+    ]
+  },
+  "Systems Manager patching behind a load balancer": {
+    "lookalikes": [
+      "EC2 Auto Scaling Standby",
+      "Application Load Balancer (ALB) path routing",
+      "Auto Scaling health checks"
+    ],
+    "practice": [
+      "T5Q39"
+    ]
+  },
+  "Aurora Serverless v2 capacity scaling": {
+    "lookalikes": [
+      "Aurora Serverless",
+      "Target tracking vs. step/scheduled scaling",
+      "ECS Service Auto Scaling"
+    ],
+    "practice": [
+      "T2Q63"
+    ]
+  },
+  "Aurora MySQL read scaling and availability": {
+    "lookalikes": [
+      "Aurora Serverless",
+      "Target tracking vs. step/scheduled scaling",
+      "Auto Scaling health checks"
+    ],
+    "practice": [
+      "T5Q55"
+    ]
+  },
+  "Amazon RDS Multi-AZ failover": {
+    "lookalikes": [
+      "Aurora Serverless",
+      "AWS DMS Serverless",
+      "Target tracking vs. step/scheduled scaling"
+    ],
+    "practice": [
+      "T6Q44"
+    ]
+  },
+  "CloudWatch Logs agent on EC2": {
+    "lookalikes": [
+      "Detailed CloudWatch monitoring",
+      "CloudWatch Logs subscriptions",
+      "EC2 user data"
+    ],
+    "practice": [
+      "T5Q59"
+    ]
+  },
+  "Shared storage for load-balanced applications": {
+    "lookalikes": [
+      "EFS Infrequent Access",
+      "S3 Standard-IA",
+      "S3 Glacier retrieval classes",
+      "One-time S3 bucket copy"
+    ],
+    "practice": [
+      "T2Q31"
+    ]
+  },
+  "Amazon FSx for NetApp ONTAP": {
+    "lookalikes": [
+      "Amazon FSx for Windows File Server",
+      "Amazon FSx for Lustre",
+      "EFS storage classes",
+      "AWS Storage Gateway File Gateway"
+    ],
+    "practice": [
+      "T3Q45"
+    ]
+  },
+  "EBS Snapshot Recycle Bin": {
+    "lookalikes": [
+      "EBS snapshots",
+      "AWS Backup plans and vaults",
+      "S3 lifecycle rules"
+    ],
+    "practice": [
+      "T5Q51"
+    ]
+  },
+  "Amazon S3 Storage Lens": {
+    "lookalikes": [
+      "S3 lifecycle rules",
+      "S3 Storage Class Analysis",
+      "CloudTrail versus CloudWatch versus Config"
+    ],
+    "practice": [
+      "T6Q49"
+    ]
+  },
+  "Amazon DynamoDB": {
+    "lookalikes": [
+      "DynamoDB Accelerator (DAX)",
+      "Amazon ElastiCache for Redis",
+      "Amazon Neptune",
+      "Aurora Serverless"
+    ],
+    "practice": [
+      "T4Q50",
+      "T5Q62"
+    ]
+  },
+  "Amazon Transcribe": {
+    "lookalikes": [
+      "Amazon Athena",
+      "Amazon Comprehend custom entity recognition",
+      "Amazon Quick"
+    ],
+    "practice": [
+      "T5Q36"
+    ]
+  },
+  "Amazon Comprehend sentiment analysis": {
+    "lookalikes": [
+      "Amazon Athena",
+      "Amazon Comprehend custom entity recognition"
+    ],
+    "practice": [
+      "T5Q62"
+    ]
+  },
+  "Amazon ElastiCache for Memcached": {
+    "lookalikes": [
+      "Amazon ElastiCache for Redis",
+      "DynamoDB Accelerator (DAX)",
+      "Aurora Serverless",
+      "ElastiCache Redis vs. Memcached"
+    ],
+    "practice": [
+      "T6Q28"
+    ]
+  },
+  "Amazon EventBridge Scheduler": {
+    "lookalikes": [
+      "EventBridge scheduled rule",
+      "AWS Step Functions",
+      "Amazon SQS standard queues"
+    ],
+    "practice": [
+      "T2Q64"
+    ]
+  },
+  "Amazon EventBridge event bus": {
+    "lookalikes": [
+      "EventBridge scheduled rule",
+      "EventBridge archive and replay",
+      "Amazon SNS",
+      "Amazon SQS standard queues"
+    ],
+    "practice": [
+      "T4Q30"
+    ]
+  },
+  "Amazon EFS access control": {
+    "lookalikes": [
+      "Security groups and network ACLs",
+      "IAM role for an AWS workload",
+      "VPC Flow Logs"
+    ],
+    "practice": [
+      "T1Q42",
+      "T1Q58"
+    ]
+  },
+  "IAM security best practices": {
+    "lookalikes": [
+      "Root user protection",
+      "IAM policy evaluation",
+      "CloudTrail data events",
+      "IAM Access Advisor and credential report"
+    ],
+    "practice": [
+      "T1Q49"
+    ]
+  },
+  "AWS Managed Microsoft AD": {
+    "lookalikes": [
+      "IAM Identity Center federation",
+      "AWS shared responsibility model",
+      "AWS Control Tower"
+    ],
+    "practice": [
+      "T3Q15",
+      "T6Q48"
+    ]
+  },
+  "AWS Systems Manager patch management": {
+    "lookalikes": [
+      "AWS Systems Manager Session Manager",
+      "AWS Config managed rules",
+      "AWS Firewall Manager"
+    ],
+    "practice": [
+      "T3Q55",
+      "T5Q39"
+    ]
+  },
+  "EC2 Instance Connect": {
+    "lookalikes": [
+      "AWS Systems Manager Session Manager",
+      "Security groups and network ACLs",
+      "IAM role for an AWS workload"
+    ],
+    "practice": [
+      "T5Q5"
+    ]
+  },
+  "Single-instance EC2 Auto Scaling recovery": {
+    "lookalikes": [
+      "AWS Control Tower",
+      "AWS CloudFormation StackSets",
+      "IAM role for an AWS workload"
+    ],
+    "practice": [
+      "T6Q15"
+    ]
+  },
+  "Cognito identity pools and private S3 access": {
+    "lookalikes": [
+      "IAM Identity Center federation",
+      "IAM role for an AWS workload",
+      "Amazon S3 Access Points"
+    ],
+    "practice": [
+      "T6Q39"
+    ]
+  },
+  "S3 Versioning and MFA Delete": {
+    "lookalikes": [
+      "S3 Object Lock Compliance mode",
+      "S3 Object Lock Governance mode",
+      "AWS Backup Vault Lock"
+    ],
+    "practice": [
+      "T1Q60"
+    ]
+  },
+  "CloudFront origins and field-level encryption": {
+    "lookalikes": [
+      "CloudFront Origin Access Control (OAC)",
+      "CloudFront signed URLs and signed cookies",
+      "AWS Certificate Manager and CloudFront"
+    ],
+    "practice": [
+      "T4Q41"
+    ]
+  },
+  "Amazon EBS encryption": {
+    "lookalikes": [
+      "RDS encryption at rest",
+      "S3 SSE-KMS encryption",
+      "AWS KMS envelope encryption"
+    ],
+    "practice": [
+      "T5Q52"
+    ]
+  },
+  "Client-side encryption": {
+    "lookalikes": [
+      "S3 SSE-C encryption",
+      "S3 SSE-KMS encryption",
+      "S3 SSE-S3 encryption"
+    ],
+    "practice": [
+      "T6Q40"
+    ]
+  },
+  "CloudFront and Aurora read scaling": {
+    "lookalikes": [
+      "CloudFront signed URLs and signed cookies",
+      "CloudFront Origin Access Control (OAC)",
+      "RDS encryption at rest"
+    ],
+    "practice": [
+      "T6Q51"
+    ]
+  },
+  "Amazon RDS Custom for Oracle": {
+    "lookalikes": [
+      "RDS Multi-AZ deployment",
+      "RDS Multi-AZ standby",
+      "Amazon RDS storage autoscaling"
+    ],
+    "practice": [
+      "T1Q52"
+    ]
+  },
+  "Prebuilt AMI recovery": {
+    "lookalikes": [
+      "AWS Elastic Disaster Recovery (DRS)",
+      "Backup and restore DR",
+      "Pilot light DR"
+    ],
+    "practice": [
+      "T4Q49"
+    ]
+  },
+  "Amazon RDS cross-Region disaster recovery": {
+    "lookalikes": [
+      "RDS Multi-AZ deployment",
+      "Cross-account and cross-Region backup",
+      "RDS and Aurora automated backups and snapshots"
+    ],
+    "practice": [
+      "T5Q21"
+    ]
+  },
+  "Multi-tier application high availability and scaling": {
+    "lookalikes": [
+      "Availability Zone capacity planning",
+      "RDS Multi-AZ deployment",
+      "Aurora Global Database"
+    ],
+    "practice": [
+      "T5Q55",
+      "T6Q44"
+    ]
+  },
+  "AMI copying across Regions": {
+    "lookalikes": [
+      "EBS snapshots",
+      "One-time S3 bucket copy",
+      "EC2 Instance Store"
+    ],
+    "practice": [
+      "T1Q27"
+    ]
+  },
+  "Shared storage for EC2 fleets": {
+    "lookalikes": [
+      "EFS mount targets",
+      "Amazon S3 and CloudFront static delivery",
+      "Amazon FSx for Windows File Server",
+      "AWS Storage Gateway File Gateway"
+    ],
+    "practice": [
+      "T2Q31"
+    ]
+  },
+  "CloudFront origins, failover, and field-level encryption": {
+    "lookalikes": [
+      "Amazon CloudFront",
+      "CloudFront Origin Access Control (OAC)",
+      "CloudFront signed URLs and signed cookies",
+      "AWS WAF geographic match rule"
+    ],
+    "practice": [
+      "T4Q41"
+    ]
+  },
+  "EKS Cluster Autoscaler": {
+    "lookalikes": [
+      "ECS Service Auto Scaling",
+      "ECS/EKS with Fargate",
+      "Target tracking vs. step/scheduled scaling"
+    ],
+    "practice": [
+      "T4Q61"
+    ]
+  },
+  "AWS Transfer Family with EFS": {
+    "lookalikes": [
+      "AWS Transfer Family",
+      "EFS mount targets",
+      "Security groups and network ACLs",
+      "Amazon FSx for Windows File Server"
+    ],
+    "practice": [
+      "T5Q32"
+    ]
+  },
+  "Geographic content access controls": {
+    "lookalikes": [
+      "Route 53 geolocation routing",
+      "AWS WAF geographic match rule",
+      "Amazon CloudFront",
+      "AWS Global Accelerator"
+    ],
+    "practice": [
+      "T1Q55"
+    ]
+  },
+  "Route 53 CNAME records": {
+    "lookalikes": [
+      "Route 53 alias records",
+      "Route 53 private hosted zone prerequisites",
+      "API Gateway endpoint types"
+    ],
+    "practice": [
+      "T3Q18"
+    ]
+  },
+  "DNS TTL caching": {
+    "lookalikes": [
+      "Route 53 failover routing",
+      "Route 53 alias records",
+      "Route 53 latency routing",
+      "Route 53 weighted routing"
+    ],
+    "practice": [
+      "T4Q58"
+    ]
+  },
+  "AWS Glue DataBrew": {
+    "lookalikes": [
+      "AWS Glue and Data Catalog",
+      "Amazon EMR",
+      "AWS Lake Formation"
+    ],
+    "practice": [
+      "T1Q63"
+    ]
+  },
+  "Amazon Comprehend": {
+    "lookalikes": [
+      "Amazon Comprehend custom entity recognition",
+      "AWS Glue and Data Catalog",
+      "Amazon OpenSearch Service"
+    ],
+    "practice": [
+      "T2Q17"
+    ]
+  },
+  "Amazon ECS launch type pricing": {
+    "lookalikes": [
+      "ECS, EKS, and Fargate",
+      "ECS Service Auto Scaling",
+      "EC2 purchasing options"
+    ],
+    "practice": [
+      "T1Q36"
+    ]
+  },
+  "EC2 Dedicated Instances": {
+    "lookalikes": [
+      "EC2 Dedicated Hosts",
+      "EC2 tenancy",
+      "EC2 purchasing options"
+    ],
+    "practice": [
+      "T2Q59",
+      "T6Q50"
+    ]
   }
 }
