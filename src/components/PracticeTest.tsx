@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import { alpha } from '@mui/material/styles';
 import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
 import FlagIcon from '@mui/icons-material/Flag';
-import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import GridViewIcon from '@mui/icons-material/GridViewOutlined';
 import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
@@ -400,8 +399,6 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
 
   const actions = (
     <>
-      {hasSections && <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={openStudy}>Guide</Button>}
-      <Button variant="outlined" startIcon={isFlagged ? <FlagIcon /> : <FlagOutlinedIcon />} color={isFlagged ? 'warning' : 'primary'} onClick={toggleFlag} disabled={isSubmitted} aria-pressed={isFlagged}>Flag</Button>
       {!isSubmitted
         ? <Button variant="contained" sx={{ flex: 1 }} onClick={submit} disabled={selected.length === 0}>Submit</Button>
         : <Button variant="contained" sx={{ flex: 1 }} onClick={next}>{isLast ? 'Review all' : 'Next'}</Button>}
@@ -436,6 +433,10 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         {q.prompt}
       </Paper>
       {q.multi && <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>Select {q.requiredCount}.</Typography>}
+
+      {hasSections && (
+        <Button fullWidth variant="outlined" size="large" startIcon={<MenuBookIcon />} onClick={openStudy} sx={{ mt: 1.5 }}>Guide</Button>
+      )}
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 1.5 }} role={q.multi ? 'group' : 'radiogroup'} aria-label="Answer choices">
         {optionOrder.map(i => {
