@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { goBack, goForward } from './screenHistory';
+import { handleSwipe } from './screenHistory';
 
 const IGNORE = 'input, textarea, select, [role="slider"], .MuiSlider-root, pre, table';
 
@@ -19,8 +19,7 @@ export function useSwipeHistory() {
       const dx = t.clientX - s.x;
       const dy = t.clientY - s.y;
       if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-      if (dx < 0) goBack();
-      else goForward();
+      handleSwipe(dx < 0 ? 'left' : 'right');
     };
     document.addEventListener('touchstart', onStart, { passive: true });
     document.addEventListener('touchend', onEnd, { passive: true });

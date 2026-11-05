@@ -19,7 +19,7 @@ import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
 import { loadStudy, saveStudy, showScoreEnabled } from '../lib/appState';
-import { initialStudy, pushScreen, currentScreen, useScreenPop } from '../lib/screenHistory';
+import { initialStudy, pushScreen, currentScreen, setSwipeHandler, useScreenPop } from '../lib/screenHistory';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -106,6 +106,20 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       setStudyFocus(null);
     }
   }, []));
+  // Swipe left = previous question, right = next question; at either end the app-level navigation takes over.
+  useEffect(() => {
+    setSwipeHandler(dir => {
+      if (view !== 'question' || studyFocus || !session) return false;
+      const target = session.index + (dir === 'left' ? -1 : 1);
+      if (target < 0 || target >= session.order.length) return false;
+      setSelected([]);
+      const next = { ...session, index: target };
+      setSession(next);
+      save(test, next);
+      return true;
+    });
+    return () => setSwipeHandler(null);
+  }, [view, studyFocus, session, test]);
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
   const pressTimer = useRef<number | null>(null);
   const pressFired = useRef(false);

@@ -67,3 +67,17 @@ export function useScreenPop(apply: (s: ScreenState | null) => void) {
     return () => window.removeEventListener('popstate', f);
   }, [apply]);
 }
+
+// A screen can claim swipes first (e.g. stepping between questions); return true when handled.
+type SwipeHandler = (dir: 'left' | 'right') => boolean;
+let swipeHandler: SwipeHandler | null = null;
+
+export function setSwipeHandler(h: SwipeHandler | null) {
+  swipeHandler = h;
+}
+
+export function handleSwipe(dir: 'left' | 'right') {
+  if (swipeHandler?.(dir)) return;
+  if (dir === 'left') goBack();
+  else goForward();
+}
