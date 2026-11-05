@@ -248,7 +248,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(52px, 1fr))', gap: 1 }}>
           {session.order.map((id, i) => {
             const done = session.answers[id] !== undefined;
-            const flagged = flaggedIds.includes(id);
+            const flagged = !done && flaggedIds.includes(id);
             return (
               <Button
                 key={id}
@@ -311,6 +311,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     commit({
       ...session!,
       answers: { ...session!.answers, [qid]: selected },
+      flagged: (session!.flagged ?? []).filter(x => x !== qid),
       score: session!.score + (right ? 1 : 0),
     });
   }
@@ -325,10 +326,11 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   }
 
   function toggleFlag() {
+    if (isSubmitted) return;
     const cur = session!.flagged ?? [];
     commit({ ...session!, flagged: cur.includes(qid) ? cur.filter(x => x !== qid) : [...cur, qid] });
   }
-  const isFlagged = flaggedIds.includes(qid);
+  const isFlagged = !isSubmitted && flaggedIds.includes(qid);
   const cramOpen = cramOpenId === qid;
 
   function clearPress() {
@@ -385,7 +387,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const actions = (
     <>
       {hasSections && <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={openStudy}>Guide</Button>}
-      <Button variant="outlined" startIcon={isFlagged ? <FlagIcon /> : <FlagOutlinedIcon />} color={isFlagged ? 'warning' : 'primary'} onClick={toggleFlag} aria-pressed={isFlagged}>Flag</Button>
+      <Button variant="outlined" startIcon={isFlagged ? <FlagIcon /> : <FlagOutlinedIcon />} color={isFlagged ? 'warning' : 'primary'} onClick={toggleFlag} disabled={isSubmitted} aria-pressed={isFlagged}>Flag</Button>
       {!isSubmitted
         ? <Button variant="contained" sx={{ flex: 1 }} onClick={submit} disabled={selected.length === 0}>Submit</Button>
         : <Button variant="contained" sx={{ flex: 1 }} onClick={next}>{isLast ? 'Review all' : 'Next'}</Button>}
