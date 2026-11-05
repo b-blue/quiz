@@ -15,7 +15,6 @@ import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
 import FlagIcon from '@mui/icons-material/Flag';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import GridViewIcon from '@mui/icons-material/GridViewOutlined';
-import CheckIcon from '@mui/icons-material/Check';
 import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
@@ -238,9 +237,13 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           <Button size="small" onClick={onExit}>Back to hub</Button>
         </Box>
         <Box sx={{ display: 'flex', gap: 2, mb: 1.5, fontSize: 13, color: 'text.secondary', alignItems: 'center' }}>
-          <span><CheckIcon sx={{ fontSize: 14, verticalAlign: -2, color: 'success.main' }} /> Answered</span>
+          <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}>
+            <Box component="span" sx={{ width: 16, height: 16, borderRadius: '50%', bgcolor: 'primary.main' }} /> Answered
+          </Box>
           <span>Not answered</span>
-          <span><FlagIcon sx={{ fontSize: 14, verticalAlign: -2, color: 'warning.main' }} /> Flagged</span>
+          <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}>
+            <Box component="span" sx={{ width: 16, height: 16, boxSizing: 'border-box', borderRadius: '50%', border: '2px dotted #fbc02d' }} /> Flagged
+          </Box>
         </Box>
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(52px, 1fr))', gap: 1 }}>
           {session.order.map((id, i) => {
@@ -249,22 +252,31 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
             return (
               <Button
                 key={id}
-                variant={i === session.index ? 'contained' : 'outlined'}
+                variant="outlined"
                 color="inherit"
                 aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}${flagged ? ', flagged' : ''}`}
                 aria-current={i === session.index ? 'true' : undefined}
                 onClick={() => { setSelected([]); setConfirmSubmit(false); commit({ ...session, index: i }); setView('question'); }}
                 sx={{
-                  minWidth: 0, p: 0.5, height: 48, position: 'relative', borderRadius: 2, fontWeight: done ? 700 : 400,
+                  minWidth: 0, p: 0.5, height: 48, borderRadius: 2, color: 'text.primary',
                   borderColor: i === session.index ? 'primary.main' : 'divider',
-                  ...(i === session.index
-                    ? { bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' } }
-                    : done ? { bgcolor: theme => alpha(theme.palette.success.main, 0.22), borderColor: 'success.main' } : { color: 'text.secondary' }),
+                  borderWidth: i === session.index ? 2 : 1,
+                  ...(i === session.index && { bgcolor: theme => alpha(theme.palette.primary.main, 0.12) }),
                 }}
               >
-                {i + 1}
-                {done && <CheckIcon aria-hidden sx={{ position: 'absolute', bottom: 1, right: 1, fontSize: 13, color: i === session.index ? 'inherit' : 'success.main' }} />}
-                {flagged && <FlagIcon aria-hidden sx={{ position: 'absolute', top: 1, right: 1, fontSize: 14, color: 'warning.main' }} />}
+                <Box
+                  component="span"
+                  sx={{
+                    minWidth: 28, height: 28, px: 0.25, boxSizing: 'border-box', borderRadius: '50%',
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                    fontWeight: done ? 700 : 400, fontSize: 14,
+                    border: '2px dotted transparent',
+                    ...(done ? { bgcolor: 'primary.main', color: 'primary.contrastText' } : { color: 'text.secondary' }),
+                    ...(flagged && { borderColor: '#fbc02d' }),
+                  }}
+                >
+                  {i + 1}
+                </Box>
               </Button>
             );
           })}
