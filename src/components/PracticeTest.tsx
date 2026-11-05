@@ -429,7 +429,7 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
           ...(isFlagged && {
             p: 1,
             border: '7px solid transparent',
-            background: `linear-gradient(${theme.palette.background.paper}, ${theme.palette.background.paper}) padding-box, repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px) border-box`,
+            background: `linear-gradient(${theme.vars?.palette.background.paper ?? theme.palette.background.paper}, ${theme.vars?.palette.background.paper ?? theme.palette.background.paper}) padding-box, repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px) border-box`,
           }),
         })}
         data-flagged={isFlagged || undefined}
