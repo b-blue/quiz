@@ -12,7 +12,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { alpha } from '@mui/material/styles';
 import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
-import FlagIcon from '@mui/icons-material/Flag';
 import GridViewIcon from '@mui/icons-material/GridViewOutlined';
 import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
@@ -425,11 +424,18 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       ))}
 
       <Paper
-        sx={{ p: 2, mt: 1, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none' }}
+        sx={(theme) => ({
+          p: 2, mt: 1, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none',
+          ...(isFlagged && {
+            p: 1,
+            border: '7px solid transparent',
+            background: `linear-gradient(${theme.palette.background.paper}, ${theme.palette.background.paper}) padding-box, repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px) border-box`,
+          }),
+        })}
+        data-flagged={isFlagged || undefined}
         onTouchStart={onPromptTouchStart}
         onContextMenu={e => e.preventDefault()}
       >
-        {isFlagged && <FlagIcon aria-label="Flagged" sx={{ fontSize: 18, verticalAlign: -3, mr: 0.5, color: 'warning.main' }} />}
         {q.prompt}
       </Paper>
       {q.multi && <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>Select {q.requiredCount}.</Typography>}
