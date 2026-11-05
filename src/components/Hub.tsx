@@ -9,7 +9,8 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from '@mui/material/Typography';
 import { useColorScheme } from '@mui/material/styles';
 import { SHOW_SECTION_KEY, showSectionEnabled } from '../lib/studySections';
-import { showScoreEnabled, saveShowScore, loadTopInset, applyTopInset, MAX_TOP_INSET } from '../lib/appState';
+import type { SavedView } from '../lib/appState';
+import { describeView, showScoreEnabled, saveShowScore, loadTopInset, applyTopInset, MAX_TOP_INSET } from '../lib/appState';
 import { PRACTICE_TEST_NUMBERS } from '../lib/practiceTests';
 import AppShell from './AppShell';
 
@@ -42,7 +43,7 @@ function SwitchRow({ label, hint, checked, onChange }: { label: string; hint: st
   );
 }
 
-export default function Hub({ onStartQuiz, onStartPractice }: { onStartQuiz: (mode: QuizMode) => void; onStartPractice: (test: number) => void }) {
+export default function Hub({ onStartQuiz, onStartPractice, lastActive, onContinue }: { onStartQuiz: (mode: QuizMode) => void; onStartPractice: (test: number) => void; lastActive: SavedView | null; onContinue: (v: SavedView) => void }) {
   const [showSection, setShowSection] = useState(showSectionEnabled());
   const [muted, setMutedState] = useState(localStorage.getItem('quiz:muted') === '1');
   const [showScore, setShowScore] = useState(showScoreEnabled());
@@ -56,6 +57,11 @@ export default function Hub({ onStartQuiz, onStartPractice }: { onStartQuiz: (mo
 
   return (
     <AppShell title="AWS Test Hub">
+      {lastActive && (
+        <Button fullWidth variant="contained" size="large" onClick={() => onContinue(lastActive)} sx={{ mb: 2 }}>
+          Continue · {describeView(lastActive)}
+        </Button>
+      )}
       <Section title="Quiz mode" hint="Flashcard-style: match each clue to the right service">
         <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5 }}>
           {QUIZZES.map(q => (

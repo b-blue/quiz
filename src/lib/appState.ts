@@ -76,3 +76,24 @@ export function applyTopInset(px: number, persist = false) {
     try { localStorage.setItem(TOP_INSET_KEY, String(px)); } catch { /* storage unavailable */ }
   }
 }
+
+const LAST_ACTIVE_KEY = 'app:lastActive';
+
+// The most recent quiz or practice test, so the hub can return to it.
+export function saveLastActive(v: SavedView) {
+  if (v.view === 'hub') return;
+  try { localStorage.setItem(LAST_ACTIVE_KEY, JSON.stringify(v)); } catch { /* storage unavailable */ }
+}
+
+export function loadLastActive(): SavedView | null {
+  try {
+    const v = JSON.parse(localStorage.getItem(LAST_ACTIVE_KEY) ?? 'null');
+    if (v && (v.view === 'aws' || v.view === 'saa')) return { view: v.view };
+    if (v && v.view === 'practice' && Number.isInteger(v.test)) return { view: 'practice', test: v.test };
+  } catch { /* none saved */ }
+  return null;
+}
+
+export function describeView(v: SavedView): string {
+  return v.view === 'practice' ? `Practice Test ${v.test}` : v.view === 'saa' ? 'SAA-C03 quiz' : 'CLF-C02 quiz';
+}

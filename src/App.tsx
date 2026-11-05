@@ -6,9 +6,9 @@ import ErrorBoundary from './components/ErrorBoundary'
 import Quiz from './components/Quiz'
 import Hub from './components/Hub'
 import PracticeTest from './components/PracticeTest'
-import { loadView, saveView, saveStudy } from './lib/appState'
+import { loadView, saveView, saveStudy, saveLastActive, loadLastActive } from './lib/appState'
 import type { SavedView } from './lib/appState'
-import { pushScreen, useScreenPop } from './lib/screenHistory'
+import { pushScreen, useScreenPop, currentScreen, setSwipeHandler } from './lib/screenHistory'
 import { useSwipeHistory } from './lib/useSwipeHistory'
 import { NavContext } from './lib/NavContext'
 import type { Nav } from './lib/NavContext'
@@ -17,7 +17,7 @@ function App() {
   const [current, setCurrent] = useState<SavedView>(() => loadView());
   const [nonce, setNonce] = useState(0);
 
-  useEffect(() => { saveView(current); }, [current]);
+  useEffect(() => { saveView(current); saveLastActive(current); }, [current]);
   useSwipeHistory();
 
   useScreenPop(useCallback((s) => {
@@ -38,6 +38,25 @@ function App() {
     };
   }, []);
 
+  function resumeLast(v: SavedView) {
+    saveStudy(null);
+    pushScreen(v);
+    setCurrent(v);
+    setNonce(n => n + 1);
+  }
+
+  // With nothing behind the hub (fresh launch), a right swipe returns to the last quiz or test.
+  useEffect(() => {
+    if (current.view !== 'hub') return;
+    setSwipeHandler(dir => {
+      const last = loadLastActive();
+      if (dir !== 'back' || !last || (currentScreen()?.idx ?? 0) > 0) return false;
+      resumeLast(last);
+      return true;
+    });
+    return () => setSwipeHandler(null);
+  }, [current.view]);
+
   // Practice tests and the SAA-C03 quiz are green; the CLF-C02 quiz and hub stay blue.
   const theme = current.view === 'practice' || current.view === 'saa' ? greenTheme : blueTheme;
 
@@ -49,7 +68,7 @@ function App() {
       {current.view === 'aws' ? <Quiz key={`aws${nonce}`} mode="aws" />
         : current.view === 'saa' ? <Quiz key={`saa${nonce}`} mode="saa" />
         : current.view === 'practice' && current.test ? <PracticeTest key={current.test} test={current.test} onExit={nav.openHub} />
-        : <Hub onStartQuiz={nav.openQuiz} onStartPractice={(n) => { saveStudy(null); pushScreen({ view: 'practice', test: n }); setCurrent({ view: 'practice', test: n }); }} />}
+        : <Hub lastActive={loadLastActive()} onContinue={resumeLast} onStartQuiz={nav.openQuiz} onStartPractice={(n) => { saveStudy(null); pushScreen({ view: 'practice', test: n }); setCurrent({ view: 'practice', test: n }); }} />}
     </ErrorBoundary>
     </NavContext.Provider>
     </ThemeProvider>
