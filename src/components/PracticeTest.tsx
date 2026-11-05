@@ -426,12 +426,17 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       <Box
         sx={{
           mt: 1,
+          WebkitTapHighlightColor: 'transparent',
           ...(isFlagged && { p: '7px', borderRadius: 2, background: 'repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px)' }),
         }}
         data-flagged={isFlagged || undefined}
       >
         <Paper
-          sx={{ p: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none', ...(isFlagged && { borderRadius: 1 }) }}
+          sx={{
+            p: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none',
+            WebkitTapHighlightColor: 'transparent', bgcolor: 'background.paper', '&::selection, & *::selection': { background: 'transparent' },
+            ...(isFlagged && { borderRadius: 1 }),
+          }}
           onTouchStart={onPromptTouchStart}
           onContextMenu={e => e.preventDefault()}
         >
