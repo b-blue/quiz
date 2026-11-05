@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { loadPracticeTest } from '../lib/practiceTests';
 import type { PracticeQuestion } from '../lib/practiceTests';
@@ -20,6 +20,7 @@ import AppShell from './AppShell';
 import { getPracticeSections, showSectionEnabled } from '../lib/studySections';
 import type { StudyFocus } from '../lib/studySections';
 import { loadStudy, saveStudy, showScoreEnabled } from '../lib/appState';
+import { initialStudy, pushScreen, currentScreen, useScreenPop } from '../lib/screenHistory';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -86,11 +87,26 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
   const [saved, setSaved] = useState<Session | null>(null);
   const [selected, setSelected] = useState<number[]>([]);
   const [finished, setFinished] = useState(false);
-  const [view, setView] = useState<'question' | 'grid'>('question');
+  const [view, setViewState] = useState<'question' | 'grid'>(() => currentScreen()?.sub === 'grid' ? 'grid' : 'question');
   const [confirmSubmit, setConfirmSubmit] = useState(false);
   const showScore = showScoreEnabled();
-  const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(() => { const st = loadStudy(); return st?.from === 'practice' ? st.focus ?? { sections: [], terms: [] } : null; });
+  const [studyFocus, setStudyFocus] = useState<StudyFocus | null>(() => { const st = initialStudy('practice'); return st ? st.focus ?? { sections: [], terms: [] } : null; });
   const [cramOpenId, setCramOpenId] = useState<number | null>(null);
+  const route = { view: 'practice' as const, test };
+  function setView(v: 'question' | 'grid') {
+    pushScreen(route, v === 'grid' ? 'grid' : undefined);
+    setViewState(v);
+  }
+  useScreenPop(useCallback((sc) => {
+    setViewState(sc?.sub === 'grid' ? 'grid' : 'question');
+    if (sc?.sub === 'study' && sc.study) {
+      saveStudy(sc.study);
+      setStudyFocus(sc.study.focus ?? { sections: [], terms: [] });
+    } else {
+      saveStudy(null);
+      setStudyFocus(null);
+    }
+  }, []));
   const touch = useRef<{ x: number; y: number; moved: boolean } | null>(null);
   const pressTimer = useRef<number | null>(null);
   const pressFired = useRef(false);
@@ -234,13 +250,20 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
               <Button
                 key={id}
                 variant={i === session.index ? 'contained' : 'outlined'}
-                color={done ? 'success' : 'primary'}
+                color="inherit"
                 aria-label={`Question ${i + 1}, ${done ? 'answered' : 'not answered'}${flagged ? ', flagged' : ''}`}
                 aria-current={i === session.index ? 'true' : undefined}
                 onClick={() => { setSelected([]); setConfirmSubmit(false); commit({ ...session, index: i }); setView('question'); }}
-                sx={{ minWidth: 0, p: 0.5, height: 48, position: 'relative', borderRadius: 2, fontWeight: done ? 700 : 400 }}
+                sx={{
+                  minWidth: 0, p: 0.5, height: 48, position: 'relative', borderRadius: 2, fontWeight: done ? 700 : 400,
+                  borderColor: i === session.index ? 'primary.main' : 'divider',
+                  ...(i === session.index
+                    ? { bgcolor: 'primary.main', color: 'primary.contrastText', '&:hover': { bgcolor: 'primary.dark' } }
+                    : done ? { bgcolor: theme => alpha(theme.palette.success.main, 0.22), borderColor: 'success.main' } : { color: 'text.secondary' }),
+                }}
               >
                 {i + 1}
+                {done && <CheckIcon aria-hidden sx={{ position: 'absolute', bottom: 1, right: 1, fontSize: 13, color: i === session.index ? 'inherit' : 'success.main' }} />}
                 {flagged && <FlagIcon aria-hidden sx={{ position: 'absolute', top: 1, right: 1, fontSize: 14, color: 'warning.main' }} />}
               </Button>
             );
@@ -289,12 +312,6 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     commit({ ...session!, index: session!.index + 1 });
   }
 
-  function prev() {
-    if (session!.index === 0) return;
-    setSelected([]);
-    commit({ ...session!, index: session!.index - 1 });
-  }
-
   function toggleFlag() {
     const cur = session!.flagged ?? [];
     commit({ ...session!, flagged: cur.includes(qid) ? cur.filter(x => x !== qid) : [...cur, qid] });
@@ -328,22 +345,14 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     if (Math.hypot(t.clientX - st.x, t.clientY - st.y) > 10) { st.moved = true; clearPress(); }
   }
 
-  function onTouchEnd(e: React.TouchEvent) {
+  function onTouchEnd() {
     clearPress();
-    const st = touch.current;
     touch.current = null;
-    if (!st || pressFired.current) return;
-    const t = e.changedTouches[0];
-    const dx = t.clientX - st.x;
-    const dy = t.clientY - st.y;
-    if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-    if (dx < 0) next();
-    else prev();
   }
   if (studyFocus) {
     return (
       <Suspense fallback={<AppShell title={title}><Typography>Loading study guide…</Typography></AppShell>}>
-        <StudyPanel mode="saa" focus={studyFocus} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setStudyFocus(null); }} />
+        <StudyPanel mode="saa" focus={studyFocus} restore={loadStudy() ?? undefined} />
       </Suspense>
     );
   }
@@ -355,7 +364,9 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
     if (!sectionInfo) return;
     const focus = { sections: sectionInfo.sections.map(x => x.sub), terms: sectionInfo.terms };
     if (session) save(test, session);
-    saveStudy({ from: 'practice', focus });
+    const study = { from: 'practice' as const, focus };
+    saveStudy(study);
+    pushScreen(route, 'study', study);
     setStudyFocus(focus);
   }
 

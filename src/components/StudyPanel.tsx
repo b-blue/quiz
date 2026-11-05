@@ -104,12 +104,11 @@ function highlight(children: ReactNode, query: string): ReactNode {
   return walk(children);
 }
 
-export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aws' | 'saa'; onBack: () => void; focus?: StudyFocus; restore?: StudyState }) {
+export default function StudyPanel({ mode, focus, restore }: { mode: 'aws' | 'saa'; focus?: StudyFocus; restore?: StudyState }) {
   const isSaa = mode === 'saa';
   const title = isSaa ? 'SAA-C03 Study Guide' : 'CLF-C02 Study Guide';
   const markdown = isSaa ? saaStudyMarkdown : clfStudyMarkdown;
   const contentRef = useRef<HTMLDivElement>(null);
-  const touch = useRef<{ x: number; y: number } | null>(null);
   const [query, setQuery] = useState(restore?.query ?? '');
 
   const filtered = useMemo(() => filterMarkdown(markdown, query), [markdown, query]);
@@ -139,20 +138,6 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
     setQuery(v);
     patchStudy({ query: v, scroll: 0 });
     window.scrollTo(0, 0);
-  }
-
-  function onTouchStart(e: React.TouchEvent) {
-    const t = e.touches[0];
-    touch.current = { x: t.clientX, y: t.clientY };
-  }
-  function onTouchEnd(e: React.TouchEvent) {
-    const s = touch.current;
-    touch.current = null;
-    if (!s) return;
-    const t = e.changedTouches[0];
-    const dx = t.clientX - s.x;
-    const dy = t.clientY - s.y;
-    if (dx < -70 && -dx > Math.abs(dy) * 1.5) onBack();
   }
 
   const focusComponents = focus ? {
@@ -188,7 +173,7 @@ export default function StudyPanel({ mode, onBack, focus, restore }: { mode: 'aw
   );
 
   return (
-    <AppShell title={title} extra={searchBox} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <AppShell title={title} extra={searchBox}>
       <Paper
         ref={contentRef}
         sx={(theme) => ({

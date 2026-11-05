@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { applyTopInset, loadTopInset } from './lib/appState'
+import { applyTopInset, loadTopInset, loadView } from './lib/appState'
+import { initScreenHistory } from './lib/screenHistory'
 import './index.css'
 import App from './App.tsx'
 
@@ -10,6 +11,7 @@ try {
 } catch (e) {}
 
 applyTopInset(loadTopInset());
+initScreenHistory(loadView());
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

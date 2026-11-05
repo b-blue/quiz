@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSaaTerms, getPracticeRefs } from '../lib/terms';
 import { loadCramText } from '../lib/practiceTests';
@@ -14,6 +14,7 @@ import TimerIcon from '@mui/icons-material/TimerOutlined';
 import TimerOffIcon from '@mui/icons-material/TimerOffOutlined';
 import AppShell from './AppShell';
 import { loadStudy, saveStudy } from '../lib/appState';
+import { initialStudy, pushScreen, useScreenPop } from '../lib/screenHistory';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
@@ -23,7 +24,12 @@ export default function Quiz({ mode = 'aws' }: { mode?: 'aws' | 'saa' }) {
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection, terms));
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [showStudyView, setShowStudyView] = useState(() => loadStudy()?.from === 'quiz');
+  const [showStudyView, setShowStudyView] = useState(() => initialStudy('quiz') !== null);
+  useScreenPop(useCallback((sc) => {
+    const on = sc?.sub === 'study';
+    if (!on) saveStudy(null);
+    setShowStudyView(on);
+  }, []));
   const [cramHint, setCramHint] = useState<string | null>(null);
   // Buttons are simple press targets now (no drag-and-drop)
 
@@ -203,7 +209,7 @@ export default function Quiz({ mode = 'aws' }: { mode?: 'aws' | 'saa' }) {
   if (showStudyView) {
     return (
       <Suspense fallback={<AppShell title={studyTitle}><Typography>Loading study guide…</Typography></AppShell>}>
-        <StudyPanel mode={mode} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setShowStudyView(false); }} />
+        <StudyPanel mode={mode} restore={loadStudy() ?? undefined} />
       </Suspense>
     );
   }
@@ -229,7 +235,7 @@ export default function Quiz({ mode = 'aws' }: { mode?: 'aws' | 'saa' }) {
 
   const actions = (
     <>
-      <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={() => { saveStudy({ from: 'quiz' }); setShowStudyView(true); }} aria-label={`Open ${studyTitle}`}>Guide</Button>
+      <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={() => { saveStudy({ from: 'quiz' }); pushScreen({ view: mode }, 'study', { from: 'quiz' }); setShowStudyView(true); }} aria-label={`Open ${studyTitle}`}>Guide</Button>
       <Button variant="outlined" startIcon={timedMode ? <TimerIcon /> : <TimerOffIcon />} onClick={toggleTimedMode} aria-label={timedMode ? 'Turn timed mode off' : 'Turn timed mode on'}>
         {timedMode ? 'Timed' : 'Untimed'}
       </Button>
