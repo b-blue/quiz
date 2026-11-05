@@ -423,21 +423,21 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
         </Box>
       ))}
 
-      <Paper
-        sx={(theme) => ({
-          p: 2, mt: 1, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none',
-          ...(isFlagged && {
-            p: 1,
-            border: '7px solid transparent',
-            background: `linear-gradient(${theme.vars?.palette.background.paper ?? theme.palette.background.paper}, ${theme.vars?.palette.background.paper ?? theme.palette.background.paper}) padding-box, repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px) border-box`,
-          }),
-        })}
+      <Box
+        sx={{
+          mt: 1,
+          ...(isFlagged && { p: '7px', borderRadius: 2, background: 'repeating-linear-gradient(-45deg, #fbc02d 0 10px, #111 10px 20px)' }),
+        }}
         data-flagged={isFlagged || undefined}
-        onTouchStart={onPromptTouchStart}
-        onContextMenu={e => e.preventDefault()}
       >
-        {q.prompt}
-      </Paper>
+        <Paper
+          sx={{ p: 2, whiteSpace: 'pre-wrap', lineHeight: 1.5, WebkitTouchCallout: 'none', userSelect: 'none', ...(isFlagged && { borderRadius: 1 }) }}
+          onTouchStart={onPromptTouchStart}
+          onContextMenu={e => e.preventDefault()}
+        >
+          {q.prompt}
+        </Paper>
+      </Box>
       {q.multi && <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>Select {q.requiredCount}.</Typography>}
 
       {hasSections && (
