@@ -33,6 +33,7 @@ interface Props {
   subtitle?: string;
   extra?: ReactNode; // rendered inside the sticky app bar, under the title row
   actions?: ReactNode; // sticky bottom action bar
+  menuItems?: { label: string; icon: ReactNode; onClick: () => void }[]; // screen-specific entries at the top of the grid menu
   children: ReactNode;
   onTouchStart?: TouchEventHandler;
   onTouchMove?: TouchEventHandler;
@@ -40,7 +41,7 @@ interface Props {
   onTouchCancel?: TouchEventHandler;
 }
 
-export default function AppShell({ title, subtitle, extra, actions, children, ...touch }: Props) {
+export default function AppShell({ title, subtitle, extra, actions, menuItems, children, ...touch }: Props) {
   const nav = useContext(NavContext);
   const { mode, setMode } = useColorScheme();
   const [anchor, setAnchor] = useState<HTMLElement | null>(null);
@@ -108,6 +109,10 @@ export default function AppShell({ title, subtitle, extra, actions, children, ..
       </AppBar>
 
       <Menu anchorEl={anchor} open={!!anchor} onClose={close} slotProps={{ paper: { sx: { minWidth: 220 } } }}>
+        {menuItems?.map(item => (
+          <MenuItem key={item.label} onClick={run(item.onClick)}><ListItemIcon>{item.icon}</ListItemIcon><ListItemText>{item.label}</ListItemText></MenuItem>
+        ))}
+        {menuItems && menuItems.length > 0 && <Divider />}
         <MenuItem onClick={run(nav.openHub)}><ListItemIcon><HomeIcon /></ListItemIcon><ListItemText>Hub</ListItemText></MenuItem>
         <MenuItem onClick={run(() => nav.openQuiz('aws'))}><ListItemIcon><StyleIcon /></ListItemIcon><ListItemText>Quiz · CLF-C02</ListItemText></MenuItem>
         <MenuItem onClick={run(() => nav.openQuiz('saa'))}><ListItemIcon><StyleIcon /></ListItemIcon><ListItemText>Quiz · SAA-C03</ListItemText></MenuItem>

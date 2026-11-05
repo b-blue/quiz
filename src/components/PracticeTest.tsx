@@ -374,16 +374,13 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       title={title}
       subtitle={`Question ${session.index + 1} of ${total}${showScore ? ` · Score ${session.score}/${answeredCount} (${pct(session.score, answeredCount)}%)` : ''}`}
       actions={actions}
+      menuItems={[{ label: 'All questions', icon: <GridViewIcon />, onClick: () => { setConfirmSubmit(false); setView('grid'); } }]}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onTouchCancel={() => { clearPress(); touch.current = null; }}
     >
       <LinearProgress variant="determinate" value={(answeredCount / total) * 100} sx={{ height: 6, borderRadius: 3, mb: 1.5 }} aria-label="Test progress" />
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1.5 }}>
-        <Button size="small" startIcon={<GridViewIcon />} onClick={() => { setConfirmSubmit(false); setView('grid'); }}>All questions</Button>
-      </Box>
-
       {hasSections && sectionInfo!.sections.map((sec, idx, all) => (
         <Box key={sec.sub} sx={{ mb: 1 }}>
           {all.findIndex(x => x.domain === sec.domain) === idx && <Chip size="small" color="primary" variant="outlined" label={sec.domain} sx={{ ...wrapChip, mr: 0.5, mb: 0.5 }} />}

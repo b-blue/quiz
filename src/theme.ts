@@ -1,10 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
-export const theme = createTheme({
+function build(light: string, dark: string) {
+  return createTheme({
   cssVariables: { colorSchemeSelector: 'class' },
   colorSchemes: {
-    light: { palette: { primary: { main: '#1976d2' }, background: { default: '#f5f7fa', paper: '#ffffff' } } },
-    dark: { palette: { primary: { main: '#90caf9' }, background: { default: '#121212', paper: '#1e1e1e' } } },
+    light: { palette: { primary: { main: light }, background: { default: '#f5f7fa', paper: '#ffffff' } } },
+    dark: { palette: { primary: { main: dark }, background: { default: '#121212', paper: '#1e1e1e' } } },
   },
   shape: { borderRadius: 10 },
   typography: { button: { fontWeight: 500 } },
@@ -22,3 +23,7 @@ export const theme = createTheme({
     },
   },
 });
+}
+
+export const blueTheme = build('#1976d2', '#90caf9');
+export const greenTheme = build('#2e7d32', '#81c784');

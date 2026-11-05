@@ -61,7 +61,7 @@ export default function LightGrid() {
             borderRadius: '50%',
             bgcolor: LIGHT_COLOR[on] ?? 'rgba(255,255,255,0.28)',
             boxShadow: on ? `0 0 6px ${LIGHT_COLOR[on]}` : 'none',
-            transition: 'background-color 0.6s, box-shadow 0.6s',
+            transition: 'background-color 80ms steps(2, end), box-shadow 80ms steps(2, end)',
           }}
         />
       ))}
