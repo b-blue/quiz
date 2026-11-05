@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Switch from '@mui/material/Switch';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Typography from '@mui/material/Typography';
+import { useColorScheme } from '@mui/material/styles';
 import { SHOW_SECTION_KEY, showSectionEnabled } from '../lib/studySections';
 import { showScoreEnabled, saveShowScore } from '../lib/appState';
-import styles from './Quiz.module.css';
-import QuizHeader from './QuizHeader';
 import { PRACTICE_TEST_NUMBERS } from '../lib/practiceTests';
+import AppShell from './AppShell';
 
 type QuizMode = 'aws' | 'saa';
 
@@ -12,10 +19,33 @@ const QUIZZES: { mode: QuizMode; label: string }[] = [
   { mode: 'saa', label: 'SAA-C03' },
 ];
 
+function Section({ title, hint, children }: { title: string; hint?: string; children: React.ReactNode }) {
+  return (
+    <Paper sx={{ p: 2, mb: 2 }}>
+      <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: '0.1em' }}>{title}</Typography>
+      {hint && <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>{hint}</Typography>}
+      {children}
+    </Paper>
+  );
+}
+
+function SwitchRow({ label, hint, checked, onChange }: { label: string; hint: string; checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, py: 0.5 }}>
+      <Box>
+        <Typography>{label}</Typography>
+        <Typography variant="body2" color="text.secondary">{hint}</Typography>
+      </Box>
+      <Switch checked={checked} onChange={e => onChange(e.target.checked)} slotProps={{ input: { 'aria-label': label } }} />
+    </Box>
+  );
+}
+
 export default function Hub({ onStartQuiz, onStartPractice }: { onStartQuiz: (mode: QuizMode) => void; onStartPractice: (test: number) => void }) {
   const [showSection, setShowSection] = useState(showSectionEnabled());
   const [muted, setMutedState] = useState(localStorage.getItem('quiz:muted') === '1');
   const [showScore, setShowScore] = useState(showScoreEnabled());
+  const { mode, setMode } = useColorScheme();
 
   function setMuted(next: boolean) {
     try { localStorage.setItem('quiz:muted', next ? '1' : '0'); } catch { /* storage unavailable */ }
@@ -23,78 +53,39 @@ export default function Hub({ onStartQuiz, onStartPractice }: { onStartQuiz: (mo
   }
 
   return (
-    <div className={styles.quizContainer} data-variant="settings">
-      <QuizHeader variant="settings">
-        <div className={styles.questionText}>AWS Test Hub</div>
-      </QuizHeader>
+    <AppShell title="AWS Test Hub">
+      <Section title="Quiz mode" hint="Flashcard-style: match each clue to the right service">
+        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5 }}>
+          {QUIZZES.map(q => (
+            <Button key={q.mode} variant="contained" size="large" onClick={() => onStartQuiz(q.mode)}>{q.label}</Button>
+          ))}
+        </Box>
+      </Section>
 
-      <div className={styles.settingsCard} style={{ marginTop: 12, padding: '1rem' }}>
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ fontWeight: 700 }}>Quiz Mode</div>
-          <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Flashcard-style: match each clue to the right service</div>
-          <div className={styles.hubQuizGrid}>
-            {QUIZZES.map(q => (
-              <button key={q.mode} className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => onStartQuiz(q.mode)}>{q.label}</button>
-            ))}
-          </div>
-        </div>
+      <Section title="Practice test mode" hint="Take a full 65-question practice test in random order">
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1.5 }}>
+          {PRACTICE_TEST_NUMBERS.map(n => (
+            <Button key={n} variant="outlined" size="large" onClick={() => onStartPractice(n)}>Test {n}</Button>
+          ))}
+        </Box>
+      </Section>
 
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ fontWeight: 700 }}>Practice Test Mode</div>
-          <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Take a full 65-question practice test in random order</div>
-          <div className={styles.ptTestGrid}>
-            {PRACTICE_TEST_NUMBERS.map(n => (
-              <button key={n} className={`${styles.timedBtn} ${styles.btn3d}`} onClick={() => onStartPractice(n)}>Test {n}</button>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ fontWeight: 700, fontSize: '1.1rem', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: 12, marginBottom: 8 }}>Settings</div>
-
-        <div className={styles.settingsMuteSection}>
-          <div>
-            <div style={{ fontWeight: 700 }}>Practice test score</div>
-            <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Show the running score during a test (also toggled by tapping it)</div>
-          </div>
-          <button
-            className={`${styles.timedBtn} ${showScore ? styles.timedBtnActive : ''} ${styles.btn3d}`}
-            onClick={() => { const next = !showScore; saveShowScore(next); setShowScore(next); }}
-            aria-pressed={showScore}
-          >
-            {showScore ? 'Shown' : 'Hidden'}
-          </button>
-        </div>
-
-        <div className={styles.settingsMuteSection}>
-          <div>
-            <div style={{ fontWeight: 700 }}>Study guide topic</div>
-            <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Show each practice question's study-guide section</div>
-          </div>
-          <button
-            className={`${styles.timedBtn} ${showSection ? styles.timedBtnActive : ''} ${styles.btn3d}`}
-            onClick={() => { const next = !showSection; try { localStorage.setItem(SHOW_SECTION_KEY, next ? '1' : '0'); } catch { /* storage unavailable */ } setShowSection(next); }}
-            aria-pressed={showSection}
-          >
-            {showSection ? 'On' : 'Off'}
-          </button>
-        </div>
-
-        <div className={styles.settingsMuteSection}>
-          <div>
-            <div style={{ fontWeight: 700 }}>Audio</div>
-            <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Toggle quiz sound effects</div>
-          </div>
-          <button
-            className={`${styles.muteBtn} ${styles.settingsMuteButton} ${styles.btn3d}`}
-            onClick={() => setMuted(!muted)}
-            aria-label={muted ? 'Sound is muted. Click to unmute.' : 'Sound is on. Click to mute.'}
-            title={muted ? 'Sound is muted' : 'Sound is on'}
-          >
-            <span aria-hidden="true">{muted ? '🔇' : '🔊'}</span>
-            {muted ? 'Muted' : 'Sound on'}
-          </button>
-        </div>
-      </div>
-    </div>
+      <Section title="Settings">
+        <SwitchRow label="Practice test score" hint="Show the running score during a test (also toggled by tapping it)" checked={showScore} onChange={v => { saveShowScore(v); setShowScore(v); }} />
+        <SwitchRow label="Study guide topic" hint="Show each practice question's study-guide section" checked={showSection} onChange={v => { try { localStorage.setItem(SHOW_SECTION_KEY, v ? '1' : '0'); } catch { /* storage unavailable */ } setShowSection(v); }} />
+        <SwitchRow label="Sound effects" hint="Quiz sounds and confetti" checked={!muted} onChange={v => setMuted(!v)} />
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, pt: 1 }}>
+          <Box>
+            <Typography>Theme</Typography>
+            <Typography variant="body2" color="text.secondary">Light, dark, or follow the device</Typography>
+          </Box>
+          <ToggleButtonGroup size="small" exclusive value={mode ?? 'system'} onChange={(_, v) => v && setMode(v)} aria-label="Theme">
+            <ToggleButton value="light">Light</ToggleButton>
+            <ToggleButton value="dark">Dark</ToggleButton>
+            <ToggleButton value="system">System</ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
+      </Section>
+    </AppShell>
   );
 }

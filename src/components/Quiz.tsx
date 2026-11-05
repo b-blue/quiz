@@ -2,13 +2,22 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { QuizQuestion } from '../types';
 import { getRandomQuestion, getAllTerms, getSaaTerms, getPracticeRefs } from '../lib/terms';
 import { loadCramText } from '../lib/practiceTests';
-import styles from './Quiz.module.css';
-import QuizHeader from './QuizHeader';
+import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import LinearProgress from '@mui/material/LinearProgress';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { alpha } from '@mui/material/styles';
+import MenuBookIcon from '@mui/icons-material/MenuBookOutlined';
+import TimerIcon from '@mui/icons-material/TimerOutlined';
+import TimerOffIcon from '@mui/icons-material/TimerOffOutlined';
+import AppShell from './AppShell';
 import { loadStudy, saveStudy } from '../lib/appState';
 
 const StudyPanel = lazy(() => import('./StudyPanel'));
 
-export default function Quiz({ onOpenHub, mode = 'aws' }: { onOpenHub?: () => void; mode?: 'aws' | 'saa' }) {
+export default function Quiz({ mode = 'aws' }: { mode?: 'aws' | 'saa' }) {
   const terms = mode === 'saa' ? getSaaTerms() : getAllTerms();
   const selectedSection: string | null = null;
   const [question, setQuestion] = useState<QuizQuestion | null>(() => getRandomQuestion(selectedSection, terms));
@@ -188,131 +197,86 @@ export default function Quiz({ onOpenHub, mode = 'aws' }: { onOpenHub?: () => vo
   // We use CSS transitions for hover/tap effects instead.
 
   if (!question) {
-    return (
-      <div>
-        {selectedSection ? (
-          <>No terms available for the selected section.</>
-        ) : (
-          <>No terms available. Run the extractor to generate data.</>
-        )}
-      </div>
-    );
+    return <AppShell title={studyTitle}><Typography>No terms available. Run the extractor to generate data.</Typography></AppShell>;
   }
 
   if (showStudyView) {
     return (
-      <Suspense fallback={<div className={styles.quizContainer}>Loading study guide…</div>}>
+      <Suspense fallback={<AppShell title={studyTitle}><Typography>Loading study guide…</Typography></AppShell>}>
         <StudyPanel mode={mode} restore={loadStudy() ?? undefined} onBack={() => { saveStudy(null); setShowStudyView(false); }} />
       </Suspense>
     );
   }
 
+  const lines: string[] = [];
+  if (showAnswer) {
+    if (selected === question.correctIndex) {
+      lines.push('Correct 🎉');
+    } else {
+      lines.push(`Incorrect — the correct answer is "${question.options[question.correctIndex]}"`);
+      if (selected !== null) {
+        const selectedTerm = question.options[selected];
+        const selectedEntry = terms.find((t) => t.term === selectedTerm);
+        if (selectedEntry?.definition) lines.push(`${selectedTerm} — ${selectedEntry.definition}`);
+      }
+    }
+    const refs = mode === 'saa' && question.term ? getPracticeRefs(question.term) : [];
+    if (refs.length > 0) {
+      lines.push(`Seen in practice: ${refs.join(' · ')}`);
+      if (cramHint) lines.push(`${refs[0]} cram — ${cramHint}`);
+    }
+  }
+
+  const actions = (
+    <>
+      <Button variant="outlined" startIcon={<MenuBookIcon />} onClick={() => { saveStudy({ from: 'quiz' }); setShowStudyView(true); }} aria-label={`Open ${studyTitle}`}>Guide</Button>
+      <Button variant="outlined" startIcon={timedMode ? <TimerIcon /> : <TimerOffIcon />} onClick={toggleTimedMode} aria-label={timedMode ? 'Turn timed mode off' : 'Turn timed mode on'}>
+        {timedMode ? 'Timed' : 'Untimed'}
+      </Button>
+      <Button variant="contained" sx={{ flex: 1 }} onClick={next} disabled={!showAnswer}>Next</Button>
+    </>
+  );
+
   return (
-    <div className={styles.quizContainer} data-variant={mode}>
-      {showAnswer && <div className={styles.nextOverlay} onClick={next} />}
+    <AppShell title={question.definition} subtitle={mode === 'saa' ? 'SAA-C03 quiz' : 'CLF-C02 quiz'} actions={actions}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }} aria-live="polite">
+        <Typography variant="body2" color="text.secondary">Streak: <strong className={csPop ? 'pop' : undefined} style={{ color: currentStreak > 0 && currentStreak % 5 === 0 ? '#66bb6a' : undefined }}>{currentStreak}</strong></Typography>
+        <Typography variant="body2" color="text.secondary">Best: <strong className={bsPop ? 'pop' : undefined} style={{ color: bestStreak > 0 && bestStreak % 10 === 0 ? '#ffb300' : undefined }}>{bestStreak}</strong></Typography>
+      </Box>
+      {timedMode && <LinearProgress variant="determinate" value={(timeLeft / timerDuration) * 100} sx={{ mb: 2, height: 6, borderRadius: 3 }} />}
 
-      <QuizHeader variant={mode}>
-        <div className={styles.questionText}>{question.definition}</div>
-      </QuizHeader>
-      {/* header controls moved to Settings */}
-      {/* question is displayed in the header's question well */}
-      <div className={styles.progressWrap} aria-hidden>
-        <div className={`${styles.progress} ${timedMode ? styles.progressAnimated : ''}`} style={{ width: `${timedMode ? (timeLeft / timerDuration) * 100 : 0}%` }} />
-      </div>
-
-      <div className={styles.quizOptions}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         {question.options.map((opt, i) => {
           const correct = i === question.correctIndex;
           const isSelected = selected === i;
-
-          const classes = [styles.quizOption];
-          if (showAnswer) {
-            if (correct) classes.push(styles.correct);
-            else if (isSelected) classes.push(styles.incorrect);
-          }
-
+          const state = showAnswer ? (correct ? 'success' : isSelected ? 'error' : null) : null;
           return (
-            <button
+            <Paper
               key={opt}
+              component="button"
+              variant="outlined"
               onClick={() => onSelect(i)}
-              className={classes.join(' ')}
               aria-pressed={isSelected}
+              sx={(theme) => ({
+                textAlign: 'left',
+                font: 'inherit',
+                color: 'text.primary',
+                p: 1.75,
+                cursor: showAnswer ? 'default' : 'pointer',
+                borderColor: state ? theme.palette[state].main : undefined,
+                bgcolor: state ? alpha(theme.palette[state].main, 0.15) : 'background.paper',
+                '&:hover': showAnswer ? undefined : { borderColor: 'primary.main' },
+              })}
             >
               {opt}
-            </button>
+            </Paper>
           );
         })}
-      </div>
+      </Box>
 
-      <div className={styles.quizFooter}>
-        <div className={styles.terminalFooter}>
-          <div className={styles.terminalContent}>
-            {showAnswer ? (
-              (() => {
-                const lines: string[] = [];
-                if (selected === question.correctIndex) {
-                  lines.push('Correct 🎉');
-                } else {
-                  lines.push(`Incorrect — the correct answer is "${question.options[question.correctIndex]}"`);
-                  if (selected !== null) {
-                    const selectedTerm = question.options[selected];
-                    const selectedEntry = terms.find((t) => t.term === selectedTerm);
-                    if (selectedEntry?.definition) lines.push(`${selectedTerm} — ${selectedEntry.definition}`);
-                  }
-                }
-                const refs = mode === 'saa' && question.term ? getPracticeRefs(question.term) : [];
-                if (refs.length > 0) {
-                  lines.push(`Seen in practice: ${refs.join(' · ')}`);
-                  if (cramHint) lines.push(`${refs[0]} cram — ${cramHint}`);
-                }
-                return lines.map((l, idx) => (
-                  <div key={idx} className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>{l}</div>
-                ));
-              })()
-            ) : (
-              <div className={styles.terminalLine}><span className={styles.terminalPrompt}>#</span>Ready</div>
-            )}
-          </div>
-        </div>
-
-        <div style={{ marginLeft: 'auto', display: 'flex', gap: 12, alignItems: 'center' }}>
-          {(() => {
-            const csColor = currentStreak > 0 && currentStreak % 5 === 0 ? '#8ce99a' : 'var(--muted)';
-            const bsColor = bestStreak > 0 && bestStreak % 10 === 0 ? '#ffd36b' : 'var(--muted)';
-            return (
-              <div className={styles.streaks} aria-live="polite">
-                <div>Streak: <strong className={csPop ? styles.pop : undefined} style={{ color: csColor }}>{currentStreak}</strong></div>
-                <div>Best Streak: <strong className={bsPop ? styles.pop : undefined} style={{ color: bsColor }}>{bestStreak}</strong></div>
-              </div>
-            );
-          })()}
-          <button
-            className={`${styles.studyToggleButton} ${styles.btn3d}`}
-            onClick={() => { saveStudy({ from: 'quiz' }); setShowStudyView(true); }}
-            aria-label={`Open ${studyTitle}`}
-            title={`Open ${studyTitle}`}
-          >
-            📖
-          </button>
-          <button
-            className={`${styles.clockBtn} ${styles.btn3d}`}
-            onClick={toggleTimedMode}
-            aria-label={timedMode ? 'Turn timed mode off' : 'Turn timed mode on'}
-            title={timedMode ? 'Timed: On' : 'Timed: Off'}
-          >
-            {timedMode ? '⏱️' : '⏰'}
-          </button>
-
-          <button
-            className={`${styles.gearBtn} ${styles.btn3d}`}
-            onClick={() => onOpenHub?.()}
-            aria-label="Open hub"
-            title="Open hub"
-          >
-            ☰
-          </button>
-        </div>
-      </div>
-    </div>
+      <Alert severity={!showAnswer ? 'info' : selected === question.correctIndex ? 'success' : 'warning'} icon={false} sx={{ mt: 2 }}>
+        {showAnswer ? lines.map((l, idx) => <Typography key={idx} variant="body2" sx={{ mb: idx < lines.length - 1 ? 1 : 0 }}>{l}</Typography>) : 'Pick the term that matches the clue.'}
+      </Alert>
+    </AppShell>
   );
 }

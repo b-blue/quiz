@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './Quiz.module.css';
+import Box from '@mui/material/Box';
 
 const GRID_SIZE = 5;
 const ACTIVE_LIGHTS = 10;
@@ -34,7 +34,7 @@ function nextPattern(previous: boolean[]): boolean[] {
   return next;
 }
 
-export default function LightGrid({ variant }: { variant?: 'default'|'settings'|'bio'|'saa' } = { variant: 'default' }) {
+export default function LightGrid() {
   const [pattern, setPattern] = useState<boolean[]>(() => randomPattern());
 
   useEffect(() => {
@@ -43,10 +43,30 @@ export default function LightGrid({ variant }: { variant?: 'default'|'settings'|
   }, []);
 
   return (
-    <div className={styles.gizmoGrid} data-variant={variant} aria-hidden>
+    <Box
+      aria-hidden
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${GRID_SIZE}, 8px)`,
+        gap: '3px',
+        p: '7px',
+        borderRadius: 2,
+        bgcolor: 'rgba(0,0,0,0.22)',
+      }}
+    >
       {pattern.map((on, i) => (
-        <div key={i} className={`${styles.gizmoLight} ${on ? styles.gizmoOn : ''}`} />
+        <Box
+          key={i}
+          sx={{
+            width: 8,
+            height: 8,
+            borderRadius: '50%',
+            bgcolor: on ? '#ffeb3b' : 'rgba(255,255,255,0.28)',
+            boxShadow: on ? '0 0 6px #ffeb3b' : 'none',
+            transition: 'background-color 0.6s, box-shadow 0.6s',
+          }}
+        />
       ))}
-    </div>
+    </Box>
   );
 }
