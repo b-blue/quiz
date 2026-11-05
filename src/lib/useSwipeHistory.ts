@@ -3,7 +3,7 @@ import { handleSwipe } from './screenHistory';
 
 const IGNORE = 'input, textarea, select, [role="slider"], .MuiSlider-root, pre, table';
 
-// Swipe left = previous screen, swipe right = next screen (when one exists).
+// Swipe right = previous screen, swipe left = next screen (when one exists).
 export function useSwipeHistory() {
   useEffect(() => {
     let start: { x: number; y: number } | null = null;
@@ -19,7 +19,7 @@ export function useSwipeHistory() {
       const dx = t.clientX - s.x;
       const dy = t.clientY - s.y;
       if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-      handleSwipe(dx < 0 ? 'left' : 'right');
+      handleSwipe(dx > 0 ? 'back' : 'forward');
     };
     document.addEventListener('touchstart', onStart, { passive: true });
     document.addEventListener('touchend', onEnd, { passive: true });

@@ -106,11 +106,11 @@ export default function PracticeTest({ test, onExit }: { test: number; onExit: (
       setStudyFocus(null);
     }
   }, []));
-  // Swipe left = previous question, right = next question; at either end the app-level navigation takes over.
+  // Swipe right = previous question, left = next question; at either end the app-level navigation takes over.
   useEffect(() => {
     setSwipeHandler(dir => {
       if (view !== 'question' || studyFocus || !session) return false;
-      const target = session.index + (dir === 'left' ? -1 : 1);
+      const target = session.index + (dir === 'back' ? -1 : 1);
       if (target < 0 || target >= session.order.length) return false;
       setSelected([]);
       const next = { ...session, index: target };
