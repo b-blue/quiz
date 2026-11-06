@@ -3016,6 +3016,10 @@
    {
     "domain": "Architecture principles",
     "sub": "High availability, fault tolerance, and disaster recovery"
+   },
+   {
+    "domain": "Backup and disaster recovery",
+    "sub": "Disaster recovery strategies"
    }
   ],
   "terms": []
@@ -4044,6 +4048,10 @@
    {
     "domain": "Architecture principles",
     "sub": "High availability, fault tolerance, and disaster recovery"
+   },
+   {
+    "domain": "Backup and disaster recovery",
+    "sub": "Disaster recovery strategies"
    }
   ],
   "terms": []
