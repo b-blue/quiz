@@ -42,7 +42,9 @@ function formatTermDefinitions(markdown: string): string {
   }).join('\n');
 }
 
-// Keeps matching term entries and the headings above them; a query that matches a heading keeps its whole section.
+// Keeps matching entries with the headings above them; a query that matches a product or category heading keeps everything beneath it.
+type Chunk = { kind: 'facet' | 'entry' | 'para'; lines: string[] };
+
 function filterMarkdown(markdown: string, query: string): string {
   const q = query.trim().toLowerCase();
   if (!q) return markdown;
@@ -52,13 +54,25 @@ function filterMarkdown(markdown: string, query: string): string {
   let domain: string | null = null;
   let domainEmitted = false;
   let domainHit = false;
-  let section: { title: string | null; titleHit: boolean; body: string[] } | null = null;
+  let section: { title: string | null; titleHit: boolean; chunks: Chunk[] } | null = null;
 
   const flush = () => {
-    if (section && section.body.length > 0) {
-      if (domain && !domainEmitted) { out.push(domain, ''); domainEmitted = true; }
-      if (section.title) out.push(section.title, '');
-      out.push(...section.body);
+    if (section) {
+      const kept: string[] = [];
+      let facet: Chunk | null = null;
+      let facetEmitted = false;
+      let facetHit = false;
+      for (const c of section.chunks) {
+        if (c.kind === 'facet') { facet = c; facetEmitted = false; facetHit = c.lines[0].toLowerCase().includes(q); continue; }
+        if (!(section.titleHit || facetHit || c.lines.join(' ').toLowerCase().includes(q))) continue;
+        if (facet && !facetEmitted) { kept.push(...facet.lines, ''); facetEmitted = true; }
+        kept.push(...c.lines, '');
+      }
+      if (kept.length > 0) {
+        if (domain && !domainEmitted) { out.push(domain, ''); domainEmitted = true; }
+        if (section.title) out.push(section.title, '');
+        out.push(...kept);
+      }
     }
     section = null;
   };
@@ -69,19 +83,27 @@ function filterMarkdown(markdown: string, query: string): string {
     if (line.startsWith('## ')) {
       flush();
       domain = line; domainEmitted = false; domainHit = line.toLowerCase().includes(q);
-      section = { title: null, titleHit: domainHit, body: [] };
+      section = { title: null, titleHit: domainHit, chunks: [] };
       i++; continue;
     }
     if (line.startsWith('### ')) {
       flush();
-      section = { title: line, titleHit: domainHit || line.toLowerCase().includes(q), body: [] };
+      section = { title: line, titleHit: domainHit || line.toLowerCase().includes(q), chunks: [] };
       i++; continue;
     }
+    if (section && line.startsWith('#### ')) { section.chunks.push({ kind: 'facet', lines: [line] }); i++; continue; }
     if (section && entryStart.test(line)) {
       const entry = [line];
       i++;
-      while (i < lines.length && !entryStart.test(lines[i]) && (/^\s+\S/.test(lines[i]) || lines[i].trim() === '')) { entry.push(lines[i]); i++; }
-      if (section.titleHit || entry.join(' ').toLowerCase().includes(q)) section.body.push(...entry, '');
+      while (i < lines.length && !entryStart.test(lines[i]) && !lines[i].startsWith('#') && (/^\s+\S/.test(lines[i]) || lines[i].trim() === '')) { entry.push(lines[i]); i++; }
+      section.chunks.push({ kind: 'entry', lines: entry });
+      continue;
+    }
+    if (section && line.trim() !== '') {
+      const para = [line];
+      i++;
+      while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !entryStart.test(lines[i])) { para.push(lines[i]); i++; }
+      section.chunks.push({ kind: 'para', lines: para });
       continue;
     }
     i++;
@@ -182,7 +204,8 @@ export default function StudyPanel({ mode, focus, restore }: { mode: 'aws' | 'sa
           '& h2': { fontSize: '1.35rem', mt: 3, '&:first-of-type': { mt: 0 } },
           '& h3': { fontSize: '1.1rem', mt: 3, color: 'primary.main', scrollMarginTop: '150px' },
           '& ul': { pl: 2.5 },
-          '& li': { mb: 1.5 },
+          '& li': { mb: 1 },
+          '& h4': { fontSize: '0.8rem', mt: 2.5, mb: 0.5, color: 'text.secondary', textTransform: 'uppercase', letterSpacing: '0.06em' },
           '& li > p': { my: 0.25 },
           '& h3.studyFocusHeading': { borderLeft: `4px solid ${theme.palette.warning.main}`, pl: 1.5 },
           '& li.studyFocusTerm': { borderLeft: `4px solid ${theme.palette.warning.main}`, bgcolor: alpha(theme.palette.warning.main, 0.18), pl: 1, listStylePosition: 'inside' },

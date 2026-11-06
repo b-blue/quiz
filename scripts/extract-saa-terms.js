@@ -6,7 +6,7 @@ import { MAX_QUIZ_DEFINITION_LENGTH } from './apply-definition-chunks.js';
 async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const projectRoot = path.resolve(__dirname, '..');
-  const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'SAA-C03.md');
+  const sourcePath = path.join(projectRoot, 'src', 'data', 'B', 'SAA-C03-flashcard-source.md');
   const outputPath = path.join(projectRoot, 'src', 'data', 'saa-terms.json');
   const cluesPath = path.join(projectRoot, 'src', 'data', 'saa-clues.json');
   const markdown = await fs.readFile(sourcePath, 'utf8');
@@ -54,7 +54,7 @@ async function main() {
     }
   }
   for (const term of Object.keys(clues)) {
-    if (!usedTerms.has(term)) throw new Error(`Clue entry "${term}" does not match any term in SAA-C03.md`);
+    if (!usedTerms.has(term)) throw new Error(`Clue entry "${term}" does not match any term in SAA-C03-flashcard-source.md`);
   }
 
   await fs.writeFile(outputPath, JSON.stringify(expandedResults, null, 2), 'utf8');
